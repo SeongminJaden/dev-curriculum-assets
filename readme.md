@@ -1,11 +1,6 @@
-# Physical AI 교안 작성 가이드
+# 교안 작성 가이드
 
 ## 1. 작성 순서
-
-1. **기준 정의** — 성취도 및 교과목은 [기준 스프레드시트](https://docs.google.com/spreadsheets/d/13z8ospFYZb4ApZN_Zfyk4NIcyW_VexWW2DkBlBVUuCk/edit?gid=0#gid=0)에 정의된 대로 진행한다.
-2. **참고 기준** — [참고 Notion 페이지](https://app.notion.com/p/3968a651517c80afb87eeddda2d0112f?showMoveTo=true&saveParent=true)를 반드시 참고하여 작성한다.
-3. **1차 작성** — 교안은 우선 Notion에 작성한다.
-4. **작성 원칙 준수** — 아래 작성 원칙(2장)을 반드시 지킨다.
 
 ---
 
