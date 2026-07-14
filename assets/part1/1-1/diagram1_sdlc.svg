@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="260" viewBox="0 0 1120 260" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="260" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">소프트웨어 개발 생명주기 (SDLC)</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- connecting arrows -->
+  <line x1="180" y1="160" x2="230" y2="160" stroke="#898781" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="360" y1="160" x2="410" y2="160" stroke="#898781" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="540" y1="160" x2="590" y2="160" stroke="#898781" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="720" y1="160" x2="770" y2="160" stroke="#898781" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="900" y1="160" x2="950" y2="160" stroke="#898781" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- feedback loop from operate back to requirements -->
+  <path d="M 1010 210 C 1010 245, 110 245, 110 210" stroke="#898781" stroke-width="2" fill="none" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+  <text x="560" y="252" text-anchor="middle" font-size="12" fill="#52514e">운영 단계에서 얻은 피드백은 다시 요구사항 정의로 순환됩니다</text>
+
+  <!-- Stage 1: 요구사항 정의 (blue) -->
+  <g>
+    <rect x="40" y="110" width="140" height="100" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <circle cx="60" cy="128" r="12" fill="#2a78d6"/>
+    <text x="60" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+    <text x="110" y="155" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">요구사항 정의</text>
+    <text x="110" y="178" text-anchor="middle" font-size="12" fill="#52514e">무엇을 만들지</text>
+    <text x="110" y="194" text-anchor="middle" font-size="12" fill="#52514e">정의한다</text>
+  </g>
+
+  <!-- Stage 2: 설계 (aqua) -->
+  <g>
+    <rect x="220" y="110" width="140" height="100" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="240" cy="128" r="12" fill="#1baf7a"/>
+    <text x="240" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+    <text x="290" y="155" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">설계</text>
+    <text x="290" y="178" text-anchor="middle" font-size="12" fill="#52514e">구조와 인터페이스</text>
+    <text x="290" y="194" text-anchor="middle" font-size="12" fill="#52514e">를 설계한다</text>
+  </g>
+
+  <!-- Stage 3: 구현 (yellow) -->
+  <g>
+    <rect x="400" y="110" width="140" height="100" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <circle cx="420" cy="128" r="12" fill="#eda100"/>
+    <text x="420" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+    <text x="470" y="155" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">구현</text>
+    <text x="470" y="178" text-anchor="middle" font-size="12" fill="#52514e">설계를 코드로</text>
+    <text x="470" y="194" text-anchor="middle" font-size="12" fill="#52514e">작성한다</text>
+  </g>
+
+  <!-- Stage 4: 빌드/테스트 (green) -->
+  <g>
+    <rect x="580" y="110" width="140" height="100" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <circle cx="600" cy="128" r="12" fill="#008300"/>
+    <text x="600" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">4</text>
+    <text x="650" y="155" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">빌드·테스트</text>
+    <text x="650" y="178" text-anchor="middle" font-size="12" fill="#52514e">컴파일하고</text>
+    <text x="650" y="194" text-anchor="middle" font-size="12" fill="#52514e">검증한다</text>
+  </g>
+
+  <!-- Stage 5: 배포 (violet) -->
+  <g>
+    <rect x="760" y="110" width="140" height="100" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <circle cx="780" cy="128" r="12" fill="#4a3aa7"/>
+    <text x="780" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">5</text>
+    <text x="830" y="155" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">배포</text>
+    <text x="830" y="178" text-anchor="middle" font-size="12" fill="#52514e">운영 환경에</text>
+    <text x="830" y="194" text-anchor="middle" font-size="12" fill="#52514e">반영한다</text>
+  </g>
+
+  <!-- Stage 6: 운영/유지보수 (red) -->
+  <g>
+    <rect x="940" y="110" width="140" height="100" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+    <circle cx="960" cy="128" r="12" fill="#e34948"/>
+    <text x="960" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">6</text>
+    <text x="1010" y="155" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">운영·유지보수</text>
+    <text x="1010" y="178" text-anchor="middle" font-size="12" fill="#52514e">모니터링하고</text>
+    <text x="1010" y="194" text-anchor="middle" font-size="12" fill="#52514e">개선한다</text>
+  </g>
+</svg>
