@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="760" height="560" fill="#fcfcfb"/>
+  <text x="380" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">TCP 3-way Handshake</text>
+  <text x="380" y="56" text-anchor="middle" font-size="12" fill="#52514e">데이터를 주고받기 전, 연결이 유효한지 서로 확인하는 세 번의 메시지</text>
+
+  <defs>
+    <marker id="arrowH" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- actor boxes -->
+  <rect x="70" y="76" width="160" height="50" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="150" y="107" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">클라이언트</text>
+
+  <rect x="530" y="76" width="160" height="50" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="610" y="107" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">서버</text>
+
+  <!-- lifelines -->
+  <line x1="150" y1="126" x2="150" y2="470" stroke="#898781" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="610" y1="126" x2="610" y2="470" stroke="#898781" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- Step 1: SYN -->
+  <line x1="150" y1="175" x2="610" y2="175" stroke="#2a78d6" stroke-width="2.5" marker-end="url(#arrowH)"/>
+  <text x="380" y="163" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">① SYN (seq = x)</text>
+  <text x="380" y="192" text-anchor="middle" font-size="12" fill="#52514e">클라이언트가 연결을 요청하며 자신의 초기 시퀀스 번호 x를 전송</text>
+
+  <!-- Step 2: SYN-ACK -->
+  <line x1="610" y1="255" x2="150" y2="255" stroke="#1baf7a" stroke-width="2.5" marker-end="url(#arrowH)"/>
+  <text x="380" y="243" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">② SYN-ACK (seq = y, ack = x+1)</text>
+  <text x="380" y="272" text-anchor="middle" font-size="12" fill="#52514e">서버가 x+1을 확인하며 자신의 초기 시퀀스 번호 y도 함께 전송</text>
+
+  <!-- Step 3: ACK -->
+  <line x1="150" y1="335" x2="610" y2="335" stroke="#eda100" stroke-width="2.5" marker-end="url(#arrowH)"/>
+  <text x="380" y="323" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">③ ACK (ack = y+1)</text>
+  <text x="380" y="352" text-anchor="middle" font-size="12" fill="#52514e">클라이언트가 y+1을 확인 → 서버가 안심하고 연결 자원을 확정</text>
+
+  <!-- established box -->
+  <rect x="190" y="390" width="380" height="55" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+  <text x="380" y="422" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">ESTABLISHED — 데이터 송수신 시작</text>
+
+  <rect x="60" y="470" width="640" height="72" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="380" y="494" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">왜 2번이 아니라 3번인가?</text>
+  <text x="380" y="513" text-anchor="middle" font-size="12" fill="#52514e">서버는 자신의 SYN-ACK이 클라이언트에 도달했는지 확인할 방법이 없습니다.</text>
+  <text x="380" y="530" text-anchor="middle" font-size="12" fill="#52514e">③ ACK을 받은 뒤에야 서버는 안전하게 연결 자원을 할당합니다.</text>
+</svg>

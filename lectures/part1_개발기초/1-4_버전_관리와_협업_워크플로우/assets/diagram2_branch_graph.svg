@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1000" height="420" fill="#fcfcfb"/>
+  <text x="500" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">브랜치는 커밋을 가리키는 가벼운 포인터일 뿐입니다</text>
+  <text x="500" y="56" text-anchor="middle" font-size="13" fill="#52514e">브랜치 생성은 파일을 복사하는 것이 아니라, 이름표 하나를 새로 붙이는 것입니다</text>
+
+  <defs>
+    <marker id="arrowc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- main branch line (blue) -->
+  <line x1="120" y1="180" x2="560" y2="180" stroke="#2a78d6" stroke-width="3"/>
+  <line x1="560" y1="180" x2="700" y2="180" stroke="#2a78d6" stroke-width="3"/>
+  <line x1="700" y1="180" x2="840" y2="180" stroke="#2a78d6" stroke-width="3"/>
+
+  <!-- feature branch line (aqua) -->
+  <line x1="280" y1="180" x2="360" y2="300" stroke="#1baf7a" stroke-width="3"/>
+  <line x1="360" y1="300" x2="500" y2="300" stroke="#1baf7a" stroke-width="3"/>
+  <line x1="500" y1="300" x2="560" y2="180" stroke="#1baf7a" stroke-width="3"/>
+
+  <!-- commit nodes: main (blue) -->
+  <circle cx="120" cy="180" r="16" fill="#2a78d6"/>
+  <text x="120" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">c1</text>
+
+  <circle cx="280" cy="180" r="16" fill="#2a78d6"/>
+  <text x="280" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">c2</text>
+  <text x="280" y="150" text-anchor="middle" font-size="11" fill="#52514e">브랜치 분기 지점</text>
+
+  <!-- merge commit (yellow) -->
+  <circle cx="560" cy="180" r="17" fill="#eda100"/>
+  <text x="560" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">merge</text>
+
+  <circle cx="700" cy="180" r="16" fill="#2a78d6"/>
+  <text x="700" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">c3</text>
+
+  <circle cx="840" cy="180" r="16" fill="#2a78d6"/>
+  <text x="840" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">c4</text>
+
+  <!-- feature commits (aqua) -->
+  <circle cx="360" cy="300" r="16" fill="#1baf7a"/>
+  <text x="360" y="335" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">f1</text>
+
+  <circle cx="500" cy="300" r="16" fill="#1baf7a"/>
+  <text x="500" y="335" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">f2</text>
+
+  <!-- branch labels as floating tags -->
+  <g>
+    <rect x="800" y="90" width="120" height="34" rx="8" fill="#2a78d6" fill-opacity="0.14" stroke="#2a78d6" stroke-width="2"/>
+    <text x="860" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">main</text>
+    <line x1="860" y1="124" x2="840" y2="164" stroke="#2a78d6" stroke-width="1.5" marker-end="url(#arrowc)"/>
+  </g>
+
+  <g>
+    <rect x="430" y="345" width="150" height="34" rx="8" fill="#1baf7a" fill-opacity="0.14" stroke="#1baf7a" stroke-width="2"/>
+    <text x="505" y="367" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">feature (병합 후 삭제)</text>
+    <line x1="505" y1="345" x2="500" y2="316" stroke="#1baf7a" stroke-width="1.5" marker-end="url(#arrowc)"/>
+  </g>
+
+  <g>
+    <rect x="720" y="60" width="90" height="30" rx="8" fill="#e34948" fill-opacity="0.14" stroke="#e34948" stroke-width="2"/>
+    <text x="765" y="80" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">HEAD</text>
+    <line x1="790" y1="90" x2="835" y2="166" stroke="#e34948" stroke-width="1.5" marker-end="url(#arrowc)"/>
+  </g>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1200" height="640" fill="#fcfcfb"/>
+  <text x="600" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">관계형 모델 vs NoSQL 문서 모델 — 배달 주문 데이터 저장 방식 비교</text>
+
+  <defs>
+    <marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <text x="290" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">RDBMS — 정규화된 여러 테이블 (중복 제거)</text>
+  <text x="900" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">NoSQL 문서형 — 하나의 문서에 중첩 (조회 최적화)</text>
+
+  <line x1="600" y1="90" x2="600" y2="545" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <!-- Users table (blue) -->
+  <g>
+    <rect x="60" y="100" width="220" height="120" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="170" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">Users</text>
+    <text x="170" y="144" text-anchor="middle" font-size="12" fill="#52514e">user_id (PK)</text>
+    <text x="170" y="162" text-anchor="middle" font-size="12" fill="#52514e">name</text>
+    <text x="170" y="180" text-anchor="middle" font-size="12" fill="#52514e">address</text>
+  </g>
+
+  <!-- Restaurants table (aqua) -->
+  <g>
+    <rect x="320" y="100" width="220" height="120" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="430" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">Restaurants</text>
+    <text x="430" y="144" text-anchor="middle" font-size="12" fill="#52514e">restaurant_id (PK)</text>
+    <text x="430" y="162" text-anchor="middle" font-size="12" fill="#52514e">name</text>
+  </g>
+
+  <!-- Orders table (yellow) -->
+  <g>
+    <rect x="60" y="270" width="220" height="150" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="170" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">Orders</text>
+    <text x="170" y="314" text-anchor="middle" font-size="12" fill="#52514e">order_id (PK)</text>
+    <text x="170" y="332" text-anchor="middle" font-size="12" fill="#52514e">user_id (FK)</text>
+    <text x="170" y="350" text-anchor="middle" font-size="12" fill="#52514e">restaurant_id (FK)</text>
+    <text x="170" y="368" text-anchor="middle" font-size="12" fill="#52514e">status</text>
+  </g>
+
+  <!-- OrderItems table (green) -->
+  <g>
+    <rect x="320" y="270" width="220" height="150" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="430" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">OrderItems</text>
+    <text x="430" y="314" text-anchor="middle" font-size="12" fill="#52514e">item_id (PK)</text>
+    <text x="430" y="332" text-anchor="middle" font-size="12" fill="#52514e">order_id (FK)</text>
+    <text x="430" y="350" text-anchor="middle" font-size="12" fill="#52514e">menu_name</text>
+    <text x="430" y="368" text-anchor="middle" font-size="12" fill="#52514e">qty</text>
+  </g>
+
+  <!-- FK arrows -->
+  <path d="M 170 270 C 170 250, 170 240, 170 220" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowA)"/>
+  <path d="M 260 270 C 320 250, 380 235, 400 220" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowA)"/>
+  <path d="M 430 270 C 430 250, 430 240, 300 230" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowA)"/>
+
+  <!-- NoSQL document (violet) -->
+  <g>
+    <rect x="620" y="100" width="520" height="320" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <text x="640" y="128" font-size="14" font-weight="700" fill="#0b0b0b">orders 문서 (order_id: "A1029")</text>
+    <text x="655" y="156" font-size="12.5" fill="#52514e">status: "배달중"</text>
+    <text x="655" y="182" font-size="12.5" fill="#52514e">user: {</text>
+    <text x="675" y="204" font-size="12.5" fill="#52514e">name: "김민준", address: "서울시 ..."</text>
+    <text x="655" y="226" font-size="12.5" fill="#52514e">}</text>
+    <text x="655" y="252" font-size="12.5" fill="#52514e">restaurant: { name: "행복분식" }</text>
+    <text x="655" y="278" font-size="12.5" fill="#52514e">items: [</text>
+    <text x="675" y="300" font-size="12.5" fill="#52514e">{ menu_name: "떡볶이", qty: 2 },</text>
+    <text x="675" y="322" font-size="12.5" fill="#52514e">{ menu_name: "순대", qty: 1 }</text>
+    <text x="655" y="344" font-size="12.5" fill="#52514e">]</text>
+    <text x="640" y="400" font-size="12" fill="#52514e">→ 주문 하나를 읽을 때 테이블 3개를 조인할 필요 없이</text>
+    <text x="640" y="418" font-size="12" fill="#52514e">   문서 하나만 읽으면 끝납니다.</text>
+  </g>
+
+  <rect x="60" y="560" width="1080" height="60" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="600" y="584" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">정규화는 중복을 제거해 갱신 이상(anomaly)을 막고,</text>
+  <text x="600" y="602" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">문서형은 조인을 없애 읽기 성능과 확장성을 높입니다.</text>
+</svg>

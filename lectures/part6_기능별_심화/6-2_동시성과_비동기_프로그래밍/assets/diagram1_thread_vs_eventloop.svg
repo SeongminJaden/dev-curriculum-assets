@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1200" height="620" fill="#fcfcfb"/>
+  <text x="600" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">멀티스레딩 vs 이벤트 루프 — 동시 요청 처리 방식 비교</text>
+
+  <defs>
+    <marker id="arrowT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <text x="295" y="70" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">멀티스레딩 — 요청마다 스레드 할당</text>
+  <text x="905" y="70" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">이벤트 루프 — 단일 스레드 + 논블로킹 I/O</text>
+
+  <line x1="600" y1="80" x2="600" y2="600" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <!-- left outer dashed box: process/OS scheduler -->
+  <rect x="50" y="90" width="500" height="470" rx="10" fill="none" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="300" y="112" text-anchor="middle" font-size="12.5" fill="#52514e">OS 스케줄러가 CPU 시간을 스레드에 나누어 배분</text>
+
+  <!-- Thread 1 (blue) -->
+  <g>
+    <rect x="70" y="128" width="460" height="80" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="90" y="153" font-size="14" font-weight="700" fill="#0b0b0b">Thread 1</text>
+    <text x="90" y="173" font-size="12" fill="#52514e">요청 A 처리 — DB 응답 대기 중 (Blocked, CPU 낭비)</text>
+    <text x="90" y="191" font-size="12" fill="#52514e">스택 메모리 별도 할당</text>
+  </g>
+
+  <!-- Thread 2 (aqua) -->
+  <g>
+    <rect x="70" y="218" width="460" height="80" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="90" y="243" font-size="14" font-weight="700" fill="#0b0b0b">Thread 2</text>
+    <text x="90" y="263" font-size="12" fill="#52514e">요청 B 처리 — 실제로 CPU를 쓰는 중</text>
+    <text x="90" y="281" font-size="12" fill="#52514e">스택 메모리 별도 할당</text>
+  </g>
+
+  <text x="300" y="316" text-anchor="middle" font-size="12" fill="#e34948" font-weight="700">↕ 컨텍스트 스위칭 — 레지스터·스택 저장/복원 비용 발생</text>
+
+  <!-- Thread 3 (yellow) -->
+  <g>
+    <rect x="70" y="326" width="460" height="80" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="90" y="351" font-size="14" font-weight="700" fill="#0b0b0b">Thread 3</text>
+    <text x="90" y="371" font-size="12" fill="#52514e">요청 C 처리 — DB 응답 대기 중 (Blocked, CPU 낭비)</text>
+    <text x="90" y="389" font-size="12" fill="#52514e">스택 메모리 별도 할당</text>
+  </g>
+
+  <!-- Thread 4 (green) -->
+  <g>
+    <rect x="70" y="416" width="460" height="80" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="90" y="441" font-size="14" font-weight="700" fill="#0b0b0b">Thread 4</text>
+    <text x="90" y="461" font-size="12" fill="#52514e">요청 D 처리 — 실행 순서를 기다리는 중</text>
+    <text x="90" y="479" font-size="12" fill="#52514e">스택 메모리 별도 할당</text>
+  </g>
+
+  <text x="300" y="520" text-anchor="middle" font-size="12" fill="#52514e">동시 처리 수만큼 스레드·스택·컨텍스트 스위칭 비용이 함께 늘어납니다</text>
+
+  <!-- Right: event loop -->
+  <g>
+    <rect x="630" y="128" width="500" height="90" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="880" y="158" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">메인 스레드 — Event Loop</text>
+    <text x="880" y="180" text-anchor="middle" font-size="12" fill="#52514e">대기 중인 콜백을 큐에서 하나씩 꺼내 순서대로 실행</text>
+    <text x="880" y="198" text-anchor="middle" font-size="12" fill="#52514e">블로킹 없이, 스레드는 단 하나</text>
+  </g>
+
+  <line x1="880" y1="218" x2="880" y2="248" stroke="#898781" stroke-width="2" marker-end="url(#arrowT)"/>
+
+  <!-- non-blocking I/O box -->
+  <g>
+    <rect x="630" y="250" width="500" height="80" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="880" y="278" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">논블로킹 I/O — 커널/이벤트 알림 메커니즘에 위임</text>
+    <text x="880" y="300" text-anchor="middle" font-size="12" fill="#52514e">스레드는 결과를 기다리지 않고 즉시 다음 작업으로 이동</text>
+  </g>
+
+  <path d="M 1090 330 C 1140 360, 1140 400, 1090 420" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowT)"/>
+  <text x="1150" y="380" font-size="11" fill="#52514e" writing-mode="vertical-rl">완료 시 콜백 등록</text>
+
+  <!-- task queue -->
+  <text x="880" y="352" text-anchor="middle" font-size="12.5" fill="#52514e">대기 중인 콜백 큐</text>
+  <g>
+    <rect x="640" y="360" width="90" height="60" rx="8" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2"/>
+    <text x="685" y="395" text-anchor="middle" font-size="12" fill="#0b0b0b">T1 콜백</text>
+  </g>
+  <g>
+    <rect x="745" y="360" width="90" height="60" rx="8" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2"/>
+    <text x="790" y="395" text-anchor="middle" font-size="12" fill="#0b0b0b">T2 콜백</text>
+  </g>
+  <g>
+    <rect x="850" y="360" width="90" height="60" rx="8" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2"/>
+    <text x="895" y="395" text-anchor="middle" font-size="12" fill="#0b0b0b">T3 콜백</text>
+  </g>
+  <g>
+    <rect x="955" y="360" width="90" height="60" rx="8" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2"/>
+    <text x="1000" y="395" text-anchor="middle" font-size="12" fill="#0b0b0b">T4 콜백</text>
+  </g>
+
+  <path d="M 790 360 C 790 300, 830 250, 860 220" stroke="#898781" stroke-width="2" fill="none" stroke-dasharray="4 3" marker-end="url(#arrowT)"/>
+
+  <text x="880" y="450" text-anchor="middle" font-size="12" fill="#52514e">스레드 하나로 수천 개의 대기 중인 I/O를 동시에 다룰 수 있습니다</text>
+
+  <rect x="630" y="480" width="500" height="80" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="880" y="510" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">단, 콜백 하나가 CPU를 오래 붙잡는 순간</text>
+  <text x="880" y="530" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">루프 전체가 그 시간만큼 멈춥니다</text>
+  <text x="880" y="550" text-anchor="middle" font-size="11.5" fill="#52514e">(CPU 집약 작업에는 이벤트 루프가 오히려 불리한 이유)</text>
+</svg>

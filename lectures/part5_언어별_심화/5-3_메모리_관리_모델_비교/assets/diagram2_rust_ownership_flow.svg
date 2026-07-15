@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="640" viewBox="0 0 680 640" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="680" height="640" fill="#fcfcfb"/>
+  <text x="340" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">Rust 소유권 — 이동(move)과 빌림(borrow)</text>
+  <text x="340" y="58" text-anchor="middle" font-size="13" fill="#52514e">컴파일러가 이 흐름을 정적으로 추적합니다</text>
+
+  <defs>
+    <marker id="arrowE" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <line x1="340" y1="140" x2="340" y2="160" stroke="#898781" stroke-width="2" marker-end="url(#arrowE)"/>
+  <line x1="340" y1="230" x2="340" y2="250" stroke="#898781" stroke-width="2" marker-end="url(#arrowE)"/>
+  <line x1="340" y1="320" x2="340" y2="340" stroke="#898781" stroke-width="2" marker-end="url(#arrowE)"/>
+  <line x1="340" y1="410" x2="340" y2="430" stroke="#898781" stroke-width="2" marker-end="url(#arrowE)"/>
+
+  <!-- Step1: 소유자 생성 (blue) -->
+  <g>
+    <rect x="80" y="80" width="520" height="60" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="110" y="107" font-size="14.5" font-weight="700" fill="#0b0b0b">let s1 = String::from("hello");</text>
+    <text x="110" y="127" font-size="12" fill="#52514e">s1이 이 값의 유일한 소유자(owner)가 된다</text>
+  </g>
+
+  <!-- Step2: move (aqua) -->
+  <g>
+    <rect x="80" y="170" width="520" height="60" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="110" y="197" font-size="14.5" font-weight="700" fill="#0b0b0b">let s2 = s1;</text>
+    <text x="110" y="217" font-size="12" fill="#52514e">소유권이 s2로 이동(move)한다 — s1은 이 시점부터 무효</text>
+  </g>
+
+  <!-- Step3: violation (yellow -> flagged red text) -->
+  <g>
+    <rect x="80" y="260" width="520" height="60" rx="10" fill="#e34948" fill-opacity="0.14" stroke="#e34948" stroke-width="2.5"/>
+    <text x="110" y="287" font-size="14.5" font-weight="700" fill="#0b0b0b">println!("{}", s1);  // 컴파일 에러</text>
+    <text x="110" y="307" font-size="12" fill="#52514e">"value borrowed here after move" — 무효화된 소유자 재사용 시도</text>
+  </g>
+
+  <!-- Step4: borrow rule (green) -->
+  <g>
+    <rect x="80" y="350" width="520" height="60" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="110" y="377" font-size="14.5" font-weight="700" fill="#0b0b0b">let r1 = &s2;  (불변 참조는 여러 개 가능)</text>
+    <text x="110" y="397" font-size="12" fill="#52514e">단, r1이 살아있는 동안 &mut s2(가변 참조)는 만들 수 없다</text>
+  </g>
+
+  <!-- Step5: scope end drop (violet) -->
+  <g>
+    <rect x="80" y="440" width="520" height="60" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <text x="110" y="467" font-size="14.5" font-weight="700" fill="#0b0b0b">함수(스코프)가 끝난다</text>
+    <text x="110" y="487" font-size="12" fill="#52514e">컴파일러가 삽입한 drop(s2)가 자동 호출되어 즉시 해제된다</text>
+  </g>
+
+  <rect x="80" y="525" width="520" height="90" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="340" y="552" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">규칙 위반은 실행되기 전, 컴파일 단계에서</text>
+  <text x="340" y="572" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">전부 거부됩니다</text>
+  <text x="340" y="596" text-anchor="middle" font-size="12" fill="#52514e">그래서 실행 중에는 GC도, 수동 free()도 필요하지 않습니다</text>
+</svg>

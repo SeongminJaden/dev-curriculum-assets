@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="920" height="560" fill="#fcfcfb"/>
+  <text x="460" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">TLS 1.3 핸드셰이크 — 비대칭 암호화로 시작해 대칭키로 마무리된다</text>
+  <text x="460" y="56" text-anchor="middle" font-size="13" fill="#52514e">RFC 8446 기준, 1-RTT로 세션 키 합의까지 완료됩니다</text>
+
+  <defs>
+    <marker id="arrowTLS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- lifeline headers -->
+  <rect x="90" y="82" width="150" height="40" rx="10" fill="#2a78d6" fill-opacity="0.14" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="165" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">클라이언트</text>
+
+  <rect x="680" y="82" width="150" height="40" rx="10" fill="#1baf7a" fill-opacity="0.14" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="755" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">서버</text>
+
+  <!-- lifelines -->
+  <line x1="165" y1="122" x2="165" y2="500" stroke="#c3c2b7" stroke-width="2" stroke-dasharray="4 3"/>
+  <line x1="755" y1="122" x2="755" y2="500" stroke="#c3c2b7" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <!-- Step 1: ClientHello (blue) -->
+  <text x="460" y="152" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">1. ClientHello — 지원 가능한 암호 방식·키 공유 값 제안</text>
+  <line x1="165" y1="165" x2="755" y2="165" stroke="#2a78d6" stroke-width="2.5" marker-end="url(#arrowTLS)"/>
+
+  <!-- Step 2: ServerHello + Certificate + Key Share (aqua) -->
+  <text x="460" y="205" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1baf7a">2. ServerHello + 인증서 + 키 공유 값</text>
+  <line x1="755" y1="218" x2="165" y2="218" stroke="#1baf7a" stroke-width="2.5" marker-end="url(#arrowTLS)"/>
+  <text x="460" y="238" text-anchor="middle" font-size="11.5" fill="#52514e">인증서에는 서버의 공개키와 CA(인증기관)의 디지털 서명이 담겨 있습니다</text>
+
+  <!-- Step 3: certificate verification (yellow, client-side note) -->
+  <rect x="60" y="260" width="220" height="70" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+  <text x="170" y="284" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">3. 클라이언트 내부 검증</text>
+  <text x="170" y="303" text-anchor="middle" font-size="11.5" fill="#52514e">CA 공개키로 서명 검증,</text>
+  <text x="170" y="319" text-anchor="middle" font-size="11.5" fill="#52514e">자신의 키 공유 값 계산</text>
+
+  <!-- Step 4: Finished (green) -->
+  <text x="460" y="358" text-anchor="middle" font-size="12.5" font-weight="700" fill="#008300">4. Finished — 양쪽 모두 같은 세션 키 계산 완료</text>
+  <line x1="165" y1="371" x2="755" y2="371" stroke="#008300" stroke-width="2.5" marker-end="url(#arrowTLS)"/>
+
+  <!-- Step 5: encrypted data (violet, bidirectional) -->
+  <text x="460" y="411" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4a3aa7">5. 세션 키(대칭키)로 암호화된 데이터 송수신</text>
+  <line x1="185" y1="424" x2="735" y2="424" stroke="#4a3aa7" stroke-width="2.5" marker-end="url(#arrowTLS)" marker-start="url(#arrowTLS)"/>
+
+  <rect x="140" y="454" width="640" height="60" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="460" y="478" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1·2·3단계는 비대칭 암호화 없이는 성립하지 않습니다</text>
+  <text x="460" y="498" text-anchor="middle" font-size="12" fill="#52514e">키 교환과 서명 검증이 끝난 뒤에야 4·5단계의 대칭키 통신이 시작됩니다</text>
+</svg>

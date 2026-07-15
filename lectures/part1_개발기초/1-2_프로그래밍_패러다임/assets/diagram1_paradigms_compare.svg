@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1080" height="420" fill="#fcfcfb"/>
+  <text x="540" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">세 가지 프로그래밍 패러다임 — 같은 문제, 다른 사고 단위</text>
+  <text x="540" y="56" text-anchor="middle" font-size="13" fill="#52514e">"장바구니 총합을 구하라"는 같은 문제를 각 패러다임은 서로 다른 단위로 쪼갭니다</text>
+
+  <!-- Column 1: 절차적 (blue) -->
+  <g>
+    <rect x="40" y="90" width="310" height="300" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <circle cx="65" cy="115" r="12" fill="#2a78d6"/>
+    <text x="65" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+    <text x="195" y="122" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">절차적 프로그래밍</text>
+
+    <text x="65" y="155" font-size="12.5" font-weight="700" fill="#0b0b0b">핵심 단위</text>
+    <text x="65" y="174" font-size="12" fill="#52514e">순차적으로 실행되는 명령(함수)</text>
+
+    <text x="65" y="204" font-size="12.5" font-weight="700" fill="#0b0b0b">데이터 취급</text>
+    <text x="65" y="223" font-size="12" fill="#52514e">함수들이 공유하는 전역/외부 상태</text>
+
+    <text x="65" y="253" font-size="12.5" font-weight="700" fill="#0b0b0b">사고 방식</text>
+    <text x="65" y="272" font-size="12" fill="#52514e">"먼저 이것을, 그다음 저것을 하라"</text>
+    <text x="65" y="288" font-size="12" fill="#52514e">순서가 곧 논리다</text>
+
+    <text x="65" y="318" font-size="12.5" font-weight="700" fill="#0b0b0b">대표 언어</text>
+    <text x="65" y="337" font-size="12" fill="#52514e">C, 초기 FORTRAN, Pascal</text>
+
+    <text x="65" y="367" font-size="12" fill="#52514e" font-style="italic">비유: 레시피를 순서대로 따라가는 요리</text>
+  </g>
+
+  <!-- Column 2: 객체지향 (aqua) -->
+  <g>
+    <rect x="385" y="90" width="310" height="300" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="410" cy="115" r="12" fill="#1baf7a"/>
+    <text x="410" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+    <text x="540" y="122" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">객체지향 프로그래밍</text>
+
+    <text x="410" y="155" font-size="12.5" font-weight="700" fill="#0b0b0b">핵심 단위</text>
+    <text x="410" y="174" font-size="12" fill="#52514e">상태와 행동을 캡슐화한 객체</text>
+
+    <text x="410" y="204" font-size="12.5" font-weight="700" fill="#0b0b0b">데이터 취급</text>
+    <text x="410" y="223" font-size="12" fill="#52514e">객체 내부에 은닉, 메서드로만 접근</text>
+
+    <text x="410" y="253" font-size="12.5" font-weight="700" fill="#0b0b0b">사고 방식</text>
+    <text x="410" y="272" font-size="12" fill="#52514e">"장바구니 객체에게 합계를 물어라"</text>
+    <text x="410" y="288" font-size="12" fill="#52514e">역할을 가진 사물들이 협력한다</text>
+
+    <text x="410" y="318" font-size="12.5" font-weight="700" fill="#0b0b0b">대표 언어</text>
+    <text x="410" y="337" font-size="12" fill="#52514e">Smalltalk, Java, C++</text>
+
+    <text x="410" y="367" font-size="12" fill="#52514e" font-style="italic">비유: 메시지를 주고받는 부서 조직</text>
+  </g>
+
+  <!-- Column 3: 함수형 (yellow) -->
+  <g>
+    <rect x="730" y="90" width="310" height="300" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <circle cx="755" cy="115" r="12" fill="#eda100"/>
+    <text x="755" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+    <text x="885" y="122" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">함수형 프로그래밍</text>
+
+    <text x="755" y="155" font-size="12.5" font-weight="700" fill="#0b0b0b">핵심 단위</text>
+    <text x="755" y="174" font-size="12" fill="#52514e">입력을 받아 출력만 내는 순수 함수</text>
+
+    <text x="755" y="204" font-size="12.5" font-weight="700" fill="#0b0b0b">데이터 취급</text>
+    <text x="755" y="223" font-size="12" fill="#52514e">불변(immutable), 새 값을 새로 생성</text>
+
+    <text x="755" y="253" font-size="12.5" font-weight="700" fill="#0b0b0b">사고 방식</text>
+    <text x="755" y="272" font-size="12" fill="#52514e">"항목 목록에 합산 함수를 적용하라"</text>
+    <text x="755" y="288" font-size="12" fill="#52514e">함수의 합성으로 문제를 조립한다</text>
+
+    <text x="755" y="318" font-size="12.5" font-weight="700" fill="#0b0b0b">대표 언어</text>
+    <text x="755" y="337" font-size="12" fill="#52514e">Lisp, Haskell, Erlang</text>
+
+    <text x="755" y="367" font-size="12" fill="#52514e" font-style="italic">비유: 수학에서 함수를 합성하는 방식</text>
+  </g>
+</svg>

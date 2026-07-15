@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1000" height="420" fill="#fcfcfb"/>
+  <text x="500" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">명령어 해독 경로 — x86과 ARM</text>
+  <text x="500" y="56" text-anchor="middle" font-size="13" fill="#52514e">겉모습은 다르지만 실행 엔진 앞단에서 두 경로가 만난다</text>
+
+  <defs>
+    <marker id="arrow41b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- x86 row -->
+  <text x="30" y="85" font-size="15" font-weight="700" fill="#2a78d6">x86 계열 (CISC)</text>
+
+  <rect x="30" y="95" width="100" height="70" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="80" y="135" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">Fetch</text>
+  <line x1="130" y1="130" x2="150" y2="130" stroke="#898781" stroke-width="2" marker-end="url(#arrow41b)"/>
+
+  <rect x="150" y="90" width="220" height="80" rx="10" fill="#2a78d6" fill-opacity="0.16" stroke="#2a78d6" stroke-width="3"/>
+  <text x="260" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">Decode</text>
+  <text x="260" y="140" text-anchor="middle" font-size="10.5" fill="#52514e">가변 길이 경계 탐지</text>
+  <text x="260" y="155" text-anchor="middle" font-size="10.5" fill="#52514e">+ 마이크로코드 해석</text>
+  <line x1="370" y1="130" x2="390" y2="130" stroke="#898781" stroke-width="2" marker-end="url(#arrow41b)"/>
+
+  <rect x="390" y="95" width="200" height="70" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="490" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">μop 변환 + μop 캐시</text>
+  <text x="490" y="142" text-anchor="middle" font-size="10.5" fill="#52514e">CISC → 내부 RISC 유사 명령어</text>
+  <line x1="590" y1="130" x2="610" y2="130" stroke="#898781" stroke-width="2" marker-end="url(#arrow41b)"/>
+
+  <rect x="610" y="95" width="200" height="70" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="710" y="125" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">비순차 실행 엔진</text>
+  <text x="710" y="145" text-anchor="middle" font-size="10.5" fill="#52514e">(4-2강에서 다룸)</text>
+  <line x1="810" y1="130" x2="830" y2="130" stroke="#898781" stroke-width="2" marker-end="url(#arrow41b)"/>
+
+  <rect x="830" y="95" width="110" height="70" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="885" y="135" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">Retire</text>
+
+  <text x="260" y="188" text-anchor="middle" font-size="11.5" fill="#52514e">회로 복잡도 높음 → 스위칭 전력 ↑</text>
+
+  <!-- ARM row -->
+  <text x="30" y="235" font-size="15" font-weight="700" fill="#1baf7a">ARM 계열 (RISC)</text>
+
+  <rect x="30" y="245" width="100" height="70" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="80" y="285" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">Fetch</text>
+  <line x1="130" y1="280" x2="150" y2="280" stroke="#898781" stroke-width="2" marker-end="url(#arrow41b)"/>
+
+  <rect x="150" y="250" width="170" height="60" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="235" y="277" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">Decode</text>
+  <text x="235" y="295" text-anchor="middle" font-size="10.5" fill="#52514e">고정 길이, 병렬 해독</text>
+  <line x1="320" y1="280" x2="340" y2="280" stroke="#898781" stroke-width="2" marker-end="url(#arrow41b)"/>
+
+  <rect x="340" y="245" width="220" height="70" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="450" y="275" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">실행 엔진</text>
+  <text x="450" y="295" text-anchor="middle" font-size="10.5" fill="#52514e">(비순차 또는 순차, 코어 등급에 따라 다름)</text>
+  <line x1="560" y1="280" x2="580" y2="280" stroke="#898781" stroke-width="2" marker-end="url(#arrow41b)"/>
+
+  <rect x="580" y="245" width="110" height="70" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="635" y="285" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">Retire</text>
+
+  <text x="235" y="330" text-anchor="middle" font-size="11.5" fill="#52514e">회로 단순 → 스위칭 전력 ↓, μop 변환 단계 자체가 없음</text>
+
+  <rect x="30" y="355" width="940" height="48" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="500" y="383" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1995년 Pentium Pro 이후 x86도 내부적으로 μop이라는 RISC 유사 명령어로 변환해 실행한다</text>
+</svg>

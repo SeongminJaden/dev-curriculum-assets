@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="580" viewBox="0 0 1150 580" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1150" height="580" fill="#fcfcfb"/>
+  <text x="575" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">같은 실수, 다른 결말 — 오타 하나가 흘러가는 길</text>
+  <text x="575" y="58" text-anchor="middle" font-size="13" fill="#52514e">함수를 호출할 때 인자 값의 타입을 착각한 동일한 실수를 가정합니다</text>
+
+  <defs>
+    <marker id="arrowD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <line x1="575" y1="80" x2="575" y2="520" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- Left lane: JavaScript -->
+  <text x="290" y="100" text-anchor="middle" font-size="15" font-weight="700" fill="#1baf7a">JavaScript (동적 타입)</text>
+
+  <line x1="290" y1="160" x2="290" y2="180" stroke="#898781" stroke-width="2" marker-end="url(#arrowD)"/>
+  <line x1="290" y1="240" x2="290" y2="260" stroke="#898781" stroke-width="2" marker-end="url(#arrowD)"/>
+  <line x1="290" y1="320" x2="290" y2="340" stroke="#898781" stroke-width="2" marker-end="url(#arrowD)"/>
+  <line x1="290" y1="400" x2="290" y2="420" stroke="#898781" stroke-width="2" marker-end="url(#arrowD)"/>
+
+  <g>
+    <rect x="40" y="110" width="500" height="50" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="290" y="140" text-anchor="middle" font-size="13.5" fill="#0b0b0b">함수 인자에 문자열 대신 숫자를 실수로 전달</text>
+  </g>
+  <g>
+    <rect x="40" y="190" width="500" height="50" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="290" y="220" text-anchor="middle" font-size="13.5" fill="#0b0b0b">타입 검사 없이 그대로 실행된다</text>
+  </g>
+  <g>
+    <rect x="40" y="270" width="500" height="50" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="290" y="300" text-anchor="middle" font-size="13.5" fill="#0b0b0b">암묵적 형변환으로 값이 조용히 바뀐다</text>
+  </g>
+  <g>
+    <rect x="40" y="350" width="500" height="50" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="290" y="380" text-anchor="middle" font-size="13.5" fill="#0b0b0b">NaN 또는 undefined가 다음 함수로 계속 전파된다</text>
+  </g>
+  <g>
+    <rect x="40" y="430" width="500" height="60" rx="10" fill="#e34948" fill-opacity="0.14" stroke="#e34948" stroke-width="2.5"/>
+    <text x="290" y="457" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">프로덕션에서 사용자가 오류를 먼저 발견</text>
+    <text x="290" y="475" text-anchor="middle" font-size="12" fill="#52514e">원인 추적을 위해 로그를 뒤져야 한다</text>
+  </g>
+
+  <!-- Right lane: TypeScript -->
+  <text x="860" y="100" text-anchor="middle" font-size="15" font-weight="700" fill="#2a78d6">TypeScript (정적 타입)</text>
+
+  <line x1="860" y1="160" x2="860" y2="180" stroke="#898781" stroke-width="2" marker-end="url(#arrowD)"/>
+  <line x1="860" y1="240" x2="860" y2="260" stroke="#898781" stroke-width="2" marker-end="url(#arrowD)"/>
+  <line x1="860" y1="320" x2="860" y2="340" stroke="#898781" stroke-width="2" marker-end="url(#arrowD)"/>
+  <line x1="860" y1="400" x2="860" y2="420" stroke="#898781" stroke-width="2" marker-end="url(#arrowD)"/>
+
+  <g>
+    <rect x="610" y="110" width="500" height="50" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="860" y="140" text-anchor="middle" font-size="13.5" fill="#0b0b0b">함수 인자에 문자열 대신 숫자를 실수로 전달</text>
+  </g>
+  <g>
+    <rect x="610" y="190" width="500" height="50" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="860" y="220" text-anchor="middle" font-size="13.5" fill="#0b0b0b">컴파일러가 매개변수 선언 타입과 대조한다</text>
+  </g>
+  <g>
+    <rect x="610" y="270" width="500" height="50" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="860" y="300" text-anchor="middle" font-size="13.5" fill="#0b0b0b">불일치를 발견하고 컴파일이 그 자리에서 실패한다</text>
+  </g>
+  <g>
+    <rect x="610" y="350" width="500" height="50" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="860" y="380" text-anchor="middle" font-size="13.5" fill="#0b0b0b">오류 메시지가 파일명·줄 번호까지 알려준다</text>
+  </g>
+  <g>
+    <rect x="610" y="430" width="500" height="60" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="860" y="457" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">배포 전에 개발자가 바로 수정</text>
+    <text x="860" y="475" text-anchor="middle" font-size="12" fill="#52514e">사용자는 이 실수를 절대 보지 못한다</text>
+  </g>
+
+  <text x="575" y="530" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">실수의 종류는 같지만, 발견되는 시점이 다릅니다</text>
+  <text x="575" y="550" text-anchor="middle" font-size="12" fill="#52514e">정적 타입은 이 차이를 "개발자의 화면"과 "사용자의 화면" 중 어느 쪽으로 만들지 결정합니다</text>
+</svg>

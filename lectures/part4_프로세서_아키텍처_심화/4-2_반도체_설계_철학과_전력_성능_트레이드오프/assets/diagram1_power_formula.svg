@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="680" viewBox="0 0 900 680" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="900" height="680" fill="#fcfcfb"/>
+  <text x="450" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">동적 전력 공식 분해: P = C · V² · f</text>
+  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#52514e">설계 요소(C)와 전압(V), 클럭(f)이 전력에 기여하는 방식</text>
+
+  <text x="450" y="118" text-anchor="middle" font-size="40" font-weight="700" fill="#0b0b0b">P = C · V² · f</text>
+
+  <defs>
+    <marker id="arrow42a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <line x1="175" y1="145" x2="175" y2="178" stroke="#898781" stroke-width="2" marker-end="url(#arrow42a)"/>
+  <line x1="450" y1="145" x2="450" y2="178" stroke="#898781" stroke-width="2" marker-end="url(#arrow42a)"/>
+  <line x1="725" y1="145" x2="725" y2="178" stroke="#898781" stroke-width="2" marker-end="url(#arrow42a)"/>
+
+  <!-- C box (blue) -->
+  <rect x="60" y="180" width="230" height="110" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="175" y="208" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">C — 정전용량</text>
+  <text x="175" y="232" text-anchor="middle" font-size="11.5" fill="#52514e">트랜지스터 수 · 배선 길이</text>
+  <text x="175" y="250" text-anchor="middle" font-size="11.5" fill="#52514e">= 회로(설계)의 규모</text>
+  <text x="175" y="272" text-anchor="middle" font-size="11.5" fill="#52514e">설계자가 선택하는 값</text>
+
+  <!-- V box (aqua) -->
+  <rect x="335" y="180" width="230" height="110" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="450" y="208" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">V — 공급 전압</text>
+  <text x="450" y="232" text-anchor="middle" font-size="11.5" fill="#52514e">공식에서 제곱으로 작용</text>
+  <text x="450" y="250" text-anchor="middle" font-size="11.5" fill="#52514e">가장 강력한 절감 지렛대</text>
+  <text x="450" y="272" text-anchor="middle" font-size="11.5" fill="#52514e">문턱 전압 이하로는 못 내림</text>
+
+  <!-- f box (yellow) -->
+  <rect x="610" y="180" width="230" height="110" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+  <text x="725" y="208" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">f — 클럭 주파수</text>
+  <text x="725" y="232" text-anchor="middle" font-size="11.5" fill="#52514e">초당 스위칭(전환) 횟수</text>
+  <text x="725" y="250" text-anchor="middle" font-size="11.5" fill="#52514e">전력에 1차(선형)로 비례</text>
+  <text x="725" y="272" text-anchor="middle" font-size="11.5" fill="#52514e">성능과 직결</text>
+
+  <text x="450" y="330" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">전압을 낮추면 전력은 얼마나 줄어들까 (상대값 예시)</text>
+  <text x="450" y="350" text-anchor="middle" font-size="12" fill="#52514e">C, f는 고정하고 V만 낮췄을 때의 계산값입니다 — 실제 제품 벤치마크가 아닙니다</text>
+
+  <!-- bar chart -->
+  <line x1="120" y1="620" x2="800" y2="620" stroke="#898781" stroke-width="2"/>
+
+  <!-- bar 1: V=1.0, P=100% (darkest) -->
+  <rect x="180" y="400" width="140" height="220" fill="#0d366b"/>
+  <text x="250" y="388" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">100%</text>
+  <text x="250" y="642" text-anchor="middle" font-size="12.5" fill="#52514e">V = 1.0 (기준)</text>
+
+  <!-- bar 2: V=0.8, P=64% (mid) -->
+  <rect x="380" y="479" width="140" height="141" fill="#3987e5"/>
+  <text x="450" y="467" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">64%</text>
+  <text x="450" y="642" text-anchor="middle" font-size="12.5" fill="#52514e">V = 0.8</text>
+
+  <!-- bar 3: V=0.6, P=36% (lightest) -->
+  <rect x="580" y="541" width="140" height="79" fill="#cde2fb"/>
+  <text x="650" y="529" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">36%</text>
+  <text x="650" y="642" text-anchor="middle" font-size="12.5" fill="#52514e">V = 0.6</text>
+
+  <rect x="120" y="656" width="680" height="16" fill="none"/>
+  <text x="450" y="668" text-anchor="middle" font-size="11.5" fill="#52514e">전압을 20%, 40% 낮췄을 뿐인데 전력은 그보다 훨씬 가파르게(제곱으로) 줄어듭니다</text>
+</svg>

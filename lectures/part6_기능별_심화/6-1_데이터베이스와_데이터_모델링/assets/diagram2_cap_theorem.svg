@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="580" viewBox="0 0 1040 580" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1040" height="580" fill="#fcfcfb"/>
+  <text x="520" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">CAP 이론 — 분산 시스템은 세 속성을 동시에 만족할 수 없다</text>
+  <text x="520" y="56" text-anchor="middle" font-size="13" fill="#52514e">네트워크 분단(P)은 피할 수 없으므로, 실제 선택은 일관성(C)과 가용성(A) 중 하나입니다</text>
+
+  <defs>
+    <marker id="arrowC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- Consistency (blue) -->
+  <g>
+    <rect x="50" y="80" width="300" height="100" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="200" y="105" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">Consistency (일관성)</text>
+    <text x="200" y="126" text-anchor="middle" font-size="12" fill="#52514e">모든 노드가 같은 시점에</text>
+    <text x="200" y="144" text-anchor="middle" font-size="12" fill="#52514e">항상 같은 데이터를 반환한다</text>
+    <text x="200" y="164" text-anchor="middle" font-size="12" fill="#52514e">(선형화 가능성, Linearizability)</text>
+  </g>
+
+  <!-- Availability (aqua) -->
+  <g>
+    <rect x="370" y="80" width="300" height="100" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="520" y="105" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">Availability (가용성)</text>
+    <text x="520" y="126" text-anchor="middle" font-size="12" fill="#52514e">장애가 없는 모든 노드는</text>
+    <text x="520" y="144" text-anchor="middle" font-size="12" fill="#52514e">모든 요청에 대해 에러 없이</text>
+    <text x="520" y="164" text-anchor="middle" font-size="12" fill="#52514e">응답을 반환해야 한다</text>
+  </g>
+
+  <!-- Partition Tolerance (yellow) -->
+  <g>
+    <rect x="690" y="80" width="300" height="100" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="840" y="105" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">Partition Tolerance (분단 내성)</text>
+    <text x="840" y="126" text-anchor="middle" font-size="12" fill="#52514e">노드 간 통신 일부가 끊겨도</text>
+    <text x="840" y="144" text-anchor="middle" font-size="12" fill="#52514e">시스템 전체는 계속</text>
+    <text x="840" y="164" text-anchor="middle" font-size="12" fill="#52514e">동작해야 한다</text>
+  </g>
+
+  <!-- converging arrows to note -->
+  <path d="M 200 180 C 200 200, 380 205, 470 218" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowC)"/>
+  <path d="M 520 180 L 520 218" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowC)"/>
+  <path d="M 840 180 C 840 200, 660 205, 570 218" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowC)"/>
+
+  <!-- decision note -->
+  <rect x="270" y="222" width="500" height="90" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="520" y="252" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">네트워크 분단이 실제로 발생했을 때</text>
+  <text x="520" y="274" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">"끊긴 노드의 응답을 기다릴 것인가(C)"</text>
+  <text x="520" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">"낡은 데이터라도 즉시 응답할 것인가(A)"</text>
+
+  <!-- diverging arrows -->
+  <path d="M 420 312 C 380 335, 320 350, 280 365" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowC)"/>
+  <path d="M 620 312 C 660 335, 720 350, 760 365" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowC)"/>
+
+  <!-- CP (green) -->
+  <g>
+    <rect x="60" y="370" width="440" height="160" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="280" y="396" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">CP — 일관성 우선</text>
+    <text x="280" y="418" text-anchor="middle" font-size="12" fill="#52514e">분단이 생기면 정합성이 깨질 위험이 있는</text>
+    <text x="280" y="436" text-anchor="middle" font-size="12" fill="#52514e">노드는 응답을 지연하거나 거부한다</text>
+    <text x="280" y="464" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">예: HBase, ZooKeeper,</text>
+    <text x="280" y="482" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">강한 일관성 설정의 MongoDB</text>
+    <text x="280" y="510" text-anchor="middle" font-size="12" fill="#52514e">→ 결제·계좌 잔액처럼 틀리면 안 되는 데이터</text>
+  </g>
+
+  <!-- AP (violet) -->
+  <g>
+    <rect x="540" y="370" width="440" height="160" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <text x="760" y="396" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">AP — 가용성 우선</text>
+    <text x="760" y="418" text-anchor="middle" font-size="12" fill="#52514e">분단이 생겨도 서비스는 멈추지 않고</text>
+    <text x="760" y="436" text-anchor="middle" font-size="12" fill="#52514e">일단 응답한 뒤 나중에 데이터를 동기화한다</text>
+    <text x="760" y="464" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">예: Cassandra, DynamoDB, CouchDB</text>
+    <text x="760" y="490" text-anchor="middle" font-size="12" fill="#52514e"> </text>
+    <text x="760" y="510" text-anchor="middle" font-size="12" fill="#52514e">→ 좋아요 수, 실시간 위치처럼 잠시 낡아도 되는 데이터</text>
+  </g>
+
+  <text x="520" y="558" text-anchor="middle" font-size="12" fill="#52514e">CA(일관성+가용성만)는 분단이 없는 단일 노드에서만 성립하며, 분산 시스템에는 해당하지 않습니다</text>
+</svg>

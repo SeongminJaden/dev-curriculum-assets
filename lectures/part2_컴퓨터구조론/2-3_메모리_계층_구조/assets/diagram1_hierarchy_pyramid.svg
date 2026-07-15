@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" viewBox="0 0 820 680" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="820" height="680" fill="#fcfcfb"/>
+  <text x="410" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">메모리 계층 구조 — 빠를수록 작고, 클수록 느리다</text>
+  <text x="410" y="56" text-anchor="middle" font-size="13" fill="#52514e">색이 짙을수록 빠르고 비싸며 용량이 작은 저장소입니다</text>
+
+  <!-- Layer 1: Register (darkest) -->
+  <polygon points="360,110 460,110 515,180 305,180" fill="#0d366b" stroke="#0d366b" stroke-width="2"/>
+  <text x="410" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">레지스터</text>
+  <text x="410" y="158" text-anchor="middle" font-size="10.5" fill="#ffffff">ALU 바로 옆, 수십~수백 바이트</text>
+
+  <!-- Layer 2: L1 Cache -->
+  <polygon points="305,180 515,180 570,250 250,250" fill="#1a4c8c" stroke="#1a4c8c" stroke-width="2"/>
+  <text x="410" y="210" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">L1 캐시</text>
+  <text x="410" y="228" text-anchor="middle" font-size="10.5" fill="#ffffff">코어마다 하나, 일반적으로 수십 KB</text>
+
+  <!-- Layer 3: L2 Cache -->
+  <polygon points="250,250 570,250 625,320 195,320" fill="#2569c2" stroke="#2569c2" stroke-width="2"/>
+  <text x="410" y="280" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">L2 캐시</text>
+  <text x="410" y="298" text-anchor="middle" font-size="10.5" fill="#ffffff">코어별 또는 소수 코어 공유, 일반적으로 수백 KB</text>
+
+  <!-- Layer 4: L3 Cache -->
+  <polygon points="195,320 625,320 680,390 140,390" fill="#3987e5" stroke="#3987e5" stroke-width="2"/>
+  <text x="410" y="350" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">L3 캐시</text>
+  <text x="410" y="368" text-anchor="middle" font-size="10.5" fill="#ffffff">모든 코어가 공유, 일반적으로 수 MB~수십 MB</text>
+
+  <!-- Layer 5: Main Memory -->
+  <polygon points="140,390 680,390 735,460 85,460" fill="#7fb2ea" stroke="#7fb2ea" stroke-width="2"/>
+  <text x="410" y="420" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">주기억장치 (RAM)</text>
+  <text x="410" y="438" text-anchor="middle" font-size="10.5" fill="#0b0b0b">일반적으로 수 GB~수백 GB, 전원이 꺼지면 사라짐</text>
+
+  <!-- Layer 6: Secondary Storage -->
+  <polygon points="85,460 735,460 790,530 30,530" fill="#cde2fb" stroke="#cde2fb" stroke-width="2"/>
+  <text x="410" y="490" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">보조기억장치 (SSD/HDD)</text>
+  <text x="410" y="508" text-anchor="middle" font-size="10.5" fill="#0b0b0b">일반적으로 수백 GB~수 TB, 전원이 꺼져도 유지됨</text>
+
+  <!-- side annotations -->
+  <defs>
+    <marker id="arrowP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52514e"/>
+    </marker>
+  </defs>
+  <line x1="60" y1="120" x2="60" y2="520" stroke="#52514e" stroke-width="1.5" marker-end="url(#arrowP)"/>
+  <text x="40" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="#52514e" transform="rotate(-90 40 330)">용량 증가</text>
+
+  <line x1="760" y1="520" x2="760" y2="120" stroke="#52514e" stroke-width="1.5" marker-end="url(#arrowP)"/>
+  <text x="780" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="#52514e" transform="rotate(90 780 330)">속도 증가</text>
+
+  <rect x="90" y="560" width="640" height="90" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="410" y="588" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">CPU는 항상 가장 빠른(가장 위) 계층부터 데이터를 찾고,</text>
+  <text x="410" y="608" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">없으면 한 단계씩 아래로 내려가며 찾습니다.</text>
+  <text x="410" y="630" text-anchor="middle" font-size="11.5" fill="#52514e">빠른 메모리는 회로가 복잡하고 비싸 크게 만들 수 없기 때문에, 계층을 나눠 절충합니다.</text>
+</svg>

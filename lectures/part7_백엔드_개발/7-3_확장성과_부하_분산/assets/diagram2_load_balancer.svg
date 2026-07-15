@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="540" viewBox="0 0 1120 540" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="540" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">로드밸런서를 통한 수평 확장, 캐싱과 샤딩</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">요청은 아래로, 병목은 캐시와 샤딩이 흡수합니다</text>
+
+  <defs>
+    <marker id="arrowLB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- 사용자 요청 -->
+  <rect x="460" y="75" width="200" height="42" rx="10" fill="#898781" fill-opacity="0.08" stroke="#898781" stroke-width="2"/>
+  <text x="560" y="101" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">사용자 요청</text>
+
+  <line x1="560" y1="117" x2="560" y2="138" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+
+  <!-- 로드밸런서 (blue, 1) -->
+  <rect x="460" y="140" width="200" height="58" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="560" y="164" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">로드밸런서</text>
+  <text x="560" y="182" text-anchor="middle" font-size="11" fill="#52514e">라운드로빈 · 최소연결 · 상태 확인</text>
+
+  <line x1="500" y1="198" x2="215" y2="222" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+  <line x1="560" y1="198" x2="560" y2="222" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+  <line x1="620" y1="198" x2="905" y2="222" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+
+  <!-- 앱 서버 (aqua, 2) -->
+  <rect x="100" y="225" width="230" height="58" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="215" y="259" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">앱 서버 1</text>
+
+  <rect x="445" y="225" width="230" height="58" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="560" y="259" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">앱 서버 2</text>
+
+  <rect x="790" y="225" width="230" height="58" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="905" y="259" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">앱 서버 3</text>
+
+  <line x1="215" y1="283" x2="500" y2="308" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+  <line x1="560" y1="283" x2="560" y2="308" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+  <line x1="905" y1="283" x2="620" y2="308" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+
+  <!-- 캐시 (yellow, 3) -->
+  <rect x="460" y="310" width="200" height="58" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+  <text x="560" y="334" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">캐시 (Redis)</text>
+  <text x="560" y="352" text-anchor="middle" font-size="11" fill="#52514e">캐시 히트 시 DB 조회 생략</text>
+
+  <line x1="560" y1="368" x2="560" y2="390" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+  <text x="590" y="384" font-size="10.5" fill="#52514e">캐시 미스 시에만 통과</text>
+
+  <line x1="500" y1="390" x2="215" y2="408" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+  <line x1="560" y1="390" x2="560" y2="408" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+  <line x1="620" y1="390" x2="905" y2="408" stroke="#898781" stroke-width="2" marker-end="url(#arrowLB)"/>
+
+  <!-- DB 샤드 (green, 4) -->
+  <rect x="100" y="410" width="230" height="60" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+  <text x="215" y="436" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">DB Shard A</text>
+  <text x="215" y="455" text-anchor="middle" font-size="10.5" fill="#52514e">user_id 0 ~ 999</text>
+
+  <rect x="445" y="410" width="230" height="60" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+  <text x="560" y="436" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">DB Shard B</text>
+  <text x="560" y="455" text-anchor="middle" font-size="10.5" fill="#52514e">user_id 1000 ~ 1999</text>
+
+  <rect x="790" y="410" width="230" height="60" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+  <text x="905" y="436" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">DB Shard C</text>
+  <text x="905" y="455" text-anchor="middle" font-size="10.5" fill="#52514e">user_id 2000 이상</text>
+
+  <rect x="80" y="485" width="960" height="40" rx="8" fill="#eda100" fill-opacity="0.10" stroke="#eda100" stroke-width="2"/>
+  <text x="560" y="510" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">캐시가 반복 요청의 병목을 흡수하고, 샤딩이 그래도 남는 DB 부하를 데이터 단위로 나눕니다</text>
+
+</svg>

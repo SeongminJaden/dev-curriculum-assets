@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="600" viewBox="0 0 920 600" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="920" height="600" fill="#fcfcfb"/>
+  <text x="460" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">세션 기반 인증 흐름 — 상태는 서버에 있다</text>
+  <text x="460" y="56" text-anchor="middle" font-size="13" fill="#52514e">서버가 로그인 상태를 직접 기억하고, 클라이언트는 그 상태를 가리키는 열쇠(session_id)만 들고 있습니다</text>
+
+  <defs>
+    <marker id="arrowS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- headers -->
+  <rect x="60" y="75" width="160" height="42" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="140" y="101" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">클라이언트</text>
+
+  <rect x="480" y="75" width="160" height="42" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="560" y="101" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">서버</text>
+
+  <!-- lifelines -->
+  <line x1="140" y1="117" x2="140" y2="560" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="560" y1="117" x2="560" y2="560" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- session store box -->
+  <rect x="700" y="205" width="170" height="235" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+  <text x="785" y="232" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">세션 저장소</text>
+  <text x="785" y="250" text-anchor="middle" font-size="11.5" fill="#52514e">(메모리 / Redis)</text>
+  <text x="785" y="285" text-anchor="middle" font-size="11" fill="#52514e">session_id →</text>
+  <text x="785" y="302" text-anchor="middle" font-size="11" fill="#52514e">{user_id, 로그인 시각,</text>
+  <text x="785" y="319" text-anchor="middle" font-size="11" fill="#52514e">권한 등}</text>
+  <text x="785" y="412" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">상태가</text>
+  <text x="785" y="429" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">여기 있습니다</text>
+
+  <!-- step 1: client -> server -->
+  <line x1="140" y1="150" x2="555" y2="150" stroke="#898781" stroke-width="2" marker-end="url(#arrowS)"/>
+  <text x="350" y="140" text-anchor="middle" font-size="12.5" fill="#0b0b0b">1. 로그인 요청 (ID / PW)</text>
+
+  <!-- step 2: server -> session store -->
+  <line x1="560" y1="225" x2="695" y2="225" stroke="#898781" stroke-width="2" marker-end="url(#arrowS)"/>
+  <text x="628" y="216" text-anchor="middle" font-size="11" fill="#0b0b0b">2. 세션 생성·저장</text>
+
+  <!-- step 3: server -> client -->
+  <line x1="560" y1="320" x2="145" y2="320" stroke="#898781" stroke-width="2" marker-end="url(#arrowS)"/>
+  <text x="350" y="310" text-anchor="middle" font-size="12.5" fill="#0b0b0b">3. Set-Cookie: session_id=abc123</text>
+
+  <!-- step 4: client -> server -->
+  <line x1="140" y1="400" x2="555" y2="400" stroke="#898781" stroke-width="2" marker-end="url(#arrowS)"/>
+  <text x="350" y="390" text-anchor="middle" font-size="12.5" fill="#0b0b0b">4. 이후 요청마다 쿠키 자동 첨부</text>
+
+  <!-- step 5: server -> session store -->
+  <line x1="560" y1="420" x2="695" y2="420" stroke="#898781" stroke-width="2" marker-end="url(#arrowS)"/>
+  <text x="628" y="411" text-anchor="middle" font-size="11" fill="#0b0b0b">5. session_id 조회</text>
+
+  <rect x="60" y="480" width="580" height="80" rx="10" fill="#898781" fill-opacity="0.07" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="350" y="507" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">서버를 여러 대로 늘리면, 이 세션 저장소를</text>
+  <text x="350" y="527" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">모든 서버가 공유하도록 별도로 설계해야 합니다</text>
+  <text x="350" y="547" text-anchor="middle" font-size="11.5" fill="#52514e">(sticky session 또는 공용 세션 스토어)</text>
+
+</svg>

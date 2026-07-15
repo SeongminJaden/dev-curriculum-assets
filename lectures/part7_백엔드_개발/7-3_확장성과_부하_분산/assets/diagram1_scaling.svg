@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="460" viewBox="0 0 1120 460" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="460" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">수직 확장 vs 수평 확장</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">서버를 늘리는 방향은 두 가지이며, 각각 다른 한계를 가집니다</text>
+
+  <defs>
+    <marker id="arrowSC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- Left panel: 수직 확장 -->
+  <text x="290" y="90" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">수직 확장 (Scale-up)</text>
+
+  <rect x="120" y="130" width="110" height="80" rx="10" fill="#cde2fb" stroke="#3987e5" stroke-width="2.5"/>
+  <text x="175" y="165" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">서버 1대</text>
+  <text x="175" y="184" text-anchor="middle" font-size="11" fill="#0b0b0b">(기존 사양)</text>
+
+  <line x1="235" y1="170" x2="285" y2="170" stroke="#898781" stroke-width="2" marker-end="url(#arrowSC)"/>
+
+  <rect x="290" y="105" width="190" height="130" rx="10" fill="#0d366b" stroke="#0d366b" stroke-width="2.5"/>
+  <text x="385" y="160" text-anchor="middle" font-size="13.5" font-weight="700" fill="#ffffff">서버 1대</text>
+  <text x="385" y="180" text-anchor="middle" font-size="11.5" fill="#ffffff">(CPU·메모리 증설)</text>
+
+  <rect x="80" y="260" width="440" height="130" rx="10" fill="#898781" fill-opacity="0.07" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="300" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">한계</text>
+  <text x="300" y="312" text-anchor="middle" font-size="11.5" fill="#52514e">물리적으로 꽂을 수 있는 CPU·메모리에</text>
+  <text x="300" y="332" text-anchor="middle" font-size="11.5" fill="#52514e">최대치가 존재합니다</text>
+  <text x="300" y="356" text-anchor="middle" font-size="11.5" fill="#52514e">이 서버가 죽으면 전체가 멈추는</text>
+  <text x="300" y="376" text-anchor="middle" font-size="11.5" fill="#52514e">단일 장애점(SPOF)이 그대로 남습니다</text>
+
+  <!-- Right panel: 수평 확장 -->
+  <text x="830" y="90" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">수평 확장 (Scale-out)</text>
+
+  <rect x="750" y="105" width="160" height="50" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="830" y="135" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">로드밸런서</text>
+
+  <line x1="800" y1="155" x2="700" y2="195" stroke="#898781" stroke-width="2" marker-end="url(#arrowSC)"/>
+  <line x1="830" y1="155" x2="830" y2="195" stroke="#898781" stroke-width="2" marker-end="url(#arrowSC)"/>
+  <line x1="860" y1="155" x2="960" y2="195" stroke="#898781" stroke-width="2" marker-end="url(#arrowSC)"/>
+
+  <rect x="620" y="200" width="160" height="60" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="700" y="235" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">서버 1</text>
+
+  <rect x="750" y="200" width="160" height="60" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="830" y="235" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">서버 2</text>
+
+  <rect x="880" y="200" width="160" height="60" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="960" y="235" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">서버 3</text>
+
+  <rect x="600" y="290" width="440" height="130" rx="10" fill="#898781" fill-opacity="0.07" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="820" y="318" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">한계</text>
+  <text x="820" y="342" text-anchor="middle" font-size="11.5" fill="#52514e">서버는 늘었지만 모두 같은 DB를 바라보면</text>
+  <text x="820" y="362" text-anchor="middle" font-size="11.5" fill="#52514e">DB 쓰기 처리량은 그대로입니다</text>
+  <text x="820" y="386" text-anchor="middle" font-size="11.5" fill="#52514e">병목이 서버에서 DB로 이동할 뿐입니다</text>
+
+  <rect x="80" y="405" width="960" height="40" rx="8" fill="#eda100" fill-opacity="0.10" stroke="#eda100" stroke-width="2"/>
+  <text x="560" y="430" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">서버를 늘리는 것은 무상태 계층에서만 선형에 가깝게 효과를 냅니다 — 상태를 가진 계층은 별도 전략이 필요합니다</text>
+
+</svg>

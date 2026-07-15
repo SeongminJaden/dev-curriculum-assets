@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="900" height="640" fill="#fcfcfb"/>
+  <text x="450" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">폰노이만 구조의 5대 구성요소</text>
+  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#52514e">CPU(제어장치+연산장치)와 기억장치를 잇는 버스가 병목의 근원입니다</text>
+
+  <defs>
+    <marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- CPU outer dashed boundary -->
+  <rect x="90" y="90" width="720" height="150" rx="14" fill="none" stroke="#898781" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="450" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#52514e">CPU (중앙처리장치)</text>
+
+  <!-- 제어장치 (blue) -->
+  <g>
+    <rect x="120" y="130" width="290" height="90" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="265" y="168" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">제어장치 (CU)</text>
+    <text x="265" y="190" text-anchor="middle" font-size="12" fill="#52514e">명령어를 해석하고 각 장치에</text>
+    <text x="265" y="206" text-anchor="middle" font-size="12" fill="#52514e">제어 신호를 내려보낸다</text>
+  </g>
+
+  <!-- 연산장치 ALU (aqua) -->
+  <g>
+    <rect x="480" y="130" width="290" height="90" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="625" y="168" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">연산장치 (ALU)</text>
+    <text x="625" y="190" text-anchor="middle" font-size="12" fill="#52514e">산술·논리 연산을 실제로</text>
+    <text x="625" y="206" text-anchor="middle" font-size="12" fill="#52514e">수행한다</text>
+  </g>
+
+  <!-- control signal arrow CU -> ALU -->
+  <line x1="410" y1="175" x2="475" y2="175" stroke="#898781" stroke-width="2" marker-end="url(#arrowA)"/>
+  <text x="443" y="165" text-anchor="middle" font-size="10.5" fill="#52514e">제어신호</text>
+
+  <!-- bidirectional bus CPU <-> Memory (bottleneck) -->
+  <line x1="450" y1="240" x2="450" y2="298" stroke="#e34948" stroke-width="4" marker-end="url(#arrowA)" marker-start="url(#arrowA)"/>
+  <rect x="490" y="252" width="300" height="36" rx="8" fill="#e34948" fill-opacity="0.10" stroke="#e34948" stroke-width="1.5"/>
+  <text x="640" y="275" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">단일 버스 — 폰노이만 병목 지점</text>
+
+  <!-- 기억장치 (yellow) -->
+  <g>
+    <rect x="300" y="300" width="300" height="90" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="450" y="338" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">기억장치 (주기억장치)</text>
+    <text x="450" y="360" text-anchor="middle" font-size="12" fill="#52514e">명령어와 데이터를 구분 없이</text>
+    <text x="450" y="376" text-anchor="middle" font-size="12" fill="#52514e">같은 공간에 저장한다</text>
+  </g>
+
+  <!-- 입력장치 (green) -->
+  <g>
+    <rect x="60" y="470" width="260" height="90" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="190" y="508" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">입력장치</text>
+    <text x="190" y="530" text-anchor="middle" font-size="12" fill="#52514e">키보드·센서 등 외부 데이터를</text>
+    <text x="190" y="546" text-anchor="middle" font-size="12" fill="#52514e">기억장치로 들여보낸다</text>
+  </g>
+
+  <!-- 출력장치 (violet) -->
+  <g>
+    <rect x="580" y="470" width="260" height="90" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <text x="710" y="508" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">출력장치</text>
+    <text x="710" y="530" text-anchor="middle" font-size="12" fill="#52514e">모니터·스피커 등으로 처리</text>
+    <text x="710" y="546" text-anchor="middle" font-size="12" fill="#52514e">결과를 내보낸다</text>
+  </g>
+
+  <!-- arrows input -> memory, memory -> output -->
+  <path d="M 190 470 C 190 430, 300 400, 355 392" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowA)"/>
+  <path d="M 545 392 C 600 400, 710 430, 710 470" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowA)"/>
+
+  <text x="450" y="605" text-anchor="middle" font-size="12" fill="#52514e">프로그램(명령어)과 데이터가 같은 기억장치에 저장되는 것을 "저장 프로그램 방식"이라 부릅니다</text>
+</svg>

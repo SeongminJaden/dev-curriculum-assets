@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="580" viewBox="0 0 980 580" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="980" height="580" fill="#fcfcfb"/>
+  <text x="490" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">입력 크기 n에 따른 연산 수 증가 비교 (개념도)</text>
+  <text x="490" y="56" text-anchor="middle" font-size="13" fill="#52514e">실제 축척이 아니라 증가율의 상대적 순서를 보여주는 개념도입니다</text>
+
+  <defs>
+    <marker id="arrowx" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52514e"/>
+    </marker>
+  </defs>
+
+  <!-- axes -->
+  <line x1="80" y1="500" x2="820" y2="500" stroke="#52514e" stroke-width="2" marker-end="url(#arrowx)"/>
+  <line x1="80" y1="500" x2="80" y2="80" stroke="#52514e" stroke-width="2" marker-end="url(#arrowx)"/>
+  <text x="800" y="522" text-anchor="end" font-size="13" fill="#0b0b0b">입력 크기 n</text>
+  <text x="60" y="90" text-anchor="end" font-size="13" fill="#0b0b0b">연산 수</text>
+
+  <!-- curves, light to dark blue by growth rate -->
+  <polyline points="80,495 780,495" fill="none" stroke="#cde2fb" stroke-width="4"/>
+  <polyline points="80,495 180,470 280,452 380,438 480,427 580,418 680,410 780,403" fill="none" stroke="#a9cdf6" stroke-width="4"/>
+  <polyline points="80,495 180,447 280,398 380,350 480,302 580,254 680,206 780,158" fill="none" stroke="#7fb3f0" stroke-width="4"/>
+  <polyline points="80,495 180,430 280,362 380,290 480,215 560,150 620,100 650,80" fill="none" stroke="#3987e5" stroke-width="4"/>
+  <polyline points="80,495 160,440 240,370 320,280 390,190 440,120 470,80" fill="none" stroke="#1f5aa8" stroke-width="4"/>
+  <polyline points="80,495 140,440 200,360 250,260 290,160 320,90 335,80" fill="none" stroke="#0d366b" stroke-width="4"/>
+
+  <!-- legend -->
+  <g font-size="13">
+    <rect x="600" y="90" width="20" height="12" fill="#cde2fb"/>
+    <text x="628" y="100" fill="#0b0b0b" font-weight="700">O(1)</text>
+    <text x="678" y="100" fill="#52514e">— 배열 인덱스 접근</text>
+
+    <rect x="600" y="112" width="20" height="12" fill="#a9cdf6"/>
+    <text x="628" y="122" fill="#0b0b0b" font-weight="700">O(log n)</text>
+    <text x="700" y="122" fill="#52514e">— 이진 탐색</text>
+
+    <rect x="600" y="134" width="20" height="12" fill="#7fb3f0"/>
+    <text x="628" y="144" fill="#0b0b0b" font-weight="700">O(n)</text>
+    <text x="678" y="144" fill="#52514e">— 선형 탐색</text>
+
+    <rect x="600" y="156" width="20" height="12" fill="#3987e5"/>
+    <text x="628" y="166" fill="#0b0b0b" font-weight="700">O(n log n)</text>
+    <text x="710" y="166" fill="#52514e">— 병합 정렬</text>
+
+    <rect x="600" y="178" width="20" height="12" fill="#1f5aa8"/>
+    <text x="628" y="188" fill="#0b0b0b" font-weight="700">O(n²)</text>
+    <text x="678" y="188" fill="#52514e">— 이중 반복문</text>
+
+    <rect x="600" y="200" width="20" height="12" fill="#0d366b"/>
+    <text x="628" y="210" fill="#0b0b0b" font-weight="700">O(2ⁿ)</text>
+    <text x="678" y="210" fill="#52514e">— 부분집합 전수 탐색</text>
+  </g>
+
+  <rect x="80" y="530" width="740" height="40" rx="8" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="450" y="555" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">n이 커질수록 O(n²)과 O(2ⁿ)은 다른 곡선과 격차가 기하급수적으로 벌어집니다</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="620" viewBox="0 0 920 620" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="920" height="620" fill="#fcfcfb"/>
+  <text x="460" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">JWT 기반 인증 구조 — 상태는 토큰 자체에 있다</text>
+  <text x="460" y="56" text-anchor="middle" font-size="13" fill="#52514e">서버는 상태를 저장하지 않고, 토큰의 서명만 검증합니다</text>
+
+  <defs>
+    <marker id="arrowJ" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="82" font-size="13.5" font-weight="700" fill="#0b0b0b">토큰 구조: 헤더 . 페이로드 . 서명</text>
+
+  <!-- Header -->
+  <rect x="60" y="92" width="220" height="66" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="170" y="115" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">HEADER</text>
+  <text x="170" y="135" text-anchor="middle" font-size="10" fill="#52514e">{"alg":"HS256",</text>
+  <text x="170" y="149" text-anchor="middle" font-size="10" fill="#52514e">"typ":"JWT"}</text>
+
+  <text x="292" y="132" text-anchor="middle" font-size="20" font-weight="700" fill="#0b0b0b">.</text>
+
+  <!-- Payload -->
+  <rect x="305" y="92" width="300" height="66" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="455" y="115" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">PAYLOAD</text>
+  <text x="455" y="135" text-anchor="middle" font-size="10" fill="#52514e">{"sub":"user123","exp":1735689600,</text>
+  <text x="455" y="149" text-anchor="middle" font-size="10" fill="#52514e">"role":"member"}</text>
+
+  <text x="617" y="132" text-anchor="middle" font-size="20" font-weight="700" fill="#0b0b0b">.</text>
+
+  <!-- Signature -->
+  <rect x="630" y="92" width="230" height="66" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+  <text x="745" y="115" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">SIGNATURE</text>
+  <text x="745" y="135" text-anchor="middle" font-size="9.5" fill="#52514e">HMACSHA256(</text>
+  <text x="745" y="149" text-anchor="middle" font-size="9.5" fill="#52514e">header + payload, 비밀키)</text>
+
+  <text x="170" y="180" text-anchor="middle" font-size="11" fill="#52514e">알고리즘·타입 명시</text>
+  <text x="455" y="180" text-anchor="middle" font-size="11" fill="#52514e">사용자 식별자·만료시간 등 claim (평문 인코딩)</text>
+  <text x="745" y="180" text-anchor="middle" font-size="11" fill="#52514e">위조 방지용 서명값</text>
+
+  <rect x="60" y="196" width="800" height="34" rx="8" fill="#898781" fill-opacity="0.07" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="460" y="217" text-anchor="middle" font-size="11.5" fill="#0b0b0b">페이로드를 한 글자라도 바꾸면 서명이 맞지 않아, 서버가 검증만으로 위·변조를 탐지합니다</text>
+
+  <!-- flow section -->
+  <text x="60" y="255" font-size="13.5" font-weight="700" fill="#0b0b0b">인증 흐름</text>
+
+  <rect x="60" y="265" width="160" height="42" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="140" y="291" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">클라이언트</text>
+
+  <rect x="480" y="265" width="160" height="42" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="560" y="291" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">서버</text>
+
+  <line x1="140" y1="307" x2="140" y2="510" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="560" y1="307" x2="560" y2="510" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- verification note (green, 4th component) -->
+  <rect x="700" y="400" width="170" height="90" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+  <text x="785" y="425" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">서명 검증만 수행</text>
+  <text x="785" y="445" text-anchor="middle" font-size="10.5" fill="#52514e">DB·세션 조회 없음</text>
+  <text x="785" y="463" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">(Stateless)</text>
+
+  <!-- step 1 -->
+  <line x1="140" y1="340" x2="555" y2="340" stroke="#898781" stroke-width="2" marker-end="url(#arrowJ)"/>
+  <text x="350" y="330" text-anchor="middle" font-size="12.5" fill="#0b0b0b">1. 로그인 요청 (ID / PW)</text>
+
+  <!-- step 2 -->
+  <line x1="560" y1="400" x2="145" y2="400" stroke="#898781" stroke-width="2" marker-end="url(#arrowJ)"/>
+  <text x="350" y="390" text-anchor="middle" font-size="12.5" fill="#0b0b0b">2. JWT 발급 (서버가 비밀키로 서명)</text>
+
+  <!-- step 3 -->
+  <line x1="140" y1="460" x2="555" y2="460" stroke="#898781" stroke-width="2" marker-end="url(#arrowJ)"/>
+  <text x="350" y="450" text-anchor="middle" font-size="12.5" fill="#0b0b0b">3. Authorization: Bearer &lt;token&gt;</text>
+
+  <!-- step 4: server -> verification box -->
+  <line x1="560" y1="445" x2="695" y2="445" stroke="#898781" stroke-width="2" marker-end="url(#arrowJ)"/>
+  <text x="628" y="436" text-anchor="middle" font-size="10.5" fill="#0b0b0b">4. 검증</text>
+
+  <rect x="60" y="530" width="580" height="70" rx="10" fill="#898781" fill-opacity="0.07" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="350" y="557" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">토큰 자체가 상태를 담고 있어, 서버를 여러 대로</text>
+  <text x="350" y="577" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">늘려도 세션 동기화가 필요 없습니다</text>
+
+</svg>

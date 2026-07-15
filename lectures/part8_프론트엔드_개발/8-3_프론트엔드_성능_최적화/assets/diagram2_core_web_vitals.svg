@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1000" height="440" fill="#fcfcfb"/>
+  <text x="500" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">Core Web Vitals — 체감 속도를 나누어 재는 세 지표</text>
+  <text x="500" y="56" text-anchor="middle" font-size="13" fill="#52514e">막대의 짙기는 값이 커질수록(느려질수록) 나빠지는 방향을 나타냅니다</text>
+
+  <!-- Column 1: LCP (blue) -->
+  <g>
+    <rect x="40" y="90" width="280" height="60" rx="10" fill="#2a78d6" fill-opacity="0.14" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="180" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">LCP</text>
+    <text x="180" y="135" text-anchor="middle" font-size="11.5" fill="#52514e">Largest Contentful Paint</text>
+  </g>
+  <text x="180" y="172" text-anchor="middle" font-size="12" fill="#0b0b0b" font-weight="700">가장 큰 콘텐츠가</text>
+  <text x="180" y="190" text-anchor="middle" font-size="12" fill="#0b0b0b" font-weight="700">보이기까지의 시간</text>
+  <text x="180" y="212" text-anchor="middle" font-size="11" fill="#52514e">개선 기법: 코드 스플리팅,</text>
+  <text x="180" y="228" text-anchor="middle" font-size="11" fill="#52514e">지연 로딩</text>
+
+  <rect x="40" y="250" width="93" height="26" fill="#cde2fb"/>
+  <rect x="133" y="250" width="93" height="26" fill="#3987e5"/>
+  <rect x="226" y="250" width="94" height="26" fill="#0d366b"/>
+  <text x="86" y="292" text-anchor="middle" font-size="11" fill="#52514e">좋음</text>
+  <text x="180" y="292" text-anchor="middle" font-size="11" fill="#52514e">개선 필요</text>
+  <text x="273" y="292" text-anchor="middle" font-size="11" fill="#52514e">나쁨</text>
+
+  <!-- Column 2: INP (aqua) -->
+  <g>
+    <rect x="360" y="90" width="280" height="60" rx="10" fill="#1baf7a" fill-opacity="0.14" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="500" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">INP</text>
+    <text x="500" y="135" text-anchor="middle" font-size="11.5" fill="#52514e">Interaction to Next Paint</text>
+  </g>
+  <text x="500" y="172" text-anchor="middle" font-size="12" fill="#0b0b0b" font-weight="700">상호작용 후 화면이</text>
+  <text x="500" y="190" text-anchor="middle" font-size="12" fill="#0b0b0b" font-weight="700">반응하기까지의 시간</text>
+  <text x="500" y="212" text-anchor="middle" font-size="11" fill="#52514e">개선 기법: 리렌더링 최소화,</text>
+  <text x="500" y="228" text-anchor="middle" font-size="11" fill="#52514e">메모이제이션</text>
+
+  <rect x="360" y="250" width="93" height="26" fill="#cde2fb"/>
+  <rect x="453" y="250" width="93" height="26" fill="#3987e5"/>
+  <rect x="546" y="250" width="94" height="26" fill="#0d366b"/>
+  <text x="406" y="292" text-anchor="middle" font-size="11" fill="#52514e">좋음</text>
+  <text x="500" y="292" text-anchor="middle" font-size="11" fill="#52514e">개선 필요</text>
+  <text x="593" y="292" text-anchor="middle" font-size="11" fill="#52514e">나쁨</text>
+
+  <!-- Column 3: CLS (yellow) -->
+  <g>
+    <rect x="680" y="90" width="280" height="60" rx="10" fill="#eda100" fill-opacity="0.16" stroke="#eda100" stroke-width="2.5"/>
+    <text x="820" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">CLS</text>
+    <text x="820" y="135" text-anchor="middle" font-size="11.5" fill="#52514e">Cumulative Layout Shift</text>
+  </g>
+  <text x="820" y="172" text-anchor="middle" font-size="12" fill="#0b0b0b" font-weight="700">로드 중 요소가</text>
+  <text x="820" y="190" text-anchor="middle" font-size="12" fill="#0b0b0b" font-weight="700">밀린 총량</text>
+  <text x="820" y="212" text-anchor="middle" font-size="11" fill="#52514e">개선 기법: 이미지 자리</text>
+  <text x="820" y="228" text-anchor="middle" font-size="11" fill="#52514e">aspect-ratio로 미리 확보</text>
+
+  <rect x="680" y="250" width="93" height="26" fill="#cde2fb"/>
+  <rect x="773" y="250" width="93" height="26" fill="#3987e5"/>
+  <rect x="866" y="250" width="94" height="26" fill="#0d366b"/>
+  <text x="726" y="292" text-anchor="middle" font-size="11" fill="#52514e">좋음</text>
+  <text x="820" y="292" text-anchor="middle" font-size="11" fill="#52514e">개선 필요</text>
+  <text x="913" y="292" text-anchor="middle" font-size="11" fill="#52514e">나쁨</text>
+
+  <rect x="40" y="335" width="920" height="70" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="500" y="360" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">세 지표는 각각 "보이는 속도", "반응하는 속도", "안정감"을 측정하며</text>
+  <text x="500" y="380" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">구체적인 좋음/나쁨 기준값은 계속 갱신되므로 web.dev 공식 문서를 확인하는 것을 권장합니다</text>
+</svg>

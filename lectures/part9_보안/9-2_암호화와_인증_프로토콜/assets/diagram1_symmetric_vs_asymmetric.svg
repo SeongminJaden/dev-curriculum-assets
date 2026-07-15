@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="470" viewBox="0 0 1080 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1080" height="470" fill="#fcfcfb"/>
+  <text x="540" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">대칭키 암호화와 비대칭키 암호화 — 서로 다른 문제를 푼다</text>
+  <text x="540" y="56" text-anchor="middle" font-size="13" fill="#52514e">TLS는 이 둘을 결합해, 속도와 안전한 키 교환을 모두 확보합니다</text>
+
+  <!-- Column 1: 대칭키 (blue) -->
+  <g>
+    <rect x="50" y="86" width="460" height="320" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <circle cx="75" cy="112" r="12" fill="#2a78d6"/>
+    <text x="75" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+    <text x="280" y="119" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">대칭키 암호화 (Symmetric)</text>
+
+    <text x="75" y="152" font-size="12.5" font-weight="700" fill="#0b0b0b">핵심 구조</text>
+    <text x="75" y="171" font-size="12" fill="#52514e">암호화와 복호화에 같은 키 하나를 사용</text>
+
+    <text x="75" y="201" font-size="12.5" font-weight="700" fill="#0b0b0b">속도</text>
+    <text x="75" y="220" font-size="12" fill="#52514e">연산이 단순해 매우 빠름 — 대용량 데이터에 적합</text>
+
+    <text x="75" y="250" font-size="12.5" font-weight="700" fill="#0b0b0b">근본적인 문제</text>
+    <text x="75" y="269" font-size="12" fill="#52514e">키 배포 문제 — 같은 키를 상대와</text>
+    <text x="75" y="286" font-size="12" fill="#52514e">어떻게 안전하게 나눠 가질 것인가</text>
+
+    <text x="75" y="316" font-size="12.5" font-weight="700" fill="#0b0b0b">대표 알고리즘</text>
+    <text x="75" y="335" font-size="12" fill="#52514e">AES (Advanced Encryption Standard)</text>
+
+    <text x="75" y="368" font-size="12" fill="#52514e" font-style="italic">비유: 하나의 열쇠로 여닫는 자물쇠</text>
+    <text x="75" y="386" font-size="12" fill="#52514e" font-style="italic">— 빠르지만 열쇠 전달이 문제</text>
+  </g>
+
+  <!-- Column 2: 비대칭키 (aqua) -->
+  <g>
+    <rect x="570" y="86" width="460" height="320" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="595" cy="112" r="12" fill="#1baf7a"/>
+    <text x="595" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+    <text x="800" y="119" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">비대칭키 암호화 (Asymmetric)</text>
+
+    <text x="595" y="152" font-size="12.5" font-weight="700" fill="#0b0b0b">핵심 구조</text>
+    <text x="595" y="171" font-size="12" fill="#52514e">수학적으로 연결된 공개키/개인키 쌍을 사용</text>
+
+    <text x="595" y="201" font-size="12.5" font-weight="700" fill="#0b0b0b">속도</text>
+    <text x="595" y="220" font-size="12" fill="#52514e">소인수분해 기반 연산이 무거워 대칭키보다 느림</text>
+
+    <text x="595" y="250" font-size="12.5" font-weight="700" fill="#0b0b0b">해결하는 문제</text>
+    <text x="595" y="269" font-size="12" fill="#52514e">사전 공유 비밀 없이 키를 교환하고,</text>
+    <text x="595" y="286" font-size="12" fill="#52514e">서명으로 상대 신원을 증명</text>
+
+    <text x="595" y="316" font-size="12.5" font-weight="700" fill="#0b0b0b">대표 알고리즘</text>
+    <text x="595" y="335" font-size="12" fill="#52514e">RSA, ECDHE(타원곡선 키 교환)</text>
+
+    <text x="595" y="368" font-size="12" fill="#52514e" font-style="italic">비유: 우편함(공개키)에는 누구나 넣을 수 있지만</text>
+    <text x="595" y="386" font-size="12" fill="#52514e" font-style="italic">여는 열쇠(개인키)는 소유자만 가진 것</text>
+  </g>
+
+  <rect x="230" y="420" width="620" height="42" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="540" y="446" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">TLS 하이브리드 암호화 = 비대칭키로 세션 키 교환 + 대칭키로 실제 데이터 암호화</text>
+</svg>

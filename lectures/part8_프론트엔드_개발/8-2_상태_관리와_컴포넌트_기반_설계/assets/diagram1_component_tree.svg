@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="470" viewBox="0 0 940 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="940" height="470" fill="#fcfcfb"/>
+  <text x="470" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">컴포넌트 트리 — 하나의 정의, 여러 개의 인스턴스</text>
+
+  <defs>
+    <marker id="arrowct" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- App (blue) -->
+  <g>
+    <rect x="390" y="50" width="160" height="70" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="470" y="90" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">App</text>
+    <text x="470" y="107" text-anchor="middle" font-size="11" fill="#52514e">최상위 컴포넌트</text>
+  </g>
+
+  <line x1="470" y1="120" x2="150" y2="178" stroke="#898781" stroke-width="2" marker-end="url(#arrowct)"/>
+  <line x1="470" y1="120" x2="470" y2="178" stroke="#898781" stroke-width="2" marker-end="url(#arrowct)"/>
+  <line x1="470" y1="120" x2="790" y2="178" stroke="#898781" stroke-width="2" marker-end="url(#arrowct)"/>
+
+  <!-- Header (aqua) -->
+  <g>
+    <rect x="60" y="180" width="180" height="80" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="150" y="215" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">Header</text>
+    <text x="150" y="234" text-anchor="middle" font-size="11" fill="#52514e">장바구니 개수 배지</text>
+    <text x="150" y="249" text-anchor="middle" font-size="11" fill="#52514e">(전역 상태 참조)</text>
+  </g>
+
+  <!-- ProductList (yellow) -->
+  <g>
+    <rect x="330" y="180" width="280" height="80" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="470" y="215" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">ProductList</text>
+    <text x="470" y="234" text-anchor="middle" font-size="11" fill="#52514e">ProductCard를 배열만큼</text>
+    <text x="470" y="249" text-anchor="middle" font-size="11" fill="#52514e">반복 렌더링</text>
+  </g>
+
+  <!-- Cart (green) -->
+  <g>
+    <rect x="700" y="180" width="180" height="80" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="790" y="215" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">Cart</text>
+    <text x="790" y="234" text-anchor="middle" font-size="11" fill="#52514e">담긴 상품 목록</text>
+    <text x="790" y="249" text-anchor="middle" font-size="11" fill="#52514e">(전역 상태 참조)</text>
+  </g>
+
+  <line x1="290" y1="260" x2="290" y2="338" stroke="#898781" stroke-width="2" marker-end="url(#arrowct)"/>
+  <line x1="470" y1="260" x2="450" y2="338" stroke="#898781" stroke-width="2" marker-end="url(#arrowct)"/>
+  <line x1="470" y1="260" x2="610" y2="338" stroke="#898781" stroke-width="2" marker-end="url(#arrowct)"/>
+
+  <!-- ProductCard instances (violet, same color = same definition) -->
+  <g>
+    <rect x="220" y="340" width="140" height="80" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <text x="290" y="373" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">ProductCard</text>
+    <text x="290" y="391" text-anchor="middle" font-size="11" fill="#52514e">인스턴스 1</text>
+    <text x="290" y="406" text-anchor="middle" font-size="11" fill="#52514e">props: 상품A</text>
+  </g>
+  <g>
+    <rect x="380" y="340" width="140" height="80" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <text x="450" y="373" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">ProductCard</text>
+    <text x="450" y="391" text-anchor="middle" font-size="11" fill="#52514e">인스턴스 2</text>
+    <text x="450" y="406" text-anchor="middle" font-size="11" fill="#52514e">props: 상품B</text>
+  </g>
+  <g>
+    <rect x="540" y="340" width="140" height="80" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <text x="610" y="373" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">ProductCard</text>
+    <text x="610" y="391" text-anchor="middle" font-size="11" fill="#52514e">인스턴스 3</text>
+    <text x="610" y="406" text-anchor="middle" font-size="11" fill="#52514e">props: 상품C</text>
+  </g>
+
+  <rect x="60" y="435" width="820" height="24" rx="8" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="470" y="452" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">세 인스턴스는 같은 ProductCard 정의를 공유하고, props로 받은 데이터만 다릅니다</text>
+</svg>

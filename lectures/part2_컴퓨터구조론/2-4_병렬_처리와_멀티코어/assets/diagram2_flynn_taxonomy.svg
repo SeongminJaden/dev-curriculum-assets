@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="600" viewBox="0 0 820 600" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="820" height="600" fill="#fcfcfb"/>
+  <text x="410" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">플린의 분류 — 명령어와 데이터를 몇 개씩 다루는가</text>
+  <text x="410" y="56" text-anchor="middle" font-size="13" fill="#52514e">SIMD와 MIMD가 오늘날 병렬 컴퓨팅의 두 축입니다</text>
+
+  <!-- column headers -->
+  <text x="280" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#52514e">단일 데이터 스트림 (SD)</text>
+  <text x="600" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#52514e">다중 데이터 스트림 (MD)</text>
+
+  <!-- row headers -->
+  <text x="60" y="185" text-anchor="middle" font-size="13" font-weight="700" fill="#52514e" transform="rotate(-90 60 185)">단일 명령어 (SI)</text>
+  <text x="60" y="405" text-anchor="middle" font-size="13" font-weight="700" fill="#52514e" transform="rotate(-90 60 405)">다중 명령어 (MI)</text>
+
+  <!-- SISD (blue) -->
+  <g>
+    <rect x="120" y="105" width="290" height="170" rx="12" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="265" y="138" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">SISD</text>
+    <text x="265" y="158" text-anchor="middle" font-size="11.5" fill="#52514e">단일 명령어, 단일 데이터</text>
+    <text x="265" y="182" text-anchor="middle" font-size="11.5" fill="#0b0b0b">한 번에 명령어 하나가</text>
+    <text x="265" y="198" text-anchor="middle" font-size="11.5" fill="#0b0b0b">데이터 하나를 처리한다</text>
+    <text x="265" y="228" text-anchor="middle" font-size="11" fill="#52514e">예: 전통적인 단일 코어의</text>
+    <text x="265" y="244" text-anchor="middle" font-size="11" fill="#52514e">순차 명령어 실행</text>
+  </g>
+
+  <!-- SIMD (aqua) -->
+  <g>
+    <rect x="440" y="105" width="290" height="170" rx="12" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="585" y="138" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">SIMD</text>
+    <text x="585" y="158" text-anchor="middle" font-size="11.5" fill="#52514e">단일 명령어, 다중 데이터</text>
+    <text x="585" y="182" text-anchor="middle" font-size="11.5" fill="#0b0b0b">하나의 명령어로 여러</text>
+    <text x="585" y="198" text-anchor="middle" font-size="11.5" fill="#0b0b0b">데이터를 동시에 처리한다</text>
+    <text x="585" y="228" text-anchor="middle" font-size="11" fill="#52514e">예: GPU 연산, CPU의 벡터</text>
+    <text x="585" y="244" text-anchor="middle" font-size="11" fill="#52514e">명령어(AVX 등)</text>
+  </g>
+
+  <!-- MISD (yellow) -->
+  <g>
+    <rect x="120" y="325" width="290" height="170" rx="12" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="265" y="358" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">MISD</text>
+    <text x="265" y="378" text-anchor="middle" font-size="11.5" fill="#52514e">다중 명령어, 단일 데이터</text>
+    <text x="265" y="402" text-anchor="middle" font-size="11.5" fill="#0b0b0b">여러 명령어가 같은</text>
+    <text x="265" y="418" text-anchor="middle" font-size="11.5" fill="#0b0b0b">데이터를 동시에 검증한다</text>
+    <text x="265" y="448" text-anchor="middle" font-size="11" fill="#52514e">예: 실제 활용은 드물며, 결함</text>
+    <text x="265" y="464" text-anchor="middle" font-size="11" fill="#52514e">허용이 중요한 일부 시스템</text>
+  </g>
+
+  <!-- MIMD (green) -->
+  <g>
+    <rect x="440" y="325" width="290" height="170" rx="12" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="585" y="358" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">MIMD</text>
+    <text x="585" y="378" text-anchor="middle" font-size="11.5" fill="#52514e">다중 명령어, 다중 데이터</text>
+    <text x="585" y="402" text-anchor="middle" font-size="11.5" fill="#0b0b0b">여러 코어가 각자 다른</text>
+    <text x="585" y="418" text-anchor="middle" font-size="11.5" fill="#0b0b0b">명령어와 데이터를 처리한다</text>
+    <text x="585" y="448" text-anchor="middle" font-size="11" fill="#52514e">예: 오늘날 멀티코어 CPU,</text>
+    <text x="585" y="464" text-anchor="middle" font-size="11" fill="#52514e">분산 서버 클러스터</text>
+  </g>
+
+  <rect x="120" y="520" width="610" height="56" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="425" y="544" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">GPU는 SIMD로 대량의 동일 연산을, 멀티코어 CPU는 MIMD로</text>
+  <text x="425" y="562" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">서로 다른 작업을 동시에 처리하도록 설계되었습니다</text>
+</svg>

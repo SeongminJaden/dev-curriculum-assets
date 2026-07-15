@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="420" viewBox="0 0 1120 420" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="420" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">자료구조별 연산 복잡도 비교</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">같은 이름의 연산이라도 자료구조 내부 표현에 따라 비용이 다릅니다</text>
+
+  <!-- Structure 1: 배열 (blue) -->
+  <g>
+    <rect x="40" y="90" width="250" height="300" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <circle cx="65" cy="115" r="12" fill="#2a78d6"/>
+    <text x="65" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+    <text x="165" y="122" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">배열(Array)</text>
+
+    <text x="65" y="155" font-size="12.5" fill="#0b0b0b">접근(access)</text>
+    <text x="265" y="155" text-anchor="end" font-size="13" font-weight="700" fill="#2a78d6">O(1)</text>
+    <text x="65" y="184" font-size="12.5" fill="#0b0b0b">탐색(search)</text>
+    <text x="265" y="184" text-anchor="end" font-size="13" font-weight="700" fill="#2a78d6">O(n)</text>
+    <text x="65" y="213" font-size="12.5" fill="#0b0b0b">삽입(insert)</text>
+    <text x="265" y="213" text-anchor="end" font-size="13" font-weight="700" fill="#2a78d6">O(n)</text>
+    <text x="65" y="242" font-size="12.5" fill="#0b0b0b">삭제(delete)</text>
+    <text x="265" y="242" text-anchor="end" font-size="13" font-weight="700" fill="#2a78d6">O(n)</text>
+
+    <line x1="65" y1="260" x2="265" y2="260" stroke="#2a78d6" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="65" y="285" font-size="11.5" fill="#52514e">인덱스로 즉시 접근하지만</text>
+    <text x="65" y="301" font-size="11.5" fill="#52514e">중간 삽입·삭제 시 뒤 요소를</text>
+    <text x="65" y="317" font-size="11.5" fill="#52514e">모두 밀어야 합니다</text>
+  </g>
+
+  <!-- Structure 2: 연결 리스트 (aqua) -->
+  <g>
+    <rect x="310" y="90" width="250" height="300" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="335" cy="115" r="12" fill="#1baf7a"/>
+    <text x="335" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+    <text x="435" y="122" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">연결 리스트</text>
+
+    <text x="335" y="155" font-size="12.5" fill="#0b0b0b">접근(access)</text>
+    <text x="535" y="155" text-anchor="end" font-size="13" font-weight="700" fill="#1baf7a">O(n)</text>
+    <text x="335" y="184" font-size="12.5" fill="#0b0b0b">탐색(search)</text>
+    <text x="535" y="184" text-anchor="end" font-size="13" font-weight="700" fill="#1baf7a">O(n)</text>
+    <text x="335" y="213" font-size="12.5" fill="#0b0b0b">삽입(insert)</text>
+    <text x="535" y="213" text-anchor="end" font-size="13" font-weight="700" fill="#1baf7a">O(1)*</text>
+    <text x="335" y="242" font-size="12.5" fill="#0b0b0b">삭제(delete)</text>
+    <text x="535" y="242" text-anchor="end" font-size="13" font-weight="700" fill="#1baf7a">O(1)*</text>
+
+    <line x1="335" y1="260" x2="535" y2="260" stroke="#1baf7a" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="335" y="285" font-size="11.5" fill="#52514e">*위치(노드)를 이미 알 때만</text>
+    <text x="335" y="301" font-size="11.5" fill="#52514e">해당하며, 그 위치를 찾는</text>
+    <text x="335" y="317" font-size="11.5" fill="#52514e">과정 자체는 O(n)입니다</text>
+  </g>
+
+  <!-- Structure 3: 해시 테이블 (yellow) -->
+  <g>
+    <rect x="580" y="90" width="250" height="300" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <circle cx="605" cy="115" r="12" fill="#eda100"/>
+    <text x="605" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+    <text x="705" y="122" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">해시 테이블</text>
+
+    <text x="605" y="155" font-size="12.5" fill="#0b0b0b">접근(key 기준)</text>
+    <text x="805" y="155" text-anchor="end" font-size="13" font-weight="700" fill="#eda100">O(1) 평균</text>
+    <text x="605" y="184" font-size="12.5" fill="#0b0b0b">탐색(search)</text>
+    <text x="805" y="184" text-anchor="end" font-size="13" font-weight="700" fill="#eda100">O(1) 평균</text>
+    <text x="605" y="213" font-size="12.5" fill="#0b0b0b">삽입(insert)</text>
+    <text x="805" y="213" text-anchor="end" font-size="13" font-weight="700" fill="#eda100">O(1) 평균</text>
+    <text x="605" y="242" font-size="12.5" fill="#0b0b0b">삭제(delete)</text>
+    <text x="805" y="242" text-anchor="end" font-size="13" font-weight="700" fill="#eda100">O(1) 평균</text>
+
+    <line x1="605" y1="260" x2="805" y2="260" stroke="#eda100" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="605" y="285" font-size="11.5" fill="#52514e">해시 충돌이 몰리면</text>
+    <text x="605" y="301" font-size="11.5" fill="#52514e">최악의 경우 O(n)까지</text>
+    <text x="605" y="317" font-size="11.5" fill="#52514e">저하될 수 있습니다</text>
+  </g>
+
+  <!-- Structure 4: 균형 이진 탐색 트리 (green) -->
+  <g>
+    <rect x="850" y="90" width="230" height="300" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <circle cx="875" cy="115" r="12" fill="#008300"/>
+    <text x="875" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">4</text>
+    <text x="975" y="122" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0b0b0b">균형 이진 탐색 트리</text>
+
+    <text x="875" y="155" font-size="12.5" fill="#0b0b0b">접근(access)</text>
+    <text x="1055" y="155" text-anchor="end" font-size="13" font-weight="700" fill="#008300">O(log n)</text>
+    <text x="875" y="184" font-size="12.5" fill="#0b0b0b">탐색(search)</text>
+    <text x="1055" y="184" text-anchor="end" font-size="13" font-weight="700" fill="#008300">O(log n)</text>
+    <text x="875" y="213" font-size="12.5" fill="#0b0b0b">삽입(insert)</text>
+    <text x="1055" y="213" text-anchor="end" font-size="13" font-weight="700" fill="#008300">O(log n)</text>
+    <text x="875" y="242" font-size="12.5" fill="#0b0b0b">삭제(delete)</text>
+    <text x="1055" y="242" text-anchor="end" font-size="13" font-weight="700" fill="#008300">O(log n)</text>
+
+    <line x1="875" y1="260" x2="1055" y2="260" stroke="#008300" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="875" y="285" font-size="11.5" fill="#52514e">정렬 순서를 유지하면서도</text>
+    <text x="875" y="301" font-size="11.5" fill="#52514e">균형을 잡아 최악의 경우도</text>
+    <text x="875" y="317" font-size="11.5" fill="#52514e">O(log n)을 보장합니다</text>
+  </g>
+</svg>

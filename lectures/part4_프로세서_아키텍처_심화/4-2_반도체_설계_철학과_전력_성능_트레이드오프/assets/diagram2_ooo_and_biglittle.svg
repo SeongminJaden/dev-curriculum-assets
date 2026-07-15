@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="800" viewBox="0 0 1040 800" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1040" height="800" fill="#fcfcfb"/>
+  <text x="520" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">실행 방식과 코어 구성의 전력·성능 트레이드오프</text>
+  <text x="520" y="56" text-anchor="middle" font-size="13" fill="#52514e">같은 공정에서도 회로 배치(C)를 어떻게 하느냐에 따라 전력이 갈린다</text>
+
+  <defs>
+    <marker id="arrow42b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Panel A: OoO vs In-order ===== -->
+  <text x="40" y="90" font-size="15" font-weight="700" fill="#0b0b0b">1. 비순차 실행(Out-of-Order) vs 순차 실행(In-Order)</text>
+
+  <rect x="40" y="100" width="460" height="42" rx="10" fill="#2a78d6"/>
+  <text x="270" y="127" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">비순차 실행 (OoO)</text>
+
+  <rect x="540" y="100" width="460" height="42" rx="10" fill="#1baf7a"/>
+  <text x="770" y="127" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">순차 실행 (In-Order)</text>
+
+  <!-- left stack -->
+  <rect x="40" y="154" width="460" height="44" rx="8" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2"/>
+  <text x="60" y="181" font-size="12.5" font-weight="700" fill="#0b0b0b">Fetch → Decode</text>
+
+  <rect x="40" y="206" width="460" height="44" rx="8" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2"/>
+  <text x="60" y="233" font-size="12.5" font-weight="700" fill="#0b0b0b">레지스터 재명명 + 예약 스테이션 (추가 회로)</text>
+
+  <rect x="40" y="258" width="460" height="52" rx="8" fill="#2a78d6" fill-opacity="0.14" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="60" y="280" font-size="12.5" font-weight="700" fill="#0b0b0b">실행 (준비된 명령어부터 먼저 처리)</text>
+  <rect x="330" y="268" width="30" height="24" rx="4" fill="#2a78d6" fill-opacity="0.35" stroke="#2a78d6"/>
+  <text x="345" y="285" text-anchor="middle" font-size="11" font-weight="700" fill="#0b0b0b">③</text>
+  <rect x="365" y="268" width="30" height="24" rx="4" fill="#2a78d6" fill-opacity="0.35" stroke="#2a78d6"/>
+  <text x="380" y="285" text-anchor="middle" font-size="11" font-weight="700" fill="#0b0b0b">①</text>
+  <rect x="400" y="268" width="30" height="24" rx="4" fill="#2a78d6" fill-opacity="0.35" stroke="#2a78d6"/>
+  <text x="415" y="285" text-anchor="middle" font-size="11" font-weight="700" fill="#0b0b0b">②</text>
+
+  <rect x="40" y="316" width="460" height="44" rx="8" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2"/>
+  <text x="60" y="343" font-size="12.5" font-weight="700" fill="#0b0b0b">Reorder Buffer → 순서대로 Retire (①②③)</text>
+
+  <!-- right stack -->
+  <rect x="540" y="154" width="460" height="44" rx="8" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2"/>
+  <text x="560" y="181" font-size="12.5" font-weight="700" fill="#0b0b0b">Fetch → Decode</text>
+
+  <rect x="540" y="206" width="460" height="52" rx="8" fill="#1baf7a" fill-opacity="0.14" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="560" y="228" font-size="12.5" font-weight="700" fill="#0b0b0b">Execute — 프로그램 순서 그대로</text>
+  <rect x="830" y="216" width="30" height="24" rx="4" fill="#1baf7a" fill-opacity="0.35" stroke="#1baf7a"/>
+  <text x="845" y="233" text-anchor="middle" font-size="11" font-weight="700" fill="#0b0b0b">①</text>
+  <text x="880" y="233" font-size="10.5" fill="#52514e">실행중</text>
+
+  <rect x="540" y="264" width="460" height="52" rx="8" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2"/>
+  <text x="560" y="286" font-size="12.5" font-weight="700" fill="#0b0b0b">② 캐시 미스로 정지 → ③도 함께 대기</text>
+  <text x="560" y="304" font-size="10.5" fill="#52514e">추가 회로가 없어 앞 명령어가 멈추면 뒤도 멈춘다</text>
+
+  <rect x="540" y="330" width="460" height="30" rx="8" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2"/>
+  <text x="560" y="350" font-size="12.5" font-weight="700" fill="#0b0b0b">Writeback</text>
+
+  <rect x="40" y="378" width="960" height="46" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="520" y="406" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">비순차 실행은 추가 회로(C 증가)로 성능을 높이고, 순차 실행은 회로를 줄여(C 감소) 전력을 아낀다</text>
+
+  <!-- ===== Panel B: big.LITTLE ===== -->
+  <text x="40" y="466" font-size="15" font-weight="700" fill="#0b0b0b">2. 빅리틀(big.LITTLE) 스케줄링 — 작업 부하에 따라 코어를 전환한다</text>
+
+  <rect x="60" y="486" width="920" height="80" rx="10" fill="#2a78d6" fill-opacity="0.06" stroke="#2a78d6" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="80" y="480" font-size="13" font-weight="700" fill="#2a78d6">성능 코어 (빅) — 대기 시 유휴</text>
+  <rect x="260" y="486" width="150" height="80" rx="8" fill="#2a78d6" fill-opacity="0.32" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="335" y="530" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">동영상 렌더링</text>
+  <rect x="620" y="486" width="120" height="80" rx="8" fill="#2a78d6" fill-opacity="0.32" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="680" y="530" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">게임</text>
+
+  <rect x="60" y="586" width="920" height="80" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2"/>
+  <text x="80" y="580" font-size="13" font-weight="700" fill="#1baf7a">효율 코어 (리틀) — 대부분의 시간 동안 동작</text>
+  <rect x="100" y="586" width="130" height="80" rx="8" fill="#1baf7a" fill-opacity="0.32" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="165" y="630" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">메시지 확인</text>
+  <rect x="740" y="586" width="140" height="80" rx="8" fill="#1baf7a" fill-opacity="0.32" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="810" y="630" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">화면 스크롤</text>
+
+  <line x1="60" y1="686" x2="960" y2="686" stroke="#898781" stroke-width="2" marker-end="url(#arrow42b)"/>
+  <text x="920" y="704" text-anchor="middle" font-size="12" fill="#52514e">시간 →</text>
+
+  <rect x="60" y="722" width="920" height="60" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="90" y="746" font-size="12.5" fill="#0b0b0b" font-weight="700">리틀 코어는 대부분의 시간 동안 낮은 V·f로 동작하고, 빅 코어는 무거운 작업이 들어올 때만</text>
+  <text x="90" y="766" font-size="12.5" fill="#0b0b0b" font-weight="700">짧게 깨어나 높은 V·f로 동작한다 — 평균 전력은 이 짧은 구간의 비중이 결정한다.</text>
+</svg>

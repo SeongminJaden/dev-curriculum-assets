@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1280" height="320" fill="#fcfcfb"/>
+  <text x="640" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">사이버 킬체인 7단계와 방어 장비가 개입하는 지점</text>
+  <text x="640" y="56" text-anchor="middle" font-size="13" fill="#52514e">방화벽과 IDS/IPS는 같은 단계가 아니라 서로 다른 단계를 겨냥합니다</text>
+
+  <defs>
+    <marker id="arrowKC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <line x1="190" y1="150" x2="210" y2="150" stroke="#898781" stroke-width="2" marker-end="url(#arrowKC)"/>
+  <line x1="360" y1="150" x2="380" y2="150" stroke="#898781" stroke-width="2" marker-end="url(#arrowKC)"/>
+  <line x1="530" y1="150" x2="550" y2="150" stroke="#898781" stroke-width="2" marker-end="url(#arrowKC)"/>
+  <line x1="700" y1="150" x2="720" y2="150" stroke="#898781" stroke-width="2" marker-end="url(#arrowKC)"/>
+  <line x1="870" y1="150" x2="890" y2="150" stroke="#898781" stroke-width="2" marker-end="url(#arrowKC)"/>
+  <line x1="1040" y1="150" x2="1060" y2="150" stroke="#898781" stroke-width="2" marker-end="url(#arrowKC)"/>
+
+  <!-- 1 정찰 (blue) -->
+  <g>
+    <rect x="40" y="90" width="150" height="120" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <circle cx="58" cy="106" r="11" fill="#2a78d6"/>
+    <text x="58" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">1</text>
+    <text x="115" y="132" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">정찰</text>
+    <text x="115" y="154" text-anchor="middle" font-size="11" fill="#52514e">열린 포트·서비스</text>
+    <text x="115" y="170" text-anchor="middle" font-size="11" fill="#52514e">조사</text>
+  </g>
+
+  <!-- 2 무기화 (aqua) -->
+  <g>
+    <rect x="210" y="90" width="150" height="120" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="228" cy="106" r="11" fill="#1baf7a"/>
+    <text x="228" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">2</text>
+    <text x="285" y="132" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">무기화</text>
+    <text x="285" y="154" text-anchor="middle" font-size="11" fill="#52514e">공격 도구</text>
+    <text x="285" y="170" text-anchor="middle" font-size="11" fill="#52514e">준비</text>
+  </g>
+
+  <!-- 3 전달 (yellow) -->
+  <g>
+    <rect x="380" y="90" width="150" height="120" rx="10" fill="#eda100" fill-opacity="0.16" stroke="#eda100" stroke-width="2.5"/>
+    <circle cx="398" cy="106" r="11" fill="#eda100"/>
+    <text x="398" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">3</text>
+    <text x="455" y="132" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">전달</text>
+    <text x="455" y="154" text-anchor="middle" font-size="11" fill="#52514e">대상에게 공격</text>
+    <text x="455" y="170" text-anchor="middle" font-size="11" fill="#52514e">도구 전달</text>
+  </g>
+
+  <!-- 4 익스플로잇 (green) -->
+  <g>
+    <rect x="550" y="90" width="150" height="120" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <circle cx="568" cy="106" r="11" fill="#008300"/>
+    <text x="568" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">4</text>
+    <text x="625" y="132" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">익스플로잇</text>
+    <text x="625" y="154" text-anchor="middle" font-size="11" fill="#52514e">취약점 실행,</text>
+    <text x="625" y="170" text-anchor="middle" font-size="11" fill="#52514e">제어권 획득</text>
+  </g>
+
+  <!-- 5 설치 (violet) -->
+  <g>
+    <rect x="720" y="90" width="150" height="120" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <circle cx="738" cy="106" r="11" fill="#4a3aa7"/>
+    <text x="738" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">5</text>
+    <text x="795" y="132" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">설치</text>
+    <text x="795" y="154" text-anchor="middle" font-size="11" fill="#52514e">백도어·악성</text>
+    <text x="795" y="170" text-anchor="middle" font-size="11" fill="#52514e">코드 설치</text>
+  </g>
+
+  <!-- 6 C2 (red) -->
+  <g>
+    <rect x="890" y="90" width="150" height="120" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+    <circle cx="908" cy="106" r="11" fill="#e34948"/>
+    <text x="908" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">6</text>
+    <text x="965" y="132" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">명령 및 제어</text>
+    <text x="965" y="154" text-anchor="middle" font-size="11" fill="#52514e">공격자 서버와</text>
+    <text x="965" y="170" text-anchor="middle" font-size="11" fill="#52514e">통신(C2)</text>
+  </g>
+
+  <!-- 7 목표 달성 (magenta) -->
+  <g>
+    <rect x="1060" y="90" width="180" height="120" rx="10" fill="#e87ba4" fill-opacity="0.14" stroke="#e87ba4" stroke-width="2.5"/>
+    <circle cx="1078" cy="106" r="11" fill="#e87ba4"/>
+    <text x="1078" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">7</text>
+    <text x="1150" y="132" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">목표 달성</text>
+    <text x="1150" y="154" text-anchor="middle" font-size="11" fill="#52514e">데이터 유출,</text>
+    <text x="1150" y="170" text-anchor="middle" font-size="11" fill="#52514e">시스템 파괴 등</text>
+  </g>
+
+  <!-- Firewall coverage bracket (under stage 3) -->
+  <path d="M 385 232 L 385 246 L 525 246 L 525 232" stroke="#2a78d6" stroke-width="2" fill="none"/>
+  <text x="455" y="266" text-anchor="middle" font-size="12" font-weight="700" fill="#2a78d6">방화벽이 주로 차단</text>
+  <text x="455" y="283" text-anchor="middle" font-size="11" fill="#52514e">(허용되지 않은 경로 접근 차단)</text>
+
+  <!-- IDS/IPS coverage bracket (under stages 4-6) -->
+  <path d="M 555 232 L 555 246 L 1035 246 L 1035 232" stroke="#e34948" stroke-width="2" fill="none"/>
+  <text x="795" y="266" text-anchor="middle" font-size="12" font-weight="700" fill="#e34948">IDS/IPS가 주로 탐지·차단</text>
+  <text x="795" y="283" text-anchor="middle" font-size="11" fill="#52514e">(통과한 트래픽의 내용·행위 패턴 감시)</text>
+</svg>

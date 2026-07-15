@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1000" height="480" fill="#fcfcfb"/>
+  <text x="500" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">컨텍스트 스위칭의 4단계와 상대적 비용</text>
+  <text x="500" y="56" text-anchor="middle" font-size="12.5" fill="#52514e">스레드 수가 많을수록 이 과정이 반복되며, 캐시·TLB 재적재로 인한 간접 비용이 특히 큽니다</text>
+
+  <!-- step 1 -->
+  <text x="60" y="112" font-size="13" font-weight="700" fill="#0b0b0b">1. 타이머·인터럽트 발생</text>
+  <text x="60" y="130" font-size="11.5" fill="#52514e">(스케줄러가 개입할 시점을 알림)</text>
+  <rect x="380" y="95" width="150" height="34" rx="6" fill="#cde2fb"/>
+  <text x="545" y="117" font-size="12.5" fill="#0b0b0b">상대적 비용: 낮음</text>
+
+  <!-- step 2 -->
+  <text x="60" y="182" font-size="13" font-weight="700" fill="#0b0b0b">2. 현재 스레드의 레지스터·</text>
+  <text x="60" y="200" font-size="13" font-weight="700" fill="#0b0b0b">프로그램 카운터를 커널 스택에 저장</text>
+  <rect x="380" y="165" width="300" height="34" rx="6" fill="#3987e5"/>
+  <text x="695" y="187" font-size="12.5" fill="#0b0b0b">상대적 비용: 중간</text>
+
+  <!-- step 3 -->
+  <text x="60" y="252" font-size="13" font-weight="700" fill="#0b0b0b">3. 스케줄러가 다음 실행할</text>
+  <text x="60" y="270" font-size="13" font-weight="700" fill="#0b0b0b">스레드를 선택 (실행 큐 탐색)</text>
+  <rect x="380" y="235" width="300" height="34" rx="6" fill="#3987e5"/>
+  <text x="695" y="257" font-size="12.5" fill="#0b0b0b">상대적 비용: 중간</text>
+
+  <!-- step 4 -->
+  <text x="60" y="322" font-size="13" font-weight="700" fill="#0b0b0b">4. 새 스레드 상태 복원 +</text>
+  <text x="60" y="340" font-size="13" font-weight="700" fill="#0b0b0b">캐시·TLB 미스로 인한 간접 비용</text>
+  <rect x="380" y="305" width="480" height="34" rx="6" fill="#0d366b"/>
+  <text x="875" y="327" font-size="12.5" fill="#0b0b0b">상대적 비용: 높음</text>
+
+  <rect x="60" y="390" width="880" height="70" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="500" y="418" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">직접 비용(레지스터 저장/복원)보다, 새 스레드가 필요한 데이터를</text>
+  <text x="500" y="438" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">캐시에 다시 채우는 간접 비용이 더 큰 경우가 많습니다</text>
+</svg>

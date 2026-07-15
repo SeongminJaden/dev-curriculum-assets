@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="430" viewBox="0 0 1120 430" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="430" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">신뢰 경계가 지켜질 때와 무너질 때 — 같은 요청, 다른 결과</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">입력값이 "값"으로 머무는지, "쿼리 구조"로 승격되는지가 SQL 인젝션의 갈림길입니다</text>
+
+  <defs>
+    <marker id="arrowSQL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="78" font-size="13" font-weight="700" fill="#2a78d6">정상 요청 흐름</text>
+
+  <!-- Row 1 (normal, blue) -->
+  <line x1="280" y1="135" x2="300" y2="135" stroke="#898781" stroke-width="2" marker-end="url(#arrowSQL)"/>
+  <line x1="540" y1="135" x2="560" y2="135" stroke="#898781" stroke-width="2" marker-end="url(#arrowSQL)"/>
+  <line x1="800" y1="135" x2="820" y2="135" stroke="#898781" stroke-width="2" marker-end="url(#arrowSQL)"/>
+
+  <g>
+    <rect x="40" y="90" width="240" height="90" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="160" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">1. 사용자 입력</text>
+    <text x="160" y="140" text-anchor="middle" font-size="12" fill="#52514e">아이디: alice</text>
+    <text x="160" y="158" text-anchor="middle" font-size="12" fill="#52514e">값(데이터)으로만 취급됨</text>
+  </g>
+
+  <g>
+    <rect x="300" y="90" width="240" height="90" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="420" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">2. 애플리케이션</text>
+    <text x="420" y="140" text-anchor="middle" font-size="12" fill="#52514e">입력값을 파라미터로</text>
+    <text x="420" y="158" text-anchor="middle" font-size="12" fill="#52514e">바인딩(구조와 분리)</text>
+  </g>
+
+  <g>
+    <rect x="560" y="90" width="240" height="90" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="680" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">3. 쿼리 구조</text>
+    <text x="680" y="140" text-anchor="middle" font-size="12" fill="#52514e">WHERE 절 형태 유지</text>
+    <text x="680" y="158" text-anchor="middle" font-size="12" fill="#52514e">입력값은 구조에 관여 못함</text>
+  </g>
+
+  <g>
+    <rect x="820" y="90" width="240" height="90" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="940" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">4. DB 응답</text>
+    <text x="940" y="140" text-anchor="middle" font-size="12" fill="#52514e">일치하는 사용자</text>
+    <text x="940" y="158" text-anchor="middle" font-size="12" fill="#52514e">1명만 반환</text>
+  </g>
+
+  <text x="40" y="212" font-size="13" font-weight="700" fill="#e34948">공격 요청 흐름 (개념적 예시 — 방어 원리 학습용)</text>
+
+  <!-- Row 2 (attack, red) -->
+  <line x1="280" y1="280" x2="300" y2="280" stroke="#898781" stroke-width="2" marker-end="url(#arrowSQL)"/>
+  <line x1="540" y1="280" x2="560" y2="280" stroke="#898781" stroke-width="2" marker-end="url(#arrowSQL)"/>
+  <line x1="800" y1="280" x2="820" y2="280" stroke="#898781" stroke-width="2" marker-end="url(#arrowSQL)"/>
+
+  <g>
+    <rect x="40" y="224" width="240" height="112" rx="10" fill="#e34948" fill-opacity="0.10" stroke="#e34948" stroke-width="2.5"/>
+    <text x="160" y="248" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">1. 사용자 입력</text>
+    <text x="160" y="274" text-anchor="middle" font-size="12" fill="#52514e">특수문자·연산자가</text>
+    <text x="160" y="292" text-anchor="middle" font-size="12" fill="#52514e">섞인 문자열</text>
+    <text x="160" y="316" text-anchor="middle" font-size="12" fill="#52514e">(개념적 예시)</text>
+  </g>
+
+  <g>
+    <rect x="300" y="224" width="240" height="112" rx="10" fill="#e34948" fill-opacity="0.10" stroke="#e34948" stroke-width="2.5"/>
+    <text x="420" y="248" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">2. 애플리케이션</text>
+    <text x="420" y="274" text-anchor="middle" font-size="12" fill="#52514e">문자열을 그대로</text>
+    <text x="420" y="292" text-anchor="middle" font-size="12" fill="#52514e">이어붙임</text>
+    <text x="420" y="316" text-anchor="middle" font-size="12" fill="#52514e">(이스케이프 없음)</text>
+  </g>
+
+  <g>
+    <rect x="560" y="224" width="240" height="112" rx="10" fill="#e34948" fill-opacity="0.10" stroke="#e34948" stroke-width="2.5"/>
+    <text x="680" y="248" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">3. 쿼리 구조</text>
+    <text x="680" y="274" text-anchor="middle" font-size="12" fill="#52514e">조건절 구조 자체가</text>
+    <text x="680" y="292" text-anchor="middle" font-size="12" fill="#52514e">변경됨</text>
+    <text x="680" y="316" text-anchor="middle" font-size="12" fill="#52514e">(원래 조건이 무력화)</text>
+  </g>
+
+  <g>
+    <rect x="820" y="224" width="240" height="112" rx="10" fill="#e34948" fill-opacity="0.10" stroke="#e34948" stroke-width="2.5"/>
+    <text x="940" y="248" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">4. DB 응답</text>
+    <text x="940" y="274" text-anchor="middle" font-size="12" fill="#52514e">의도하지 않은 범위의</text>
+    <text x="940" y="292" text-anchor="middle" font-size="12" fill="#52514e">데이터가 반환될 수 있음</text>
+  </g>
+
+  <rect x="200" y="360" width="720" height="52" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="560" y="382" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">핵심 차이는 하나입니다 — 입력값이 "쿼리 구조"에 영향을 줄 수 있는가</text>
+  <text x="560" y="400" text-anchor="middle" font-size="12" fill="#52514e">준비된 문(Prepared Statement)은 이 영향력 자체를 차단합니다</text>
+</svg>

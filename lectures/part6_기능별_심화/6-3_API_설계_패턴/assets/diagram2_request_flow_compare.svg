@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1200" height="560" fill="#fcfcfb"/>
+  <text x="600" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">같은 화면 하나를 그리기 위한 세 가지 통신 방식</text>
+  <text x="600" y="56" text-anchor="middle" font-size="12.5" fill="#52514e">주문 상세 화면 = 사용자 정보 + 주문 목록 + 상품 정보가 함께 필요한 상황</text>
+
+  <defs>
+    <marker id="arrowR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- REST row (blue) -->
+  <text x="60" y="98" font-size="14" font-weight="700" fill="#0b0b0b">REST</text>
+  <rect x="60" y="110" width="110" height="50" rx="8" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2"/>
+  <text x="115" y="140" text-anchor="middle" font-size="12" fill="#0b0b0b">클라이언트</text>
+
+  <line x1="170" y1="120" x2="260" y2="120" stroke="#898781" stroke-width="2" marker-end="url(#arrowR)"/>
+  <rect x="260" y="100" width="200" height="40" rx="8" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="1.5"/>
+  <text x="360" y="125" text-anchor="middle" font-size="11.5" fill="#0b0b0b">① GET /users/1</text>
+
+  <line x1="170" y1="150" x2="500" y2="150" stroke="#898781" stroke-width="2" marker-end="url(#arrowR)"/>
+  <rect x="500" y="130" width="220" height="40" rx="8" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="1.5"/>
+  <text x="610" y="155" text-anchor="middle" font-size="11.5" fill="#0b0b0b">② GET /users/1/orders</text>
+
+  <line x1="170" y1="180" x2="760" y2="180" stroke="#898781" stroke-width="2" marker-end="url(#arrowR)"/>
+  <rect x="760" y="160" width="240" height="40" rx="8" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="1.5"/>
+  <text x="880" y="185" text-anchor="middle" font-size="11.5" fill="#0b0b0b">③ GET /orders/5/items</text>
+
+  <rect x="1040" y="105" width="120" height="80" rx="8" fill="#898781" fill-opacity="0.10" stroke="#898781" stroke-width="1.5"/>
+  <text x="1100" y="150" text-anchor="middle" font-size="12" fill="#0b0b0b">서버</text>
+  <text x="60" y="210" font-size="12" fill="#e34948" font-weight="700">→ 화면 하나에 엔드포인트 3번 왕복 (오버페칭·N+1 위험)</text>
+
+  <!-- GraphQL row (aqua) -->
+  <text x="60" y="256" font-size="14" font-weight="700" fill="#0b0b0b">GraphQL</text>
+  <rect x="60" y="268" width="110" height="50" rx="8" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2"/>
+  <text x="115" y="298" text-anchor="middle" font-size="12" fill="#0b0b0b">클라이언트</text>
+
+  <line x1="170" y1="293" x2="1030" y2="293" stroke="#898781" stroke-width="2" marker-end="url(#arrowR)"/>
+  <rect x="300" y="273" width="500" height="40" rx="8" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="1.5"/>
+  <text x="550" y="298" text-anchor="middle" font-size="11.5" fill="#0b0b0b">① POST /graphql { user{ name orders{ items{ name } } } }</text>
+
+  <rect x="1040" y="263" width="120" height="60" rx="8" fill="#898781" fill-opacity="0.10" stroke="#898781" stroke-width="1.5"/>
+  <text x="1100" y="298" text-anchor="middle" font-size="12" fill="#0b0b0b">서버</text>
+  <text x="60" y="342" font-size="12" fill="#0b0b0b" font-weight="700">→ 필요한 필드만 지정해 단 한 번의 요청으로 조합</text>
+
+  <!-- gRPC row (yellow) -->
+  <text x="60" y="388" font-size="14" font-weight="700" fill="#0b0b0b">gRPC</text>
+  <rect x="60" y="400" width="150" height="50" rx="8" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2"/>
+  <text x="135" y="422" text-anchor="middle" font-size="11.5" fill="#0b0b0b">내부 서비스</text>
+  <text x="135" y="438" text-anchor="middle" font-size="11.5" fill="#0b0b0b">(주로 서버-서버)</text>
+
+  <line x1="210" y1="425" x2="1030" y2="425" stroke="#898781" stroke-width="2" marker-end="url(#arrowR)"/>
+  <rect x="380" y="405" width="400" height="40" rx="8" fill="#eda100" fill-opacity="0.10" stroke="#eda100" stroke-width="1.5"/>
+  <text x="580" y="430" text-anchor="middle" font-size="11.5" fill="#0b0b0b">① OrderService.GetOrderDetail(Protobuf, HTTP/2 스트림)</text>
+
+  <rect x="1040" y="395" width="120" height="60" rx="8" fill="#898781" fill-opacity="0.10" stroke="#898781" stroke-width="1.5"/>
+  <text x="1100" y="430" text-anchor="middle" font-size="12" fill="#0b0b0b">서버</text>
+  <text x="60" y="474" font-size="12" fill="#0b0b0b" font-weight="700">→ 스키마로 계약을 고정한 채 바이너리로 빠르게 통신 (양방향 스트리밍 가능)</text>
+
+  <rect x="60" y="495" width="1100" height="50" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="600" y="525" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">세 방식 모두 "네트워크 왕복을 줄이거나, 계약을 명확히 하려는" 같은 목표를 서로 다른 방법으로 풉니다</text>
+</svg>

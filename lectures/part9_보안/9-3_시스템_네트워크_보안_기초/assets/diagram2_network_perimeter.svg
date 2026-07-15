@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="620" viewBox="0 0 620 620" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="620" height="620" fill="#fcfcfb"/>
+  <text x="310" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">네트워크 경계에 배치되는 방어 계층</text>
+  <text x="310" y="58" text-anchor="middle" font-size="13" fill="#52514e">핵심 시스템에 닿기까지 두 겹의 방어선을 통과해야 합니다</text>
+
+  <defs>
+    <marker id="arrowNP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <line x1="310" y1="140" x2="310" y2="160" stroke="#898781" stroke-width="2" marker-end="url(#arrowNP)"/>
+  <line x1="310" y1="230" x2="310" y2="250" stroke="#898781" stroke-width="2" marker-end="url(#arrowNP)"/>
+  <line x1="310" y1="320" x2="310" y2="340" stroke="#898781" stroke-width="2" marker-end="url(#arrowNP)"/>
+  <line x1="310" y1="410" x2="310" y2="430" stroke="#898781" stroke-width="2" marker-end="url(#arrowNP)"/>
+
+  <!-- Layer 1: 인터넷 (red) -->
+  <g>
+    <rect x="60" y="80" width="500" height="60" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+    <text x="90" y="107" font-size="15" font-weight="700" fill="#0b0b0b">인터넷 (신뢰할 수 없는 외부)</text>
+    <text x="90" y="127" font-size="12" fill="#52514e">누구나 접근을 시도할 수 있는 영역</text>
+  </g>
+
+  <!-- Layer 2: 방화벽 (blue) -->
+  <g>
+    <rect x="60" y="170" width="500" height="60" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="90" y="197" font-size="15" font-weight="700" fill="#0b0b0b">방화벽 — 첫 번째 경계</text>
+    <text x="90" y="217" font-size="12" fill="#52514e">IP·포트·프로토콜 규칙에 맞지 않는 접근을 차단</text>
+  </g>
+
+  <!-- Layer 3: DMZ (aqua) -->
+  <g>
+    <rect x="60" y="260" width="500" height="60" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="90" y="287" font-size="15" font-weight="700" fill="#0b0b0b">DMZ (비무장지대)</text>
+    <text x="90" y="307" font-size="12" fill="#52514e">외부에 노출되어야 하는 서버만 배치 (웹 서버 등)</text>
+  </g>
+
+  <!-- Layer 4: IDS/IPS (yellow) -->
+  <g>
+    <rect x="60" y="350" width="500" height="60" rx="10" fill="#eda100" fill-opacity="0.16" stroke="#eda100" stroke-width="2.5"/>
+    <text x="90" y="377" font-size="15" font-weight="700" fill="#0b0b0b">IDS/IPS — 두 번째 경계</text>
+    <text x="90" y="397" font-size="12" fill="#52514e">통과한 트래픽의 내용·행위 패턴을 감시하고 이상 시 차단</text>
+  </g>
+
+  <!-- Layer 5: 내부망 (green) -->
+  <g>
+    <rect x="60" y="440" width="500" height="60" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="90" y="467" font-size="15" font-weight="700" fill="#0b0b0b">내부 네트워크 (핵심 시스템)</text>
+    <text x="90" y="487" font-size="12" fill="#52514e">데이터베이스, 사내 서버 등 가장 안쪽에 보호되는 자원</text>
+  </g>
+
+  <rect x="60" y="525" width="500" height="70" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="310" y="550" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">방화벽 하나가 뚫려도 IDS/IPS가 남아있는 것이 심층 방어입니다</text>
+  <text x="310" y="570" text-anchor="middle" font-size="12" fill="#52514e">두 장비는 같은 일을 중복하는 것이 아니라, 서로 다른 단계를 지킵니다</text>
+</svg>

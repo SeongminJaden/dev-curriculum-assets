@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="620" viewBox="0 0 1040 620" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1040" height="620" fill="#fcfcfb"/>
+  <text x="520" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">x86(CISC)과 ARM(RISC) 명령어 집합 비교</text>
+  <text x="520" y="58" text-anchor="middle" font-size="13" fill="#52514e">같은 계산을 지시하는 방식이 근본적으로 다르다</text>
+
+  <!-- column headers -->
+  <rect x="40" y="86" width="460" height="50" rx="10" fill="#2a78d6"/>
+  <text x="270" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">x86 계열 (CISC)</text>
+
+  <rect x="540" y="86" width="460" height="50" rx="10" fill="#1baf7a"/>
+  <text x="770" y="117" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">ARM 계열 (RISC)</text>
+
+  <!-- Row 1: 명령어 길이 -->
+  <text x="520" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#52514e">명령어 길이</text>
+  <rect x="40" y="152" width="460" height="82" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="60" y="180" font-size="14" font-weight="700" fill="#0b0b0b">가변 길이 (1~15바이트)</text>
+  <text x="60" y="202" font-size="12" fill="#52514e">복잡한 동작을 명령어 하나에 압축해서 표현</text>
+  <text x="60" y="220" font-size="12" fill="#52514e">→ 경계를 알려면 앞에서부터 순차 해석 필요</text>
+
+  <rect x="540" y="152" width="460" height="82" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="560" y="180" font-size="14" font-weight="700" fill="#0b0b0b">고정 길이 (기본 32비트)</text>
+  <text x="560" y="202" font-size="12" fill="#52514e">Thumb 모드는 16/32비트 혼합(코드 크기 절약용)</text>
+  <text x="560" y="220" font-size="12" fill="#52514e">→ N번째 명령어 위치를 계산 없이 바로 알 수 있음</text>
+
+  <!-- Row 2: 메모리 접근 방식 -->
+  <text x="520" y="252" text-anchor="middle" font-size="12.5" font-weight="700" fill="#52514e">메모리 접근 방식</text>
+  <rect x="40" y="258" width="460" height="82" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="60" y="286" font-size="14" font-weight="700" fill="#0b0b0b">연산 명령이 메모리를 직접 참조</text>
+  <text x="60" y="308" font-size="12" fill="#52514e">다양한 주소 지정 방식(addressing mode) 지원</text>
+  <text x="60" y="326" font-size="12" fill="#52514e">예: ADD [mem], reg</text>
+
+  <rect x="540" y="258" width="460" height="82" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="560" y="286" font-size="14" font-weight="700" fill="#0b0b0b">레지스터끼리만 연산</text>
+  <text x="560" y="308" font-size="12" fill="#52514e">메모리는 오직 load / store 명령어로만 접근</text>
+  <text x="560" y="326" font-size="12" fill="#52514e">Load-Store 구조</text>
+
+  <!-- Row 3: 해독기 구조 -->
+  <text x="520" y="358" text-anchor="middle" font-size="12.5" font-weight="700" fill="#52514e">해독기(디코더) 구조</text>
+  <rect x="40" y="364" width="460" height="82" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="60" y="392" font-size="14" font-weight="700" fill="#0b0b0b">경계 탐지 + 마이크로코드 변환</text>
+  <text x="60" y="414" font-size="12" fill="#52514e">다단계 · 복잡한 회로, 병렬 해독이 어려움</text>
+  <text x="60" y="432" font-size="12" fill="#52514e">→ 트랜지스터 스위칭이 많아 전력 소모 ↑</text>
+
+  <rect x="540" y="364" width="460" height="82" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="560" y="392" font-size="14" font-weight="700" fill="#0b0b0b">고정폭 병렬 디코드</text>
+  <text x="560" y="414" font-size="12" fill="#52514e">단순한 조합 논리, 여러 디코더 병렬 배치 가능</text>
+  <text x="560" y="432" font-size="12" fill="#52514e">→ 같은 작업을 더 적은 회로로 처리 → 전력 ↓</text>
+
+  <!-- Row 4: 설계 계보 -->
+  <text x="520" y="464" text-anchor="middle" font-size="12.5" font-weight="700" fill="#52514e">설계 계보</text>
+  <rect x="40" y="470" width="460" height="82" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="60" y="498" font-size="14" font-weight="700" fill="#0b0b0b">Intel 8086(1978)에서 출발</text>
+  <text x="60" y="520" font-size="12" fill="#52514e">하위 호환을 위해 새 명령어를 계속 추가</text>
+  <text x="60" y="538" font-size="12" fill="#52514e">메모리가 비쌌던 시대의 "명령어 압축" 철학</text>
+
+  <rect x="540" y="470" width="460" height="82" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="560" y="498" font-size="14" font-weight="700" fill="#0b0b0b">Berkeley RISC / MIPS 연구 계승</text>
+  <text x="560" y="520" font-size="12" fill="#52514e">실제 컴파일된 프로그램의 명령어 사용 통계에서 출발</text>
+  <text x="560" y="538" font-size="12" fill="#52514e">ARM(1985, Acorn RISC Machine)에 반영</text>
+
+  <!-- bottom note -->
+  <rect x="40" y="566" width="960" height="42" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="520" y="592" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">두 진영 모두 파이프라인·비순차 실행을 쓰지만, 명령어 해독 단계의 회로 복잡도는 여전히 다르다</text>
+</svg>

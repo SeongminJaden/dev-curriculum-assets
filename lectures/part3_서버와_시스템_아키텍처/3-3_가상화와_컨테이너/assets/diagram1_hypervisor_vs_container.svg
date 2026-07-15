@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1100" height="700" fill="#fcfcfb"/>
+  <text x="550" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">가상 머신 vs 컨테이너 — 커널을 복제하는가, 공유하는가</text>
+
+  <line x1="550" y1="60" x2="550" y2="660" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- LEFT: VM stack -->
+  <text x="270" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">가상 머신 (하이퍼바이저)</text>
+
+  <!-- Apps -->
+  <rect x="60" y="96" width="130" height="56" rx="8" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2"/>
+  <text x="125" y="129" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">App A</text>
+  <rect x="205" y="96" width="130" height="56" rx="8" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2"/>
+  <text x="270" y="129" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">App B</text>
+  <rect x="350" y="96" width="130" height="56" rx="8" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2"/>
+  <text x="415" y="129" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">App C</text>
+
+  <!-- Guest OS x3 -->
+  <rect x="60" y="164" width="130" height="60" rx="8" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2"/>
+  <text x="125" y="190" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">Guest OS</text>
+  <text x="125" y="208" text-anchor="middle" font-size="10.5" fill="#52514e">(독립 커널)</text>
+
+  <rect x="205" y="164" width="130" height="60" rx="8" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2"/>
+  <text x="270" y="190" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">Guest OS</text>
+  <text x="270" y="208" text-anchor="middle" font-size="10.5" fill="#52514e">(독립 커널)</text>
+
+  <rect x="350" y="164" width="130" height="60" rx="8" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2"/>
+  <text x="415" y="190" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">Guest OS</text>
+  <text x="415" y="208" text-anchor="middle" font-size="10.5" fill="#52514e">(독립 커널)</text>
+
+  <!-- Hypervisor -->
+  <rect x="60" y="244" width="420" height="60" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+  <text x="270" y="270" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">하이퍼바이저 (Hypervisor)</text>
+  <text x="270" y="290" text-anchor="middle" font-size="11" fill="#52514e">물리 자원을 가상 CPU·메모리로 분배</text>
+
+  <!-- Host OS optional -->
+  <rect x="60" y="324" width="420" height="50" rx="10" fill="#898781" fill-opacity="0.08" stroke="#898781" stroke-width="2"/>
+  <text x="270" y="354" text-anchor="middle" font-size="12.5" fill="#52514e">Host OS (Type 2의 경우에만 존재)</text>
+
+  <!-- Hardware -->
+  <rect x="60" y="394" width="420" height="60" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+  <text x="270" y="429" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">물리 하드웨어</text>
+
+  <rect x="60" y="474" width="420" height="60" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="270" y="500" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">커널이 App 개수만큼</text>
+  <text x="270" y="519" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">완전히 복제됨</text>
+
+  <!-- RIGHT: Container stack -->
+  <text x="830" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">컨테이너 (컨테이너 엔진)</text>
+
+  <rect x="620" y="96" width="130" height="56" rx="8" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2"/>
+  <text x="685" y="129" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">App A</text>
+  <rect x="765" y="96" width="130" height="56" rx="8" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2"/>
+  <text x="830" y="129" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">App B</text>
+  <rect x="910" y="96" width="130" height="56" rx="8" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2"/>
+  <text x="975" y="129" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">App C</text>
+
+  <!-- Container Engine -->
+  <rect x="620" y="164" width="420" height="60" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="830" y="190" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">컨테이너 엔진 (예: Docker)</text>
+  <text x="830" y="210" text-anchor="middle" font-size="11" fill="#52514e">네임스페이스 · cgroups로 격리</text>
+
+  <!-- Host OS single, full width -->
+  <rect x="620" y="324" width="420" height="50" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+  <text x="830" y="354" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">Host OS — 커널 1개를 모든 컨테이너가 공유</text>
+
+  <!-- Hardware -->
+  <rect x="620" y="394" width="420" height="60" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+  <text x="830" y="429" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">물리 하드웨어</text>
+
+  <rect x="620" y="474" width="420" height="60" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="830" y="500" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">커널은 1개, App만 프로세스</text>
+  <text x="830" y="519" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">단위로 격리되어 실행됨</text>
+</svg>

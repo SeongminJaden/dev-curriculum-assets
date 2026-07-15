@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="640" viewBox="0 0 760 640" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="760" height="640" fill="#fcfcfb"/>
+  <text x="380" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">명령어 실행 사이클 (Fetch-Decode-Execute)</text>
+  <text x="380" y="56" text-anchor="middle" font-size="13" fill="#52514e">CPU는 이 4단계를 클럭에 맞춰 끝없이 반복합니다</text>
+
+  <defs>
+    <marker id="arrowC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- 1. Fetch (blue) -->
+  <g>
+    <rect x="290" y="90" width="180" height="90" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <circle cx="310" cy="108" r="12" fill="#2a78d6"/>
+    <text x="310" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">1</text>
+    <text x="380" y="135" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">인출 (Fetch)</text>
+    <text x="380" y="157" text-anchor="middle" font-size="12" fill="#52514e">PC가 가리키는 주소에서</text>
+    <text x="380" y="172" text-anchor="middle" font-size="12" fill="#52514e">명령어를 읽어온다</text>
+  </g>
+
+  <!-- 2. Decode (aqua) -->
+  <g>
+    <rect x="530" y="230" width="180" height="90" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="550" cy="248" r="12" fill="#1baf7a"/>
+    <text x="550" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">2</text>
+    <text x="620" y="275" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">해독 (Decode)</text>
+    <text x="620" y="297" text-anchor="middle" font-size="12" fill="#52514e">명령어가 무엇을 하라는</text>
+    <text x="620" y="312" text-anchor="middle" font-size="12" fill="#52514e">뜻인지 해석한다</text>
+  </g>
+
+  <!-- 3. Execute (yellow) -->
+  <g>
+    <rect x="290" y="370" width="180" height="90" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <circle cx="310" cy="388" r="12" fill="#eda100"/>
+    <text x="310" y="392" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">3</text>
+    <text x="380" y="415" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">실행 (Execute)</text>
+    <text x="380" y="437" text-anchor="middle" font-size="12" fill="#52514e">ALU가 실제 연산을</text>
+    <text x="380" y="452" text-anchor="middle" font-size="12" fill="#52514e">수행한다</text>
+  </g>
+
+  <!-- 4. Store/Writeback (green) -->
+  <g>
+    <rect x="50" y="230" width="180" height="90" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <circle cx="70" cy="248" r="12" fill="#008300"/>
+    <text x="70" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">4</text>
+    <text x="140" y="275" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">저장 (Writeback)</text>
+    <text x="140" y="297" text-anchor="middle" font-size="12" fill="#52514e">연산 결과를 레지스터나</text>
+    <text x="140" y="312" text-anchor="middle" font-size="12" fill="#52514e">기억장치에 반영한다</text>
+  </g>
+
+  <!-- circular arrows -->
+  <path d="M 470 140 C 520 160, 545 190, 555 225" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowC)"/>
+  <path d="M 590 320 C 550 355, 470 380, 475 385" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowC)"/>
+  <path d="M 290 405 C 220 390, 160 355, 140 325" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowC)"/>
+  <path d="M 130 230 C 150 190, 220 150, 285 130" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowC)"/>
+
+  <rect x="130" y="530" width="500" height="70" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="380" y="558" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">프로그램 카운터(PC)가 다음 명령어 주소로 갱신되며</text>
+  <text x="380" y="578" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">이 사이클이 다시 처음부터 반복됩니다</text>
+</svg>

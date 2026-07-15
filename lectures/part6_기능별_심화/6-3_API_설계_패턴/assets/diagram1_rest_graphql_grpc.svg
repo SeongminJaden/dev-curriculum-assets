@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1200" height="560" fill="#fcfcfb"/>
+  <text x="600" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">REST vs GraphQL vs gRPC — 무엇이 다른가</text>
+
+  <!-- REST (blue) -->
+  <g>
+    <rect x="40" y="70" width="360" height="460" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="220" y="100" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">REST</text>
+    <text x="220" y="120" text-anchor="middle" font-size="12" fill="#52514e">Roy Fielding 2000년 박사논문</text>
+
+    <text x="60" y="152" font-size="12.5" font-weight="700" fill="#0b0b0b">통신 방식</text>
+    <text x="60" y="170" font-size="12" fill="#52514e">HTTP 메서드(GET/POST 등) +</text>
+    <text x="60" y="186" font-size="12" fill="#52514e">자원(URL) 단위 요청</text>
+
+    <text x="60" y="216" font-size="12.5" font-weight="700" fill="#0b0b0b">데이터 형식</text>
+    <text x="60" y="234" font-size="12" fill="#52514e">JSON, 구조가 엔드포인트마다 고정</text>
+
+    <text x="60" y="264" font-size="12.5" font-weight="700" fill="#0b0b0b">풀고자 한 문제</text>
+    <text x="60" y="282" font-size="12" fill="#52514e">서버마다 제각각이던 API 설계를</text>
+    <text x="60" y="298" font-size="12" fill="#52514e">"자원과 HTTP 동사"라는 하나의</text>
+    <text x="60" y="314" font-size="12" fill="#52514e">규약으로 통일</text>
+
+    <text x="60" y="344" font-size="12.5" font-weight="700" fill="#0b0b0b">강점</text>
+    <text x="60" y="362" font-size="12" fill="#52514e">HTTP 캐시 그대로 활용, 브라우저·</text>
+    <text x="60" y="378" font-size="12" fill="#52514e">툴 생태계 호환성 최고</text>
+
+    <text x="60" y="408" font-size="12.5" font-weight="700" fill="#0b0b0b">약점</text>
+    <text x="60" y="426" font-size="12" fill="#52514e">화면마다 필요한 필드가 다르면</text>
+    <text x="60" y="442" font-size="12" fill="#52514e">오버페칭/언더페칭, 여러 번 호출(N+1)</text>
+
+    <text x="60" y="500" font-size="12" font-weight="700" fill="#0b0b0b">주 사용처: 공개 웹 API, 브라우저-서버</text>
+  </g>
+
+  <!-- GraphQL (aqua) -->
+  <g>
+    <rect x="420" y="70" width="360" height="460" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="600" y="100" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">GraphQL</text>
+    <text x="600" y="120" text-anchor="middle" font-size="12" fill="#52514e">Facebook 2012 개발, 2015 공개</text>
+
+    <text x="440" y="152" font-size="12.5" font-weight="700" fill="#0b0b0b">통신 방식</text>
+    <text x="440" y="170" font-size="12" fill="#52514e">단일 엔드포인트 + 쿼리 언어로</text>
+    <text x="440" y="186" font-size="12" fill="#52514e">원하는 필드만 지정해 요청</text>
+
+    <text x="440" y="216" font-size="12.5" font-weight="700" fill="#0b0b0b">데이터 형식</text>
+    <text x="440" y="234" font-size="12" fill="#52514e">JSON, 응답 구조를 클라이언트가 결정</text>
+
+    <text x="440" y="264" font-size="12.5" font-weight="700" fill="#0b0b0b">풀고자 한 문제</text>
+    <text x="440" y="282" font-size="12" fill="#52514e">화면마다 다른 데이터 요구를 맞추려</text>
+    <text x="440" y="298" font-size="12" fill="#52514e">REST 엔드포인트가 계속 늘어나거나</text>
+    <text x="440" y="314" font-size="12" fill="#52514e">여러 번 호출해야 했던 문제</text>
+
+    <text x="440" y="344" font-size="12.5" font-weight="700" fill="#0b0b0b">강점</text>
+    <text x="440" y="362" font-size="12" fill="#52514e">필요한 필드만 한 번의 요청으로 조합,</text>
+    <text x="440" y="378" font-size="12" fill="#52514e">오버페칭·N+1 문제 완화</text>
+
+    <text x="440" y="408" font-size="12.5" font-weight="700" fill="#0b0b0b">약점</text>
+    <text x="440" y="426" font-size="12" fill="#52514e">서버 측 쿼리 복잡도 관리 필요,</text>
+    <text x="440" y="442" font-size="12" fill="#52514e">HTTP 캐시를 그대로 쓰기 어려움</text>
+
+    <text x="440" y="500" font-size="12" font-weight="700" fill="#0b0b0b">주 사용처: 다양한 화면이 같은 데이터를 조합해 쓰는 클라이언트</text>
+  </g>
+
+  <!-- gRPC (yellow) -->
+  <g>
+    <rect x="800" y="70" width="360" height="460" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="980" y="100" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">gRPC</text>
+    <text x="980" y="120" text-anchor="middle" font-size="12" fill="#52514e">Google 2015 공개 (Stubby 후속)</text>
+
+    <text x="820" y="152" font-size="12.5" font-weight="700" fill="#0b0b0b">통신 방식</text>
+    <text x="820" y="170" font-size="12" fill="#52514e">HTTP/2 + Protocol Buffers</text>
+    <text x="820" y="186" font-size="12" fill="#52514e">바이너리 직렬화, 함수 호출처럼 사용</text>
+
+    <text x="820" y="216" font-size="12.5" font-weight="700" fill="#0b0b0b">데이터 형식</text>
+    <text x="820" y="234" font-size="12" fill="#52514e">바이너리(Protobuf), .proto로 스키마 고정</text>
+
+    <text x="820" y="264" font-size="12.5" font-weight="700" fill="#0b0b0b">풀고자 한 문제</text>
+    <text x="820" y="282" font-size="12" fill="#52514e">서비스 수가 많아진 내부 마이크로</text>
+    <text x="820" y="298" font-size="12" fill="#52514e">서비스 간 호출에서, 텍스트 기반</text>
+    <text x="820" y="314" font-size="12" fill="#52514e">JSON의 직렬화 비용과 느슨한 계약 문제</text>
+
+    <text x="820" y="344" font-size="12.5" font-weight="700" fill="#0b0b0b">강점</text>
+    <text x="820" y="362" font-size="12" fill="#52514e">빠른 직렬화, 양방향 스트리밍,</text>
+    <text x="820" y="378" font-size="12" fill="#52514e">스키마로 계약을 강하게 고정</text>
+
+    <text x="820" y="408" font-size="12.5" font-weight="700" fill="#0b0b0b">약점</text>
+    <text x="820" y="426" font-size="12" fill="#52514e">브라우저에서 직접 호출 어려움,</text>
+    <text x="820" y="442" font-size="12" fill="#52514e">사람이 읽기 어려운 바이너리 포맷</text>
+
+    <text x="820" y="500" font-size="12" font-weight="700" fill="#0b0b0b">주 사용처: 내부 마이크로서비스 간 고성능 통신</text>
+  </g>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="800" viewBox="0 0 780 800" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="780" height="800" fill="#fcfcfb"/>
+  <text x="390" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">데이터 접근 흐름 — 적중과 미스가 평균 접근시간을 결정한다</text>
+  <text x="390" y="56" text-anchor="middle" font-size="13" fill="#52514e">가까운 계층부터 확인하고, 없으면 한 단계씩 더 먼(느린) 계층으로 내려갑니다</text>
+
+  <defs>
+    <marker id="arrowQ" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- CPU request -->
+  <rect x="100" y="90" width="300" height="60" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="250" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">CPU가 데이터를 요청한다</text>
+  <line x1="250" y1="150" x2="250" y2="188" stroke="#898781" stroke-width="2" marker-end="url(#arrowQ)"/>
+
+  <!-- L1 -->
+  <rect x="100" y="190" width="300" height="70" rx="10" fill="#0d366b" stroke="#0d366b" stroke-width="2.5"/>
+  <text x="250" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">L1 캐시 확인</text>
+  <text x="250" y="240" text-anchor="middle" font-size="11" fill="#ffffff">가장 빠르지만 가장 작다</text>
+  <line x1="400" y1="225" x2="465" y2="225" stroke="#1baf7a" stroke-width="2.5" marker-end="url(#arrowQ)"/>
+  <text x="432" y="212" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1baf7a">적중</text>
+  <rect x="470" y="190" width="220" height="70" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="580" y="220" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">즉시 반환</text>
+  <text x="580" y="240" text-anchor="middle" font-size="11" fill="#52514e">가장 짧은 접근시간</text>
+  <line x1="250" y1="260" x2="250" y2="298" stroke="#898781" stroke-width="2" marker-end="url(#arrowQ)"/>
+  <text x="264" y="282" font-size="10.5" fill="#52514e">미스</text>
+
+  <!-- L2 -->
+  <rect x="100" y="300" width="300" height="70" rx="10" fill="#2569c2" stroke="#2569c2" stroke-width="2.5"/>
+  <text x="250" y="330" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">L2 캐시 확인</text>
+  <text x="250" y="350" text-anchor="middle" font-size="11" fill="#ffffff">L1보다 크지만 더 느리다</text>
+  <line x1="400" y1="335" x2="465" y2="335" stroke="#1baf7a" stroke-width="2.5" marker-end="url(#arrowQ)"/>
+  <text x="432" y="322" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1baf7a">적중</text>
+  <rect x="470" y="300" width="220" height="70" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="580" y="330" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">반환</text>
+  <text x="580" y="350" text-anchor="middle" font-size="11" fill="#52514e">L1보다는 느리다</text>
+  <line x1="250" y1="370" x2="250" y2="408" stroke="#898781" stroke-width="2" marker-end="url(#arrowQ)"/>
+  <text x="264" y="392" font-size="10.5" fill="#52514e">미스</text>
+
+  <!-- L3 -->
+  <rect x="100" y="410" width="300" height="70" rx="10" fill="#3987e5" stroke="#3987e5" stroke-width="2.5"/>
+  <text x="250" y="440" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">L3 캐시 확인</text>
+  <text x="250" y="460" text-anchor="middle" font-size="11" fill="#ffffff">여러 코어가 공유한다</text>
+  <line x1="400" y1="445" x2="465" y2="445" stroke="#1baf7a" stroke-width="2.5" marker-end="url(#arrowQ)"/>
+  <text x="432" y="432" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1baf7a">적중</text>
+  <rect x="470" y="410" width="220" height="70" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="580" y="440" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">반환</text>
+  <text x="580" y="460" text-anchor="middle" font-size="11" fill="#52514e">캐시 중 가장 느리다</text>
+  <line x1="250" y1="480" x2="250" y2="518" stroke="#898781" stroke-width="2" marker-end="url(#arrowQ)"/>
+  <text x="264" y="502" font-size="10.5" fill="#52514e">미스</text>
+
+  <!-- Main memory -->
+  <rect x="100" y="520" width="300" height="70" rx="10" fill="#cde2fb" stroke="#7fb2ea" stroke-width="2.5"/>
+  <text x="250" y="550" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">주기억장치(RAM) 접근</text>
+  <text x="250" y="570" text-anchor="middle" font-size="11" fill="#52514e">캐시 전부를 놓쳤을 때만 도달 — 가장 느리다</text>
+
+  <!-- Formula box -->
+  <rect x="60" y="630" width="660" height="150" rx="12" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="390" y="660" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">AMAT (평균 메모리 접근시간, Average Memory Access Time)</text>
+  <text x="390" y="688" text-anchor="middle" font-size="15" font-weight="700" fill="#0d366b">AMAT = 적중시간 + 미스율 × 미스 페널티</text>
+  <text x="390" y="714" text-anchor="middle" font-size="12" fill="#52514e">적중시간(Hit Time): 해당 계층에서 바로 찾았을 때 걸리는 시간</text>
+  <text x="390" y="734" text-anchor="middle" font-size="12" fill="#52514e">미스율(Miss Rate) = 1 − 적중률(Hit Rate) = 미스 횟수 ÷ 전체 접근 횟수</text>
+  <text x="390" y="754" text-anchor="middle" font-size="12" fill="#52514e">미스 페널티(Miss Penalty): 미스가 나서 다음 계층까지 가야 할 때 추가로 드는 시간</text>
+</svg>

@@ -29,7 +29,7 @@
 
 소프트웨어 개발 생명주기(Software Development Life Cycle, SDLC)는 1970년 윈스턴 로이스(Winston Royce)가 대규모 소프트웨어 프로젝트의 관리 문제를 정리하면서 처음 체계화한 개념으로, 이후 폭포수(Waterfall) 모델과 애자일(Agile) 모델 등 다양한 실행 방식으로 발전했습니다. 방식은 달라도 아래 6단계 자체는 거의 모든 개발 방법론에 공통으로 존재합니다.
 
-![소프트웨어 개발 생명주기 다이어그램](https://raw.githubusercontent.com/SeongminJaden/dev-curriculum-assets/main/assets/part1/1-1/diagram1_sdlc.svg)
+![소프트웨어 개발 생명주기 다이어그램](https://raw.githubusercontent.com/SeongminJaden/dev-curriculum-assets/main/lectures/part1_개발기초/1-1_소프트웨어_개발의_전체_그림/assets/diagram1_sdlc.svg)
 
 1. **요구사항 정의** — 사용자와 이해관계자가 원하는 것이 무엇인지 문서로 확정합니다.
 2. **설계** — 요구사항을 만족시킬 시스템의 구조(모듈, 데이터베이스, 인터페이스)를 결정합니다.
@@ -65,7 +65,7 @@
 
 사용자가 배달 앱에서 "주문하기" 버튼을 누르는 순간부터, 그 요청이 실제로 처리되어 화면에 결과가 표시되기까지는 아래와 같은 계층을 순서대로 통과합니다.
 
-![요청 처리 계층 구조 다이어그램](https://raw.githubusercontent.com/SeongminJaden/dev-curriculum-assets/main/assets/part1/1-1/diagram2_stack.svg)
+![요청 처리 계층 구조 다이어그램](https://raw.githubusercontent.com/SeongminJaden/dev-curriculum-assets/main/lectures/part1_개발기초/1-1_소프트웨어_개발의_전체_그림/assets/diagram2_stack.svg)
 
 - <u>**사용자 계층**</u>: 브라우저나 앱이 버튼 클릭을 감지합니다.
 - <u>**프론트엔드 계층**</u>: 클릭 이벤트를 서버가 이해할 수 있는 HTTP 요청으로 변환합니다.
@@ -88,11 +88,7 @@
 
 ## 4. 실습
 
-> **참고** 실습은 제출물이 아니라, 오늘 배운 두 개의 지도를 스스로 그려보는 과정입니다.
-
-1. 최근에 사용한 앱이나 웹 서비스를 하나 골라주세요.
-2. 그 서비스에 있었을 법한 기능 하나를 정하고, SDLC 6단계에 각각 어떤 일이 있었을지 한 문장씩 적어보세요.
-3. 같은 기능이 사용자 계층부터 하드웨어 계층까지 어떤 순서로 처리될지, 오늘 배운 6개 계층에 맞춰 정리해보세요.
+> **참고** 오늘 배운 두 개의 지도를 스스로 그려보는 실습은 [practice.md](./practice.md)에 정리되어 있습니다.
 
 ---
 
