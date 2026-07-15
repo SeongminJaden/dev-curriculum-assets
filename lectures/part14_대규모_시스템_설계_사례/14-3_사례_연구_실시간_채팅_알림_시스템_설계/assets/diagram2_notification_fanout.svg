@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="460" viewBox="0 0 1120 460" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="460" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">메시지 큐를 이용한 알림 팬아웃 구조</text>
+
+  <defs>
+    <marker id="arrowC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- Event source (blue) -->
+  <g>
+    <rect x="440" y="60" width="240" height="60" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="560" y="86" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">이벤트 발생</text>
+    <text x="560" y="106" text-anchor="middle" font-size="11.5" fill="#52514e">새 메시지 · 댓글 · 좋아요 등</text>
+  </g>
+
+  <line x1="560" y1="120" x2="560" y2="152" stroke="#898781" stroke-width="2" marker-end="url(#arrowC)"/>
+
+  <!-- Broker (aqua) -->
+  <g>
+    <rect x="410" y="160" width="300" height="60" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="560" y="186" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">메시지 브로커 (Queue)</text>
+    <text x="560" y="206" text-anchor="middle" font-size="11.5" fill="#52514e">발행자와 구독자를 분리해 결합도를 낮춤</text>
+  </g>
+
+  <line x1="480" y1="220" x2="220" y2="270" stroke="#898781" stroke-width="2" marker-end="url(#arrowC)"/>
+  <line x1="530" y1="220" x2="440" y2="270" stroke="#898781" stroke-width="2" marker-end="url(#arrowC)"/>
+  <line x1="590" y1="220" x2="680" y2="270" stroke="#898781" stroke-width="2" marker-end="url(#arrowC)"/>
+  <line x1="640" y1="220" x2="900" y2="270" stroke="#898781" stroke-width="2" marker-end="url(#arrowC)"/>
+
+  <!-- Consumer 1: WebSocket 서버 (yellow) -->
+  <g>
+    <rect x="90" y="278" width="260" height="70" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="220" y="304" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">WebSocket 서버</text>
+    <text x="220" y="324" text-anchor="middle" font-size="11" fill="#52514e">온라인 사용자에게</text>
+    <text x="220" y="340" text-anchor="middle" font-size="11" fill="#52514e">즉시 push 전달</text>
+  </g>
+
+  <!-- Consumer 2: 푸시 알림 서비스 (green) -->
+  <g>
+    <rect x="360" y="278" width="220" height="70" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="470" y="304" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">푸시 알림 서비스</text>
+    <text x="470" y="324" text-anchor="middle" font-size="11" fill="#52514e">앱이 꺼져 있어도</text>
+    <text x="470" y="340" text-anchor="middle" font-size="11" fill="#52514e">모바일 푸시로 전달</text>
+  </g>
+
+  <!-- Consumer 3: 이메일 알림 서비스 (violet) -->
+  <g>
+    <rect x="600" y="278" width="200" height="70" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <text x="700" y="304" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">이메일 알림 서비스</text>
+    <text x="700" y="324" text-anchor="middle" font-size="11" fill="#52514e">긴급하지 않은</text>
+    <text x="700" y="340" text-anchor="middle" font-size="11" fill="#52514e">알림을 비동기로 발송</text>
+  </g>
+
+  <!-- Consumer 4: 오프라인 메시지 저장소 (red) -->
+  <g>
+    <rect x="820" y="278" width="230" height="70" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+    <text x="935" y="304" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">오프라인 메시지 저장소</text>
+    <text x="935" y="324" text-anchor="middle" font-size="11" fill="#52514e">수신자가 오프라인이면</text>
+    <text x="935" y="340" text-anchor="middle" font-size="11" fill="#52514e">DB에 보관 후 재접속 시 전달</text>
+  </g>
+
+  <path d="M 935 348 C 935 400, 220 400, 220 348" stroke="#898781" stroke-width="2" fill="none" stroke-dasharray="4 4" marker-end="url(#arrowC)"/>
+  <text x="577" y="416" text-anchor="middle" font-size="11.5" fill="#52514e">재접속 시 WebSocket 서버가 저장소에서 미읽음 메시지를 가져와 전달</text>
+
+  <g>
+    <rect x="340" y="424" width="440" height="26" rx="8" fill="#e87ba4" fill-opacity="0.12" stroke="#e87ba4" stroke-width="2"/>
+    <text x="560" y="442" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0b0b0b">수신 확인(ACK) 시 읽음 상태를 갱신해 발신자에게 반영</text>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1000" height="480" fill="#fcfcfb"/>
+  <text x="500" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">선언적 IaC 코드가 여러 환경의 일관성을 보장하는 원리</text>
+  <text x="500" y="56" text-anchor="middle" font-size="13" fill="#52514e">하나의 코드가 목표 상태를 정의하고, 도구가 각 환경에 동일하게 적용합니다</text>
+
+  <defs>
+    <marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- source code box (blue) -->
+  <g>
+    <rect x="360" y="90" width="280" height="80" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="500" y="122" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">IaC 코드 (목표 상태 정의)</text>
+    <text x="500" y="144" text-anchor="middle" font-size="12" fill="#52514e">버전 관리 시스템에 저장된 단일 원본</text>
+  </g>
+
+  <!-- arrows fanning out -->
+  <line x1="420" y1="170" x2="180" y2="230" stroke="#898781" stroke-width="2" marker-end="url(#arrow3)"/>
+  <line x1="500" y1="170" x2="500" y2="230" stroke="#898781" stroke-width="2" marker-end="url(#arrow3)"/>
+  <line x1="580" y1="170" x2="820" y2="230" stroke="#898781" stroke-width="2" marker-end="url(#arrow3)"/>
+  <text x="270" y="205" font-size="12" fill="#52514e">적용(apply)</text>
+  <text x="510" y="205" font-size="12" fill="#52514e">적용(apply)</text>
+  <text x="700" y="205" font-size="12" fill="#52514e">적용(apply)</text>
+
+  <!-- Env 1: 개발 (aqua) -->
+  <g>
+    <rect x="60" y="240" width="240" height="110" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="180" y="270" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">개발 환경</text>
+    <text x="180" y="292" text-anchor="middle" font-size="12" fill="#52514e">코드와 동일한 구조로</text>
+    <text x="180" y="310" text-anchor="middle" font-size="12" fill="#52514e">자동 구성됨</text>
+  </g>
+
+  <!-- Env 2: 스테이징 (yellow) -->
+  <g>
+    <rect x="380" y="240" width="240" height="110" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="500" y="270" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">스테이징 환경</text>
+    <text x="500" y="292" text-anchor="middle" font-size="12" fill="#52514e">코드와 동일한 구조로</text>
+    <text x="500" y="310" text-anchor="middle" font-size="12" fill="#52514e">자동 구성됨</text>
+  </g>
+
+  <!-- Env 3: 운영 (violet) -->
+  <g>
+    <rect x="700" y="240" width="240" height="110" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <text x="820" y="270" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">운영 환경</text>
+    <text x="820" y="292" text-anchor="middle" font-size="12" fill="#52514e">코드와 동일한 구조로</text>
+    <text x="820" y="310" text-anchor="middle" font-size="12" fill="#52514e">자동 구성됨</text>
+  </g>
+
+  <rect x="60" y="390" width="880" height="60" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="500" y="415" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">세 환경 모두 사람이 각각 손으로 설정한 것이 아니라</text>
+  <text x="500" y="433" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">동일한 코드로부터 재현되었으므로 구조가 일치합니다</text>
+</svg>

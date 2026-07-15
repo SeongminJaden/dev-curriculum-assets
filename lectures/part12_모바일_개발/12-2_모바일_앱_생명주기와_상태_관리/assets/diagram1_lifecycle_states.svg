@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="320" viewBox="0 0 1160 320" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1160" height="320" fill="#fcfcfb"/>
+  <text x="580" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">앱 생명주기 상태 전이</text>
+  <text x="580" y="56" text-anchor="middle" font-size="13" fill="#52514e">iOS(Not Running~Suspended)와 Android(Created~Stopped)에 공통으로 적용되는 흐름입니다</text>
+
+  <defs>
+    <marker id="lc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- forward arrows -->
+  <line x1="180" y1="170" x2="220" y2="170" stroke="#898781" stroke-width="2" marker-end="url(#lc)"/>
+  <line x1="360" y1="170" x2="400" y2="170" stroke="#898781" stroke-width="2" marker-end="url(#lc)"/>
+  <line x1="540" y1="170" x2="580" y2="170" stroke="#898781" stroke-width="2" marker-end="url(#lc)"/>
+  <line x1="720" y1="170" x2="760" y2="170" stroke="#898781" stroke-width="2" marker-end="url(#lc)"/>
+  <line x1="900" y1="170" x2="940" y2="170" stroke="#898781" stroke-width="2" marker-end="url(#lc)"/>
+
+  <!-- feedback loop: terminated -> not running (re-launch) -->
+  <path d="M 1010 220 C 1010 258, 110 258, 110 220" stroke="#898781" stroke-width="2" fill="none" stroke-dasharray="4 4" marker-end="url(#lc)"/>
+  <text x="580" y="286" text-anchor="middle" font-size="12" fill="#52514e">사용자가 앱을 다시 실행하면 Not Running에서 처음부터 새 프로세스로 시작합니다</text>
+
+  <!-- return-to-foreground curved arrow -->
+  <path d="M 850 110 C 750 60, 550 60, 470 110" stroke="#898781" stroke-width="2" fill="none" stroke-dasharray="4 4" marker-end="url(#lc)"/>
+  <text x="660" y="72" text-anchor="middle" font-size="11.5" fill="#52514e">사용자가 다시 열면 Active로 복귀 (콜백 재호출)</text>
+
+  <!-- 1. Not Running (blue) -->
+  <g>
+    <rect x="40" y="120" width="140" height="100" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <circle cx="60" cy="138" r="12" fill="#2a78d6"/>
+    <text x="60" y="142" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+    <text x="110" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">Not Running</text>
+    <text x="110" y="188" text-anchor="middle" font-size="11.5" fill="#52514e">실행 전이거나</text>
+    <text x="110" y="204" text-anchor="middle" font-size="11.5" fill="#52514e">완전히 종료된 상태</text>
+  </g>
+
+  <!-- 2. Inactive (aqua) -->
+  <g>
+    <rect x="220" y="120" width="140" height="100" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="240" cy="138" r="12" fill="#1baf7a"/>
+    <text x="240" y="142" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+    <text x="290" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">Inactive</text>
+    <text x="290" y="188" text-anchor="middle" font-size="11.5" fill="#52514e">포그라운드지만</text>
+    <text x="290" y="204" text-anchor="middle" font-size="11.5" fill="#52514e">이벤트 미수신 전이</text>
+  </g>
+
+  <!-- 3. Active (yellow) -->
+  <g>
+    <rect x="400" y="120" width="140" height="100" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <circle cx="420" cy="138" r="12" fill="#eda100"/>
+    <text x="420" y="142" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+    <text x="470" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">Active</text>
+    <text x="470" y="188" text-anchor="middle" font-size="11.5" fill="#52514e">정상적으로 입력을</text>
+    <text x="470" y="204" text-anchor="middle" font-size="11.5" fill="#52514e">받는 상태</text>
+  </g>
+
+  <!-- 4. Background (green) -->
+  <g>
+    <rect x="580" y="120" width="140" height="100" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <circle cx="600" cy="138" r="12" fill="#008300"/>
+    <text x="600" y="142" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">4</text>
+    <text x="650" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">Background</text>
+    <text x="650" y="188" text-anchor="middle" font-size="11.5" fill="#52514e">화면은 안 보여도</text>
+    <text x="650" y="204" text-anchor="middle" font-size="11.5" fill="#52514e">제한 시간 동안 실행 중</text>
+  </g>
+
+  <!-- 5. Suspended (violet) -->
+  <g>
+    <rect x="760" y="120" width="140" height="100" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <circle cx="780" cy="138" r="12" fill="#4a3aa7"/>
+    <text x="780" y="142" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">5</text>
+    <text x="830" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">Suspended</text>
+    <text x="830" y="188" text-anchor="middle" font-size="11.5" fill="#52514e">코드 실행 정지,</text>
+    <text x="830" y="204" text-anchor="middle" font-size="11.5" fill="#52514e">메모리엔 남아 있음</text>
+  </g>
+
+  <!-- 6. Terminated (red) -->
+  <g>
+    <rect x="940" y="120" width="140" height="100" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+    <circle cx="960" cy="138" r="12" fill="#e34948"/>
+    <text x="960" y="142" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">6</text>
+    <text x="1010" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">Terminated</text>
+    <text x="1010" y="188" text-anchor="middle" font-size="11.5" fill="#52514e">OS가 메모리 확보를</text>
+    <text x="1010" y="204" text-anchor="middle" font-size="11.5" fill="#52514e">위해 예고 없이 종료</text>
+  </g>
+</svg>

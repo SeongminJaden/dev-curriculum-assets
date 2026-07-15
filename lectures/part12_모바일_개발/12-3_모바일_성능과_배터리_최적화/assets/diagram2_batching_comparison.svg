@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1000" height="460" fill="#fcfcfb"/>
+  <text x="500" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">배칭 전후 라디오 전력 소모 비교 (동일한 데이터량 기준)</text>
+  <text x="500" y="56" text-anchor="middle" font-size="12.5" fill="#52514e">색이 짙을수록 고전력 상태입니다 — 막대 길이는 시간의 흐름을 나타냅니다</text>
+
+  <!-- legend -->
+  <rect x="60" y="76" width="22" height="16" rx="3" fill="#cde2fb"/>
+  <text x="90" y="89" font-size="11.5" fill="#52514e">Idle(저전력)</text>
+  <rect x="190" y="76" width="22" height="16" rx="3" fill="#3987e5"/>
+  <text x="220" y="89" font-size="11.5" fill="#52514e">Tail Time(중간)</text>
+  <rect x="340" y="76" width="22" height="16" rx="3" fill="#0d366b"/>
+  <text x="370" y="89" font-size="11.5" fill="#52514e">Full Power(전송, 최대)</text>
+
+  <!-- Row A: unbatched -->
+  <text x="60" y="126" font-size="14" font-weight="700" fill="#0b0b0b">배칭하지 않음 — 작은 요청 3번을 흩어서 전송</text>
+  <g>
+    <rect x="60" y="140" width="100" height="50" fill="#cde2fb"/>
+    <rect x="160" y="140" width="50" height="50" fill="#0d366b"/>
+    <rect x="210" y="140" width="130" height="50" fill="#3987e5"/>
+    <rect x="340" y="140" width="60" height="50" fill="#cde2fb"/>
+    <rect x="400" y="140" width="50" height="50" fill="#0d366b"/>
+    <rect x="450" y="140" width="130" height="50" fill="#3987e5"/>
+    <rect x="580" y="140" width="60" height="50" fill="#cde2fb"/>
+    <rect x="640" y="140" width="50" height="50" fill="#0d366b"/>
+    <rect x="690" y="140" width="130" height="50" fill="#3987e5"/>
+    <rect x="820" y="140" width="100" height="50" fill="#cde2fb"/>
+    <rect x="60" y="140" width="860" height="50" fill="none" stroke="#c3c2b7" stroke-width="1.5"/>
+  </g>
+  <text x="185" y="210" text-anchor="middle" font-size="10.5" fill="#52514e">요청 1</text>
+  <text x="425" y="210" text-anchor="middle" font-size="10.5" fill="#52514e">요청 2</text>
+  <text x="665" y="210" text-anchor="middle" font-size="10.5" fill="#52514e">요청 3</text>
+  <text x="60" y="232" font-size="12" fill="#52514e">테일 타임이 요청마다 반복되어, 고전력 상태(전송+테일)가 총 3번 발생합니다</text>
+
+  <!-- Row B: batched -->
+  <text x="60" y="278" font-size="14" font-weight="700" fill="#0b0b0b">배칭함 — 같은 데이터를 한 번에 모아 전송</text>
+  <g>
+    <rect x="60" y="292" width="100" height="50" fill="#cde2fb"/>
+    <rect x="160" y="292" width="90" height="50" fill="#0d366b"/>
+    <rect x="250" y="292" width="130" height="50" fill="#3987e5"/>
+    <rect x="380" y="292" width="540" height="50" fill="#cde2fb"/>
+    <rect x="60" y="292" width="860" height="50" fill="none" stroke="#c3c2b7" stroke-width="1.5"/>
+  </g>
+  <text x="205" y="362" text-anchor="middle" font-size="10.5" fill="#52514e">요청 1개 (데이터량 동일)</text>
+  <text x="60" y="384" font-size="12" fill="#52514e">테일 타임이 한 번만 발생해, 고전력 상태로 머무는 총 시간이 크게 줄어듭니다</text>
+
+  <rect x="60" y="404" width="860" height="42" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="500" y="430" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">배칭이 아끼는 것은 전송 자체가 아니라, 요청마다 반복되는 테일 타임입니다</text>
+</svg>

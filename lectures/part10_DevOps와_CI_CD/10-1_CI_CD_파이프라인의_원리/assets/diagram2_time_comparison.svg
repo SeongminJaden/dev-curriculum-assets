@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1000" height="420" fill="#fcfcfb"/>
+  <text x="500" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">수동 배포와 자동화 파이프라인의 소요 시간 비교</text>
+  <text x="500" y="56" text-anchor="middle" font-size="13" fill="#52514e">막대 길이와 색의 짙기 = 사람의 대기·확인 시간이 차지하는 비중 (개념적 비교)</text>
+
+  <!-- Bar 1: 수동 배포 - darkest, longest -->
+  <g>
+    <text x="60" y="118" font-size="15" font-weight="700" fill="#0b0b0b">수동 배포 프로세스</text>
+    <text x="60" y="138" font-size="12" fill="#52514e">담당자가 직접 빌드·테스트 결과를 확인하고 다음 단계를 수동 실행</text>
+    <rect x="60" y="150" width="860" height="40" rx="8" fill="#0d366b"/>
+    <text x="490" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">각 단계 사이 사람의 대기·확인 시간이 누적됨</text>
+  </g>
+
+  <!-- Bar 2: 지속적 전달 - medium -->
+  <g>
+    <text x="60" y="238" font-size="15" font-weight="700" fill="#0b0b0b">지속적 전달 (마지막 승인만 사람)</text>
+    <text x="60" y="258" font-size="12" fill="#52514e">빌드·테스트는 자동, 운영 반영 버튼만 사람이 클릭</text>
+    <rect x="60" y="270" width="440" height="40" rx="8" fill="#3987e5"/>
+    <text x="280" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">마지막 승인 대기 시간만 남음</text>
+  </g>
+
+  <!-- Bar 3: 지속적 배포 - lightest, shortest -->
+  <g>
+    <text x="60" y="358" font-size="15" font-weight="700" fill="#0b0b0b">지속적 배포 (전 단계 자동)</text>
+    <text x="60" y="378" font-size="12" fill="#52514e">검증 통과 즉시 다음 단계로 연쇄 실행</text>
+    <rect x="60" y="390" width="180" height="24" rx="8" fill="#cde2fb"/>
+    <text x="150" y="407" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">사람의 대기 시간 없음</text>
+  </g>
+</svg>

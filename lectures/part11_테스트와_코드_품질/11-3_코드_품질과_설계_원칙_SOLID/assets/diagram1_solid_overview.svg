@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="260" viewBox="0 0 1040 260" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1040" height="260" fill="#fcfcfb"/>
+  <text x="520" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">SOLID 다섯 원칙</text>
+  <text x="520" y="56" text-anchor="middle" font-size="13" fill="#52514e">각 원칙은 서로 다른 각도에서 "변경의 파급 범위를 줄이는 것"을 겨냥합니다</text>
+
+  <!-- Principle 1: SRP (blue) -->
+  <g>
+    <rect x="40" y="80" width="160" height="140" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <circle cx="120" cy="104" r="16" fill="#2a78d6"/>
+    <text x="120" y="110" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">S</text>
+    <text x="120" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">단일 책임</text>
+    <text x="120" y="160" text-anchor="middle" font-size="11.5" fill="#52514e">변경 이유는</text>
+    <text x="120" y="176" text-anchor="middle" font-size="11.5" fill="#52514e">오직 하나여야</text>
+    <text x="120" y="192" text-anchor="middle" font-size="11.5" fill="#52514e">한다</text>
+  </g>
+
+  <!-- Principle 2: OCP (aqua) -->
+  <g>
+    <rect x="240" y="80" width="160" height="140" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="320" cy="104" r="16" fill="#1baf7a"/>
+    <text x="320" y="110" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">O</text>
+    <text x="320" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">개방-폐쇄</text>
+    <text x="320" y="160" text-anchor="middle" font-size="11.5" fill="#52514e">확장에는 열리고</text>
+    <text x="320" y="176" text-anchor="middle" font-size="11.5" fill="#52514e">변경에는 닫혀야</text>
+    <text x="320" y="192" text-anchor="middle" font-size="11.5" fill="#52514e">한다</text>
+  </g>
+
+  <!-- Principle 3: LSP (yellow) -->
+  <g>
+    <rect x="440" y="80" width="160" height="140" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <circle cx="520" cy="104" r="16" fill="#eda100"/>
+    <text x="520" y="110" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">L</text>
+    <text x="520" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">리스코프 치환</text>
+    <text x="520" y="160" text-anchor="middle" font-size="11.5" fill="#52514e">하위 타입은</text>
+    <text x="520" y="176" text-anchor="middle" font-size="11.5" fill="#52514e">상위 타입을</text>
+    <text x="520" y="192" text-anchor="middle" font-size="11.5" fill="#52514e">대체할 수 있어야</text>
+  </g>
+
+  <!-- Principle 4: ISP (green) -->
+  <g>
+    <rect x="640" y="80" width="160" height="140" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <circle cx="720" cy="104" r="16" fill="#008300"/>
+    <text x="720" y="110" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">I</text>
+    <text x="720" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">인터페이스 분리</text>
+    <text x="720" y="160" text-anchor="middle" font-size="11.5" fill="#52514e">쓰지 않는</text>
+    <text x="720" y="176" text-anchor="middle" font-size="11.5" fill="#52514e">메서드에 의존을</text>
+    <text x="720" y="192" text-anchor="middle" font-size="11.5" fill="#52514e">강요받지 않는다</text>
+  </g>
+
+  <!-- Principle 5: DIP (violet) -->
+  <g>
+    <rect x="840" y="80" width="160" height="140" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <circle cx="920" cy="104" r="16" fill="#4a3aa7"/>
+    <text x="920" y="110" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">D</text>
+    <text x="920" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">의존성 역전</text>
+    <text x="920" y="160" text-anchor="middle" font-size="11.5" fill="#52514e">둘 다 추상에</text>
+    <text x="920" y="176" text-anchor="middle" font-size="11.5" fill="#52514e">의존해야</text>
+    <text x="920" y="192" text-anchor="middle" font-size="11.5" fill="#52514e">한다</text>
+  </g>
+
+  <text x="520" y="246" text-anchor="middle" font-size="12" fill="#52514e">로버트 마틴(Robert C. Martin)이 다섯 원칙을 SOLID라는 하나의 체계로 정리했습니다</text>
+</svg>

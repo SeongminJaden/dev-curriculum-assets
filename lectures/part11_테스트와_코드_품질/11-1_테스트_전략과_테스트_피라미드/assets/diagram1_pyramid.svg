@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="620" viewBox="0 0 760 620" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="760" height="620" fill="#fcfcfb"/>
+  <text x="380" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">테스트 피라미드</text>
+  <text x="380" y="56" text-anchor="middle" font-size="13" fill="#52514e">아래로 갈수록 많이, 위로 갈수록 적게 작성합니다</text>
+
+  <!-- Layer 3: E2E (top, blue, smallest) -->
+  <g>
+    <polygon points="330,90 430,90 460,190 300,190" fill="#2a78d6" fill-opacity="0.14" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="380" y="135" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">E2E 테스트</text>
+    <text x="380" y="155" text-anchor="middle" font-size="12" fill="#52514e">사용자 흐름 전체</text>
+    <text x="380" y="171" text-anchor="middle" font-size="12" fill="#52514e">가장 적게, 느리게</text>
+  </g>
+
+  <!-- Layer 2: Integration (middle, aqua) -->
+  <g>
+    <polygon points="300,190 460,190 510,320 250,320" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="380" y="245" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">통합 테스트</text>
+    <text x="380" y="266" text-anchor="middle" font-size="12" fill="#52514e">모듈 간 연동</text>
+    <text x="380" y="284" text-anchor="middle" font-size="12" fill="#52514e">중간 속도·비용</text>
+  </g>
+
+  <!-- Layer 1: Unit (bottom, yellow, largest) -->
+  <g>
+    <polygon points="250,320 510,320 570,480 190,480" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="380" y="380" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">단위 테스트</text>
+    <text x="380" y="402" text-anchor="middle" font-size="12" fill="#52514e">함수·클래스 단위</text>
+    <text x="380" y="420" text-anchor="middle" font-size="12" fill="#52514e">가장 많이, 빠르게</text>
+  </g>
+
+  <!-- axis labels -->
+  <line x1="600" y1="100" x2="600" y2="470" stroke="#898781" stroke-width="1.5"/>
+  <polygon points="600,96 594,108 606,108" fill="#898781"/>
+  <text x="614" y="130" font-size="12.5" fill="#52514e">신뢰도(확신) 높음</text>
+  <text x="614" y="150" font-size="12.5" fill="#52514e">속도 느림 · 비용 큼</text>
+  <text x="614" y="440" font-size="12.5" fill="#52514e">속도 빠름 · 비용 작음</text>
+  <text x="614" y="460" font-size="12.5" fill="#52514e">신뢰도(확신) 낮음</text>
+  <polygon points="600,474 594,462 606,462" fill="#898781"/>
+
+  <rect x="60" y="520" width="640" height="70" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="380" y="548" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">대다수 버그는 저렴한 단위 테스트로 걸러내고,</text>
+  <text x="380" y="568" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">E2E 테스트는 "전체 흐름이 실제로 이어지는가"를 확인하는 용도로만 최소한 유지합니다</text>
+</svg>

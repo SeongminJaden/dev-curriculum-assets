@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="360" viewBox="0 0 1040 360" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1040" height="360" fill="#fcfcfb"/>
+  <text x="520" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">관측성의 세 기둥이 각각 답하는 질문</text>
+  <text x="520" y="56" text-anchor="middle" font-size="13" fill="#52514e">세 데이터는 서로 대체하지 않고, 답할 수 있는 질문이 서로 다릅니다</text>
+
+  <!-- Pillar 1: 로그 (blue) -->
+  <g>
+    <rect x="40" y="90" width="300" height="230" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <circle cx="70" cy="118" r="14" fill="#2a78d6"/>
+    <text x="70" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">1</text>
+    <text x="190" y="150" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">로그 (Logs)</text>
+    <text x="190" y="180" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">"정확히 무슨 일이</text>
+    <text x="190" y="198" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">있었는가?"</text>
+    <text x="190" y="230" text-anchor="middle" font-size="12" fill="#52514e">시간 순서대로 남긴</text>
+    <text x="190" y="248" text-anchor="middle" font-size="12" fill="#52514e">개별 이벤트의 상세 기록</text>
+    <text x="190" y="280" text-anchor="middle" font-size="12" fill="#52514e">가장 구체적이지만</text>
+    <text x="190" y="298" text-anchor="middle" font-size="12" fill="#52514e">전체 추세 파악은 어려움</text>
+  </g>
+
+  <!-- Pillar 2: 메트릭 (aqua) -->
+  <g>
+    <rect x="370" y="90" width="300" height="230" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="400" cy="118" r="14" fill="#1baf7a"/>
+    <text x="400" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">2</text>
+    <text x="520" y="150" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">메트릭 (Metrics)</text>
+    <text x="520" y="180" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">"지금 상태는 어떠하고</text>
+    <text x="520" y="198" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">추세는 어떤가?"</text>
+    <text x="520" y="230" text-anchor="middle" font-size="12" fill="#52514e">숫자로 집계된</text>
+    <text x="520" y="248" text-anchor="middle" font-size="12" fill="#52514e">시계열 데이터</text>
+    <text x="520" y="280" text-anchor="middle" font-size="12" fill="#52514e">저장 비용이 낮고</text>
+    <text x="520" y="298" text-anchor="middle" font-size="12" fill="#52514e">이상 징후를 한눈에 파악</text>
+  </g>
+
+  <!-- Pillar 3: 트레이스 (yellow) -->
+  <g>
+    <rect x="700" y="90" width="300" height="230" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <circle cx="730" cy="118" r="14" fill="#eda100"/>
+    <text x="730" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">3</text>
+    <text x="850" y="150" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">트레이스 (Traces)</text>
+    <text x="850" y="180" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">"요청이 어디를 거쳐</text>
+    <text x="850" y="198" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">어디서 느려졌는가?"</text>
+    <text x="850" y="230" text-anchor="middle" font-size="12" fill="#52514e">하나의 요청이 거치는</text>
+    <text x="850" y="248" text-anchor="middle" font-size="12" fill="#52514e">전체 경로와 소요 시간</text>
+    <text x="850" y="280" text-anchor="middle" font-size="12" fill="#52514e">분산 시스템에서</text>
+    <text x="850" y="298" text-anchor="middle" font-size="12" fill="#52514e">특히 중요해짐</text>
+  </g>
+</svg>

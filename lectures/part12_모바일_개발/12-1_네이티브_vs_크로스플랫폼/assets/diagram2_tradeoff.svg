@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="520" viewBox="0 0 1040 520" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1040" height="520" fill="#fcfcfb"/>
+  <text x="520" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">코드 공유와 맞바꾸는 것들</text>
+  <text x="520" y="56" text-anchor="middle" font-size="13" fill="#52514e">"하나의 코드베이스"로 얻는 것과, 그 대가로 내주는 것을 프레임워크별로 정리합니다</text>
+
+  <!-- React Native column -->
+  <text x="270" y="94" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">React Native</text>
+
+  <rect x="60" y="110" width="420" height="130" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+  <text x="90" y="136" font-size="13.5" font-weight="700" fill="#0b0b0b">얻는 것</text>
+  <text x="90" y="160" font-size="12" fill="#52514e">- 로직·UI 선언을 JS 코드 하나로 공유</text>
+  <text x="90" y="180" font-size="12" fill="#52514e">- 실제 네이티브 위젯을 사용해 플랫폼</text>
+  <text x="90" y="198" font-size="12" fill="#52514e">  고유 룩앤필·접근성을 상당 부분 유지</text>
+  <text x="90" y="220" font-size="12" fill="#52514e">- 필요 시 네이티브 모듈로 확장 가능</text>
+
+  <rect x="60" y="255" width="420" height="150" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+  <text x="90" y="281" font-size="13.5" font-weight="700" fill="#0b0b0b">내주는 것</text>
+  <text x="90" y="305" font-size="12" fill="#52514e">- JS 스레드 ↔ 네이티브 스레드 간</text>
+  <text x="90" y="323" font-size="12" fill="#52514e">  통신 비용 (구 브리지: 직렬화·큐잉)</text>
+  <text x="90" y="345" font-size="12" fill="#52514e">- 프레임마다 값이 바뀌는 애니메이션·</text>
+  <text x="90" y="363" font-size="12" fill="#52514e">  제스처는 스레드 간 조율이 필요</text>
+  <text x="90" y="385" font-size="12" fill="#52514e">- JS 엔진(Hermes) 포함으로 용량 증가</text>
+
+  <!-- Flutter column -->
+  <text x="770" y="94" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">Flutter</text>
+
+  <rect x="560" y="110" width="420" height="130" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+  <text x="590" y="136" font-size="13.5" font-weight="700" fill="#0b0b0b">얻는 것</text>
+  <text x="590" y="160" font-size="12" fill="#52514e">- Dart 코드 하나로 UI·로직 전체 공유</text>
+  <text x="590" y="180" font-size="12" fill="#52514e">- 자체 엔진이 직접 그리므로 두 플랫폼</text>
+  <text x="590" y="198" font-size="12" fill="#52514e">  에서 완전히 동일한 렌더링 결과</text>
+  <text x="590" y="220" font-size="12" fill="#52514e">- 스레드 간 브리지 통신 비용 자체가 없음</text>
+
+  <rect x="560" y="255" width="420" height="150" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+  <text x="590" y="281" font-size="13.5" font-weight="700" fill="#0b0b0b">내주는 것</text>
+  <text x="590" y="305" font-size="12" fill="#52514e">- 네이티브 위젯을 쓰지 않아 OS 디자인</text>
+  <text x="590" y="323" font-size="12" fill="#52514e">  변화가 자동으로 반영되지 않음</text>
+  <text x="590" y="345" font-size="12" fill="#52514e">- 스크린 리더용 시맨틱 트리를 엔진이</text>
+  <text x="590" y="363" font-size="12" fill="#52514e">  직접 구성해 노출해야 함</text>
+  <text x="590" y="385" font-size="12" fill="#52514e">- 렌더링 엔진 자체 포함으로 용량 증가</text>
+
+  <rect x="60" y="430" width="920" height="65" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="520" y="458" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">두 프레임워크 모두 플랫폼 고유 기능(카메라, 결제 등)에는 별도의 네이티브 코드가</text>
+  <text x="520" y="478" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">필요할 수 있다는 한계는 공통으로 남습니다</text>
+</svg>

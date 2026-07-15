@@ -1,0 +1,71 @@
+{
+  "lecture": "12-1",
+  "title": "네이티브 vs 크로스플랫폼",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "네이티브 개발(iOS/Android)이 화면을 그리는 방식의 공통점으로 강의가 제시한 것은 무엇인가요?",
+      "choices": [
+        "두 플랫폼 모두 Skia 렌더링 엔진을 사용한다",
+        "OS가 직접 제공하는 UI 컴포넌트를 그대로 사용한다",
+        "모든 화면을 캔버스 위에 직접 그린다",
+        "JavaScript 엔진을 통해 화면을 구성한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "iOS의 UIKit/SwiftUI와 Android의 View 시스템/Jetpack Compose는 모두 OS가 제공하는 버튼, 리스트 같은 네이티브 UI 컴포넌트를 그대로 사용해 화면을 구성합니다."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "React Native의 (구) 브리지(Bridge) 아키텍처에서 JS 스레드와 네이티브 스레드가 통신하는 방식으로 옳은 것은 무엇인가요?",
+      "choices": [
+        "두 스레드가 메모리 주소를 직접 공유한다",
+        "메시지를 JSON으로 직렬화해 비동기 큐를 통해 주고받는다",
+        "Skia 엔진이 중간에서 픽셀 단위로 변환한다",
+        "네이티브 코드를 Dart로 컴파일해 하나의 스레드에서 실행한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "구 브리지 아키텍처는 JS 스레드와 네이티브 스레드 사이의 모든 메시지(레이아웃 값, 이벤트, 함수 호출 인자)를 JSON으로 직렬화해 비동기 큐에 쌓아 전달했습니다. 이 직렬화·큐잉 비용이 프레임마다 값이 바뀌는 상황에서 병목이 될 수 있습니다."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Flutter가 React Native와 근본적으로 다른 렌더링 방식은 무엇인가요?",
+      "choices": [
+        "OS가 제공하는 네이티브 위젯을 전혀 사용하지 않고 Skia로 직접 그린다",
+        "Dart 코드를 JVM 바이트코드로 컴파일한다",
+        "JS 엔진과 네이티브 스레드 사이의 브리지를 통해 화면을 구성한다",
+        "iOS에서는 UIKit을, Android에서는 View 시스템을 그대로 호출한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "Flutter는 OS로부터 그림을 그릴 수 있는 캔버스만 받아, 버튼·텍스트 등 모든 UI를 Skia(또는 Impeller) 렌더링 엔진으로 직접 픽셀 단위로 그립니다. 네이티브 위젯을 전혀 사용하지 않는다는 점이 React Native와의 근본적 차이입니다."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "Flutter가 React Native에 비해 상대적으로 더 신경 써야 하는 부분으로 강의가 제시한 것은 무엇인가요?",
+      "choices": [
+        "네트워크 요청을 비동기로 처리하는 방법",
+        "Dart 코드를 네이티브 머신 코드로 컴파일하는 과정",
+        "스크린 리더 같은 보조 기술을 위한 접근성 트리를 엔진이 직접 구성해 노출하는 작업",
+        "코드를 iOS와 Android 두 벌로 나누어 작성하는 작업"
+      ],
+      "answerIndex": 2,
+      "explanation": "React Native는 실제 네이티브 뷰를 사용해 OS의 접근성 트리와 비교적 자연스럽게 연결되지만, Flutter는 캔버스 위에 그림을 그리는 방식이므로 별도의 시맨틱 트리를 엔진이 직접 구성해 OS 접근성 API에 맞춰 노출해야 합니다."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "강의에서 설명한 \"하나의 코드베이스\"의 한계로 옳은 것은 무엇인가요?",
+      "choices": [
+        "카메라, 결제 SDK 같은 플랫폼 고유 기능은 여전히 네이티브 모듈을 따로 작성해야 하는 경우가 많다",
+        "React Native와 Flutter 모두 UI 코드를 전혀 공유할 수 없다",
+        "크로스플랫폼 앱은 iOS에서만 실행 가능하다",
+        "네이티브 앱은 크로스플랫폼보다 항상 코드량이 더 적다"
+      ],
+      "answerIndex": 0,
+      "explanation": "카메라, 블루투스, 결제 SDK처럼 플랫폼 고유 기능을 다루려면 React Native의 Native Module이나 Flutter의 Platform Channel을 통해 Swift/Kotlin 코드를 따로 작성해야 하는 경우가 많습니다. \"코드베이스 하나\"는 UI와 공통 로직 수준의 절약이지, 완전한 절약을 의미하지는 않습니다."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="480" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">뉴스피드 — 팬아웃 온 Write vs 팬아웃 온 Read</text>
+
+  <defs>
+    <marker id="arrowB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <line x1="560" y1="70" x2="560" y2="440" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- LEFT: 팬아웃 온 Write -->
+  <text x="270" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">팬아웃 온 Write (Fan-out on Write)</text>
+
+  <g>
+    <rect x="150" y="96" width="240" height="60" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="270" y="122" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">게시물 작성</text>
+    <text x="270" y="142" text-anchor="middle" font-size="11.5" fill="#52514e">사용자 한 명이 글을 올림</text>
+  </g>
+
+  <line x1="200" y1="156" x2="120" y2="216" stroke="#898781" stroke-width="2" marker-end="url(#arrowB)"/>
+  <line x1="270" y1="156" x2="270" y2="216" stroke="#898781" stroke-width="2" marker-end="url(#arrowB)"/>
+  <line x1="340" y1="156" x2="420" y2="216" stroke="#898781" stroke-width="2" marker-end="url(#arrowB)"/>
+
+  <g>
+    <rect x="40" y="224" width="160" height="56" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="120" y="256" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">팔로워 A 피드함</text>
+  </g>
+  <g>
+    <rect x="210" y="224" width="120" height="56" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="270" y="256" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">팔로워 B 피드함</text>
+  </g>
+  <g>
+    <rect x="340" y="224" width="160" height="56" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="420" y="256" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">팔로워 C 피드함</text>
+  </g>
+  <text x="270" y="300" text-anchor="middle" font-size="11.5" fill="#52514e">(… 팔로워 수만큼 미리 복사)</text>
+
+  <g>
+    <rect x="60" y="330" width="420" height="110" rx="10" fill="#eda100" fill-opacity="0.12" stroke="#eda100" stroke-width="2.5"/>
+    <text x="270" y="354" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">쓰기 시점에 팔로워 수만큼 복사</text>
+    <text x="270" y="376" text-anchor="middle" font-size="12" fill="#52514e">쓰기 비용은 O(팔로워 수)로 늘어나지만,</text>
+    <text x="270" y="394" text-anchor="middle" font-size="12" fill="#52514e">읽을 때는 이미 채워진 피드함을 O(1)로</text>
+    <text x="270" y="412" text-anchor="middle" font-size="12" fill="#52514e">즉시 반환할 수 있음</text>
+  </g>
+
+  <!-- RIGHT: 팬아웃 온 Read -->
+  <text x="850" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">팬아웃 온 Read (Fan-out on Read)</text>
+
+  <g>
+    <rect x="730" y="96" width="240" height="60" rx="10" fill="#4a3aa7" fill-opacity="0.12" stroke="#4a3aa7" stroke-width="2.5"/>
+    <text x="850" y="122" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">피드 요청</text>
+    <text x="850" y="142" text-anchor="middle" font-size="11.5" fill="#52514e">사용자가 새로고침할 때 조회</text>
+  </g>
+
+  <line x1="700" y1="216" x2="780" y2="156" stroke="#898781" stroke-width="2" marker-end="url(#arrowB)"/>
+  <line x1="850" y1="216" x2="850" y2="156" stroke="#898781" stroke-width="2" marker-end="url(#arrowB)"/>
+  <line x1="1000" y1="216" x2="920" y2="156" stroke="#898781" stroke-width="2" marker-end="url(#arrowB)"/>
+
+  <g>
+    <rect x="620" y="224" width="160" height="56" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+    <text x="700" y="256" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">팔로우 X 게시물</text>
+  </g>
+  <g>
+    <rect x="790" y="224" width="120" height="56" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+    <text x="850" y="256" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">팔로우 Y 게시물</text>
+  </g>
+  <g>
+    <rect x="920" y="224" width="160" height="56" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+    <text x="1000" y="256" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">팔로우 Z 게시물</text>
+  </g>
+  <text x="850" y="300" text-anchor="middle" font-size="11.5" fill="#52514e">(… 팔로우 대상 수만큼 매번 조회)</text>
+
+  <g>
+    <rect x="640" y="330" width="420" height="110" rx="10" fill="#e87ba4" fill-opacity="0.14" stroke="#e87ba4" stroke-width="2.5"/>
+    <text x="850" y="354" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">읽기 시점에 팔로우 대상 수만큼 조회·병합</text>
+    <text x="850" y="376" text-anchor="middle" font-size="12" fill="#52514e">쓰기 비용은 게시물당 O(1)로 저렴하지만,</text>
+    <text x="850" y="394" text-anchor="middle" font-size="12" fill="#52514e">읽을 때마다 팔로우 대상 전체를 모아</text>
+    <text x="850" y="412" text-anchor="middle" font-size="12" fill="#52514e">정렬해야 하므로 읽기 지연이 커짐</text>
+  </g>
+
+  <text x="560" y="465" text-anchor="middle" font-size="12" fill="#52514e">팔로워 수가 극단적으로 많은 유명 계정은 두 방식을 섞은 하이브리드 전략으로 처리합니다</text>
+</svg>

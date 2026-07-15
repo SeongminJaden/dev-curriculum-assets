@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="560" viewBox="0 0 640 560" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="640" height="560" fill="#fcfcfb"/>
+  <text x="320" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">Red-Green-Refactor 사이클</text>
+  <text x="320" y="56" text-anchor="middle" font-size="13" fill="#52514e">짧은 주기로 세 단계를 반복합니다</text>
+
+  <defs>
+    <marker id="arrowc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- curved arrows forming a triangle cycle -->
+  <path d="M 320 160 C 220 200, 190 300, 250 380" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowc)"/>
+  <path d="M 390 380 C 450 300, 420 200, 340 160" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowc)"/>
+  <path d="M 250 410 C 280 460, 360 460, 390 410" stroke="#898781" stroke-width="2" fill="none" marker-end="url(#arrowc)"/>
+
+  <!-- Node 1: Red (top, blue) -->
+  <g>
+    <rect x="220" y="90" width="200" height="80" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <circle cx="245" cy="112" r="12" fill="#2a78d6"/>
+    <text x="245" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+    <text x="320" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">Red</text>
+    <text x="320" y="149" text-anchor="middle" font-size="12" fill="#52514e">실패하는 테스트를</text>
+    <text x="320" y="163" text-anchor="middle" font-size="12" fill="#52514e">먼저 작성한다</text>
+  </g>
+
+  <!-- Node 2: Green (bottom-left, aqua) -->
+  <g>
+    <rect x="90" y="380" width="200" height="80" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <circle cx="115" cy="402" r="12" fill="#1baf7a"/>
+    <text x="115" y="406" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+    <text x="190" y="418" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">Green</text>
+    <text x="190" y="439" text-anchor="middle" font-size="12" fill="#52514e">최소 구현으로</text>
+    <text x="190" y="453" text-anchor="middle" font-size="12" fill="#52514e">테스트를 통과시킨다</text>
+  </g>
+
+  <!-- Node 3: Refactor (bottom-right, yellow) -->
+  <g>
+    <rect x="350" y="380" width="200" height="80" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <circle cx="375" cy="402" r="12" fill="#eda100"/>
+    <text x="375" y="406" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+    <text x="450" y="418" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">Refactor</text>
+    <text x="450" y="439" text-anchor="middle" font-size="12" fill="#52514e">통과 상태를 유지하며</text>
+    <text x="450" y="453" text-anchor="middle" font-size="12" fill="#52514e">구조를 개선한다</text>
+  </g>
+
+  <rect x="90" y="495" width="460" height="50" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="320" y="524" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">세 단계를 짧게 반복하며 기능을 조금씩 완성해 갑니다</text>
+</svg>

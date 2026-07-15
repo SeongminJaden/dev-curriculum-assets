@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="760" height="500" fill="#fcfcfb"/>
+  <text x="380" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">근사 최근접 이웃(ANN) 탐색 — 계층 그래프로 후보를 좁힌다</text>
+
+  <text x="60" y="100" font-size="13" font-weight="700" fill="#eda100">레이어 2 (진입점, 노드 적음)</text>
+  <circle cx="240" cy="115" r="9" fill="#eda100"/>
+  <circle cx="400" cy="115" r="9" fill="#eda100"/>
+  <circle cx="560" cy="115" r="9" fill="#eda100"/>
+  <line x1="240" y1="115" x2="400" y2="115" stroke="#c9b98a" stroke-width="1.5"/>
+  <line x1="400" y1="115" x2="560" y2="115" stroke="#c9b98a" stroke-width="1.5"/>
+
+  <text x="60" y="235" font-size="13" font-weight="700" fill="#1baf7a">레이어 1 (중간 밀도)</text>
+  <circle cx="180" cy="250" r="9" fill="#1baf7a"/>
+  <circle cx="290" cy="250" r="9" fill="#1baf7a"/>
+  <circle cx="400" cy="250" r="9" fill="#1baf7a"/>
+  <circle cx="500" cy="250" r="9" fill="#1baf7a"/>
+  <circle cx="610" cy="250" r="9" fill="#1baf7a"/>
+  <line x1="180" y1="250" x2="290" y2="250" stroke="#9ed9c1" stroke-width="1.5"/>
+  <line x1="290" y1="250" x2="400" y2="250" stroke="#9ed9c1" stroke-width="1.5"/>
+  <line x1="400" y1="250" x2="500" y2="250" stroke="#9ed9c1" stroke-width="1.5"/>
+  <line x1="500" y1="250" x2="610" y2="250" stroke="#9ed9c1" stroke-width="1.5"/>
+
+  <text x="60" y="370" font-size="13" font-weight="700" fill="#2a78d6">레이어 0 (전체 벡터)</text>
+  <circle cx="120" cy="385" r="8" fill="#2a78d6"/>
+  <circle cx="190" cy="385" r="8" fill="#2a78d6"/>
+  <circle cx="260" cy="385" r="8" fill="#2a78d6"/>
+  <circle cx="330" cy="385" r="8" fill="#2a78d6"/>
+  <circle cx="400" cy="385" r="8" fill="#2a78d6"/>
+  <circle cx="470" cy="385" r="8" fill="#2a78d6"/>
+  <circle cx="540" cy="385" r="8" fill="#2a78d6"/>
+  <circle cx="610" cy="385" r="8" fill="#2a78d6"/>
+  <circle cx="680" cy="385" r="8" fill="#2a78d6"/>
+  <line x1="120" y1="385" x2="680" y2="385" stroke="#bcd7f8" stroke-width="1.5"/>
+
+  <!-- vertical dashed connections across layers (same physical node) -->
+  <line x1="400" y1="124" x2="400" y2="241" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <line x1="400" y1="259" x2="400" y2="376" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <!-- search path highlighted -->
+  <defs>
+    <marker id="arrowa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e34948"/>
+    </marker>
+  </defs>
+  <path d="M400,115 L400,250 L470,385" stroke="#e34948" stroke-width="3" fill="none" marker-end="url(#arrowa)"/>
+  <circle cx="470" cy="385" r="11" fill="none" stroke="#e34948" stroke-width="3"/>
+  <text x="470" y="415" text-anchor="middle" font-size="12" font-weight="700" fill="#e34948">최근접 이웃 확정</text>
+
+  <text x="60" y="70" font-size="12" fill="#52514e">쿼리는 진입점(레이어 2)에서 시작해 대략적인 위치를 찾은 뒤, 아래 레이어로 내려가며 정밀 탐색합니다</text>
+
+  <rect x="60" y="440" width="640" height="45" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="380" y="467" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">브루트포스는 벡터 N개를 모두 비교하지만(O(N)), 계층 그래프 탐색은 훨씬 적은 비교로 근사 해를 찾습니다</text>
+</svg>

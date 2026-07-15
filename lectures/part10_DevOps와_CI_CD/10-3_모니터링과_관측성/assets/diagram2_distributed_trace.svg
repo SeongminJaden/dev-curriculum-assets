@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="440" viewBox="0 0 1040 440" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1040" height="440" fill="#fcfcfb"/>
+  <text x="520" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">하나의 트레이스 ID로 재구성한 분산 트레이스</text>
+  <text x="520" y="56" text-anchor="middle" font-size="13" fill="#52514e">막대(스팬)의 길이 = 각 서비스에서 소요된 시간, 하나의 주문 요청 기준</text>
+
+  <!-- timeline axis -->
+  <line x1="100" y1="90" x2="900" y2="90" stroke="#c3c2b7" stroke-width="1.5"/>
+  <line x1="100" y1="85" x2="100" y2="95" stroke="#898781" stroke-width="1.5"/>
+  <line x1="300" y1="85" x2="300" y2="95" stroke="#898781" stroke-width="1.5"/>
+  <line x1="500" y1="85" x2="500" y2="95" stroke="#898781" stroke-width="1.5"/>
+  <line x1="700" y1="85" x2="700" y2="95" stroke="#898781" stroke-width="1.5"/>
+  <line x1="900" y1="85" x2="900" y2="95" stroke="#898781" stroke-width="1.5"/>
+  <text x="100" y="78" text-anchor="middle" font-size="11" fill="#52514e">0ms</text>
+  <text x="300" y="78" text-anchor="middle" font-size="11" fill="#52514e">500ms</text>
+  <text x="500" y="78" text-anchor="middle" font-size="11" fill="#52514e">1000ms</text>
+  <text x="700" y="78" text-anchor="middle" font-size="11" fill="#52514e">1500ms</text>
+  <text x="900" y="78" text-anchor="middle" font-size="11" fill="#52514e">2000ms</text>
+  <text x="500" y="110" text-anchor="middle" font-size="11.5" fill="#52514e">trace_id: 8f2a91c... (동일한 요청 하나에 부여된 공통 ID)</text>
+
+  <!-- Span 1: 주문 서비스 (blue) -->
+  <text x="60" y="150" text-anchor="end" font-size="13" font-weight="700" fill="#0b0b0b">주문 서비스</text>
+  <rect x="100" y="132" width="80" height="30" rx="6" fill="#2a78d6" fill-opacity="0.55" stroke="#2a78d6" stroke-width="2"/>
+  <text x="140" y="152" text-anchor="middle" font-size="11" font-weight="700" fill="#0b0b0b">100ms</text>
+
+  <!-- Span 2: 재고 서비스 (aqua) - bottleneck -->
+  <text x="60" y="210" text-anchor="end" font-size="13" font-weight="700" fill="#0b0b0b">재고 서비스</text>
+  <rect x="180" y="192" width="480" height="30" rx="6" fill="#1baf7a" fill-opacity="0.55" stroke="#1baf7a" stroke-width="2"/>
+  <text x="420" y="212" text-anchor="middle" font-size="11" font-weight="700" fill="#0b0b0b">1200ms</text>
+
+  <!-- Span 3: 결제 서비스 (yellow) -->
+  <text x="60" y="270" text-anchor="end" font-size="13" font-weight="700" fill="#0b0b0b">결제 서비스</text>
+  <rect x="660" y="252" width="120" height="30" rx="6" fill="#eda100" fill-opacity="0.6" stroke="#eda100" stroke-width="2"/>
+  <text x="720" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#0b0b0b">300ms</text>
+
+  <!-- Span 4: 배송 서비스 (green) -->
+  <text x="60" y="330" text-anchor="end" font-size="13" font-weight="700" fill="#0b0b0b">배송 서비스</text>
+  <rect x="780" y="312" width="120" height="30" rx="6" fill="#008300" fill-opacity="0.45" stroke="#008300" stroke-width="2"/>
+  <text x="840" y="332" text-anchor="middle" font-size="11" font-weight="700" fill="#0b0b0b">300ms</text>
+
+  <!-- bottleneck annotation bracket -->
+  <path d="M 180 188 L 180 178 L 660 178 L 660 188" stroke="#e34948" stroke-width="2" fill="none"/>
+  <text x="420" y="172" text-anchor="middle" font-size="12" font-weight="700" fill="#e34948">전체 소요 시간의 약 60%가 이 구간에 집중</text>
+
+  <rect x="60" y="370" width="880" height="55" rx="10" fill="#898781" fill-opacity="0.07" stroke="#c3c2b7" stroke-width="1.5"/>
+  <text x="500" y="393" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">각 서비스의 로그만 따로 보면 "재고 서비스가 조금 느렸다"는 사실만 보이지만,</text>
+  <text x="500" y="411" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">트레이스로 묶으면 지연의 원인이 재고 서비스라는 것이 즉시 드러납니다</text>
+</svg>

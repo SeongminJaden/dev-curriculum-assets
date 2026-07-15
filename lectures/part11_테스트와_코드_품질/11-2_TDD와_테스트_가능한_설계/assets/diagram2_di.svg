@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="460" viewBox="0 0 820 460" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="820" height="460" fill="#fcfcfb"/>
+  <text x="410" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">의존성 주입이 테스트 가능성을 바꾸는 방식</text>
+
+  <defs>
+    <marker id="arrowd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- Left panel: bad -->
+  <text x="205" y="72" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">의존성이 내부에 박혀 있을 때</text>
+  <rect x="80" y="90" width="250" height="60" rx="10" fill="#e34948" fill-opacity="0.12" stroke="#e34948" stroke-width="2.5"/>
+  <text x="205" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">OrderService</text>
+
+  <line x1="150" y1="150" x2="130" y2="200" stroke="#898781" stroke-width="2" marker-end="url(#arrowd)"/>
+  <line x1="260" y1="150" x2="280" y2="200" stroke="#898781" stroke-width="2" marker-end="url(#arrowd)"/>
+
+  <rect x="60" y="205" width="150" height="55" rx="10" fill="#e34948" fill-opacity="0.08" stroke="#e34948" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="135" y="228" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">MySQLConnection</text>
+  <text x="135" y="246" text-anchor="middle" font-size="11" fill="#52514e">내부에서 직접 생성</text>
+
+  <rect x="220" y="205" width="150" height="55" rx="10" fill="#e34948" fill-opacity="0.08" stroke="#e34948" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="295" y="228" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">ExternalPriceApi</text>
+  <text x="295" y="246" text-anchor="middle" font-size="11" fill="#52514e">내부에서 직접 생성</text>
+
+  <rect x="60" y="285" width="310" height="80" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5"/>
+  <text x="215" y="308" text-anchor="middle" font-size="12.5" fill="#0b0b0b">테스트하려면 실제 DB와</text>
+  <text x="215" y="326" text-anchor="middle" font-size="12.5" fill="#0b0b0b">실제 외부 API가 항상 살아 있어야</text>
+  <text x="215" y="344" text-anchor="middle" font-size="12.5" fill="#0b0b0b">하고, 예외 상황 재현이 어렵습니다</text>
+
+  <!-- Divider -->
+  <line x1="410" y1="70" x2="410" y2="400" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- Right panel: good -->
+  <text x="615" y="72" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">의존성을 주입받을 때</text>
+
+  <rect x="440" y="90" width="150" height="55" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="515" y="113" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">db (실제 또는 가짜)</text>
+  <text x="515" y="131" text-anchor="middle" font-size="11" fill="#52514e">생성자로 전달</text>
+
+  <rect x="600" y="90" width="150" height="55" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="675" y="113" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">price_api (실제 또는 가짜)</text>
+  <text x="675" y="131" text-anchor="middle" font-size="11" fill="#52514e">생성자로 전달</text>
+
+  <line x1="530" y1="145" x2="580" y2="195" stroke="#898781" stroke-width="2" marker-end="url(#arrowd)"/>
+  <line x1="660" y1="145" x2="640" y2="195" stroke="#898781" stroke-width="2" marker-end="url(#arrowd)"/>
+
+  <rect x="490" y="200" width="250" height="60" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+  <text x="615" y="236" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">OrderService</text>
+
+  <rect x="450" y="285" width="330" height="80" rx="10" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5"/>
+  <text x="615" y="308" text-anchor="middle" font-size="12.5" fill="#0b0b0b">테스트에서는 가짜 객체를 넣어</text>
+  <text x="615" y="326" text-anchor="middle" font-size="12.5" fill="#0b0b0b">외부 상태 없이도 원하는 상황을</text>
+  <text x="615" y="344" text-anchor="middle" font-size="12.5" fill="#0b0b0b">즉시 재현할 수 있습니다</text>
+
+  <text x="410" y="425" text-anchor="middle" font-size="12.5" fill="#52514e">같은 클래스라도 의존성을 어디서 만드는가에 따라 테스트 가능성이 달라집니다</text>
+</svg>

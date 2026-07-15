@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="560" fill="#fcfcfb"/>
+  <text x="560" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">하나의 판단 틀로 통합하기 — 질문과 대응 개념</text>
+  <text x="560" y="58" text-anchor="middle" font-size="13" fill="#52514e">앞선 파트에서 배운 개별 개념을, 설계 중 마주치는 질문에 대한 답으로 다시 배치합니다</text>
+
+  <defs>
+    <marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <!-- Row 1: blue -->
+  <g>
+    <rect x="50" y="90" width="430" height="90" rx="10" fill="#2a78d6" fill-opacity="0.12" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="74" y="122" font-size="15" font-weight="700" fill="#0b0b0b">Q. 읽기와 쓰기 중 무엇이 더 많은가?</text>
+    <text x="74" y="146" font-size="12" fill="#52514e">읽기가 압도적으로 많다면 캐싱으로 DB 도달 자체를 줄이고,</text>
+    <text x="74" y="164" font-size="12" fill="#52514e">쓰기가 병목이면 샤딩으로 저장·쓰기를 분산합니다</text>
+    <line x1="480" y1="135" x2="522" y2="135" stroke="#898781" stroke-width="2" marker-end="url(#arrow3)"/>
+    <rect x="530" y="100" width="230" height="70" rx="8" fill="#2a78d6" fill-opacity="0.08" stroke="#2a78d6" stroke-width="2"/>
+    <text x="645" y="128" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">캐싱 · 샤딩</text>
+    <text x="645" y="150" text-anchor="middle" font-size="11.5" fill="#52514e">Part 7-3. 확장성과 부하 분산</text>
+  </g>
+  <g>
+    <rect x="800" y="90" width="280" height="90" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="940" y="127" text-anchor="middle" font-size="12.5" fill="#52514e">읽기 비율이 100:1을 넘으면</text>
+    <text x="940" y="146" text-anchor="middle" font-size="12.5" fill="#52514e">캐시 히트율이 설계의 성패를 좌우</text>
+  </g>
+
+  <!-- Row 2: aqua -->
+  <g>
+    <rect x="50" y="200" width="430" height="90" rx="10" fill="#1baf7a" fill-opacity="0.12" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="74" y="232" font-size="15" font-weight="700" fill="#0b0b0b">Q. 일관성과 가용성 중 무엇을 우선하는가?</text>
+    <text x="74" y="256" font-size="12" fill="#52514e">네트워크 분단은 피할 수 없으므로, 분단 시 즉시 응답(A)을</text>
+    <text x="74" y="274" font-size="12" fill="#52514e">택할지 응답을 미루더라도 정확성(C)을 택할지 미리 정합니다</text>
+    <line x1="480" y1="245" x2="522" y2="245" stroke="#898781" stroke-width="2" marker-end="url(#arrow3)"/>
+    <rect x="530" y="210" width="230" height="70" rx="8" fill="#1baf7a" fill-opacity="0.08" stroke="#1baf7a" stroke-width="2"/>
+    <text x="645" y="238" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">CAP 이론 (CP / AP)</text>
+    <text x="645" y="260" text-anchor="middle" font-size="11.5" fill="#52514e">Part 6-1. 데이터베이스와 데이터 모델링</text>
+  </g>
+  <g>
+    <rect x="800" y="200" width="280" height="90" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="940" y="237" text-anchor="middle" font-size="12.5" fill="#52514e">결제·재고는 CP,</text>
+    <text x="940" y="256" text-anchor="middle" font-size="12.5" fill="#52514e">타임라인·좋아요 수는 AP에 가깝게</text>
+  </g>
+
+  <!-- Row 3: yellow -->
+  <g>
+    <rect x="50" y="310" width="430" height="90" rx="10" fill="#eda100" fill-opacity="0.14" stroke="#eda100" stroke-width="2.5"/>
+    <text x="74" y="342" font-size="15" font-weight="700" fill="#0b0b0b">Q. 늘어난 트래픽을 어떻게 나눌 것인가?</text>
+    <text x="74" y="366" font-size="12" fill="#52514e">무상태 서버 계층을 여러 대로 늘리고, 그 앞에서 요청을</text>
+    <text x="74" y="384" font-size="12" fill="#52514e">고르게(또는 상황에 맞게) 배분할 장치가 필요합니다</text>
+    <line x1="480" y1="355" x2="522" y2="355" stroke="#898781" stroke-width="2" marker-end="url(#arrow3)"/>
+    <rect x="530" y="320" width="230" height="70" rx="8" fill="#eda100" fill-opacity="0.10" stroke="#eda100" stroke-width="2"/>
+    <text x="645" y="348" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">수평 확장 · 로드밸런싱</text>
+    <text x="645" y="370" text-anchor="middle" font-size="11.5" fill="#52514e">Part 7-3. 확장성과 부하 분산</text>
+  </g>
+  <g>
+    <rect x="800" y="310" width="280" height="90" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="940" y="347" text-anchor="middle" font-size="12.5" fill="#52514e">상태를 가진 자원(DB)은</text>
+    <text x="940" y="366" text-anchor="middle" font-size="12.5" fill="#52514e">서버만 늘려서는 병목이 사라지지 않음</text>
+  </g>
+
+  <!-- Row 4: green -->
+  <g>
+    <rect x="50" y="420" width="430" height="90" rx="10" fill="#008300" fill-opacity="0.10" stroke="#008300" stroke-width="2.5"/>
+    <text x="74" y="452" font-size="15" font-weight="700" fill="#0b0b0b">Q. 서비스 간 결합을 어떻게 가져갈 것인가?</text>
+    <text x="74" y="476" font-size="12" fill="#52514e">응답을 즉시 받아야 하면 동기 호출, 결과를 나중에</text>
+    <text x="74" y="494" font-size="12" fill="#52514e">처리해도 되면 메시지 큐를 통한 비동기 이벤트로 분리합니다</text>
+    <line x1="480" y1="465" x2="522" y2="465" stroke="#898781" stroke-width="2" marker-end="url(#arrow3)"/>
+    <rect x="530" y="430" width="230" height="70" rx="8" fill="#008300" fill-opacity="0.08" stroke="#008300" stroke-width="2"/>
+    <text x="645" y="458" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">이벤트 기반 아키텍처</text>
+    <text x="645" y="480" text-anchor="middle" font-size="11.5" fill="#52514e">Part 3-2. 시스템 아키텍처 패턴</text>
+  </g>
+  <g>
+    <rect x="800" y="420" width="280" height="90" rx="10" fill="#898781" fill-opacity="0.06" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="940" y="457" text-anchor="middle" font-size="12.5" fill="#52514e">알림·통계 집계처럼</text>
+    <text x="940" y="476" text-anchor="middle" font-size="12.5" fill="#52514e">즉시 응답이 불필요한 작업에 적합</text>
+  </g>
+
+  <text x="560" y="540" text-anchor="middle" font-size="12" fill="#52514e">14-2, 14-3의 사례 연구는 이 네 가지 질문을 실제 서비스에 순서대로 적용하는 과정입니다</text>
+</svg>
