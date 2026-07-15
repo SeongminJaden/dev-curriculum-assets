@@ -1,0 +1,71 @@
+{
+  "lecture": "8-3",
+  "title": "프론트엔드 성능 최적화",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "코드 스플리팅이 기반으로 하는 자바스크립트 표준 문법은?",
+      "choices": [
+        "정적 import 문",
+        "require() 함수",
+        "동적 import(), 즉 함수처럼 호출되는 시점에 모듈을 별도 파일로 내려받는 문법",
+        "async/await 문법"
+      ],
+      "answerIndex": 2,
+      "explanation": "코드 스플리팅은 동적 임포트(dynamic import, import()) 문법을 기반으로 하며, 정적 import 문과 달리 호출되는 시점에 해당 모듈을 별도 파일로 내려받도록 번들러에게 지시합니다."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "Intersection Observer API가 이전 방식(scroll 이벤트 + getBoundingClientRect())보다 나은 이유는?",
+      "choices": [
+        "뷰포트 진입 여부 계산을 브라우저 엔진 내부에서 비동기로 처리해, 스크롤마다 반복되던 강제 동기 레이아웃(리플로우)을 방지하기 때문이다",
+        "이미지를 자동으로 압축해주기 때문이다",
+        "CSSOM 생성을 건너뛰기 때문이다",
+        "서버로부터 이미지를 미리 전송받기 때문이다"
+      ],
+      "answerIndex": 0,
+      "explanation": "scroll 이벤트마다 getBoundingClientRect()로 위치를 계산하는 방식은 강제 동기 레이아웃을 유발해 리플로우 비용을 반복시켰지만, Intersection Observer는 이 계산을 브라우저 엔진 내부에서 비동기로 처리하도록 표준화해 이 문제를 해결했습니다."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "React 컴포넌트가 상태 변화 시 기본적으로 자식 트리 전체를 다시 렌더링하는 이유로 강의가 제시한 설명은?",
+      "choices": [
+        "자식 컴포넌트는 항상 부모보다 렌더링 비용이 크기 때문이다",
+        "가상 DOM은 자식 노드의 변경을 감지할 수 없기 때문이다",
+        "리렌더링을 생략하면 CSS가 깨지기 때문이다",
+        "부모의 상태가 자식에게 props로 전달되는 구조이므로, 부모가 바뀌면 자식에게 내려가는 props도 바뀌었을 가능성이 있다고 보수적으로 가정하기 때문이다"
+      ],
+      "answerIndex": 3,
+      "explanation": "부모의 상태가 자식에게 props로 전달되는 구조이기 때문에, 프레임워크는 '부모가 바뀌었으니 자식에게 내려가는 props도 바뀌었을 가능성이 있다'고 보수적으로 가정해 자식 트리 전체를 재계산하는 것을 기본값으로 삼습니다."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "prompt": "메모이제이션(React.memo, useMemo 등)에 대한 강의의 설명으로 옳은 것은?",
+      "choices": [
+        "모든 컴포넌트에 무분별하게 적용해도 항상 이득이다",
+        "메모이제이션은 비교 연산 자체에도 비용이 들기 때문에, 렌더링 비용이 이미 작은 컴포넌트에 무분별하게 적용하면 오히려 손해일 수 있다",
+        "메모이제이션은 리스트의 key 속성을 대체하는 기술이다",
+        "메모이제이션은 네트워크 요청 횟수를 줄이는 기술이다"
+      ],
+      "answerIndex": 1,
+      "explanation": "강의는 메모이제이션이 공짜가 아니며, 이전 값과 새 값을 비교하는 연산 자체에도 비용이 들기 때문에 렌더링 비용이 이미 작은 컴포넌트에 무분별하게 적용하면 오히려 손해일 수 있다고 설명합니다. 렌더링 비용이 큰 컴포넌트에 선택적으로 적용하는 것이 원칙입니다."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "prompt": "Core Web Vitals의 세 지표 중, 페이지 로드 중 요소들이 예상치 못하게 위치를 이동한 총량을 측정하는 지표는?",
+      "choices": [
+        "LCP (Largest Contentful Paint)",
+        "INP (Interaction to Next Paint)",
+        "FID (First Input Delay)",
+        "CLS (Cumulative Layout Shift)"
+      ],
+      "answerIndex": 3,
+      "explanation": "CLS(Cumulative Layout Shift)는 페이지가 로드되는 동안 요소들이 예상치 못하게 위치를 이동한 총량을 측정하며, 이미지 자리에 크기를 미리 확보하지 않아 발생하는 레이아웃 밀림이 이 지표를 악화시킵니다."
+    }
+  ]
+}
