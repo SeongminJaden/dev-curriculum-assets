@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="510" viewBox="0 0 1120 510" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="510" fill="#fcfcfb"/>
+  <defs>
+    <marker id="tc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1baf7a"/>
+    </marker>
+  </defs>
+
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">2의 보수 — 정수는 시계처럼 순환합니다</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">4비트 정수는 2⁴ = 16으로 나눈 나머지 세계에 삽니다</text>
+
+  <!-- Left: the clock -->
+  <g>
+    <rect x="30" y="78" width="520" height="410" rx="10" fill="#2a78d6" fill-opacity="0.08" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="290" y="106" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">4비트 정수의 시계 (바깥=비트 패턴 값, 안쪽=부호 해석)</text>
+
+    <circle cx="290" cy="282" r="125" fill="none" stroke="#52514e" stroke-opacity="0.25" stroke-width="1.5"/>
+
+    <!-- positive half markers 0..7 (blue) -->
+    <g font-size="12.5" font-weight="700" text-anchor="middle">
+      <circle cx="290" cy="157" r="15" fill="#2a78d6" fill-opacity="0.20" stroke="#2a78d6" stroke-width="2"/><text x="290" y="162" fill="#0b0b0b">0</text>
+      <circle cx="338" cy="167" r="15" fill="#2a78d6" fill-opacity="0.20" stroke="#2a78d6" stroke-width="2"/><text x="338" y="172" fill="#0b0b0b">1</text>
+      <circle cx="378" cy="194" r="15" fill="#2a78d6" fill-opacity="0.20" stroke="#2a78d6" stroke-width="2"/><text x="378" y="199" fill="#0b0b0b">2</text>
+      <circle cx="406" cy="234" r="15" fill="#2a78d6" fill-opacity="0.20" stroke="#2a78d6" stroke-width="2"/><text x="406" y="239" fill="#0b0b0b">3</text>
+      <circle cx="415" cy="282" r="15" fill="#2a78d6" fill-opacity="0.20" stroke="#2a78d6" stroke-width="2"/><text x="415" y="287" fill="#0b0b0b">4</text>
+      <circle cx="406" cy="330" r="15" fill="#2a78d6" fill-opacity="0.20" stroke="#2a78d6" stroke-width="2"/><text x="406" y="335" fill="#0b0b0b">5</text>
+      <circle cx="378" cy="370" r="15" fill="#2a78d6" fill-opacity="0.20" stroke="#2a78d6" stroke-width="2"/><text x="378" y="375" fill="#0b0b0b">6</text>
+      <circle cx="338" cy="398" r="15" fill="#2a78d6" fill-opacity="0.20" stroke="#2a78d6" stroke-width="2"/><text x="338" y="403" fill="#0b0b0b">7</text>
+    </g>
+
+    <!-- negative half markers 8..15 (red outer) -->
+    <g font-size="12.5" font-weight="700" text-anchor="middle">
+      <circle cx="290" cy="407" r="15" fill="#dc2626" fill-opacity="0.20" stroke="#dc2626" stroke-width="2"/><text x="290" y="412" fill="#0b0b0b">8</text>
+      <circle cx="242" cy="398" r="15" fill="#dc2626" fill-opacity="0.20" stroke="#dc2626" stroke-width="2"/><text x="242" y="403" fill="#0b0b0b">9</text>
+      <circle cx="202" cy="370" r="15" fill="#dc2626" fill-opacity="0.20" stroke="#dc2626" stroke-width="2"/><text x="202" y="375" fill="#0b0b0b">10</text>
+      <circle cx="174" cy="330" r="15" fill="#dc2626" fill-opacity="0.20" stroke="#dc2626" stroke-width="2"/><text x="174" y="335" fill="#0b0b0b">11</text>
+      <circle cx="165" cy="282" r="15" fill="#dc2626" fill-opacity="0.20" stroke="#dc2626" stroke-width="2"/><text x="165" y="287" fill="#0b0b0b">12</text>
+      <circle cx="174" cy="234" r="16" fill="#dc2626" fill-opacity="0.35" stroke="#dc2626" stroke-width="2.5"/><text x="174" y="239" fill="#0b0b0b">13</text>
+      <circle cx="202" cy="194" r="15" fill="#dc2626" fill-opacity="0.20" stroke="#dc2626" stroke-width="2"/><text x="202" y="199" fill="#0b0b0b">14</text>
+      <circle cx="242" cy="167" r="15" fill="#dc2626" fill-opacity="0.20" stroke="#dc2626" stroke-width="2"/><text x="242" y="172" fill="#0b0b0b">15</text>
+    </g>
+
+    <!-- inner signed labels -->
+    <g font-size="11.5" font-weight="700" text-anchor="middle" fill="#dc2626">
+      <text x="290" y="381">−8</text>
+      <text x="254" y="374">−7</text>
+      <text x="223" y="353">−6</text>
+      <text x="202" y="322">−5</text>
+      <text x="195" y="286">−4</text>
+      <text x="202" y="250">−3</text>
+      <text x="223" y="219">−2</text>
+      <text x="254" y="198">−1</text>
+    </g>
+
+    <text x="290" y="272" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">−3 ≡ 13</text>
+    <text x="290" y="292" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">(mod 16)</text>
+
+    <text x="60" y="440" font-size="11.5" fill="#52514e">시계에서 3시간 뒤로 가는 것과 13시간 앞으로 가는 것은 같은 자리에</text>
+    <text x="60" y="456" font-size="11.5" fill="#52514e">도착합니다. 2의 보수는 정확히 이 원리이며, −x = ¬x + 1 = 2ⁿ − x 입니다.</text>
+    <text x="60" y="478" font-size="11.5" fill="#52514e">0의 표현이 하나뿐이라 +0/−0 문제도 없습니다.</text>
+  </g>
+
+  <!-- Right: subtraction via addition -->
+  <g>
+    <rect x="572" y="78" width="518" height="410" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="831" y="106" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">뺄셈 5 − 3 을 덧셈만으로 처리하기</text>
+
+    <text x="600" y="140" font-size="12.5" font-weight="700" fill="#0b0b0b">1단계 — −3 을 2의 보수로 만듭니다</text>
+    <text x="616" y="164" font-size="12.5" fill="#0b0b0b">3        =  0011</text>
+    <text x="616" y="186" font-size="12.5" fill="#0b0b0b">¬3       =  1100      (모든 비트 반전)</text>
+    <text x="616" y="208" font-size="12.5" font-weight="700" fill="#1baf7a">¬3 + 1   =  1101  =  −3  (= 13)</text>
+
+    <line x1="600" y1="226" x2="1062" y2="226" stroke="#1baf7a" stroke-opacity="0.3" stroke-width="1"/>
+
+    <text x="600" y="252" font-size="12.5" font-weight="700" fill="#0b0b0b">2단계 — 그냥 더합니다 (부호를 보지 않습니다)</text>
+    <text x="640" y="280" font-size="14" font-family="monospace" fill="#0b0b0b">  0101   (5)</text>
+    <text x="640" y="302" font-size="14" font-family="monospace" fill="#0b0b0b">+ 1101   (−3, 즉 13)</text>
+    <line x1="636" y1="312" x2="820" y2="312" stroke="#0b0b0b" stroke-width="1.5"/>
+    <text x="640" y="334" font-size="14" font-family="monospace" font-weight="700" fill="#dc2626">1 0010   (18)</text>
+
+    <rect x="628" y="318" width="20" height="22" rx="4" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"/>
+    <line x1="638" y1="346" x2="638" y2="368" stroke="#1baf7a" stroke-width="2.5" marker-end="url(#tc)"/>
+    <text x="660" y="364" font-size="11.5" font-weight="700" fill="#dc2626">4비트를 넘는 자리올림은 버려집니다</text>
+
+    <text x="600" y="392" font-size="12.5" font-weight="700" fill="#1baf7a">결과 = 0010 = 2      (18 − 16 = 2  ✓)</text>
+
+    <line x1="600" y1="410" x2="1062" y2="410" stroke="#1baf7a" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="600" y="434" font-size="12.5" font-weight="700" fill="#0b0b0b">넘침을 버리는 것이 곧 mod 2ⁿ 연산입니다</text>
+    <text x="600" y="456" font-size="11.5" fill="#52514e">그래서 하드웨어는 덧셈기 하나만 있으면 되고, 뺄셈 전용 회로가</text>
+    <text x="600" y="472" font-size="11.5" fill="#52514e">필요 없습니다. 가산기 회로의 구성은 Part 18을 참고하세요.</text>
+  </g>
+</svg>

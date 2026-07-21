@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="500" viewBox="0 0 1120 500" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="500" fill="#fcfcfb"/>
+  <defs>
+    <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52514e"/>
+    </marker>
+  </defs>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">뮤텍스와 세마포어 — 차이는 개수가 아니라 소유권입니다</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">뮤텍스는 잠근 스레드만 열 수 있고, 세마포어는 누가 줄였는지 기억하지 않습니다</text>
+
+  <!-- MUTEX -->
+  <rect x="40" y="80" width="500" height="330" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="290" y="110" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">뮤텍스 Mutex — 소유권 있음</text>
+
+  <rect x="66" y="128" width="106" height="46" rx="8" fill="#2a78d6" fill-opacity="0.35" stroke="#2a78d6" stroke-width="2"/>
+  <text x="119" y="157" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">스레드 A</text>
+  <line x1="176" y1="151" x2="256" y2="151" stroke="#52514e" stroke-width="2" marker-end="url(#ar4)"/>
+  <text x="216" y="142" text-anchor="middle" font-size="11" fill="#52514e">lock()</text>
+
+  <rect x="262" y="120" width="250" height="112" rx="10" fill="#ffffff" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="387" y="147" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">임계 구역 — 정원 1명</text>
+  <text x="387" y="172" text-anchor="middle" font-size="12.5" fill="#0b0b0b">현재 소유자: 스레드 A</text>
+  <text x="387" y="196" text-anchor="middle" font-size="11.5" fill="#52514e">공유 데이터를 안전하게 갱신하는 중</text>
+  <text x="387" y="216" text-anchor="middle" font-size="11.5" fill="#dc2626">A만 unlock() 할 수 있습니다</text>
+
+  <text x="66" y="262" font-size="12.5" font-weight="700" fill="#0b0b0b">대기 중</text>
+  <rect x="66" y="274" width="96" height="38" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="114" y="298" text-anchor="middle" font-size="12" fill="#52514e">스레드 B</text>
+  <rect x="172" y="274" width="96" height="38" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="220" y="298" text-anchor="middle" font-size="12" fill="#52514e">스레드 C</text>
+  <text x="288" y="299" font-size="11.5" fill="#52514e">A가 풀 때까지 진입 불가</text>
+
+  <line x1="66" y1="330" x2="514" y2="330" stroke="#2a78d6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="66" y="354" font-size="12" fill="#0b0b0b">주 용도: 상호 배제 — &quot;이 구간은 한 번에 한 스레드만&quot;</text>
+  <text x="66" y="375" font-size="12" fill="#0b0b0b">소유자를 알기에 우선순위 상속을 구현할 수 있습니다</text>
+  <text x="66" y="396" font-size="11.5" fill="#52514e">대표 실수: 예외 발생 경로에서 unlock을 빠뜨려 교착</text>
+
+  <!-- SEMAPHORE -->
+  <rect x="580" y="80" width="500" height="330" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <text x="830" y="110" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">세마포어 Semaphore — 소유권 없음</text>
+
+  <rect x="606" y="128" width="106" height="46" rx="8" fill="#d97706" fill-opacity="0.35" stroke="#d97706" stroke-width="2"/>
+  <text x="659" y="157" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">스레드들</text>
+  <line x1="716" y1="151" x2="796" y2="151" stroke="#52514e" stroke-width="2" marker-end="url(#ar4)"/>
+  <text x="756" y="142" text-anchor="middle" font-size="11" fill="#52514e">wait() = P</text>
+
+  <rect x="802" y="120" width="250" height="112" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2.5"/>
+  <text x="927" y="147" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">자원 카운터 = 3</text>
+  <rect x="828" y="160" width="42" height="34" rx="6" fill="#1baf7a" fill-opacity="0.45" stroke="#1baf7a" stroke-width="2"/>
+  <rect x="878" y="160" width="42" height="34" rx="6" fill="#1baf7a" fill-opacity="0.45" stroke="#1baf7a" stroke-width="2"/>
+  <rect x="928" y="160" width="42" height="34" rx="6" fill="#1baf7a" fill-opacity="0.45" stroke="#1baf7a" stroke-width="2"/>
+  <rect x="978" y="160" width="42" height="34" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="927" y="216" text-anchor="middle" font-size="11.5" fill="#52514e">동시에 최대 3개까지 통과합니다</text>
+
+  <text x="606" y="262" font-size="12.5" font-weight="700" fill="#0b0b0b">누가 늘리는가</text>
+  <rect x="606" y="274" width="180" height="38" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <text x="696" y="298" text-anchor="middle" font-size="12" fill="#0b0b0b">스레드 A가 wait()</text>
+  <line x1="792" y1="293" x2="836" y2="293" stroke="#52514e" stroke-width="2" marker-end="url(#ar4)"/>
+  <rect x="842" y="274" width="196" height="38" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <text x="940" y="298" text-anchor="middle" font-size="12" fill="#0b0b0b">스레드 B가 signal() 가능</text>
+
+  <line x1="606" y1="330" x2="1054" y2="330" stroke="#d97706" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="606" y="354" font-size="12" fill="#0b0b0b">주 용도: 자원 개수 제한(커넥션 풀 20개), 순서 신호 전달</text>
+  <text x="606" y="375" font-size="12" fill="#0b0b0b">소유자를 모르므로 생산자-소비자 신호에 쓸 수 있습니다</text>
+  <text x="606" y="396" font-size="11.5" fill="#52514e">대표 실수: 잘못된 signal 남발로 카운터 값이 붕괴</text>
+
+  <text x="40" y="446" font-size="11.5" fill="#52514e">실무 기준: &quot;한 번에 하나만&quot;이면 뮤텍스, &quot;한 번에 N개까지&quot;이면 카운팅 세마포어입니다. 초기값 1인 이진 세마포어도 소유권이 없다는 점에서 뮤텍스와 같지 않습니다.</text>
+  <text x="40" y="472" font-size="11.5" fill="#52514e">두 도구 모두 내부적으로는 CAS 같은 하드웨어 원자적 연산 위에 세워져 있습니다. 세마포어는 1965년 에츠허르 다익스트라가 제안했습니다.</text>
+</svg>

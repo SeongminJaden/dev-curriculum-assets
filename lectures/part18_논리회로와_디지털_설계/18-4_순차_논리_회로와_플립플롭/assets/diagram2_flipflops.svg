@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="470" viewBox="0 0 1120 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="470" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">D · JK · T 플립플롭의 동작과 클럭 에지</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">세 플립플롭 모두 클럭 상승 에지(↑) 순간에만 상태를 바꿉니다</text>
+
+  <!-- Clock waveform on top -->
+  <text x="60" y="98" font-size="12.5" font-weight="700" fill="#0b0b0b">CLK</text>
+  <polyline points="100,110 140,110 140,80 200,80 200,110 260,110 260,80 320,80 320,110 380,110 380,80 440,80 440,110 500,110 500,80 560,80 560,110 620,110 620,80 680,80 680,110 740,110"
+            fill="none" stroke="#52514e" stroke-width="2"/>
+  <g fill="#dc2626">
+    <text x="140" y="74" text-anchor="middle" font-size="13" font-weight="700">↑</text>
+    <text x="320" y="74" text-anchor="middle" font-size="13" font-weight="700">↑</text>
+    <text x="500" y="74" text-anchor="middle" font-size="13" font-weight="700">↑</text>
+    <text x="680" y="74" text-anchor="middle" font-size="13" font-weight="700">↑</text>
+  </g>
+
+  <!-- D flip-flop card -->
+  <g>
+    <rect x="40" y="140" width="330" height="290" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="205" y="168" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">D 플립플롭</text>
+    <text x="205" y="190" text-anchor="middle" font-size="12.5" fill="#52514e">Q(next) = D  ·  금지 상태 없음</text>
+    <!-- symbol -->
+    <rect x="130" y="210" width="110" height="90" rx="6" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+    <text x="120" y="240" text-anchor="end" font-size="13" fill="#0b0b0b">D</text>
+    <line x1="122" y1="235" x2="130" y2="235" stroke="#2a78d6" stroke-width="2"/>
+    <text x="252" y="240" font-size="13" fill="#0b0b0b">Q</text>
+    <line x1="240" y1="235" x2="248" y2="235" stroke="#2a78d6" stroke-width="2"/>
+    <polyline points="130,270 142,278 130,286" fill="none" stroke="#2a78d6" stroke-width="2"/>
+    <text x="150" y="283" font-size="11.5" fill="#52514e">CLK</text>
+    <text x="185" y="264" text-anchor="middle" font-size="12" fill="#52514e">DFF</text>
+    <!-- truth -->
+    <text x="70" y="335" font-size="12.5" fill="#0b0b0b">D=0  →  Q(next)=0</text>
+    <text x="70" y="358" font-size="12.5" fill="#0b0b0b">D=1  →  Q(next)=1</text>
+    <text x="70" y="395" font-size="11.5" fill="#52514e">에지 순간 D의 값이 그대로</text>
+    <text x="70" y="411" font-size="11.5" fill="#52514e">Q로 넘어가 다음 에지까지 유지</text>
+  </g>
+
+  <!-- JK flip-flop card -->
+  <g>
+    <rect x="395" y="140" width="330" height="290" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="560" y="168" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">JK 플립플롭</text>
+    <text x="560" y="190" text-anchor="middle" font-size="12.5" fill="#52514e">J=K=1이면 반전(toggle)</text>
+    <rect x="500" y="210" width="110" height="90" rx="6" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+    <text x="490" y="232" text-anchor="end" font-size="13" fill="#0b0b0b">J</text>
+    <line x1="492" y1="227" x2="500" y2="227" stroke="#1baf7a" stroke-width="2"/>
+    <text x="490" y="288" text-anchor="end" font-size="13" fill="#0b0b0b">K</text>
+    <line x1="492" y1="283" x2="500" y2="283" stroke="#1baf7a" stroke-width="2"/>
+    <text x="622" y="240" font-size="13" fill="#0b0b0b">Q</text>
+    <line x1="610" y1="235" x2="618" y2="235" stroke="#1baf7a" stroke-width="2"/>
+    <polyline points="500,270 512,278 500,286" fill="none" stroke="#1baf7a" stroke-width="2"/>
+    <text x="440" y="330" font-size="12.5" fill="#0b0b0b">J K → Q(next)</text>
+    <text x="440" y="352" font-size="12.5" fill="#0b0b0b">0 0 → Q (유지)</text>
+    <text x="440" y="372" font-size="12.5" fill="#0b0b0b">0 1 → 0    1 0 → 1</text>
+    <text x="440" y="392" font-size="12.5" font-weight="700" fill="#1baf7a">1 1 → Q̄ (반전)</text>
+    <text x="440" y="414" font-size="11.5" fill="#52514e">SR의 금지 조합을 반전으로 재활용</text>
+  </g>
+
+  <!-- T flip-flop card -->
+  <g>
+    <rect x="750" y="140" width="330" height="290" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+    <text x="915" y="168" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">T 플립플롭</text>
+    <text x="915" y="190" text-anchor="middle" font-size="12.5" fill="#52514e">T=1 반전, T=0 유지 · 카운터의 부품</text>
+    <rect x="855" y="210" width="110" height="90" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <text x="845" y="240" text-anchor="end" font-size="13" fill="#0b0b0b">T</text>
+    <line x1="847" y1="235" x2="855" y2="235" stroke="#d97706" stroke-width="2"/>
+    <text x="977" y="240" font-size="13" fill="#0b0b0b">Q</text>
+    <line x1="965" y1="235" x2="973" y2="235" stroke="#d97706" stroke-width="2"/>
+    <polyline points="855,270 867,278 855,286" fill="none" stroke="#d97706" stroke-width="2"/>
+    <text x="785" y="335" font-size="12.5" fill="#0b0b0b">T=0  →  Q(next)=Q (유지)</text>
+    <text x="785" y="358" font-size="12.5" font-weight="700" fill="#d97706">T=1  →  Q(next)=Q̄ (반전)</text>
+    <text x="785" y="395" font-size="11.5" fill="#52514e">J와 K를 묶어 하나로 만든 것.</text>
+    <text x="785" y="411" font-size="11.5" fill="#52514e">이어 붙이면 2진 카운터가 됨</text>
+  </g>
+
+  <text x="560" y="456" text-anchor="middle" font-size="11.5" fill="#52514e">세 종류 모두 클럭 에지에서만 값을 갱신하므로, 회로 전체가 하나의 클럭에 맞춰 동기식으로 동작합니다</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="470" viewBox="0 0 1120 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="470" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">이진 트리의 네 가지 순회</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">같은 트리라도 "현재 노드를 언제 처리하느냐"에 따라 전혀 다른 수열이 나옵니다</text>
+
+  <!-- 왼쪽: 트리 -->
+  <rect x="40" y="82" width="440" height="352" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="260" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">대상 이진 탐색 트리</text>
+
+  <!-- edges -->
+  <line x1="260" y1="152" x2="170" y2="216" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="260" y1="152" x2="350" y2="216" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="170" y1="244" x2="110" y2="308" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="170" y1="244" x2="230" y2="308" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="350" y1="244" x2="290" y2="308" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="350" y1="244" x2="410" y2="308" stroke="#8b5cf6" stroke-width="2"/>
+
+  <!-- nodes -->
+  <circle cx="260" cy="138" r="26" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="260" y="144" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">50</text>
+  <circle cx="170" cy="230" r="26" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="170" y="236" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">30</text>
+  <circle cx="350" cy="230" r="26" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="350" y="236" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">70</text>
+  <circle cx="110" cy="322" r="26" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="110" y="328" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">20</text>
+  <circle cx="230" cy="322" r="26" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="230" y="328" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">40</text>
+  <circle cx="290" cy="322" r="26" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="290" y="328" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">60</text>
+  <circle cx="410" cy="322" r="26" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="410" y="328" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">80</text>
+
+  <text x="66" y="380" font-size="11.5" fill="#52514e">깊이 0 = 루트(50), 깊이 2 = 잎 4개</text>
+  <text x="66" y="398" font-size="11.5" fill="#52514e">노드 7개, 간선 6개, 트리 높이 2</text>
+  <text x="66" y="416" font-size="11.5" fill="#52514e">노드를 빈틈없이 채운 이상적인 형태입니다</text>
+
+  <!-- 오른쪽: 순회 결과 -->
+  <rect x="500" y="82" width="580" height="80" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="524" y="108" font-size="13.5" font-weight="700" fill="#2a78d6">전위(preorder) — 현재 → 좌 → 우</text>
+  <text x="524" y="130" font-size="13.5" font-weight="700" fill="#0b0b0b">50 → 30 → 20 → 40 → 70 → 60 → 80</text>
+  <text x="524" y="150" font-size="11.5" fill="#52514e">부모를 먼저 만드므로 트리 복제·직렬화에 씁니다</text>
+
+  <rect x="500" y="172" width="580" height="80" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="524" y="198" font-size="13.5" font-weight="700" fill="#1baf7a">중위(inorder) — 좌 → 현재 → 우</text>
+  <text x="524" y="220" font-size="13.5" font-weight="700" fill="#0b0b0b">20 → 30 → 40 → 50 → 60 → 70 → 80</text>
+  <text x="524" y="240" font-size="11.5" fill="#52514e">BST에서는 항상 오름차순 — 정렬 출력과 범위 질의의 근거입니다</text>
+
+  <rect x="500" y="262" width="580" height="80" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <text x="524" y="288" font-size="13.5" font-weight="700" fill="#d97706">후위(postorder) — 좌 → 우 → 현재</text>
+  <text x="524" y="310" font-size="13.5" font-weight="700" fill="#0b0b0b">20 → 40 → 30 → 60 → 80 → 70 → 50</text>
+  <text x="524" y="330" font-size="11.5" fill="#52514e">자식을 먼저 끝내므로 메모리 해제·디렉터리 용량 합산에 씁니다</text>
+
+  <rect x="500" y="352" width="580" height="82" rx="10" fill="#dc2626" fill-opacity="0.10" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="524" y="378" font-size="13.5" font-weight="700" fill="#dc2626">레벨(level-order) — 위에서 아래로 층별</text>
+  <text x="524" y="400" font-size="13.5" font-weight="700" fill="#0b0b0b">50 → 30 → 70 → 20 → 40 → 60 → 80</text>
+  <text x="524" y="420" font-size="11.5" fill="#52514e">유일하게 재귀가 아닌 큐(Queue)를 사용합니다</text>
+
+  <text x="560" y="458" text-anchor="middle" font-size="11.5" fill="#52514e">네 순회 모두 모든 노드를 정확히 한 번 방문하므로 시간복잡도는 O(n)으로 동일합니다</text>
+</svg>

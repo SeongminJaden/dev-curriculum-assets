@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="470" viewBox="0 0 1120 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="470" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">O · Ω · Θ — 세 점근 표기가 주장하는 것</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">n ≥ n₀ 구간에서만 성립하는 진술이며, 그 이전 구간에 대해서는 아무것도 말하지 않습니다</text>
+
+  <defs>
+    <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52514e"/>
+    </marker>
+  </defs>
+
+  <line x1="90" y1="400" x2="700" y2="400" stroke="#52514e" stroke-width="2" marker-end="url(#ar1)"/>
+  <line x1="90" y1="400" x2="90" y2="90" stroke="#52514e" stroke-width="2" marker-end="url(#ar1)"/>
+  <text x="686" y="422" text-anchor="end" font-size="12.5" fill="#0b0b0b">입력 크기 n</text>
+  <text x="76" y="100" text-anchor="end" font-size="12.5" fill="#0b0b0b">비용</text>
+
+  <line x1="250" y1="400" x2="250" y2="100" stroke="#898781" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="250" y="418" text-anchor="middle" font-size="12.5" font-weight="700" fill="#52514e">n₀</text>
+
+  <path d="M90,392 C200,375 320,320 430,250 C520,196 600,150 690,110" fill="none" stroke="#2a78d6" stroke-width="3.5"/>
+  <path d="M90,396 C200,388 320,352 430,296 C520,252 600,214 690,180" fill="none" stroke="#1baf7a" stroke-width="3" stroke-dasharray="7 5"/>
+  <path d="M90,384 C200,356 320,282 430,196 C500,140 545,116 590,96" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="7 5"/>
+
+  <circle cx="600" cy="163" r="4.5" fill="#2a78d6"/>
+  <text x="614" y="152" font-size="12.5" font-weight="700" fill="#2a78d6">f(n) — 실제 비용</text>
+
+  <circle cx="662" cy="192" r="4.5" fill="#1baf7a"/>
+  <text x="676" y="212" font-size="12.5" font-weight="700" fill="#1baf7a">c₁·g(n) — 아래 경계</text>
+
+  <circle cx="565" cy="105" r="4.5" fill="#dc2626"/>
+  <text x="578" y="90" font-size="12.5" font-weight="700" fill="#dc2626">c₂·g(n) — 위 경계</text>
+
+  <rect x="760" y="90" width="300" height="86" rx="10" fill="#dc2626" fill-opacity="0.10" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="780" y="116" font-size="13.5" font-weight="700" fill="#0b0b0b">f(n) = O(g(n))  — 상한</text>
+  <text x="780" y="138" font-size="11.5" fill="#52514e">위 경계 아래에만 있으면 됩니다.</text>
+  <text x="780" y="156" font-size="11.5" fill="#52514e">"아무리 나빠도 이 정도"를 주장합니다.</text>
+
+  <rect x="760" y="192" width="300" height="86" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="780" y="218" font-size="13.5" font-weight="700" fill="#0b0b0b">f(n) = Ω(g(n))  — 하한</text>
+  <text x="780" y="240" font-size="11.5" fill="#52514e">아래 경계 위에만 있으면 됩니다.</text>
+  <text x="780" y="258" font-size="11.5" fill="#52514e">"적어도 이만큼은 든다"를 주장합니다.</text>
+
+  <rect x="760" y="294" width="300" height="104" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="780" y="320" font-size="13.5" font-weight="700" fill="#0b0b0b">f(n) = Θ(g(n))  — 정확한 한계</text>
+  <text x="780" y="342" font-size="11.5" fill="#52514e">두 경계 사이에 갇혀 있어야 합니다.</text>
+  <text x="780" y="360" font-size="11.5" fill="#52514e">O와 Ω를 동시에 만족한다는 뜻이며,</text>
+  <text x="780" y="378" font-size="11.5" fill="#52514e">세 표기 중 가장 강한 진술입니다.</text>
+
+  <rect x="90" y="432" width="610" height="26" rx="8" fill="#898781" fill-opacity="0.08" stroke="#c3c2b7" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="395" y="450" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">상한은 얼마든지 헐겁게 잡을 수 있으므로, O만으로는 "정확히 얼마나 걸리는가"를 말할 수 없습니다</text>
+</svg>

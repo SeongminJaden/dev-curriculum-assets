@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="480" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">동적 배열 append의 분할상환 O(1)</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">막대 높이는 각 호출의 실제 비용이고, 점선은 전체를 평평하게 편 분할상환 비용입니다</text>
+
+  <defs>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52514e"/>
+    </marker>
+  </defs>
+
+  <line x1="80" y1="330" x2="700" y2="330" stroke="#52514e" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="80" y1="330" x2="80" y2="95" stroke="#52514e" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="686" y="352" text-anchor="end" font-size="12.5" fill="#0b0b0b">append 호출 순서</text>
+  <text x="66" y="105" text-anchor="end" font-size="12.5" fill="#0b0b0b">1회 비용</text>
+
+  <g fill="#2a78d6" fill-opacity="0.35" stroke="#2a78d6" stroke-width="1.5">
+    <rect x="92" y="316" width="16" height="14"/>
+    <rect x="122" y="316" width="16" height="14"/>
+    <rect x="152" y="316" width="16" height="14"/>
+    <rect x="182" y="316" width="16" height="14"/>
+    <rect x="212" y="316" width="16" height="14"/>
+    <rect x="242" y="316" width="16" height="14"/>
+    <rect x="272" y="316" width="16" height="14"/>
+    <rect x="302" y="316" width="16" height="14"/>
+    <rect x="332" y="316" width="16" height="14"/>
+    <rect x="362" y="316" width="16" height="14"/>
+    <rect x="392" y="316" width="16" height="14"/>
+    <rect x="422" y="316" width="16" height="14"/>
+    <rect x="452" y="316" width="16" height="14"/>
+    <rect x="482" y="316" width="16" height="14"/>
+    <rect x="512" y="316" width="16" height="14"/>
+    <rect x="542" y="316" width="16" height="14"/>
+    <rect x="572" y="316" width="16" height="14"/>
+    <rect x="602" y="316" width="16" height="14"/>
+  </g>
+
+  <g fill="#dc2626" fill-opacity="0.35" stroke="#dc2626" stroke-width="1.5">
+    <rect x="122" y="300" width="16" height="30"/>
+    <rect x="152" y="286" width="16" height="44"/>
+    <rect x="212" y="258" width="16" height="72"/>
+    <rect x="332" y="200" width="16" height="130"/>
+    <rect x="572" y="112" width="16" height="218"/>
+  </g>
+
+  <text x="130" y="292" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="700">1</text>
+  <text x="160" y="278" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="700">2</text>
+  <text x="220" y="250" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="700">4</text>
+  <text x="340" y="192" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="700">8</text>
+  <text x="580" y="104" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="700">16</text>
+
+  <line x1="80" y1="298" x2="660" y2="298" stroke="#1baf7a" stroke-width="3" stroke-dasharray="8 5"/>
+  <text x="666" y="294" font-size="12.5" font-weight="700" fill="#1baf7a">분할상환 비용 ≈ 3</text>
+
+  <rect x="756" y="88" width="304" height="120" rx="10" fill="#dc2626" fill-opacity="0.10" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="776" y="114" font-size="13.5" font-weight="700" fill="#0b0b0b">빨강 = 용량 두 배 확장 시점</text>
+  <text x="776" y="136" font-size="11.5" fill="#52514e">기존 원소를 전부 새 배열로 복사합니다.</text>
+  <text x="776" y="154" font-size="11.5" fill="#52514e">비용은 1 → 2 → 4 → 8 → 16으로 커지지만,</text>
+  <text x="776" y="172" font-size="11.5" fill="#52514e">발생 간격도 똑같이 두 배씩 벌어집니다.</text>
+  <text x="776" y="192" font-size="11.5" fill="#52514e">그래서 전체 면적은 선형에 머무릅니다.</text>
+
+  <rect x="756" y="224" width="304" height="126" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="776" y="250" font-size="13.5" font-weight="700" fill="#0b0b0b">총계 기법으로 나눠보기</text>
+  <text x="776" y="274" font-size="12.5" fill="#0b0b0b">복사 합 = 1+2+4+…+2ᵏ &lt; 2n</text>
+  <text x="776" y="296" font-size="12.5" fill="#0b0b0b">쓰기 비용 = n</text>
+  <text x="776" y="318" font-size="12.5" font-weight="700" fill="#0b0b0b">총 비용 &lt; 3n → n으로 나누면 O(1)</text>
+  <text x="776" y="338" font-size="11.5" fill="#52514e">확률 가정이 필요 없는 최악의 경우 보장입니다.</text>
+
+  <rect x="80" y="392" width="980" height="64" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <text x="100" y="418" font-size="13.5" font-weight="700" fill="#0b0b0b">만약 용량을 매번 +1씩 늘린다면?</text>
+  <text x="100" y="442" font-size="12.5" fill="#52514e">복사 합이 1+2+3+…+n = Θ(n²)이 되어 1회당 Θ(n)으로 무너집니다. "곱셈적으로 늘린다"가 O(1)의 전부입니다.</text>
+</svg>

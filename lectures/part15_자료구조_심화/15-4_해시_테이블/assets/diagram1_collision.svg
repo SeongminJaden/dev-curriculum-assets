@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="480" fill="#fcfcfb"/>
+  <defs>
+    <marker id="arrB4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2a78d6"/>
+    </marker>
+    <marker id="arrO4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">충돌 해결 두 가지 — 체이닝 vs 개방 주소법</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">세 키가 모두 인덱스 3으로 해싱되었을 때 각 방식이 하는 일</text>
+
+  <!-- 왼쪽: 체이닝 -->
+  <rect x="40" y="82" width="510" height="366" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <circle cx="68" cy="108" r="12" fill="#2a78d6"/>
+  <text x="68" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+  <text x="90" y="113" font-size="15" font-weight="700" fill="#0b0b0b">체이닝(Separate Chaining)</text>
+  <text x="66" y="136" font-size="11.5" fill="#52514e">버킷마다 연결 리스트를 두고 충돌한 키를 매답니다</text>
+
+  <!-- 버킷 배열 -->
+  <rect x="66" y="152" width="100" height="34" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <text x="88" y="174" font-size="11.5" fill="#52514e">[0]</text>
+  <text x="140" y="174" text-anchor="end" font-size="12.5" fill="#52514e">null</text>
+
+  <rect x="66" y="190" width="100" height="34" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <text x="88" y="212" font-size="11.5" fill="#52514e">[1]</text>
+  <text x="140" y="212" text-anchor="end" font-size="12.5" fill="#52514e">null</text>
+
+  <rect x="66" y="228" width="100" height="34" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <text x="88" y="250" font-size="11.5" fill="#52514e">[2]</text>
+  <text x="140" y="250" text-anchor="end" font-size="12.5" fill="#52514e">null</text>
+
+  <rect x="66" y="266" width="100" height="34" rx="4" fill="#2a78d6" fill-opacity="0.22" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="88" y="288" font-size="11.5" font-weight="700" fill="#0b0b0b">[3]</text>
+
+  <rect x="66" y="304" width="100" height="34" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <text x="88" y="326" font-size="11.5" fill="#52514e">[4]</text>
+  <text x="140" y="326" text-anchor="end" font-size="12.5" fill="#52514e">null</text>
+
+  <!-- 체인 -->
+  <line x1="166" y1="283" x2="204" y2="283" stroke="#2a78d6" stroke-width="2.5" marker-end="url(#arrB4)"/>
+  <rect x="208" y="264" width="86" height="38" rx="6" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <text x="251" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">cat</text>
+
+  <line x1="294" y1="283" x2="330" y2="283" stroke="#2a78d6" stroke-width="2.5" marker-end="url(#arrB4)"/>
+  <rect x="334" y="264" width="86" height="38" rx="6" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <text x="377" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">dog</text>
+
+  <line x1="420" y1="283" x2="456" y2="283" stroke="#2a78d6" stroke-width="2.5" marker-end="url(#arrB4)"/>
+  <rect x="460" y="264" width="66" height="38" rx="6" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <text x="493" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">ox</text>
+
+  <line x1="66" y1="356" x2="524" y2="356" stroke="#2a78d6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="66" y="380" font-size="12.5" font-weight="700" fill="#2a78d6">장점</text>
+  <text x="66" y="400" font-size="11.5" fill="#0b0b0b">적재율이 1을 넘어도 무너지지 않고 완만하게 나빠집니다</text>
+  <text x="66" y="418" font-size="11.5" fill="#0b0b0b">삭제가 단순합니다 — 리스트에서 노드만 떼면 끝</text>
+  <text x="66" y="440" font-size="11.5" fill="#52514e">단점: 노드당 포인터 오버헤드와 캐시 미스 (15-1 참고)</text>
+
+  <!-- 오른쪽: 개방 주소법 -->
+  <rect x="570" y="82" width="510" height="366" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <circle cx="598" cy="108" r="12" fill="#d97706"/>
+  <text x="598" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+  <text x="620" y="113" font-size="15" font-weight="700" fill="#0b0b0b">개방 주소법(Open Addressing)</text>
+  <text x="596" y="136" font-size="11.5" fill="#52514e">테이블 안의 다음 빈칸을 찾아 들어갑니다 (선형 탐사)</text>
+
+  <rect x="596" y="152" width="150" height="34" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <text x="618" y="174" font-size="11.5" fill="#52514e">[0]</text>
+  <text x="726" y="174" text-anchor="end" font-size="12.5" fill="#52514e">비어 있음</text>
+
+  <rect x="596" y="190" width="150" height="34" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <text x="618" y="212" font-size="11.5" fill="#52514e">[1]</text>
+  <text x="726" y="212" text-anchor="end" font-size="12.5" fill="#52514e">비어 있음</text>
+
+  <rect x="596" y="228" width="150" height="34" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <text x="618" y="250" font-size="11.5" fill="#52514e">[2]</text>
+  <text x="726" y="250" text-anchor="end" font-size="12.5" fill="#52514e">비어 있음</text>
+
+  <rect x="596" y="266" width="150" height="34" rx="4" fill="#d97706" fill-opacity="0.22" stroke="#d97706" stroke-width="2.5"/>
+  <text x="618" y="288" font-size="11.5" font-weight="700" fill="#0b0b0b">[3]</text>
+  <text x="726" y="288" text-anchor="end" font-size="12.5" font-weight="700" fill="#0b0b0b">cat</text>
+
+  <rect x="596" y="304" width="150" height="34" rx="4" fill="#d97706" fill-opacity="0.22" stroke="#d97706" stroke-width="2.5"/>
+  <text x="618" y="326" font-size="11.5" font-weight="700" fill="#0b0b0b">[4]</text>
+  <text x="726" y="326" text-anchor="end" font-size="12.5" font-weight="700" fill="#0b0b0b">dog</text>
+
+  <line x1="756" y1="283" x2="756" y2="316" stroke="#d97706" stroke-width="2.5" marker-end="url(#arrO4)"/>
+  <text x="770" y="288" font-size="11.5" fill="#52514e">[3]이 차 있으니</text>
+  <text x="770" y="306" font-size="11.5" fill="#52514e">다음 칸으로,</text>
+  <text x="770" y="324" font-size="11.5" fill="#52514e">거기도 차 있으면</text>
+  <text x="770" y="342" font-size="11.5" fill="#52514e">또 다음 칸으로</text>
+
+  <line x1="596" y1="356" x2="1054" y2="356" stroke="#d97706" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="596" y="380" font-size="12.5" font-weight="700" fill="#d97706">장점</text>
+  <text x="596" y="400" font-size="11.5" fill="#0b0b0b">포인터가 전혀 없어 메모리가 작고 캐시 지역성이 뛰어납니다</text>
+  <text x="596" y="418" font-size="11.5" fill="#0b0b0b">단점: 삭제 시 툼스톤 표식이 필요합니다</text>
+  <text x="596" y="440" font-size="11.5" fill="#52514e">빈칸으로 두면 뒤로 밀린 원소를 찾는 탐사가 끊겨버립니다</text>
+</svg>

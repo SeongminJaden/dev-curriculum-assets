@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="480" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">주요 CPU 스케줄링 알고리즘 비교</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">다섯 알고리즘은 &quot;무엇을 기준으로 다음 차례를 정하는가&quot;에서 갈립니다</text>
+
+  <!-- 1 FCFS -->
+  <rect x="40" y="82" width="196" height="330" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="138" y="108" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0b0b0b">FCFS</text>
+  <text x="138" y="127" text-anchor="middle" font-size="11.5" fill="#52514e">선착순 · 비선점</text>
+  <rect x="58" y="140" width="110" height="20" rx="4" fill="#2a78d6" fill-opacity="0.55"/>
+  <rect x="170" y="140" width="22" height="20" rx="4" fill="#1baf7a" fill-opacity="0.55"/>
+  <rect x="194" y="140" width="22" height="20" rx="4" fill="#d97706" fill-opacity="0.55"/>
+  <text x="58" y="177" font-size="11.5" fill="#52514e">A(긴 작업) → B → C</text>
+  <text x="58" y="204" font-size="12.5" font-weight="700" fill="#0b0b0b">기준</text>
+  <text x="58" y="223" font-size="11.5" fill="#52514e">도착한 순서</text>
+  <text x="58" y="250" font-size="12.5" font-weight="700" fill="#0b0b0b">장점</text>
+  <text x="58" y="269" font-size="11.5" fill="#52514e">구현이 가장 단순</text>
+  <text x="58" y="285" font-size="11.5" fill="#52514e">기아가 없음</text>
+  <text x="58" y="312" font-size="12.5" font-weight="700" fill="#0b0b0b">단점</text>
+  <text x="58" y="331" font-size="11.5" fill="#52514e">호위 효과 — 긴 작업</text>
+  <text x="58" y="347" font-size="11.5" fill="#52514e">하나가 뒤의 짧은</text>
+  <text x="58" y="363" font-size="11.5" fill="#52514e">작업 전부를 붙잡음</text>
+  <text x="58" y="392" font-size="11.5" fill="#dc2626">대화형 작업에 부적합</text>
+
+  <!-- 2 SJF -->
+  <rect x="251" y="82" width="196" height="330" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="349" y="108" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0b0b0b">SJF</text>
+  <text x="349" y="127" text-anchor="middle" font-size="11.5" fill="#52514e">최단 작업 우선</text>
+  <rect x="269" y="140" width="22" height="20" rx="4" fill="#1baf7a" fill-opacity="0.55"/>
+  <rect x="293" y="140" width="22" height="20" rx="4" fill="#d97706" fill-opacity="0.55"/>
+  <rect x="317" y="140" width="110" height="20" rx="4" fill="#2a78d6" fill-opacity="0.55"/>
+  <text x="269" y="177" font-size="11.5" fill="#52514e">B → C → A(긴 작업)</text>
+  <text x="269" y="204" font-size="12.5" font-weight="700" fill="#0b0b0b">기준</text>
+  <text x="269" y="223" font-size="11.5" fill="#52514e">남은 실행 시간</text>
+  <text x="269" y="250" font-size="12.5" font-weight="700" fill="#0b0b0b">장점</text>
+  <text x="269" y="269" font-size="11.5" fill="#52514e">평균 대기 시간이</text>
+  <text x="269" y="285" font-size="11.5" fill="#52514e">수학적으로 최적</text>
+  <text x="269" y="312" font-size="12.5" font-weight="700" fill="#0b0b0b">단점</text>
+  <text x="269" y="331" font-size="11.5" fill="#52514e">실행 시간을 미리</text>
+  <text x="269" y="347" font-size="11.5" fill="#52514e">알아야 함(비현실적)</text>
+  <text x="269" y="363" font-size="11.5" fill="#52514e">긴 작업이 기아</text>
+  <text x="269" y="392" font-size="11.5" fill="#dc2626">이력 예측으로 근사</text>
+
+  <!-- 3 Priority -->
+  <rect x="462" y="82" width="196" height="330" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <text x="560" y="108" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0b0b0b">우선순위</text>
+  <text x="560" y="127" text-anchor="middle" font-size="11.5" fill="#52514e">선점 · 비선점 모두 가능</text>
+  <rect x="480" y="140" width="40" height="20" rx="4" fill="#dc2626" fill-opacity="0.55"/>
+  <rect x="522" y="140" width="60" height="20" rx="4" fill="#d97706" fill-opacity="0.55"/>
+  <rect x="584" y="140" width="54" height="20" rx="4" fill="#2a78d6" fill-opacity="0.35"/>
+  <text x="480" y="177" font-size="11.5" fill="#52514e">높음 → 중간 → 낮음</text>
+  <text x="480" y="204" font-size="12.5" font-weight="700" fill="#0b0b0b">기준</text>
+  <text x="480" y="223" font-size="11.5" fill="#52514e">부여된 중요도 값</text>
+  <text x="480" y="250" font-size="12.5" font-weight="700" fill="#0b0b0b">장점</text>
+  <text x="480" y="269" font-size="11.5" fill="#52514e">중요한 작업을 먼저</text>
+  <text x="480" y="285" font-size="11.5" fill="#52514e">처리할 수 있음</text>
+  <text x="480" y="312" font-size="12.5" font-weight="700" fill="#0b0b0b">단점</text>
+  <text x="480" y="331" font-size="11.5" fill="#52514e">낮은 우선순위 작업이</text>
+  <text x="480" y="347" font-size="11.5" fill="#52514e">영원히 밀리는 기아</text>
+  <text x="480" y="392" font-size="11.5" fill="#dc2626">에이징으로 보완</text>
+
+  <!-- 4 Round Robin -->
+  <rect x="673" y="82" width="196" height="330" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="771" y="108" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0b0b0b">라운드 로빈</text>
+  <text x="771" y="127" text-anchor="middle" font-size="11.5" fill="#52514e">시간 할당량 · 선점</text>
+  <rect x="691" y="140" width="34" height="20" rx="4" fill="#2a78d6" fill-opacity="0.55"/>
+  <rect x="727" y="140" width="34" height="20" rx="4" fill="#1baf7a" fill-opacity="0.55"/>
+  <rect x="763" y="140" width="34" height="20" rx="4" fill="#d97706" fill-opacity="0.55"/>
+  <rect x="799" y="140" width="34" height="20" rx="4" fill="#2a78d6" fill-opacity="0.55"/>
+  <text x="691" y="177" font-size="11.5" fill="#52514e">A → B → C → A …</text>
+  <text x="691" y="204" font-size="12.5" font-weight="700" fill="#0b0b0b">기준</text>
+  <text x="691" y="223" font-size="11.5" fill="#52514e">동일한 시간 할당량</text>
+  <text x="691" y="250" font-size="12.5" font-weight="700" fill="#0b0b0b">장점</text>
+  <text x="691" y="269" font-size="11.5" fill="#52514e">응답 시간에 상한이</text>
+  <text x="691" y="285" font-size="11.5" fill="#52514e">보장되고 공정함</text>
+  <text x="691" y="312" font-size="12.5" font-weight="700" fill="#0b0b0b">단점</text>
+  <text x="691" y="331" font-size="11.5" fill="#52514e">할당량이 짧으면 전환</text>
+  <text x="691" y="347" font-size="11.5" fill="#52514e">오버헤드가 커지고</text>
+  <text x="691" y="363" font-size="11.5" fill="#52514e">길면 FCFS에 수렴</text>
+  <text x="691" y="392" font-size="11.5" fill="#dc2626">할당량 선택이 관건</text>
+
+  <!-- 5 MLFQ -->
+  <rect x="884" y="82" width="196" height="330" rx="10" fill="#dc2626" fill-opacity="0.10" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="982" y="108" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0b0b0b">다단계 피드백 큐</text>
+  <text x="982" y="127" text-anchor="middle" font-size="11.5" fill="#52514e">행동 관찰 기반 · 선점</text>
+  <rect x="902" y="136" width="160" height="14" rx="4" fill="#dc2626" fill-opacity="0.55"/>
+  <rect x="902" y="153" width="130" height="14" rx="4" fill="#d97706" fill-opacity="0.5"/>
+  <rect x="902" y="170" width="100" height="14" rx="4" fill="#2a78d6" fill-opacity="0.45"/>
+  <text x="902" y="200" font-size="11.5" fill="#52514e">위 큐일수록 우선 처리</text>
+  <text x="902" y="222" font-size="12.5" font-weight="700" fill="#0b0b0b">기준</text>
+  <text x="902" y="241" font-size="11.5" fill="#52514e">할당량 소진 시 강등</text>
+  <text x="902" y="257" font-size="11.5" fill="#52514e">입출력 시 우선순위 유지</text>
+  <text x="902" y="282" font-size="12.5" font-weight="700" fill="#0b0b0b">장점</text>
+  <text x="902" y="301" font-size="11.5" fill="#52514e">실행 시간을 묻지 않고</text>
+  <text x="902" y="317" font-size="11.5" fill="#52514e">SJF에 가까운 효과</text>
+  <text x="902" y="342" font-size="12.5" font-weight="700" fill="#0b0b0b">단점</text>
+  <text x="902" y="361" font-size="11.5" fill="#52514e">파라미터가 많고</text>
+  <text x="902" y="377" font-size="11.5" fill="#52514e">부스팅 없으면 기아</text>
+  <text x="902" y="399" font-size="11.5" fill="#dc2626">1962년 CTSS에서 도입</text>
+
+  <text x="40" y="450" font-size="11.5" fill="#52514e">가로 막대는 CPU 점유 구간을 나타냅니다. 색이 같으면 같은 프로세스이며, 라운드 로빈과 MLFQ에서 한 프로세스의 막대가 여러 조각으로 나뉜 것은 선점되었다는 뜻입니다.</text>
+  <text x="40" y="470" font-size="11.5" fill="#52514e">평균 대기 시간만 보면 SJF가 최적이지만, 어떤 작업도 오래 방치되지 않는다는 보장은 라운드 로빈 계열만 제공합니다.</text>
+</svg>

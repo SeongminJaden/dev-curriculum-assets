@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="460" viewBox="0 0 1120 460" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="460" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">완전탐색 트리와 가지치기(pruning)</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">위쪽에서 자를수록 그 아래 서브트리 전체가 한꺼번에 사라집니다</text>
+
+  <!-- edges (draw first) -->
+  <g stroke-width="2.5" fill="none">
+    <!-- root to depth1 -->
+    <line x1="560" y1="110" x2="330" y2="200" stroke="#2a78d6"/>
+    <line x1="560" y1="110" x2="790" y2="200" stroke="#b8b7b3"/>
+    <!-- left branch (kept, blue) -->
+    <line x1="330" y1="200" x2="220" y2="300" stroke="#2a78d6"/>
+    <line x1="330" y1="200" x2="440" y2="300" stroke="#2a78d6"/>
+    <line x1="220" y1="300" x2="160" y2="395" stroke="#2a78d6"/>
+    <line x1="220" y1="300" x2="280" y2="395" stroke="#2a78d6"/>
+    <line x1="440" y1="300" x2="400" y2="395" stroke="#b8b7b3"/>
+    <line x1="440" y1="300" x2="500" y2="395" stroke="#2a78d6"/>
+    <!-- right branch (pruned, gray) -->
+    <line x1="790" y1="200" x2="700" y2="300" stroke="#b8b7b3"/>
+    <line x1="790" y1="200" x2="900" y2="300" stroke="#b8b7b3"/>
+    <line x1="700" y1="300" x2="650" y2="395" stroke="#b8b7b3"/>
+    <line x1="700" y1="300" x2="760" y2="395" stroke="#b8b7b3"/>
+    <line x1="900" y1="300" x2="850" y2="395" stroke="#b8b7b3"/>
+    <line x1="900" y1="300" x2="960" y2="395" stroke="#b8b7b3"/>
+  </g>
+
+  <!-- pruning scissors marker on right depth-1 edge -->
+  <circle cx="675" cy="155" r="16" fill="#dc2626"/>
+  <text x="675" y="160" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">✕</text>
+  <text x="675" y="132" text-anchor="middle" font-size="11.5" font-weight="700" fill="#dc2626">여기서 가지치기</text>
+
+  <!-- nodes -->
+  <g font-size="13" font-weight="700">
+    <circle cx="560" cy="110" r="20" fill="#2a78d6"/><text x="560" y="115" text-anchor="middle" fill="#ffffff">시작</text>
+    <!-- kept nodes blue -->
+    <circle cx="330" cy="200" r="18" fill="#2a78d6"/><text x="330" y="205" text-anchor="middle" fill="#ffffff"> </text>
+    <circle cx="220" cy="300" r="18" fill="#2a78d6"/>
+    <circle cx="440" cy="300" r="18" fill="#2a78d6"/>
+    <circle cx="160" cy="395" r="18" fill="#1baf7a"/><text x="160" y="400" text-anchor="middle" fill="#ffffff">해</text>
+    <circle cx="280" cy="395" r="18" fill="#2a78d6"/>
+    <circle cx="400" cy="395" r="18" fill="#b8b7b3"/>
+    <circle cx="500" cy="395" r="18" fill="#2a78d6"/>
+    <!-- pruned nodes gray -->
+    <circle cx="790" cy="200" r="18" fill="#b8b7b3"/>
+    <circle cx="700" cy="300" r="18" fill="#b8b7b3"/>
+    <circle cx="900" cy="300" r="18" fill="#b8b7b3"/>
+    <circle cx="650" cy="395" r="18" fill="#b8b7b3"/>
+    <circle cx="760" cy="395" r="18" fill="#b8b7b3"/>
+    <circle cx="850" cy="395" r="18" fill="#b8b7b3"/>
+    <circle cx="960" cy="395" r="18" fill="#b8b7b3"/>
+  </g>
+
+  <!-- legend -->
+  <g font-size="12.5">
+    <circle cx="180" cy="440" r="9" fill="#2a78d6"/><text x="196" y="445" fill="#0b0b0b">실제로 탐색한 경로</text>
+    <circle cx="420" cy="440" r="9" fill="#1baf7a"/><text x="436" y="445" fill="#0b0b0b">찾은 해</text>
+    <circle cx="560" cy="440" r="9" fill="#b8b7b3"/><text x="576" y="445" fill="#0b0b0b">가지치기로 잘려나간 영역(계산 안 함)</text>
+  </g>
+  <text x="890" y="440" text-anchor="middle" font-size="11.5" fill="#52514e">깊이 d에서 자르면 아래 b^(h−d)개 노드가 통째로 사라짐</text>
+</svg>

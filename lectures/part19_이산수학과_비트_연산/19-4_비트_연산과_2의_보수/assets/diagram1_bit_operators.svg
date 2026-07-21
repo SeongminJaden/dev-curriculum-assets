@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="470" viewBox="0 0 1120 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="470" fill="#fcfcfb"/>
+  <defs>
+    <marker id="sh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">비트 연산자의 동작 — 각 자리는 서로 독립입니다</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">자리올림이 없으므로 64개 비트를 한 사이클에 처리할 수 있습니다</text>
+
+  <!-- Left: AND / OR / XOR -->
+  <g>
+    <rect x="30" y="78" width="560" height="368" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="310" y="106" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">AND · OR · XOR (8비트 예시)</text>
+
+    <text x="60" y="140" font-size="12" fill="#52514e">a =</text>
+    <text x="60" y="164" font-size="12" fill="#52514e">b =</text>
+
+    <!-- a bits -->
+    <g font-size="13" font-weight="700" text-anchor="middle">
+      <rect x="100" y="126" width="26" height="20" rx="4" fill="#2a78d6" fill-opacity="0.30" stroke="#2a78d6" stroke-width="1.5"/><text x="113" y="141" fill="#0b0b0b">1</text>
+      <rect x="130" y="126" width="26" height="20" rx="4" fill="#2a78d6" fill-opacity="0.30" stroke="#2a78d6" stroke-width="1.5"/><text x="143" y="141" fill="#0b0b0b">1</text>
+      <rect x="160" y="126" width="26" height="20" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.5"/><text x="173" y="141" fill="#52514e">0</text>
+      <rect x="190" y="126" width="26" height="20" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.5"/><text x="203" y="141" fill="#52514e">0</text>
+      <rect x="220" y="126" width="26" height="20" rx="4" fill="#2a78d6" fill-opacity="0.30" stroke="#2a78d6" stroke-width="1.5"/><text x="233" y="141" fill="#0b0b0b">1</text>
+      <rect x="250" y="126" width="26" height="20" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.5"/><text x="263" y="141" fill="#52514e">0</text>
+      <rect x="280" y="126" width="26" height="20" rx="4" fill="#2a78d6" fill-opacity="0.30" stroke="#2a78d6" stroke-width="1.5"/><text x="293" y="141" fill="#0b0b0b">1</text>
+      <rect x="310" y="126" width="26" height="20" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.5"/><text x="323" y="141" fill="#52514e">0</text>
+    </g>
+    <!-- b bits -->
+    <g font-size="13" font-weight="700" text-anchor="middle">
+      <rect x="100" y="150" width="26" height="20" rx="4" fill="#2a78d6" fill-opacity="0.30" stroke="#2a78d6" stroke-width="1.5"/><text x="113" y="165" fill="#0b0b0b">1</text>
+      <rect x="130" y="150" width="26" height="20" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.5"/><text x="143" y="165" fill="#52514e">0</text>
+      <rect x="160" y="150" width="26" height="20" rx="4" fill="#2a78d6" fill-opacity="0.30" stroke="#2a78d6" stroke-width="1.5"/><text x="173" y="165" fill="#0b0b0b">1</text>
+      <rect x="190" y="150" width="26" height="20" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.5"/><text x="203" y="165" fill="#52514e">0</text>
+      <rect x="220" y="150" width="26" height="20" rx="4" fill="#2a78d6" fill-opacity="0.30" stroke="#2a78d6" stroke-width="1.5"/><text x="233" y="165" fill="#0b0b0b">1</text>
+      <rect x="250" y="150" width="26" height="20" rx="4" fill="#2a78d6" fill-opacity="0.30" stroke="#2a78d6" stroke-width="1.5"/><text x="263" y="165" fill="#0b0b0b">1</text>
+      <rect x="280" y="150" width="26" height="20" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.5"/><text x="293" y="165" fill="#52514e">0</text>
+      <rect x="310" y="150" width="26" height="20" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.5"/><text x="323" y="165" fill="#52514e">0</text>
+    </g>
+
+    <line x1="60" y1="182" x2="560" y2="182" stroke="#2a78d6" stroke-opacity="0.35" stroke-width="1.5"/>
+
+    <!-- AND result -->
+    <text x="60" y="212" font-size="12.5" font-weight="700" fill="#1baf7a">a &amp; b</text>
+    <g font-size="13" font-weight="700" text-anchor="middle">
+      <rect x="100" y="197" width="26" height="20" rx="4" fill="#1baf7a" fill-opacity="0.35" stroke="#1baf7a" stroke-width="1.5"/><text x="113" y="212" fill="#0b0b0b">1</text>
+      <rect x="130" y="197" width="26" height="20" rx="4" fill="#ffffff" stroke="#1baf7a" stroke-width="1.5"/><text x="143" y="212" fill="#52514e">0</text>
+      <rect x="160" y="197" width="26" height="20" rx="4" fill="#ffffff" stroke="#1baf7a" stroke-width="1.5"/><text x="173" y="212" fill="#52514e">0</text>
+      <rect x="190" y="197" width="26" height="20" rx="4" fill="#ffffff" stroke="#1baf7a" stroke-width="1.5"/><text x="203" y="212" fill="#52514e">0</text>
+      <rect x="220" y="197" width="26" height="20" rx="4" fill="#1baf7a" fill-opacity="0.35" stroke="#1baf7a" stroke-width="1.5"/><text x="233" y="212" fill="#0b0b0b">1</text>
+      <rect x="250" y="197" width="26" height="20" rx="4" fill="#ffffff" stroke="#1baf7a" stroke-width="1.5"/><text x="263" y="212" fill="#52514e">0</text>
+      <rect x="280" y="197" width="26" height="20" rx="4" fill="#ffffff" stroke="#1baf7a" stroke-width="1.5"/><text x="293" y="212" fill="#52514e">0</text>
+      <rect x="310" y="197" width="26" height="20" rx="4" fill="#ffffff" stroke="#1baf7a" stroke-width="1.5"/><text x="323" y="212" fill="#52514e">0</text>
+    </g>
+    <text x="356" y="212" font-size="11.5" fill="#52514e">둘 다 1일 때만 1 — 마스킹(추출)에 사용</text>
+
+    <!-- OR result -->
+    <text x="60" y="252" font-size="12.5" font-weight="700" fill="#d97706">a | b</text>
+    <g font-size="13" font-weight="700" text-anchor="middle">
+      <rect x="100" y="237" width="26" height="20" rx="4" fill="#d97706" fill-opacity="0.35" stroke="#d97706" stroke-width="1.5"/><text x="113" y="252" fill="#0b0b0b">1</text>
+      <rect x="130" y="237" width="26" height="20" rx="4" fill="#d97706" fill-opacity="0.35" stroke="#d97706" stroke-width="1.5"/><text x="143" y="252" fill="#0b0b0b">1</text>
+      <rect x="160" y="237" width="26" height="20" rx="4" fill="#d97706" fill-opacity="0.35" stroke="#d97706" stroke-width="1.5"/><text x="173" y="252" fill="#0b0b0b">1</text>
+      <rect x="190" y="237" width="26" height="20" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/><text x="203" y="252" fill="#52514e">0</text>
+      <rect x="220" y="237" width="26" height="20" rx="4" fill="#d97706" fill-opacity="0.35" stroke="#d97706" stroke-width="1.5"/><text x="233" y="252" fill="#0b0b0b">1</text>
+      <rect x="250" y="237" width="26" height="20" rx="4" fill="#d97706" fill-opacity="0.35" stroke="#d97706" stroke-width="1.5"/><text x="263" y="252" fill="#0b0b0b">1</text>
+      <rect x="280" y="237" width="26" height="20" rx="4" fill="#d97706" fill-opacity="0.35" stroke="#d97706" stroke-width="1.5"/><text x="293" y="252" fill="#0b0b0b">1</text>
+      <rect x="310" y="237" width="26" height="20" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/><text x="323" y="252" fill="#52514e">0</text>
+    </g>
+    <text x="356" y="252" font-size="11.5" fill="#52514e">하나라도 1이면 1 — 플래그 합치기에 사용</text>
+
+    <!-- XOR result -->
+    <text x="60" y="292" font-size="12.5" font-weight="700" fill="#8b5cf6">a ^ b</text>
+    <g font-size="13" font-weight="700" text-anchor="middle">
+      <rect x="100" y="277" width="26" height="20" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="113" y="292" fill="#52514e">0</text>
+      <rect x="130" y="277" width="26" height="20" rx="4" fill="#8b5cf6" fill-opacity="0.35" stroke="#8b5cf6" stroke-width="1.5"/><text x="143" y="292" fill="#0b0b0b">1</text>
+      <rect x="160" y="277" width="26" height="20" rx="4" fill="#8b5cf6" fill-opacity="0.35" stroke="#8b5cf6" stroke-width="1.5"/><text x="173" y="292" fill="#0b0b0b">1</text>
+      <rect x="190" y="277" width="26" height="20" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="203" y="292" fill="#52514e">0</text>
+      <rect x="220" y="277" width="26" height="20" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="233" y="292" fill="#52514e">0</text>
+      <rect x="250" y="277" width="26" height="20" rx="4" fill="#8b5cf6" fill-opacity="0.35" stroke="#8b5cf6" stroke-width="1.5"/><text x="263" y="292" fill="#0b0b0b">1</text>
+      <rect x="280" y="277" width="26" height="20" rx="4" fill="#8b5cf6" fill-opacity="0.35" stroke="#8b5cf6" stroke-width="1.5"/><text x="293" y="292" fill="#0b0b0b">1</text>
+      <rect x="310" y="277" width="26" height="20" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="323" y="292" fill="#52514e">0</text>
+    </g>
+    <text x="356" y="292" font-size="11.5" fill="#52514e">서로 다를 때만 1 — 토글·소거에 사용</text>
+
+    <line x1="60" y1="316" x2="560" y2="316" stroke="#2a78d6" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="60" y="342" font-size="12.5" font-weight="700" fill="#0b0b0b">각 자리는 옆자리와 무관하게 계산됩니다</text>
+    <text x="60" y="366" font-size="11.5" fill="#52514e">덧셈과 달리 자리올림(carry)이 없으므로, 64비트 정수의 AND</text>
+    <text x="60" y="382" font-size="11.5" fill="#52514e">한 번은 64개의 독립 판단을 CPU 한 사이클에 끝냅니다.</text>
+    <text x="60" y="398" font-size="11.5" fill="#52514e">비트 연산이 빠른 근본적인 이유입니다.</text>
+    <text x="60" y="424" font-size="11.5" fill="#52514e">이 연산을 실제로 수행하는 논리 게이트 회로는 Part 18 참고.</text>
+  </g>
+
+  <!-- Right: shifts -->
+  <g>
+    <rect x="612" y="78" width="478" height="368" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+    <text x="851" y="106" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">시프트 — 자릿수를 미는 것이 곧 2배·절반</text>
+
+    <text x="640" y="140" font-size="12.5" font-weight="700" fill="#0b0b0b">x = 0000 0011  (= 3)</text>
+    <g font-size="13" font-weight="700" text-anchor="middle">
+      <rect x="640" y="152" width="26" height="22" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="653" y="168" fill="#52514e">0</text>
+      <rect x="670" y="152" width="26" height="22" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="683" y="168" fill="#52514e">0</text>
+      <rect x="700" y="152" width="26" height="22" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="713" y="168" fill="#52514e">0</text>
+      <rect x="730" y="152" width="26" height="22" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="743" y="168" fill="#52514e">0</text>
+      <rect x="760" y="152" width="26" height="22" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="773" y="168" fill="#52514e">0</text>
+      <rect x="790" y="152" width="26" height="22" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="803" y="168" fill="#52514e">0</text>
+      <rect x="820" y="152" width="26" height="22" rx="4" fill="#8b5cf6" fill-opacity="0.35" stroke="#8b5cf6" stroke-width="1.5"/><text x="833" y="168" fill="#0b0b0b">1</text>
+      <rect x="850" y="152" width="26" height="22" rx="4" fill="#8b5cf6" fill-opacity="0.35" stroke="#8b5cf6" stroke-width="1.5"/><text x="863" y="168" fill="#0b0b0b">1</text>
+    </g>
+
+    <line x1="830" y1="184" x2="770" y2="200" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#sh)"/>
+    <text x="900" y="196" font-size="12" font-weight="700" fill="#8b5cf6">x &lt;&lt; 2</text>
+
+    <text x="640" y="228" font-size="12.5" font-weight="700" fill="#0b0b0b">x &lt;&lt; 2 = 0000 1100  (= 12 = 3 × 2²)</text>
+    <g font-size="13" font-weight="700" text-anchor="middle">
+      <rect x="640" y="240" width="26" height="22" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="653" y="256" fill="#52514e">0</text>
+      <rect x="670" y="240" width="26" height="22" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="683" y="256" fill="#52514e">0</text>
+      <rect x="700" y="240" width="26" height="22" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="713" y="256" fill="#52514e">0</text>
+      <rect x="730" y="240" width="26" height="22" rx="4" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/><text x="743" y="256" fill="#52514e">0</text>
+      <rect x="760" y="240" width="26" height="22" rx="4" fill="#8b5cf6" fill-opacity="0.35" stroke="#8b5cf6" stroke-width="1.5"/><text x="773" y="256" fill="#0b0b0b">1</text>
+      <rect x="790" y="240" width="26" height="22" rx="4" fill="#8b5cf6" fill-opacity="0.35" stroke="#8b5cf6" stroke-width="1.5"/><text x="803" y="256" fill="#0b0b0b">1</text>
+      <rect x="820" y="240" width="26" height="22" rx="4" fill="#1baf7a" fill-opacity="0.20" stroke="#1baf7a" stroke-width="1.5" stroke-dasharray="3 2"/><text x="833" y="256" fill="#52514e">0</text>
+      <rect x="850" y="240" width="26" height="22" rx="4" fill="#1baf7a" fill-opacity="0.20" stroke="#1baf7a" stroke-width="1.5" stroke-dasharray="3 2"/><text x="863" y="256" fill="#52514e">0</text>
+    </g>
+    <text x="640" y="282" font-size="11.5" fill="#1baf7a">점선 자리는 0으로 새로 채워집니다</text>
+
+    <line x1="640" y1="300" x2="1062" y2="300" stroke="#8b5cf6" stroke-opacity="0.3" stroke-width="1"/>
+
+    <text x="640" y="326" font-size="12.5" font-weight="700" fill="#0b0b0b">산술 시프트 vs 논리 시프트 (음수에서만 갈림)</text>
+    <text x="640" y="350" font-size="12" fill="#0b0b0b">1111 1000 (= −8)</text>
+    <text x="640" y="372" font-size="12" fill="#0b0b0b">산술 &gt;&gt; 1  →  1111 1100 = −4</text>
+    <text x="880" y="372" font-size="11.5" fill="#52514e">부호 비트 복제</text>
+    <text x="640" y="394" font-size="12" fill="#0b0b0b">논리 &gt;&gt;&gt; 1 →  0111 1100 = 124</text>
+    <text x="880" y="394" font-size="11.5" fill="#52514e">0으로 채움</text>
+    <text x="640" y="422" font-size="11.5" fill="#52514e">부호 비트를 복제해 채우는 것을 부호 확장(sign extension)</text>
+    <text x="640" y="438" font-size="11.5" fill="#52514e">이라 하며, int8 → int32 같은 타입 확장에도 같은 원리입니다.</text>
+  </g>
+</svg>

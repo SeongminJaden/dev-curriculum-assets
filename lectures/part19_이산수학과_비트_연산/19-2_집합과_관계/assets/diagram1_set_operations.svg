@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="500" viewBox="0 0 1120 500" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="500" fill="#fcfcfb"/>
+  <defs>
+    <clipPath id="clipA1"><circle cx="0" cy="0" r="1"/></clipPath>
+  </defs>
+
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">집합 연산과 드모르간 법칙</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">색칠된 영역이 각 연산이 가리키는 원소들입니다</text>
+
+  <!-- Row 1: four basic ops -->
+  <!-- 1. Union -->
+  <g>
+    <rect x="30" y="76" width="250" height="180" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="155" y="102" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">합집합  A ∪ B</text>
+    <circle cx="128" cy="170" r="46" fill="#2a78d6" fill-opacity="0.45" stroke="#2a78d6" stroke-width="2"/>
+    <circle cx="182" cy="170" r="46" fill="#2a78d6" fill-opacity="0.45" stroke="#2a78d6" stroke-width="2"/>
+    <text x="102" y="175" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A</text>
+    <text x="208" y="175" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">B</text>
+    <text x="155" y="240" text-anchor="middle" font-size="11.5" fill="#52514e">A 또는 B  ·  SQL UNION</text>
+  </g>
+
+  <!-- 2. Intersection -->
+  <g>
+    <rect x="300" y="76" width="250" height="180" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="425" y="102" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">교집합  A ∩ B</text>
+    <circle cx="398" cy="170" r="46" fill="none" stroke="#1baf7a" stroke-width="2"/>
+    <circle cx="452" cy="170" r="46" fill="none" stroke="#1baf7a" stroke-width="2"/>
+    <path d="M 425 128 A 46 46 0 0 0 425 212 A 46 46 0 0 0 425 128 Z" fill="#1baf7a" fill-opacity="0.55"/>
+    <text x="372" y="175" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A</text>
+    <text x="478" y="175" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">B</text>
+    <text x="425" y="240" text-anchor="middle" font-size="11.5" fill="#52514e">A 이면서 B  ·  INNER JOIN</text>
+  </g>
+
+  <!-- 3. Difference -->
+  <g>
+    <rect x="570" y="76" width="250" height="180" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+    <text x="695" y="102" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">차집합  A ∖ B</text>
+    <path d="M 668 124 A 46 46 0 1 0 668 216 A 46 46 0 0 1 668 124 Z" fill="#d97706" fill-opacity="0.55"/>
+    <circle cx="668" cy="170" r="46" fill="none" stroke="#d97706" stroke-width="2"/>
+    <circle cx="722" cy="170" r="46" fill="none" stroke="#d97706" stroke-width="2"/>
+    <text x="642" y="175" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A</text>
+    <text x="748" y="175" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">B</text>
+    <text x="695" y="240" text-anchor="middle" font-size="11.5" fill="#52514e">A 이지만 B 아님  ·  EXCEPT</text>
+  </g>
+
+  <!-- 4. Complement -->
+  <g>
+    <rect x="840" y="76" width="250" height="180" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+    <text x="965" y="102" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">여집합  Aᶜ</text>
+    <rect x="880" y="120" width="170" height="100" rx="6" fill="#8b5cf6" fill-opacity="0.40" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="965" cy="170" r="40" fill="#fcfcfb" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="965" y="175" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A</text>
+    <text x="895" y="138" font-size="11.5" font-weight="700" fill="#0b0b0b">U</text>
+    <text x="965" y="240" text-anchor="middle" font-size="11.5" fill="#52514e">전체집합 U 중 A가 아닌 것</text>
+  </g>
+
+  <!-- Row 2: De Morgan -->
+  <g>
+    <rect x="30" y="278" width="1060" height="196" rx="10" fill="#dc2626" fill-opacity="0.08" stroke="#dc2626" stroke-width="2.5"/>
+    <text x="560" y="306" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">드모르간 법칙 — 두 표현이 가리키는 영역은 정확히 같습니다</text>
+
+    <!-- left venn -->
+    <rect x="70" y="322" width="200" height="126" rx="6" fill="#dc2626" fill-opacity="0.35" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="145" cy="385" r="42" fill="#fcfcfb" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="197" cy="385" r="42" fill="#fcfcfb" stroke="#dc2626" stroke-width="2"/>
+    <text x="120" y="390" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A</text>
+    <text x="222" y="390" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">B</text>
+    <text x="85" y="340" font-size="11.5" font-weight="700" fill="#0b0b0b">U</text>
+    <text x="170" y="466" text-anchor="middle" font-size="13" font-weight="700" fill="#dc2626">(A ∪ B)ᶜ</text>
+
+    <text x="310" y="392" text-anchor="middle" font-size="24" font-weight="700" fill="#0b0b0b">=</text>
+
+    <!-- right venn -->
+    <rect x="350" y="322" width="200" height="126" rx="6" fill="#dc2626" fill-opacity="0.35" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="425" cy="385" r="42" fill="#fcfcfb" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="477" cy="385" r="42" fill="#fcfcfb" stroke="#dc2626" stroke-width="2"/>
+    <text x="400" y="390" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A</text>
+    <text x="502" y="390" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">B</text>
+    <text x="365" y="340" font-size="11.5" font-weight="700" fill="#0b0b0b">U</text>
+    <text x="450" y="466" text-anchor="middle" font-size="13" font-weight="700" fill="#dc2626">Aᶜ ∩ Bᶜ</text>
+
+    <!-- text panel -->
+    <line x1="590" y1="326" x2="590" y2="452" stroke="#dc2626" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="620" y="344" font-size="13" font-weight="700" fill="#0b0b0b">부정을 괄호 안으로 밀면 ∪ 와 ∩ 이 뒤집힙니다</text>
+    <text x="620" y="374" font-size="12.5" fill="#0b0b0b">(A ∪ B)ᶜ = Aᶜ ∩ Bᶜ      ¬(p ∨ q) ≡ ¬p ∧ ¬q</text>
+    <text x="620" y="398" font-size="12.5" fill="#0b0b0b">(A ∩ B)ᶜ = Aᶜ ∪ Bᶜ      ¬(p ∧ q) ≡ ¬p ∨ ¬q</text>
+    <text x="620" y="428" font-size="11.5" fill="#52514e">조건식 리팩터링(not (a or b) → not a and not b)과</text>
+    <text x="620" y="444" font-size="11.5" fill="#52514e">쿼리 옵티마이저의 자동 변환이 안전한 근거입니다.</text>
+  </g>
+</svg>

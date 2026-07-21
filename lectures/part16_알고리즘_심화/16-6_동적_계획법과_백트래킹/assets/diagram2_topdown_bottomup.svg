@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="450" viewBox="0 0 1120 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="450" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">Top-down 메모이제이션 vs Bottom-up 타뷸레이션</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">같은 점화식을 큰 문제에서 내려가느냐, 작은 문제에서 올라가느냐의 차이입니다</text>
+
+  <defs>
+    <marker id="d2a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2a78d6"/></marker>
+    <marker id="d2b" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1baf7a"/></marker>
+  </defs>
+
+  <!-- LEFT: top-down -->
+  <rect x="40" y="80" width="500" height="350" rx="12" fill="#2a78d6" fill-opacity="0.07" stroke="#2a78d6" stroke-width="2"/>
+  <text x="290" y="108" text-anchor="middle" font-size="15" font-weight="700" fill="#2a78d6">Top-down (메모이제이션)</text>
+  <text x="290" y="130" text-anchor="middle" font-size="12" fill="#52514e">큰 문제에서 재귀로 내려가며 필요한 것만 계산</text>
+
+  <g font-size="13" font-weight="700">
+    <rect x="220" y="150" width="140" height="40" rx="8" fill="#2a78d6"/><text x="290" y="175" text-anchor="middle" fill="#ffffff">F(5) 요청</text>
+    <rect x="130" y="220" width="120" height="38" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="190" y="244" text-anchor="middle" fill="#0b0b0b">F(4)</text>
+    <rect x="330" y="220" width="120" height="38" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="390" y="244" text-anchor="middle" fill="#0b0b0b">F(3)</text>
+    <rect x="80" y="290" width="110" height="38" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="135" y="314" text-anchor="middle" fill="#0b0b0b">F(3)</text>
+    <rect x="210" y="290" width="110" height="38" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="2" stroke-dasharray="4 3"/><text x="265" y="314" text-anchor="middle" font-size="11" fill="#52514e">캐시 적중</text>
+  </g>
+  <g stroke="#2a78d6" stroke-width="2" fill="none">
+    <line x1="270" y1="190" x2="205" y2="216" marker-end="url(#d2a)"/>
+    <line x1="310" y1="190" x2="375" y2="216" marker-end="url(#d2a)"/>
+    <line x1="170" y1="258" x2="140" y2="286" marker-end="url(#d2a)"/>
+    <line x1="210" y1="258" x2="255" y2="286" marker-end="url(#d2a)"/>
+  </g>
+  <text x="290" y="360" text-anchor="middle" font-size="12" fill="#0b0b0b">두 번째로 만난 F(3)은 저장된 값을 즉시 반환</text>
+  <text x="290" y="382" text-anchor="middle" font-size="11.5" fill="#52514e">필요한 부분 문제만 계산 · 재귀 스택 사용</text>
+  <text x="290" y="404" text-anchor="middle" font-size="11.5" fill="#dc2626">주의: 재귀 깊이가 크면 스택 오버플로</text>
+
+  <!-- RIGHT: bottom-up -->
+  <rect x="580" y="80" width="500" height="350" rx="12" fill="#1baf7a" fill-opacity="0.07" stroke="#1baf7a" stroke-width="2"/>
+  <text x="830" y="108" text-anchor="middle" font-size="15" font-weight="700" fill="#1baf7a">Bottom-up (타뷸레이션)</text>
+  <text x="830" y="130" text-anchor="middle" font-size="12" fill="#52514e">가장 작은 문제부터 표를 채워 올라감 · 재귀 없음</text>
+
+  <g font-size="13" font-weight="700">
+    <rect x="620" y="180" width="66" height="42" rx="6" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/><text x="653" y="207" text-anchor="middle" fill="#0b0b0b">F(0)</text>
+    <rect x="694" y="180" width="66" height="42" rx="6" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/><text x="727" y="207" text-anchor="middle" fill="#0b0b0b">F(1)</text>
+    <rect x="768" y="180" width="66" height="42" rx="6" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/><text x="801" y="207" text-anchor="middle" fill="#0b0b0b">F(2)</text>
+    <rect x="842" y="180" width="66" height="42" rx="6" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/><text x="875" y="207" text-anchor="middle" fill="#0b0b0b">F(3)</text>
+    <rect x="916" y="180" width="66" height="42" rx="6" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/><text x="949" y="207" text-anchor="middle" fill="#0b0b0b">F(4)</text>
+    <rect x="990" y="180" width="66" height="42" rx="6" fill="#1baf7a" fill-opacity="0.2" stroke="#1baf7a" stroke-width="2.5"/><text x="1023" y="207" text-anchor="middle" fill="#0b0b0b">F(5)</text>
+  </g>
+  <line x1="620" y1="245" x2="1050" y2="245" stroke="#1baf7a" stroke-width="2" marker-end="url(#d2b)"/>
+  <text x="835" y="268" text-anchor="middle" font-size="12" fill="#0b0b0b">왼쪽(작은 문제)에서 오른쪽으로 한 방향 진행</text>
+  <text x="830" y="300" text-anchor="middle" font-size="12.5" fill="#0b0b0b">dp[i] = dp[i-1] + dp[i-2]</text>
+  <text x="830" y="330" text-anchor="middle" font-size="11.5" fill="#52514e">모든 칸을 계산하지만 반복문이라 빠르고</text>
+  <text x="830" y="348" text-anchor="middle" font-size="11.5" fill="#52514e">스택을 쓰지 않아 깊이 제한이 없음</text>
+  <rect x="660" y="375" width="340" height="42" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="1.5"/>
+  <text x="830" y="401" text-anchor="middle" font-size="12" font-weight="700" fill="#1baf7a">직전 두 값만 참조 → 공간 O(1)로 최적화 가능</text>
+</svg>

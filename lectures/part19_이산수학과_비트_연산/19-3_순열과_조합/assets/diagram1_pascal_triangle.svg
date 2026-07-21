@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="480" fill="#fcfcfb"/>
+  <defs>
+    <marker id="pv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">파스칼의 삼각형과 조합 점화식</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">각 수는 바로 위 두 수의 합입니다 — 그 덧셈에는 조합론적 의미가 있습니다</text>
+
+  <!-- Left: triangle (blue) -->
+  <g>
+    <rect x="30" y="78" width="560" height="380" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="310" y="106" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">0행 ~ 6행</text>
+
+    <!-- row 0 -->
+    <text x="55" y="140" font-size="11.5" fill="#52514e">n=0</text>
+    <circle cx="310" cy="135" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="310" y="140" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <!-- row 1 -->
+    <text x="55" y="185" font-size="11.5" fill="#52514e">n=1</text>
+    <circle cx="278" cy="180" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="278" y="185" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <circle cx="342" cy="180" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="342" y="185" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <!-- row 2 -->
+    <text x="55" y="230" font-size="11.5" fill="#52514e">n=2</text>
+    <circle cx="246" cy="225" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="246" y="230" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <circle cx="310" cy="225" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="310" y="230" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">2</text>
+    <circle cx="374" cy="225" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="374" y="230" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <!-- row 3 -->
+    <text x="55" y="275" font-size="11.5" fill="#52514e">n=3</text>
+    <circle cx="214" cy="270" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="214" y="275" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <circle cx="278" cy="270" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="278" y="275" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">3</text>
+    <circle cx="342" cy="270" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="342" y="275" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">3</text>
+    <circle cx="406" cy="270" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="406" y="275" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <!-- row 4 highlighted -->
+    <text x="55" y="320" font-size="11.5" fill="#52514e">n=4</text>
+    <circle cx="182" cy="315" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="182" y="320" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <circle cx="246" cy="315" r="16" fill="#8b5cf6" fill-opacity="0.30" stroke="#8b5cf6" stroke-width="2.5"/><text x="246" y="320" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">4</text>
+    <circle cx="310" cy="315" r="16" fill="#8b5cf6" fill-opacity="0.30" stroke="#8b5cf6" stroke-width="2.5"/><text x="310" y="320" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">6</text>
+    <circle cx="374" cy="315" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="374" y="320" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">4</text>
+    <circle cx="438" cy="315" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="438" y="320" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <!-- row 5 with target -->
+    <text x="55" y="365" font-size="11.5" fill="#52514e">n=5</text>
+    <circle cx="150" cy="360" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="150" y="365" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <circle cx="214" cy="360" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="214" y="365" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">5</text>
+    <circle cx="278" cy="360" r="17" fill="#8b5cf6" fill-opacity="0.55" stroke="#8b5cf6" stroke-width="3"/><text x="278" y="365" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">10</text>
+    <circle cx="342" cy="360" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="342" y="365" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">10</text>
+    <circle cx="406" cy="360" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="406" y="365" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">5</text>
+    <circle cx="470" cy="360" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="470" y="365" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <!-- row 6 -->
+    <text x="55" y="410" font-size="11.5" fill="#52514e">n=6</text>
+    <circle cx="118" cy="405" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="118" y="410" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+    <circle cx="182" cy="405" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="182" y="410" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">6</text>
+    <circle cx="246" cy="405" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="246" y="410" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">15</text>
+    <circle cx="310" cy="405" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="310" y="410" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">20</text>
+    <circle cx="374" cy="405" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="374" y="410" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">15</text>
+    <circle cx="438" cy="405" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="438" y="410" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">6</text>
+    <circle cx="502" cy="405" r="16" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/><text x="502" y="410" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">1</text>
+
+    <!-- arrows 4+6 -> 10 -->
+    <line x1="250" y1="332" x2="272" y2="342" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#pv)"/>
+    <line x1="306" y1="332" x2="284" y2="342" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#pv)"/>
+    <text x="500" y="342" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8b5cf6">4 + 6 = 10</text>
+    <text x="500" y="360" text-anchor="middle" font-size="11.5" fill="#52514e">C(4,1)+C(4,2)</text>
+    <text x="500" y="376" text-anchor="middle" font-size="11.5" fill="#52514e">= C(5,2)</text>
+
+    <text x="310" y="440" text-anchor="middle" font-size="11.5" fill="#52514e">n행의 r번째 수(0부터 셈)가 곧 C(n, r)이며, n행의 합은 2ⁿ입니다</text>
+  </g>
+
+  <!-- Right: explanation (green) -->
+  <g>
+    <rect x="612" y="78" width="478" height="380" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="851" y="108" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">점화식이 뜻하는 것</text>
+    <text x="851" y="134" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1baf7a">C(n,r) = C(n−1,r−1) + C(n−1,r)</text>
+
+    <text x="640" y="170" font-size="12.5" fill="#0b0b0b">n개 중 r개를 고를 때, 특정 원소 ★ 하나에 주목합니다.</text>
+
+    <rect x="640" y="188" width="200" height="118" rx="10" fill="#1baf7a" fill-opacity="0.18" stroke="#1baf7a" stroke-width="2"/>
+    <text x="740" y="212" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">★ 를 고른 경우</text>
+    <text x="656" y="238" font-size="11.5" fill="#52514e">★ 는 이미 확보했으므로</text>
+    <text x="656" y="256" font-size="11.5" fill="#52514e">남은 n−1개 중에서</text>
+    <text x="656" y="274" font-size="11.5" fill="#52514e">r−1개를 더 고릅니다</text>
+    <text x="740" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#1baf7a">C(n−1, r−1)</text>
+
+    <rect x="862" y="188" width="200" height="118" rx="10" fill="#d97706" fill-opacity="0.18" stroke="#d97706" stroke-width="2"/>
+    <text x="962" y="212" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">★ 를 고르지 않은 경우</text>
+    <text x="878" y="238" font-size="11.5" fill="#52514e">★ 를 제외한</text>
+    <text x="878" y="256" font-size="11.5" fill="#52514e">남은 n−1개 중에서</text>
+    <text x="878" y="274" font-size="11.5" fill="#52514e">r개를 전부 고릅니다</text>
+    <text x="962" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#d97706">C(n−1, r)</text>
+
+    <line x1="640" y1="326" x2="1062" y2="326" stroke="#1baf7a" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="640" y="350" font-size="12.5" fill="#0b0b0b">두 경우는 서로 겹치지 않고, 합치면 전체입니다.</text>
+    <text x="640" y="368" font-size="12.5" fill="#0b0b0b">따라서 그냥 더하면 됩니다.</text>
+
+    <text x="640" y="400" font-size="12.5" font-weight="700" fill="#0b0b0b">"하나의 원소를 포함/미포함으로 쪼갠다"</text>
+    <text x="640" y="422" font-size="11.5" fill="#52514e">이 발상이 배낭 문제를 비롯한 수많은 DP 점화식의</text>
+    <text x="640" y="438" font-size="11.5" fill="#52514e">원형입니다. 팩토리얼 없이 덧셈만으로 구할 수 있어</text>
+    <text x="640" y="454" font-size="11.5" fill="#52514e">오버플로도 피할 수 있습니다.</text>
+  </g>
+</svg>

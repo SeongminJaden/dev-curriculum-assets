@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="500" viewBox="0 0 1120 500" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="500" fill="#fcfcfb"/>
+  <defs>
+    <marker id="arrG5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1baf7a"/>
+    </marker>
+  </defs>
+
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">같은 그래프, 두 가지 표현</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">정점 5개 · 간선 5개인 무방향 그래프를 인접 행렬과 인접 리스트로 담아봅니다</text>
+
+  <!-- 그래프 -->
+  <rect x="40" y="82" width="300" height="380" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="190" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">대상 그래프</text>
+
+  <line x1="190" y1="164" x2="110" y2="238" stroke="#8b5cf6" stroke-width="2.5"/>
+  <line x1="190" y1="164" x2="270" y2="238" stroke="#8b5cf6" stroke-width="2.5"/>
+  <line x1="110" y1="272" x2="190" y2="330" stroke="#8b5cf6" stroke-width="2.5"/>
+  <line x1="270" y1="272" x2="190" y2="330" stroke="#8b5cf6" stroke-width="2.5"/>
+  <line x1="190" y1="382" x2="190" y2="416" stroke="#8b5cf6" stroke-width="2.5"/>
+
+  <circle cx="190" cy="150" r="24" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="190" y="156" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">A</text>
+  <circle cx="110" cy="252" r="24" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="110" y="258" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">B</text>
+  <circle cx="270" cy="252" r="24" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="270" y="258" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">C</text>
+  <circle cx="190" cy="354" r="24" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="190" y="360" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">D</text>
+  <circle cx="190" cy="430" r="24" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="190" y="436" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">E</text>
+
+  <!-- 인접 행렬 -->
+  <rect x="360" y="82" width="340" height="380" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="530" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">인접 행렬 — 5 x 5 = 25칸</text>
+
+  <text x="430" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">A</text>
+  <text x="470" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">B</text>
+  <text x="510" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">C</text>
+  <text x="550" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">D</text>
+  <text x="590" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">E</text>
+
+  <text x="400" y="176" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">A</text>
+  <text x="430" y="176" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="470" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">1</text>
+  <text x="510" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">1</text>
+  <text x="550" y="176" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="590" y="176" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+
+  <text x="400" y="206" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">B</text>
+  <text x="430" y="206" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">1</text>
+  <text x="470" y="206" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="510" y="206" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="550" y="206" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">1</text>
+  <text x="590" y="206" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+
+  <text x="400" y="236" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">C</text>
+  <text x="430" y="236" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">1</text>
+  <text x="470" y="236" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="510" y="236" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="550" y="236" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">1</text>
+  <text x="590" y="236" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+
+  <text x="400" y="266" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">D</text>
+  <text x="430" y="266" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="470" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">1</text>
+  <text x="510" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">1</text>
+  <text x="550" y="266" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="590" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">1</text>
+
+  <text x="400" y="296" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">E</text>
+  <text x="430" y="296" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="470" y="296" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="510" y="296" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+  <text x="550" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">1</text>
+  <text x="590" y="296" text-anchor="middle" font-size="12.5" fill="#52514e">0</text>
+
+  <line x1="386" y1="320" x2="674" y2="320" stroke="#2a78d6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="386" y="346" font-size="12.5" fill="#0b0b0b">공간</text>
+  <text x="674" y="346" text-anchor="end" font-size="13" font-weight="700" fill="#2a78d6">O(V²)</text>
+  <text x="386" y="372" font-size="12.5" fill="#0b0b0b">간선 존재 확인</text>
+  <text x="674" y="372" text-anchor="end" font-size="13" font-weight="700" fill="#2a78d6">O(1)</text>
+  <text x="386" y="398" font-size="12.5" fill="#0b0b0b">이웃 순회</text>
+  <text x="674" y="398" text-anchor="end" font-size="13" font-weight="700" fill="#2a78d6">O(V)</text>
+
+  <text x="386" y="428" font-size="11.5" fill="#52514e">1이 적힌 칸은 10개, 나머지 15칸은 0입니다.</text>
+  <text x="386" y="446" font-size="11.5" fill="#52514e">없는 간선까지 명시하는 것이 낭비의 원인입니다.</text>
+
+  <!-- 인접 리스트 -->
+  <rect x="720" y="82" width="360" height="380" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="900" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">인접 리스트 — 있는 간선만 저장</text>
+
+  <text x="746" y="150" font-size="13" font-weight="700" fill="#1baf7a">A</text>
+  <line x1="766" y1="146" x2="800" y2="146" stroke="#1baf7a" stroke-width="2" marker-end="url(#arrG5)"/>
+  <text x="812" y="150" font-size="12.5" fill="#0b0b0b">[ B, C ]</text>
+
+  <text x="746" y="184" font-size="13" font-weight="700" fill="#1baf7a">B</text>
+  <line x1="766" y1="180" x2="800" y2="180" stroke="#1baf7a" stroke-width="2" marker-end="url(#arrG5)"/>
+  <text x="812" y="184" font-size="12.5" fill="#0b0b0b">[ A, D ]</text>
+
+  <text x="746" y="218" font-size="13" font-weight="700" fill="#1baf7a">C</text>
+  <line x1="766" y1="214" x2="800" y2="214" stroke="#1baf7a" stroke-width="2" marker-end="url(#arrG5)"/>
+  <text x="812" y="218" font-size="12.5" fill="#0b0b0b">[ A, D ]</text>
+
+  <text x="746" y="252" font-size="13" font-weight="700" fill="#1baf7a">D</text>
+  <line x1="766" y1="248" x2="800" y2="248" stroke="#1baf7a" stroke-width="2" marker-end="url(#arrG5)"/>
+  <text x="812" y="252" font-size="12.5" fill="#0b0b0b">[ B, C, E ]</text>
+
+  <text x="746" y="286" font-size="13" font-weight="700" fill="#1baf7a">E</text>
+  <line x1="766" y1="282" x2="800" y2="282" stroke="#1baf7a" stroke-width="2" marker-end="url(#arrG5)"/>
+  <text x="812" y="286" font-size="12.5" fill="#0b0b0b">[ D ]</text>
+
+  <line x1="746" y1="320" x2="1054" y2="320" stroke="#1baf7a" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="746" y="346" font-size="12.5" fill="#0b0b0b">공간</text>
+  <text x="1054" y="346" text-anchor="end" font-size="13" font-weight="700" fill="#1baf7a">O(V + E)</text>
+  <text x="746" y="372" font-size="12.5" fill="#0b0b0b">간선 존재 확인</text>
+  <text x="1054" y="372" text-anchor="end" font-size="13" font-weight="700" fill="#1baf7a">O(deg(v))</text>
+  <text x="746" y="398" font-size="12.5" fill="#0b0b0b">이웃 순회</text>
+  <text x="1054" y="398" text-anchor="end" font-size="13" font-weight="700" fill="#1baf7a">O(deg(v))</text>
+
+  <text x="746" y="428" font-size="11.5" fill="#52514e">그래프 알고리즘이 가장 자주 하는 일이 이웃 순회라,</text>
+  <text x="746" y="446" font-size="11.5" fill="#52514e">희소 그래프가 지배적인 실무의 기본 선택지입니다.</text>
+
+  <text x="560" y="486" text-anchor="middle" font-size="11.5" fill="#52514e">Part 16의 탐색·최단경로 알고리즘 복잡도가 O(V+E)로 적히는 이유가 바로 인접 리스트를 전제하기 때문입니다</text>
+</svg>

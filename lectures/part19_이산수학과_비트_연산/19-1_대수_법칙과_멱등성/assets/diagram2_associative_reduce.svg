@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="480" fill="#fcfcfb"/>
+  <defs>
+    <marker id="aOr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/>
+    </marker>
+    <marker id="aGr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1baf7a"/>
+    </marker>
+  </defs>
+
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">결합법칙이 병렬 리듀스를 여는 원리</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">원소 6개를 합칠 때, 묶는 순서의 자유가 단계 수를 바꿉니다</text>
+
+  <!-- Left: sequential (orange) -->
+  <g>
+    <rect x="40" y="82" width="500" height="368" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+    <text x="290" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">순차 리듀스 — 왼쪽부터 차례로</text>
+    <text x="290" y="133" text-anchor="middle" font-size="12" fill="#52514e">((((a⊕b)⊕c)⊕d)⊕e)⊕f</text>
+
+    <rect x="70" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <text x="91" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">a</text>
+    <rect x="122" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <text x="143" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">b</text>
+    <rect x="174" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <text x="195" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">c</text>
+    <rect x="226" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <text x="247" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">d</text>
+    <rect x="278" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <text x="299" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">e</text>
+    <rect x="330" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <text x="351" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">f</text>
+
+    <line x1="91" y1="192" x2="91" y2="214" stroke="#d97706" stroke-width="2" marker-end="url(#aOr)"/>
+    <text x="70" y="234" font-size="12" fill="#0b0b0b">1단계</text>
+    <text x="150" y="234" font-size="12.5" font-weight="700" fill="#d97706">t1 = a⊕b</text>
+    <text x="70" y="262" font-size="12" fill="#0b0b0b">2단계</text>
+    <text x="150" y="262" font-size="12.5" font-weight="700" fill="#d97706">t2 = t1⊕c</text>
+    <text x="70" y="290" font-size="12" fill="#0b0b0b">3단계</text>
+    <text x="150" y="290" font-size="12.5" font-weight="700" fill="#d97706">t3 = t2⊕d</text>
+    <text x="70" y="318" font-size="12" fill="#0b0b0b">4단계</text>
+    <text x="150" y="318" font-size="12.5" font-weight="700" fill="#d97706">t4 = t3⊕e</text>
+    <text x="70" y="346" font-size="12" fill="#0b0b0b">5단계</text>
+    <text x="150" y="346" font-size="12.5" font-weight="700" fill="#d97706">결과 = t4⊕f</text>
+
+    <text x="290" y="262" font-size="11.5" fill="#52514e">각 단계는 앞 단계의</text>
+    <text x="290" y="278" font-size="11.5" fill="#52514e">결과를 기다려야 하므로</text>
+    <text x="290" y="294" font-size="11.5" fill="#52514e">어떤 두 단계도 동시에</text>
+    <text x="290" y="310" font-size="11.5" fill="#52514e">실행할 수 없습니다.</text>
+
+    <line x1="70" y1="368" x2="510" y2="368" stroke="#d97706" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="70" y="394" font-size="13" font-weight="700" fill="#0b0b0b">단계 수 = n − 1 = 5</text>
+    <text x="70" y="418" font-size="11.5" fill="#52514e">뺄셈처럼 결합법칙이 없는 연산은 이 방식밖에 없습니다.</text>
+    <text x="70" y="436" font-size="11.5" fill="#52514e">(5−3)−1 = 1 이지만 5−(3−1) = 3 으로 답이 달라집니다.</text>
+  </g>
+
+  <!-- Right: parallel tree (green) -->
+  <g>
+    <rect x="570" y="82" width="510" height="368" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="825" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">병렬 리듀스 — 트리로 접기</text>
+    <text x="825" y="133" text-anchor="middle" font-size="12" fill="#52514e">((a⊕b)⊕(c⊕d))⊕(e⊕f)</text>
+
+    <rect x="600" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+    <text x="621" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">a</text>
+    <rect x="652" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+    <text x="673" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">b</text>
+    <rect x="756" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+    <text x="777" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">c</text>
+    <rect x="808" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+    <text x="829" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">d</text>
+    <rect x="912" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+    <text x="933" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">e</text>
+    <rect x="964" y="152" width="42" height="34" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+    <text x="985" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">f</text>
+
+    <line x1="647" y1="192" x2="647" y2="218" stroke="#1baf7a" stroke-width="2" marker-end="url(#aGr)"/>
+    <line x1="803" y1="192" x2="803" y2="218" stroke="#1baf7a" stroke-width="2" marker-end="url(#aGr)"/>
+    <line x1="959" y1="192" x2="959" y2="218" stroke="#1baf7a" stroke-width="2" marker-end="url(#aGr)"/>
+
+    <rect x="602" y="226" width="90" height="36" rx="9" fill="#1baf7a" fill-opacity="0.20" stroke="#1baf7a" stroke-width="2"/>
+    <text x="647" y="249" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">a⊕b</text>
+    <rect x="758" y="226" width="90" height="36" rx="9" fill="#1baf7a" fill-opacity="0.20" stroke="#1baf7a" stroke-width="2"/>
+    <text x="803" y="249" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">c⊕d</text>
+    <rect x="914" y="226" width="90" height="36" rx="9" fill="#1baf7a" fill-opacity="0.20" stroke="#1baf7a" stroke-width="2"/>
+    <text x="959" y="249" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">e⊕f</text>
+    <text x="825" y="282" text-anchor="middle" font-size="11.5" fill="#52514e">1단계 — 세 코어가 동시에 계산</text>
+
+    <line x1="647" y1="290" x2="712" y2="312" stroke="#1baf7a" stroke-width="2" marker-end="url(#aGr)"/>
+    <line x1="803" y1="290" x2="742" y2="312" stroke="#1baf7a" stroke-width="2" marker-end="url(#aGr)"/>
+    <rect x="682" y="318" width="90" height="36" rx="9" fill="#1baf7a" fill-opacity="0.20" stroke="#1baf7a" stroke-width="2"/>
+    <text x="727" y="341" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">a⊕b⊕c⊕d</text>
+    <text x="880" y="306" font-size="11.5" fill="#52514e">2단계</text>
+
+    <line x1="727" y1="358" x2="790" y2="378" stroke="#1baf7a" stroke-width="2" marker-end="url(#aGr)"/>
+    <line x1="959" y1="266" x2="959" y2="378" stroke="#1baf7a" stroke-width="2" marker-end="url(#aGr)"/>
+    <line x1="959" y1="378" x2="880" y2="378" stroke="#1baf7a" stroke-width="2"/>
+    <rect x="796" y="384" width="120" height="36" rx="9" fill="#1baf7a" fill-opacity="0.32" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="856" y="407" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">최종 결과</text>
+
+    <text x="600" y="318" font-size="13" font-weight="700" fill="#0b0b0b">단계 수 = ⌈log₂ n⌉ = 3</text>
+    <text x="600" y="344" font-size="11.5" fill="#52514e">어떻게 묶어도 답이 같음이</text>
+    <text x="600" y="360" font-size="11.5" fill="#52514e">결합법칙으로 보장되므로,</text>
+    <text x="600" y="376" font-size="11.5" fill="#52514e">부분합을 서로 다른 노드에</text>
+    <text x="600" y="392" font-size="11.5" fill="#52514e">맡길 수 있습니다.</text>
+    <text x="600" y="416" font-size="11.5" fill="#52514e">SUM · MAX · MIN · COUNT가</text>
+    <text x="600" y="432" font-size="11.5" fill="#52514e">분산 집계되는 근거입니다.</text>
+  </g>
+</svg>

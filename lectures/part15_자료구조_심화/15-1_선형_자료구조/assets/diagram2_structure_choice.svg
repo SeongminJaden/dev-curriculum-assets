@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="470" viewBox="0 0 1120 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="470" fill="#fcfcfb"/>
+  <defs>
+    <marker id="arrGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52514e"/>
+    </marker>
+  </defs>
+
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">선형 자료구조 선택 흐름</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">"무엇이 빠른가"가 아니라 "어떤 연산을 가장 자주 하는가"에서 출발합니다</text>
+
+  <!-- 질문 1 -->
+  <rect x="380" y="82" width="360" height="56" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="560" y="106" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">가장 자주 하는 연산은 무엇입니까?</text>
+  <text x="560" y="126" text-anchor="middle" font-size="11.5" fill="#52514e">접근·순회 / 양 끝 삽입·삭제 / 중간 이동</text>
+
+  <line x1="470" y1="138" x2="200" y2="184" stroke="#52514e" stroke-width="2" marker-end="url(#arrGray)"/>
+  <line x1="560" y1="138" x2="560" y2="184" stroke="#52514e" stroke-width="2" marker-end="url(#arrGray)"/>
+  <line x1="650" y1="138" x2="920" y2="184" stroke="#52514e" stroke-width="2" marker-end="url(#arrGray)"/>
+
+  <!-- 갈래 1: 동적 배열 -->
+  <rect x="40" y="190" width="300" height="240" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="190" y="218" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a78d6">인덱스 접근 · 전체 순회가 지배적</text>
+  <line x1="66" y1="230" x2="314" y2="230" stroke="#2a78d6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="190" y="258" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">동적 배열</text>
+  <text x="190" y="278" text-anchor="middle" font-size="11.5" fill="#52514e">list / ArrayList / vector</text>
+
+  <text x="66" y="308" font-size="12.5" fill="#0b0b0b">접근</text>
+  <text x="314" y="308" text-anchor="end" font-size="13" font-weight="700" fill="#2a78d6">O(1)</text>
+  <text x="66" y="332" font-size="12.5" fill="#0b0b0b">뒤에 추가</text>
+  <text x="314" y="332" text-anchor="end" font-size="13" font-weight="700" fill="#2a78d6">O(1) 상환</text>
+  <text x="66" y="356" font-size="12.5" fill="#0b0b0b">중간 삽입</text>
+  <text x="314" y="356" text-anchor="end" font-size="13" font-weight="700" fill="#2a78d6">O(n)</text>
+
+  <text x="66" y="386" font-size="11.5" fill="#52514e">캐시 지역성이 가장 좋아 대부분의</text>
+  <text x="66" y="404" font-size="11.5" fill="#52514e">언어에서 기본 리스트 타입입니다.</text>
+  <text x="66" y="422" font-size="11.5" fill="#52514e">확신이 없으면 여기서 시작하세요.</text>
+
+  <!-- 갈래 2: 덱 -->
+  <rect x="360" y="190" width="400" height="240" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="560" y="218" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1baf7a">양 끝에서만 넣고 뺀다</text>
+  <line x1="386" y1="230" x2="734" y2="230" stroke="#1baf7a" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="560" y="258" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">스택 · 큐 · 덱</text>
+  <text x="560" y="278" text-anchor="middle" font-size="11.5" fill="#52514e">deque / 원형 버퍼(Circular Buffer)</text>
+
+  <text x="386" y="308" font-size="12.5" fill="#0b0b0b">한쪽 끝만 사용(LIFO)</text>
+  <text x="734" y="308" text-anchor="end" font-size="12.5" font-weight="700" fill="#1baf7a">스택</text>
+  <text x="386" y="332" font-size="12.5" fill="#0b0b0b">한쪽에 넣고 반대에서 뺌(FIFO)</text>
+  <text x="734" y="332" text-anchor="end" font-size="12.5" font-weight="700" fill="#1baf7a">큐</text>
+  <text x="386" y="356" font-size="12.5" fill="#0b0b0b">양쪽 모두 넣고 뺌</text>
+  <text x="734" y="356" text-anchor="end" font-size="12.5" font-weight="700" fill="#1baf7a">덱</text>
+
+  <text x="386" y="386" font-size="11.5" fill="#52514e">배열 앞에서 빼면 O(n)이 되는 함정을</text>
+  <text x="386" y="404" font-size="11.5" fill="#52514e">(rear + 1) % capacity 되감기로 피합니다.</text>
+  <text x="386" y="422" font-size="11.5" fill="#52514e">원소를 하나도 옮기지 않아 양 끝 모두 O(1)입니다.</text>
+
+  <!-- 갈래 3: 이중 연결 리스트 -->
+  <rect x="780" y="190" width="300" height="240" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <text x="930" y="218" text-anchor="middle" font-size="12.5" font-weight="700" fill="#d97706">아는 위치를 자주 떼어 옮긴다</text>
+  <line x1="806" y1="230" x2="1054" y2="230" stroke="#d97706" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="930" y="258" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">이중 연결 리스트</text>
+  <text x="930" y="278" text-anchor="middle" font-size="11.5" fill="#52514e">LRU 캐시 · OS 대기열</text>
+
+  <text x="806" y="308" font-size="12.5" fill="#0b0b0b">아는 노드 삭제</text>
+  <text x="1054" y="308" text-anchor="end" font-size="13" font-weight="700" fill="#d97706">O(1)</text>
+  <text x="806" y="332" font-size="12.5" fill="#0b0b0b">i번째 접근</text>
+  <text x="1054" y="332" text-anchor="end" font-size="13" font-weight="700" fill="#d97706">O(n)</text>
+  <text x="806" y="356" font-size="12.5" fill="#0b0b0b">노드당 오버헤드</text>
+  <text x="1054" y="356" text-anchor="end" font-size="13" font-weight="700" fill="#d97706">포인터 2개</text>
+
+  <text x="806" y="386" font-size="11.5" fill="#52514e">포인터 재배선만으로 원소를 옮기는</text>
+  <text x="806" y="404" font-size="11.5" fill="#52514e">능력이 필요할 때만 값어치가 있습니다.</text>
+  <text x="806" y="422" font-size="11.5" fill="#52514e">그 외에는 메모리와 캐시에서 손해입니다.</text>
+
+  <text x="560" y="456" text-anchor="middle" font-size="11.5" fill="#52514e">세 갈래 모두 저장 방식이 아니라 "허용하는 연산의 집합"이 다를 뿐입니다</text>
+</svg>

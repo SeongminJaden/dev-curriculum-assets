@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="470" viewBox="0 0 1120 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="470" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">파라메트릭 서치 — 배열이 아니라 "답" 위에서 이진 탐색하기</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">최적화 문제를 예/아니오 결정 문제로 바꾸면, 정렬 배열의 lower_bound와 같은 구조가 됩니다</text>
+
+  <defs>
+    <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+
+  <rect x="60" y="86" width="1000" height="52" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="80" y="108" font-size="13" font-weight="700" fill="#0b0b0b">최적화 문제 — "같은 길이로 K개를 만들 때 가능한 최대 길이는?"</text>
+  <text x="80" y="128" font-size="12.5" fill="#52514e">그대로는 이진 탐색이 안 됩니다. 아래처럼 결정 문제로 바꿔야 합니다.</text>
+
+  <line x1="560" y1="142" x2="560" y2="168" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#ar3)"/>
+
+  <rect x="60" y="172" width="1000" height="46" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="80" y="201" font-size="13" font-weight="700" fill="#0b0b0b">결정 문제 f(x) — "길이 x로 K개를 만들 수 있는가?" → 예 / 아니오</text>
+
+  <text x="60" y="252" font-size="12.5" font-weight="700" fill="#52514e">답의 후보 범위 위에서의 f(x)</text>
+
+  <rect x="60" y="262" width="560" height="40" rx="8" fill="#1baf7a" fill-opacity="0.20" stroke="#1baf7a" stroke-width="2.5"/>
+  <rect x="620" y="262" width="440" height="40" rx="8" fill="#dc2626" fill-opacity="0.20" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="340" y="287" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">f(x) = 가능 (참)</text>
+  <text x="840" y="287" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0b0b0b">f(x) = 불가능 (거짓)</text>
+
+  <line x1="620" y1="256" x2="620" y2="330" stroke="#d97706" stroke-width="3"/>
+  <text x="620" y="350" text-anchor="middle" font-size="13" font-weight="700" fill="#d97706">경계 x* = 우리가 찾는 최적해</text>
+
+  <text x="66" y="320" font-size="11.5" fill="#52514e">x = 1 (짧으면 당연히 가능)</text>
+  <text x="1054" y="320" text-anchor="end" font-size="11.5" fill="#52514e">x = max (길면 당연히 불가능)</text>
+
+  <rect x="60" y="368" width="490" height="88" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="80" y="394" font-size="13.5" font-weight="700" fill="#0b0b0b">적용 조건 — 단조성 하나뿐</text>
+  <text x="80" y="416" font-size="12" fill="#52514e">"답이 x일 때 가능하다면, x보다 조금 더 나쁜 값에서도</text>
+  <text x="80" y="434" font-size="12" fill="#52514e">반드시 가능한가?" — 예라면 참·거짓 경계가 한 곳뿐이고</text>
+  <text x="80" y="450" font-size="12" fill="#52514e">이진 탐색이 성립합니다.</text>
+
+  <rect x="570" y="368" width="490" height="88" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <text x="590" y="394" font-size="13.5" font-weight="700" fill="#0b0b0b">복잡도</text>
+  <text x="590" y="416" font-size="12.5" fill="#0b0b0b">O( f의 비용 × log(답의 범위) )</text>
+  <text x="590" y="436" font-size="12" fill="#52514e">랜선 자르기라면 O(N log max) — N=10만, max=2³¹이어도</text>
+  <text x="590" y="452" font-size="12" fill="#52514e">약 300만 연산. 후보를 다 시도하는 O(N·max)와 차원이 다릅니다.</text>
+</svg>

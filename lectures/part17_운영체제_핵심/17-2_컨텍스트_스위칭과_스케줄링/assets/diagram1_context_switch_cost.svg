@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="500" viewBox="0 0 1120 500" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="500" fill="#fcfcfb"/>
+  <defs>
+    <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52514e"/>
+    </marker>
+  </defs>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">컨텍스트 스위칭의 비용 — 보이는 비용과 보이지 않는 비용</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">전환 구간 동안 CPU는 어떤 사용자 코드도 실행하지 못합니다</text>
+
+  <!-- timeline -->
+  <rect x="60" y="88" width="340" height="58" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="230" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">프로세스 A 실행 중</text>
+  <text x="230" y="134" text-anchor="middle" font-size="11.5" fill="#52514e">캐시·TLB가 A의 데이터로 채워져 있음</text>
+
+  <rect x="410" y="88" width="220" height="58" rx="10" fill="#dc2626" fill-opacity="0.10" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="520" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">커널: 컨텍스트 전환</text>
+  <text x="520" y="134" text-anchor="middle" font-size="11.5" fill="#52514e">순수 오버헤드 구간</text>
+
+  <rect x="640" y="88" width="420" height="58" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="850" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">프로세스 B 실행 시작</text>
+  <text x="850" y="134" text-anchor="middle" font-size="11.5" fill="#52514e">한동안 캐시 미스가 폭증하며 서서히 회복됩니다</text>
+
+  <line x1="410" y1="162" x2="410" y2="180" stroke="#52514e" stroke-width="1.5"/>
+  <line x1="630" y1="162" x2="630" y2="180" stroke="#52514e" stroke-width="1.5"/>
+  <line x1="410" y1="180" x2="630" y2="180" stroke="#52514e" stroke-width="1.5"/>
+  <text x="520" y="199" text-anchor="middle" font-size="11.5" fill="#52514e">직접 비용 (수백 ns)</text>
+
+  <line x1="640" y1="162" x2="640" y2="180" stroke="#d97706" stroke-width="1.5"/>
+  <line x1="1000" y1="162" x2="1000" y2="180" stroke="#d97706" stroke-width="1.5"/>
+  <line x1="640" y1="180" x2="1000" y2="180" stroke="#d97706" stroke-width="1.5"/>
+  <text x="820" y="199" text-anchor="middle" font-size="11.5" fill="#d97706">간접 비용 (수 µs, 실행은 되지만 매우 느림)</text>
+
+  <!-- cost cards -->
+  <rect x="60" y="222" width="490" height="230" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <circle cx="88" cy="250" r="12" fill="#2a78d6"/>
+  <text x="88" y="254" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+  <text x="112" y="255" font-size="15" font-weight="700" fill="#0b0b0b">직접 비용 — 눈에 보이는 작업</text>
+  <text x="86" y="288" font-size="12.5" fill="#0b0b0b">· 범용 레지스터 · 스택 포인터를 PCB에 저장</text>
+  <text x="86" y="313" font-size="12.5" fill="#0b0b0b">· 프로그램 카운터 · 상태 레지스터 저장</text>
+  <text x="86" y="338" font-size="12.5" fill="#0b0b0b">· 다음 프로세스의 PCB에서 같은 값을 복원</text>
+  <text x="86" y="363" font-size="12.5" fill="#0b0b0b">· 주소 공간 교체(x86-64의 CR3 레지스터 갱신)</text>
+  <text x="86" y="388" font-size="12.5" fill="#0b0b0b">· 커널의 스케줄러 실행 자체의 시간</text>
+  <line x1="86" y1="404" x2="524" y2="404" stroke="#2a78d6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="86" y="428" font-size="11.5" fill="#52514e">메모리 쓰기·읽기 수십 회로 끝나므로 총량이 정해져</text>
+  <text x="86" y="444" font-size="11.5" fill="#52514e">있고 예측 가능합니다</text>
+
+  <rect x="580" y="222" width="480" height="230" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <circle cx="608" cy="250" r="12" fill="#d97706"/>
+  <text x="608" y="254" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+  <text x="632" y="255" font-size="15" font-weight="700" fill="#0b0b0b">간접 비용 — 실제로 더 아픈 쪽</text>
+  <text x="606" y="288" font-size="12.5" fill="#0b0b0b">· 캐시 오염: L1/L2/L3이 이전 프로세스 데이터</text>
+  <text x="620" y="308" font-size="12.5" fill="#0b0b0b">로 차 있어 새 프로세스는 캐시 미스 연속</text>
+  <text x="606" y="333" font-size="12.5" fill="#0b0b0b">· TLB 무효화: 주소 변환 결과를 버려 페이지</text>
+  <text x="620" y="353" font-size="12.5" fill="#0b0b0b">테이블 조회를 처음부터 다시 수행</text>
+  <text x="606" y="378" font-size="12.5" fill="#0b0b0b">· 분기 예측기 · 프리페처 학습 결과 초기화</text>
+  <line x1="606" y1="404" x2="1034" y2="404" stroke="#d97706" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="606" y="428" font-size="11.5" fill="#52514e">작업 특성에 따라 직접 비용의 수 배~수십 배까지</text>
+  <text x="606" y="444" font-size="11.5" fill="#52514e">커지며, 측정이 어렵습니다</text>
+
+  <text x="60" y="482" font-size="11.5" fill="#52514e">같은 프로세스 안의 스레드끼리 전환할 때는 주소 공간이 그대로라 CR3 교체와 TLB 무효화가 없습니다 — 이것이 스레드 전환이 더 싼 핵심 이유입니다.</text>
+</svg>

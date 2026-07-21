@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="480" fill="#fcfcfb"/>
+  <defs>
+    <marker id="d1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#0b0b0b"/>
+    </marker>
+    <marker id="d2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">디코더 — 번호를 선 하나로 펼치기</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">n비트 입력을 받아 2ⁿ개 출력 중 정확히 하나만 1로 만듭니다(원-핫)</text>
+
+  <!-- ===== 2대4 디코더 게이트 수준 ===== -->
+  <g>
+    <rect x="30" y="76" width="520" height="370" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+    <text x="290" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">2대4 디코더 — 게이트 수준</text>
+    <text x="290" y="126" text-anchor="middle" font-size="11.5" fill="#52514e">각 출력은 최소항(minterm) 하나씩에 정확히 대응합니다</text>
+
+    <!-- Y0 -->
+    <text x="172" y="162" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">A₁&#773;</text>
+    <text x="172" y="176" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">A₀&#773;</text>
+    <line x1="180" y1="158" x2="230" y2="158" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="180" y1="172" x2="230" y2="172" stroke="#0b0b0b" stroke-width="2"/>
+    <g transform="translate(230,150)"><path d="M0,0 H14 A15,15 0 0 1 14,30 H0 Z" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/></g>
+    <line x1="259" y1="165" x2="320" y2="165" stroke="#0b0b0b" stroke-width="2" marker-end="url(#d1)"/>
+    <text x="332" y="170" font-size="12.5" font-weight="700" fill="#8b5cf6">Y₀</text>
+    <text x="372" y="170" font-size="11.5" fill="#52514e">A₁A₀ = 00 일 때만 1</text>
+
+    <!-- Y1 -->
+    <text x="172" y="222" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">A₁&#773;</text>
+    <text x="172" y="236" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">A₀</text>
+    <line x1="180" y1="218" x2="230" y2="218" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="180" y1="232" x2="230" y2="232" stroke="#0b0b0b" stroke-width="2"/>
+    <g transform="translate(230,210)"><path d="M0,0 H14 A15,15 0 0 1 14,30 H0 Z" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/></g>
+    <line x1="259" y1="225" x2="320" y2="225" stroke="#0b0b0b" stroke-width="2" marker-end="url(#d1)"/>
+    <text x="332" y="230" font-size="12.5" font-weight="700" fill="#8b5cf6">Y₁</text>
+    <text x="372" y="230" font-size="11.5" fill="#52514e">A₁A₀ = 01 일 때만 1</text>
+
+    <!-- Y2 -->
+    <text x="172" y="282" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">A₁</text>
+    <text x="172" y="296" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">A₀&#773;</text>
+    <line x1="180" y1="278" x2="230" y2="278" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="180" y1="292" x2="230" y2="292" stroke="#0b0b0b" stroke-width="2"/>
+    <g transform="translate(230,270)"><path d="M0,0 H14 A15,15 0 0 1 14,30 H0 Z" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/></g>
+    <line x1="259" y1="285" x2="320" y2="285" stroke="#0b0b0b" stroke-width="2" marker-end="url(#d1)"/>
+    <text x="332" y="290" font-size="12.5" font-weight="700" fill="#8b5cf6">Y₂</text>
+    <text x="372" y="290" font-size="11.5" fill="#52514e">A₁A₀ = 10 일 때만 1</text>
+
+    <!-- Y3 -->
+    <text x="172" y="342" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">A₁</text>
+    <text x="172" y="356" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">A₀</text>
+    <line x1="180" y1="338" x2="230" y2="338" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="180" y1="352" x2="230" y2="352" stroke="#0b0b0b" stroke-width="2"/>
+    <g transform="translate(230,330)"><path d="M0,0 H14 A15,15 0 0 1 14,30 H0 Z" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/></g>
+    <line x1="259" y1="345" x2="320" y2="345" stroke="#0b0b0b" stroke-width="2" marker-end="url(#d1)"/>
+    <text x="332" y="350" font-size="12.5" font-weight="700" fill="#8b5cf6">Y₃</text>
+    <text x="372" y="350" font-size="11.5" fill="#52514e">A₁A₀ = 11 일 때만 1</text>
+
+    <line x1="55" y1="378" x2="525" y2="378" stroke="#8b5cf6" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="55" y="402" font-size="11.5" fill="#52514e">n대2ⁿ 디코더는 n변수의 모든 최소항을 한꺼번에 만들어내는 장치입니다.</text>
+    <text x="55" y="420" font-size="11.5" fill="#52514e">필요한 출력들을 OR로 묶기만 하면 어떤 불 함수든 구현할 수 있습니다.</text>
+  </g>
+
+  <!-- ===== 메모리 주소 해독 ===== -->
+  <g>
+    <rect x="570" y="76" width="520" height="370" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="830" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">메모리 주소 해독 — 3대8 디코더</text>
+    <text x="830" y="126" text-anchor="middle" font-size="11.5" fill="#52514e">"주소 5번을 읽는다"의 물리적 실체는 5번 워드 라인에만 전압을 거는 것입니다</text>
+
+    <text x="600" y="238" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0b0b0b">주소</text>
+    <text x="600" y="254" text-anchor="middle" font-size="11" fill="#52514e">3비트</text>
+    <line x1="600" y1="262" x2="600" y2="290" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="600" y1="290" x2="640" y2="290" stroke="#0b0b0b" stroke-width="2" marker-end="url(#d1)"/>
+    <text x="608" y="284" font-size="11" fill="#dc2626">101</text>
+
+    <rect x="640" y="150" width="80" height="212" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="680" y="248" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b0b0b">디코더</text>
+    <text x="680" y="266" text-anchor="middle" font-size="11" fill="#52514e">3 → 8</text>
+
+    <line x1="720" y1="164" x2="800" y2="164" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="720" y1="190" x2="800" y2="190" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="720" y1="216" x2="800" y2="216" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="720" y1="242" x2="800" y2="242" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="720" y1="268" x2="800" y2="268" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="720" y1="294" x2="800" y2="294" stroke="#dc2626" stroke-width="3" marker-end="url(#d2)"/>
+    <line x1="720" y1="320" x2="800" y2="320" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="720" y1="346" x2="800" y2="346" stroke="#0b0b0b" stroke-width="2"/>
+
+    <rect x="800" y="152" width="190" height="24" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.8"/>
+    <text x="815" y="169" font-size="11.5" fill="#52514e">워드 0</text>
+    <rect x="800" y="178" width="190" height="24" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.8"/>
+    <text x="815" y="195" font-size="11.5" fill="#52514e">워드 1</text>
+    <rect x="800" y="204" width="190" height="24" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.8"/>
+    <text x="815" y="221" font-size="11.5" fill="#52514e">워드 2</text>
+    <rect x="800" y="230" width="190" height="24" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.8"/>
+    <text x="815" y="247" font-size="11.5" fill="#52514e">워드 3</text>
+    <rect x="800" y="256" width="190" height="24" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.8"/>
+    <text x="815" y="273" font-size="11.5" fill="#52514e">워드 4</text>
+    <rect x="800" y="282" width="190" height="24" rx="4" fill="#dc2626" fill-opacity="0.16" stroke="#dc2626" stroke-width="2.5"/>
+    <text x="815" y="299" font-size="11.5" font-weight="700" fill="#dc2626">워드 5 — 선택됨</text>
+    <rect x="800" y="308" width="190" height="24" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.8"/>
+    <text x="815" y="325" font-size="11.5" fill="#52514e">워드 6</text>
+    <rect x="800" y="334" width="190" height="24" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="1.8"/>
+    <text x="815" y="351" font-size="11.5" fill="#52514e">워드 7</text>
+
+    <text x="1000" y="288" font-size="11.5" font-weight="700" fill="#dc2626">데이터</text>
+    <line x1="990" y1="294" x2="1055" y2="294" stroke="#dc2626" stroke-width="2.5" marker-end="url(#d2)"/>
+
+    <line x1="595" y1="378" x2="1065" y2="378" stroke="#2a78d6" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="595" y="402" font-size="11.5" fill="#52514e">1024워드 메모리라면 10비트 주소를 받는 10대1024 디코더가 들어 있습니다.</text>
+    <text x="595" y="420" font-size="11.5" fill="#52514e">실제 대용량 메모리는 선을 일렬로 뽑는 대신 행·열 디코더 두 개를 쓰는</text>
+    <text x="595" y="438" font-size="11.5" fill="#52514e">2차원 격자 구조를 택합니다 — 같은 용량에 면적 효율이 훨씬 좋기 때문입니다.</text>
+  </g>
+</svg>

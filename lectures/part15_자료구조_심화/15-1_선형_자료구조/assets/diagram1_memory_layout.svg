@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="460" viewBox="0 0 1120 460" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="460" fill="#fcfcfb"/>
+  <defs>
+    <marker id="arrGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1baf7a"/>
+    </marker>
+  </defs>
+
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">배열과 연결 리스트의 메모리 배치</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">연속 블록이냐 흩어진 노드냐가 모든 연산 비용을 결정합니다</text>
+
+  <!-- 배열 (파랑) -->
+  <rect x="40" y="82" width="1040" height="160" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <circle cx="68" cy="108" r="12" fill="#2a78d6"/>
+  <text x="68" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+  <text x="90" y="113" font-size="15" font-weight="700" fill="#0b0b0b">배열(Array) — 하나의 연속된 메모리 블록</text>
+
+  <text x="66" y="146" font-size="11.5" fill="#52514e">기준 주소 base = 1000, 원소 크기 4바이트</text>
+
+  <g>
+    <rect x="66" y="156" width="88" height="42" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+    <text x="110" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A[0]</text>
+    <text x="110" y="214" text-anchor="middle" font-size="11.5" fill="#52514e">1000</text>
+
+    <rect x="154" y="156" width="88" height="42" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+    <text x="198" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A[1]</text>
+    <text x="198" y="214" text-anchor="middle" font-size="11.5" fill="#52514e">1004</text>
+
+    <rect x="242" y="156" width="88" height="42" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+    <text x="286" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A[2]</text>
+    <text x="286" y="214" text-anchor="middle" font-size="11.5" fill="#52514e">1008</text>
+
+    <rect x="330" y="156" width="88" height="42" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+    <text x="374" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A[3]</text>
+    <text x="374" y="214" text-anchor="middle" font-size="11.5" fill="#52514e">1012</text>
+
+    <rect x="418" y="156" width="88" height="42" rx="4" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+    <text x="462" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">A[4]</text>
+    <text x="462" y="214" text-anchor="middle" font-size="11.5" fill="#52514e">1016</text>
+  </g>
+
+  <line x1="540" y1="150" x2="540" y2="226" stroke="#2a78d6" stroke-opacity="0.35" stroke-width="1.5"/>
+  <text x="566" y="162" font-size="12.5" font-weight="700" fill="#2a78d6">주소 = base + i x 4</text>
+  <text x="566" y="184" font-size="12.5" fill="#0b0b0b">인덱스 접근은 곱셈 1회 + 덧셈 1회로 끝나 O(1)</text>
+  <text x="566" y="204" font-size="12.5" fill="#0b0b0b">중간 삽입은 뒤 원소를 모두 밀어야 하므로 O(n)</text>
+  <text x="566" y="224" font-size="11.5" fill="#52514e">연속 배치 덕에 캐시 라인 한 번 적재로 여러 원소를 함께 읽습니다</text>
+
+  <!-- 연결 리스트 (초록) -->
+  <rect x="40" y="258" width="1040" height="176" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <circle cx="68" cy="284" r="12" fill="#1baf7a"/>
+  <text x="68" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+  <text x="90" y="289" font-size="15" font-weight="700" fill="#0b0b0b">연결 리스트(Linked List) — 힙에 흩어진 노드 + 포인터</text>
+
+  <g>
+    <rect x="66" y="316" width="118" height="46" rx="6" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+    <line x1="140" y1="316" x2="140" y2="362" stroke="#1baf7a" stroke-width="1.5"/>
+    <text x="103" y="345" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">10</text>
+    <text x="162" y="345" text-anchor="middle" font-size="11.5" fill="#52514e">next</text>
+    <text x="125" y="382" text-anchor="middle" font-size="11.5" fill="#52514e">주소 2048</text>
+
+    <rect x="246" y="316" width="118" height="46" rx="6" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+    <line x1="320" y1="316" x2="320" y2="362" stroke="#1baf7a" stroke-width="1.5"/>
+    <text x="283" y="345" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">27</text>
+    <text x="342" y="345" text-anchor="middle" font-size="11.5" fill="#52514e">next</text>
+    <text x="305" y="382" text-anchor="middle" font-size="11.5" fill="#52514e">주소 7712</text>
+
+    <rect x="426" y="316" width="118" height="46" rx="6" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+    <line x1="500" y1="316" x2="500" y2="362" stroke="#1baf7a" stroke-width="1.5"/>
+    <text x="463" y="345" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">5</text>
+    <text x="522" y="345" text-anchor="middle" font-size="11.5" fill="#52514e">null</text>
+    <text x="485" y="382" text-anchor="middle" font-size="11.5" fill="#52514e">주소 3160</text>
+
+    <line x1="184" y1="339" x2="242" y2="339" stroke="#1baf7a" stroke-width="2.5" marker-end="url(#arrGreen)"/>
+    <line x1="364" y1="339" x2="422" y2="339" stroke="#1baf7a" stroke-width="2.5" marker-end="url(#arrGreen)"/>
+  </g>
+
+  <line x1="580" y1="308" x2="580" y2="418" stroke="#1baf7a" stroke-opacity="0.35" stroke-width="1.5"/>
+  <text x="606" y="322" font-size="12.5" font-weight="700" fill="#1baf7a">주소를 계산할 수 없음 — 링크를 따라가야 함</text>
+  <text x="606" y="344" font-size="12.5" fill="#0b0b0b">i번째 원소 접근은 첫 노드부터 i번 이동하므로 O(n)</text>
+  <text x="606" y="364" font-size="12.5" fill="#0b0b0b">삽입·삭제는 포인터 2개만 고쳐 쓰면 되므로 O(1)</text>
+  <text x="606" y="386" font-size="11.5" fill="#52514e">노드가 흩어져 있어 순회할 때마다 캐시 미스가 발생하고,</text>
+  <text x="606" y="404" font-size="11.5" fill="#52514e">포인터 자체가 데이터보다 큰 메모리를 차지하기도 합니다</text>
+</svg>

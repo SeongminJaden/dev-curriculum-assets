@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="470" viewBox="0 0 1120 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="470" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">인터럽트 처리 흐름</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">외부 신호가 도착하면 CPU는 하던 일을 저장하고, 정해진 핸들러로 잠시 다녀옵니다</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#52514e"/>
+    </marker>
+  </defs>
+
+  <!-- running user code lane -->
+  <rect x="40" y="90" width="230" height="90" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="155" y="120" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">① 사용자 코드 실행 중</text>
+  <text x="155" y="145" text-anchor="middle" font-size="11.5" fill="#52514e">현재 명령을 끝까지 완료</text>
+  <text x="155" y="163" text-anchor="middle" font-size="11.5" fill="#52514e">하고 나서 인터럽트 접수</text>
+
+  <!-- interrupt signal -->
+  <g>
+    <polygon points="360,110 400,95 400,105 440,105 440,135 400,135 400,145" fill="#dc2626"/>
+    <text x="400" y="80" text-anchor="middle" font-size="12.5" font-weight="700" fill="#dc2626">인터럽트 신호</text>
+    <text x="400" y="170" text-anchor="middle" font-size="11" fill="#52514e">(번호 실려 옴)</text>
+  </g>
+  <line x1="270" y1="135" x2="352" y2="120" stroke="#52514e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 2 save context -->
+  <rect x="480" y="90" width="250" height="90" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <text x="605" y="118" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">② 상태 저장</text>
+  <text x="605" y="143" text-anchor="middle" font-size="11.5" fill="#52514e">프로그램 카운터(PC)와</text>
+  <text x="605" y="161" text-anchor="middle" font-size="11.5" fill="#52514e">상태 레지스터를 스택에 보관</text>
+  <line x1="440" y1="120" x2="474" y2="120" stroke="#52514e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 3 kernel mode -->
+  <rect x="770" y="90" width="290" height="90" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="915" y="118" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">③ 커널 모드 전환</text>
+  <text x="915" y="143" text-anchor="middle" font-size="11.5" fill="#52514e">사용자 모드 → 커널 모드로</text>
+  <text x="915" y="161" text-anchor="middle" font-size="11.5" fill="#52514e">권한 수준 상승</text>
+  <line x1="730" y1="135" x2="764" y2="135" stroke="#52514e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 4 IVT lookup -->
+  <rect x="600" y="240" width="290" height="110" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="745" y="268" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">④ IVT 조회</text>
+  <text x="745" y="292" text-anchor="middle" font-size="11.5" fill="#52514e">인터럽트 번호를 색인으로</text>
+  <text x="745" y="310" text-anchor="middle" font-size="11.5" fill="#52514e">벡터 테이블에서 ISR 주소 획득</text>
+  <text x="745" y="332" text-anchor="middle" font-size="11" fill="#52514e">x86-64: IDT / IDTR 레지스터</text>
+  <line x1="915" y1="180" x2="820" y2="236" stroke="#52514e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 5 ISR run -->
+  <rect x="600" y="380" width="290" height="70" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="745" y="408" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">⑤ ISR(핸들러) 실행</text>
+  <text x="745" y="432" text-anchor="middle" font-size="11.5" fill="#52514e">해당 장치의 처리 루틴 수행</text>
+  <line x1="745" y1="350" x2="745" y2="376" stroke="#52514e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 6/7 restore & return -->
+  <rect x="120" y="380" width="380" height="70" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="310" y="408" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">⑥ 상태 복원 → ⑦ 원래 코드로 복귀</text>
+  <text x="310" y="432" text-anchor="middle" font-size="11.5" fill="#52514e">저장했던 PC·레지스터를 되살려 중단 지점부터 재개 (사용자 모드로 복귀)</text>
+  <line x1="600" y1="415" x2="504" y2="415" stroke="#52514e" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

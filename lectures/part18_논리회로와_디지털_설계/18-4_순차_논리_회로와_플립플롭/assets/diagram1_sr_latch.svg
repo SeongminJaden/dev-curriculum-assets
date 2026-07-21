@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="470" viewBox="0 0 1120 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="470" fill="#fcfcfb"/>
+  <defs>
+    <marker id="s1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#0b0b0b"/>
+    </marker>
+  </defs>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">SR 래치 — 교차 연결이 만들어내는 기억</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">출력을 다시 입력으로 되돌리면, 아무 입력이 없어도 스스로 값을 유지하는 상태가 생깁니다</text>
+
+  <!-- ===== 회로 ===== -->
+  <g>
+    <rect x="30" y="76" width="560" height="370" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+    <text x="310" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">NOR 게이트 두 개의 교차 연결</text>
+
+    <!-- 입력 -->
+    <text x="152" y="152" text-anchor="end" font-size="13" font-weight="700" fill="#0b0b0b">R</text>
+    <line x1="162" y1="148" x2="280" y2="148" stroke="#0b0b0b" stroke-width="2"/>
+    <text x="152" y="286" text-anchor="end" font-size="13" font-weight="700" fill="#0b0b0b">S</text>
+    <line x1="162" y1="282" x2="280" y2="282" stroke="#0b0b0b" stroke-width="2"/>
+
+    <!-- NOR1 -->
+    <g transform="translate(280,140)">
+      <path d="M0,0 Q15,15 0,30 Q22,30 38,15 Q22,0 0,0 Z" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+      <circle cx="43" cy="15" r="5" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+    </g>
+    <text x="299" y="132" font-size="10.5" fill="#52514e">NOR 1</text>
+    <line x1="328" y1="155" x2="430" y2="155" stroke="#0b0b0b" stroke-width="2" marker-end="url(#s1)"/>
+    <text x="442" y="160" font-size="13" font-weight="700" fill="#8b5cf6">Q</text>
+
+    <!-- NOR2 -->
+    <g transform="translate(280,260)">
+      <path d="M0,0 Q15,15 0,30 Q22,30 38,15 Q22,0 0,0 Z" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+      <circle cx="43" cy="15" r="5" fill="#ffffff" stroke="#8b5cf6" stroke-width="2.5"/>
+    </g>
+    <text x="299" y="305" font-size="10.5" fill="#52514e">NOR 2</text>
+    <line x1="328" y1="275" x2="430" y2="275" stroke="#0b0b0b" stroke-width="2" marker-end="url(#s1)"/>
+    <text x="442" y="280" font-size="13" font-weight="700" fill="#8b5cf6">Q&#773;</text>
+
+    <!-- 피드백 A : Q → NOR2 위쪽 입력 -->
+    <circle cx="370" cy="155" r="3.5" fill="#dc2626"/>
+    <path d="M370,155 V320 H255 V268 H280" fill="none" stroke="#dc2626" stroke-width="2"/>
+
+    <!-- 피드백 B : Q̄ → NOR1 아래쪽 입력 (교차 지점은 점프로 표시) -->
+    <circle cx="395" cy="275" r="3.5" fill="#1baf7a"/>
+    <path d="M395,275 V163 Q404,155 395,147 V110 H245 V162 H280" fill="none" stroke="#1baf7a" stroke-width="2"/>
+
+    <text x="55" y="352" font-size="11.5" fill="#52514e">S=R=0이면 각 NOR는 "상대 출력의 반전"을 내므로 현재 값이 그대로 순환합니다.</text>
+    <text x="55" y="372" font-size="11.5" fill="#52514e">전원이 공급되는 한 이 순환은 외부 도움 없이 스스로 버팁니다 — 이것이 기억입니다.</text>
+    <text x="55" y="398" font-size="11.5" fill="#dc2626">S=R=1은 금지 상태입니다. Q와 Q&#773;가 동시에 0이 되어 모순이며, 입력이 함께 0으로</text>
+    <text x="55" y="416" font-size="11.5" fill="#dc2626">돌아갈 때 어느 쪽이 이길지 물리적 지연 차이로 무작위 결정되기 때문입니다.</text>
+  </g>
+
+  <!-- ===== 두 안정 상태 ===== -->
+  <g>
+    <rect x="610" y="76" width="480" height="370" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="850" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">S = R = 0 일 때의 두 안정 상태</text>
+
+    <rect x="635" y="122" width="200" height="150" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="735" y="149" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1baf7a">안정 상태 ①</text>
+    <text x="655" y="178" font-size="12.5" font-weight="700" fill="#0b0b0b">Q = 1 ,  Q&#773; = 0</text>
+    <line x1="655" y1="192" x2="815" y2="192" stroke="#1baf7a" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="655" y="215" font-size="11.5" fill="#52514e">NOR1(R=0, Q&#773;=0) → 1 = Q ✓</text>
+    <text x="655" y="237" font-size="11.5" fill="#52514e">NOR2(S=0, Q=1) → 0 = Q&#773; ✓</text>
+    <text x="655" y="259" font-size="11.5" fill="#0b0b0b">모순 없이 스스로 성립</text>
+
+    <rect x="865" y="122" width="200" height="150" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="965" y="149" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1baf7a">안정 상태 ②</text>
+    <text x="885" y="178" font-size="12.5" font-weight="700" fill="#0b0b0b">Q = 0 ,  Q&#773; = 1</text>
+    <line x1="885" y1="192" x2="1045" y2="192" stroke="#1baf7a" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="885" y="215" font-size="11.5" fill="#52514e">NOR1(R=0, Q&#773;=1) → 0 = Q ✓</text>
+    <text x="885" y="237" font-size="11.5" fill="#52514e">NOR2(S=0, Q=0) → 1 = Q&#773; ✓</text>
+    <text x="885" y="259" font-size="11.5" fill="#0b0b0b">역시 모순 없이 성립</text>
+
+    <line x1="635" y1="296" x2="1065" y2="296" stroke="#1baf7a" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="635" y="322" font-size="12.5" font-weight="700" fill="#0b0b0b">같은 입력(S=R=0)에 두 개의 유효한 답이 존재합니다.</text>
+    <text x="635" y="346" font-size="11.5" fill="#52514e">조합 회로였다면 입력이 같으면 답도 하나여야 합니다. 답이 둘이라는 것은</text>
+    <text x="635" y="364" font-size="11.5" fill="#52514e">회로가 "이전에 무슨 일이 있었는가"를 붙들고 있다는 뜻입니다.</text>
+    <text x="635" y="392" font-size="11.5" fill="#52514e">SRAM의 한 비트 셀이 정확히 이 구조입니다. 인버터 두 개를 마주보게 연결하고</text>
+    <text x="635" y="410" font-size="11.5" fill="#52514e">접근용 트랜지스터 두 개를 붙인 6T 셀이 표준이며, 재충전 없이 스스로 유지되기에</text>
+    <text x="635" y="428" font-size="11.5" fill="#52514e">Static RAM이라 부릅니다.</text>
+  </g>
+</svg>

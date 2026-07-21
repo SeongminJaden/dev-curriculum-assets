@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="480" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">편향 트리와 균형 트리 — 같은 데이터, 다른 삽입 순서</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">담긴 키 7개는 동일하고 BST 불변식도 둘 다 지키지만 높이가 6과 2로 갈립니다</text>
+
+  <!-- 왼쪽: 편향 트리 -->
+  <rect x="40" y="82" width="510" height="360" rx="10" fill="#dc2626" fill-opacity="0.10" stroke="#dc2626" stroke-width="2.5"/>
+  <circle cx="68" cy="108" r="12" fill="#dc2626"/>
+  <text x="68" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+  <text x="90" y="113" font-size="15" font-weight="700" fill="#0b0b0b">편향 트리 — 오름차순 삽입</text>
+  <text x="66" y="136" font-size="11.5" fill="#52514e">삽입 순서: 10, 20, 30, 40, 50, 60, 70</text>
+
+  <line x1="118" y1="176" x2="158" y2="212" stroke="#dc2626" stroke-width="2"/>
+  <line x1="168" y1="226" x2="208" y2="262" stroke="#dc2626" stroke-width="2"/>
+  <line x1="218" y1="276" x2="258" y2="312" stroke="#dc2626" stroke-width="2"/>
+  <line x1="268" y1="326" x2="308" y2="362" stroke="#dc2626" stroke-width="2"/>
+
+  <circle cx="106" cy="164" r="22" fill="#ffffff" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="106" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">10</text>
+  <circle cx="156" cy="214" r="22" fill="#ffffff" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="156" y="220" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">20</text>
+  <circle cx="206" cy="264" r="22" fill="#ffffff" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="206" y="270" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">30</text>
+  <circle cx="256" cy="314" r="22" fill="#ffffff" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="256" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">40</text>
+  <circle cx="306" cy="364" r="22" fill="#ffffff" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="306" y="370" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">50</text>
+  <text x="352" y="370" font-size="13" font-weight="700" fill="#dc2626">... 계속 오른쪽으로</text>
+
+  <line x1="400" y1="150" x2="400" y2="330" stroke="#dc2626" stroke-opacity="0.35" stroke-width="1.5"/>
+  <text x="418" y="164" font-size="12.5" font-weight="700" fill="#dc2626">높이 = n - 1 = 6</text>
+  <text x="418" y="188" font-size="12.5" fill="#0b0b0b">탐색 O(n)</text>
+  <text x="418" y="210" font-size="12.5" fill="#0b0b0b">삽입 O(n)</text>
+  <text x="418" y="232" font-size="12.5" fill="#0b0b0b">삭제 O(n)</text>
+  <text x="418" y="262" font-size="11.5" fill="#52514e">사실상</text>
+  <text x="418" y="280" font-size="11.5" fill="#52514e">연결 리스트</text>
+  <text x="418" y="298" font-size="11.5" fill="#52514e">입니다</text>
+
+  <text x="66" y="418" font-size="11.5" fill="#52514e">자동 증가 ID, 타임스탬프, 정렬된 파일명처럼</text>
+  <text x="66" y="434" font-size="11.5" fill="#52514e">실무의 정렬된 입력이 그대로 이 형태를 만듭니다</text>
+
+  <!-- 오른쪽: 균형 트리 -->
+  <rect x="570" y="82" width="510" height="360" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <circle cx="598" cy="108" r="12" fill="#1baf7a"/>
+  <text x="598" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+  <text x="620" y="113" font-size="15" font-weight="700" fill="#0b0b0b">균형 트리 — 회전으로 높이 유지</text>
+  <text x="596" y="136" font-size="11.5" fill="#52514e">같은 키 7개, 삽입할 때마다 스스로 재조정</text>
+
+  <line x1="790" y1="186" x2="700" y2="242" stroke="#1baf7a" stroke-width="2"/>
+  <line x1="790" y1="186" x2="880" y2="242" stroke="#1baf7a" stroke-width="2"/>
+  <line x1="690" y1="278" x2="640" y2="332" stroke="#1baf7a" stroke-width="2"/>
+  <line x1="690" y1="278" x2="740" y2="332" stroke="#1baf7a" stroke-width="2"/>
+  <line x1="890" y1="278" x2="840" y2="332" stroke="#1baf7a" stroke-width="2"/>
+  <line x1="890" y1="278" x2="940" y2="332" stroke="#1baf7a" stroke-width="2"/>
+
+  <circle cx="790" cy="172" r="22" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="790" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">40</text>
+  <circle cx="690" cy="256" r="22" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="690" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">20</text>
+  <circle cx="890" cy="256" r="22" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="890" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">60</text>
+  <circle cx="630" cy="342" r="22" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="630" y="348" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">10</text>
+  <circle cx="750" cy="342" r="22" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="750" y="348" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">30</text>
+  <circle cx="830" cy="342" r="22" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="830" y="348" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">50</text>
+  <circle cx="950" cy="342" r="22" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="950" y="348" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">70</text>
+
+  <text x="596" y="400" font-size="12.5" font-weight="700" fill="#1baf7a">높이 = 2 (약 log2 n)</text>
+  <text x="596" y="422" font-size="12.5" fill="#0b0b0b">탐색·삽입·삭제 모두 최악에도 O(log n) 보장</text>
+
+  <text x="990" y="400" text-anchor="end" font-size="11.5" fill="#52514e">AVL: 높이 차 1 이하</text>
+  <text x="990" y="418" text-anchor="end" font-size="11.5" fill="#52514e">레드-블랙: 검은 높이 동일</text>
+  <text x="990" y="436" text-anchor="end" font-size="11.5" fill="#52514e">TreeMap · std::map의 기반</text>
+
+  <text x="560" y="468" text-anchor="middle" font-size="11.5" fill="#52514e">노드가 100만 개로 늘면 이 높이 격차는 약 100만 대 20으로 벌어집니다</text>
+</svg>

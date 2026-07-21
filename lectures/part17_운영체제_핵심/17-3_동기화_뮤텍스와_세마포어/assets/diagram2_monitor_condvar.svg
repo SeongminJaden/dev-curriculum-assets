@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="480" fill="#fcfcfb"/>
+  <defs>
+    <marker id="ar5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52514e"/>
+    </marker>
+  </defs>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">모니터와 조건 변수 — 두 종류의 대기 큐</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">진입 큐는 &quot;들어가려고&quot; 기다리고, 조건 변수 큐는 &quot;조건이 충족되기를&quot; 기다립니다</text>
+
+  <!-- Entry queue -->
+  <rect x="40" y="90" width="230" height="300" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="155" y="118" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0b0b0b">진입 큐 Entry Queue</text>
+  <text x="155" y="139" text-anchor="middle" font-size="11.5" fill="#52514e">아직 모니터 밖에 있습니다</text>
+
+  <rect x="64" y="156" width="182" height="40" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <text x="155" y="181" text-anchor="middle" font-size="12.5" fill="#0b0b0b">스레드 B</text>
+  <rect x="64" y="206" width="182" height="40" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <text x="155" y="231" text-anchor="middle" font-size="12.5" fill="#0b0b0b">스레드 C</text>
+  <rect x="64" y="256" width="182" height="40" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <text x="155" y="281" text-anchor="middle" font-size="12.5" fill="#0b0b0b">스레드 D</text>
+
+  <text x="64" y="326" font-size="11.5" fill="#52514e">모니터 안에 한 스레드가</text>
+  <text x="64" y="342" font-size="11.5" fill="#52514e">있는 동안에는 아무도</text>
+  <text x="64" y="358" font-size="11.5" fill="#52514e">들어갈 수 없습니다</text>
+  <text x="64" y="378" font-size="11.5" fill="#52514e">락 관리는 언어가 대신합니다</text>
+
+  <line x1="276" y1="230" x2="326" y2="230" stroke="#52514e" stroke-width="2" marker-end="url(#ar5)"/>
+  <text x="301" y="220" text-anchor="middle" font-size="11" fill="#52514e">진입</text>
+
+  <!-- Monitor -->
+  <rect x="332" y="90" width="382" height="300" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="523" y="118" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0b0b0b">모니터 Monitor — 정원 1명</text>
+  <text x="523" y="139" text-anchor="middle" font-size="11.5" fill="#52514e">공유 데이터와 연산을 하나로 묶은 단위</text>
+
+  <rect x="356" y="156" width="334" height="70" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+  <text x="376" y="180" font-size="12.5" font-weight="700" fill="#0b0b0b">공유 데이터</text>
+  <text x="376" y="202" font-size="12" fill="#0b0b0b">buffer = [ ]   max_size = 5</text>
+  <text x="376" y="219" font-size="11.5" fill="#52514e">모니터 밖에서는 직접 접근할 수 없습니다</text>
+
+  <rect x="356" y="238" width="334" height="66" rx="8" fill="#1baf7a" fill-opacity="0.3" stroke="#1baf7a" stroke-width="2"/>
+  <text x="523" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">실행 중: 스레드 A</text>
+  <text x="523" y="284" text-anchor="middle" font-size="11.5" fill="#52514e">put() / get() 같은 연산을 수행하는 중</text>
+
+  <text x="356" y="330" font-size="11.5" fill="#52514e">조건이 충족되지 않으면 A는 스스로 wait()를 호출해</text>
+  <text x="356" y="346" font-size="11.5" fill="#52514e">락을 놓으면서 동시에 잠듭니다 — 이 둘은 원자적입니다</text>
+  <text x="356" y="366" font-size="11.5" fill="#dc2626">락을 놓지 않고 잠들면 아무도 조건을 바꿔줄 수 없습니다</text>
+
+  <line x1="720" y1="210" x2="770" y2="210" stroke="#52514e" stroke-width="2" marker-end="url(#ar5)"/>
+  <text x="745" y="200" text-anchor="middle" font-size="11" fill="#52514e">wait()</text>
+  <line x1="770" y1="272" x2="720" y2="272" stroke="#52514e" stroke-width="2" marker-end="url(#ar5)"/>
+  <text x="745" y="292" text-anchor="middle" font-size="11" fill="#52514e">signal()</text>
+
+  <!-- Condition variable queue -->
+  <rect x="776" y="90" width="304" height="300" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <text x="928" y="118" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0b0b0b">조건 변수 대기 큐</text>
+  <text x="928" y="139" text-anchor="middle" font-size="11.5" fill="#52514e">이미 들어왔지만 조건을 못 만난 스레드</text>
+
+  <rect x="800" y="156" width="256" height="46" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <text x="820" y="176" font-size="12.5" fill="#0b0b0b">스레드 E — not_empty 대기</text>
+  <text x="820" y="194" font-size="11.5" fill="#52514e">버퍼에 데이터가 들어오기를 기다림</text>
+
+  <rect x="800" y="212" width="256" height="46" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <text x="820" y="232" font-size="12.5" fill="#0b0b0b">스레드 F — not_full 대기</text>
+  <text x="820" y="250" font-size="11.5" fill="#52514e">버퍼에 빈자리가 나기를 기다림</text>
+
+  <line x1="800" y1="280" x2="1056" y2="280" stroke="#d97706" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="800" y="304" font-size="11.5" fill="#52514e">signal()로 깨어난 스레드는 곧바로 실행되지</text>
+  <text x="800" y="320" font-size="11.5" fill="#52514e">않고 락을 다시 얻어야 합니다. 그 사이 다른</text>
+  <text x="800" y="336" font-size="11.5" fill="#52514e">스레드가 조건을 무너뜨릴 수 있고, 허위 각성도</text>
+  <text x="800" y="352" font-size="11.5" fill="#52514e">허용되므로 조건 검사는 반드시 while 루프로</text>
+  <text x="800" y="374" font-size="11.5" fill="#dc2626">while not buffer: cond.wait()</text>
+
+  <text x="40" y="428" font-size="11.5" fill="#52514e">모니터는 1974년 C.A.R. 호어와 페르 브린치 한센이 정식화한 개념으로, 자바의 synchronized와 wait()/notify(), 파이썬의 threading.Condition,</text>
+  <text x="40" y="448" font-size="11.5" fill="#52514e">C#의 lock 구문이 모두 이 개념의 직계 후손입니다. 프로그래머가 락 획득·해제를 손으로 짝맞추다 실수하는 문제를 언어 차원에서 없애려는 설계입니다.</text>
+</svg>

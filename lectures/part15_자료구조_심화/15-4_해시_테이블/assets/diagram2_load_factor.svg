@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="470" viewBox="0 0 1120 470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="470" fill="#fcfcfb"/>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">적재율에 따른 평균 탐색 비용과 리사이징 임계값</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">개념도이지만 두 곡선의 모양 차이는 수학적으로 엄밀합니다</text>
+
+  <!-- 그래프 영역 -->
+  <rect x="40" y="82" width="700" height="350" rx="10" fill="#8b5cf6" fill-opacity="0.06" stroke="#8b5cf6" stroke-width="2.5"/>
+
+  <!-- 축 -->
+  <line x1="180" y1="380" x2="700" y2="380" stroke="#52514e" stroke-width="2"/>
+  <line x1="180" y1="380" x2="180" y2="120" stroke="#52514e" stroke-width="2"/>
+  <text x="440" y="412" text-anchor="middle" font-size="12.5" fill="#0b0b0b">적재율 a = 원소 수 / 버킷 수</text>
+  <text x="128" y="250" font-size="12.5" fill="#0b0b0b">평균</text>
+  <text x="128" y="268" font-size="12.5" fill="#0b0b0b">탐색</text>
+  <text x="128" y="286" font-size="12.5" fill="#0b0b0b">비용</text>
+
+  <text x="180" y="398" text-anchor="middle" font-size="11.5" fill="#52514e">0</text>
+  <text x="430" y="398" text-anchor="middle" font-size="11.5" fill="#52514e">0.5</text>
+  <text x="555" y="398" text-anchor="middle" font-size="11.5" fill="#52514e">0.75</text>
+  <text x="680" y="398" text-anchor="middle" font-size="11.5" fill="#52514e">1.0</text>
+
+  <!-- 임계선 -->
+  <line x1="530" y1="140" x2="530" y2="380" stroke="#d97706" stroke-dasharray="5 4" stroke-width="1.8"/>
+  <text x="524" y="134" text-anchor="end" font-size="11.5" font-weight="700" fill="#d97706">개방 주소법 임계 0.7</text>
+  <line x1="555" y1="168" x2="555" y2="380" stroke="#2a78d6" stroke-dasharray="5 4" stroke-width="1.8"/>
+  <text x="566" y="162" font-size="11.5" font-weight="700" fill="#2a78d6">체이닝 임계 0.75</text>
+
+  <!-- 개방 주소법 곡선 -->
+  <path d="M180,380 L430,359 L530,311 L580,216 Q602,160 620,125" fill="none" stroke="#d97706" stroke-width="3"/>
+  <text x="634" y="140" font-size="12.5" font-weight="700" fill="#d97706">개방 주소법</text>
+  <text x="634" y="158" font-size="11.5" fill="#52514e">a → 1에서 발산</text>
+
+  <!-- 체이닝 직선 -->
+  <line x1="180" y1="380" x2="690" y2="360" stroke="#2a78d6" stroke-width="3"/>
+  <text x="600" y="352" font-size="12.5" font-weight="700" fill="#2a78d6">체이닝 — O(1 + a)</text>
+
+  <circle cx="180" cy="380" r="4" fill="#52514e"/>
+
+  <!-- 오른쪽 설명 -->
+  <rect x="760" y="82" width="320" height="168" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="786" y="108" font-size="14" font-weight="700" fill="#0b0b0b">체이닝의 비용</text>
+  <line x1="786" y1="120" x2="1054" y2="120" stroke="#2a78d6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="786" y="146" font-size="12.5" fill="#0b0b0b">평균 체인 길이가 정확히 a이므로</text>
+  <text x="786" y="166" font-size="13" font-weight="700" fill="#2a78d6">평균 탐색 = O(1 + a)</text>
+  <text x="786" y="192" font-size="11.5" fill="#52514e">a가 1을 넘어도 리스트가 조금 길어질</text>
+  <text x="786" y="210" font-size="11.5" fill="#52514e">뿐 구조가 무너지지 않습니다.</text>
+  <text x="786" y="234" font-size="11.5" fill="#52514e">그래서 임계값을 0.75로 여유 있게 잡습니다.</text>
+
+  <rect x="760" y="264" width="320" height="168" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <text x="786" y="290" font-size="14" font-weight="700" fill="#0b0b0b">개방 주소법의 비용</text>
+  <line x1="786" y1="302" x2="1054" y2="302" stroke="#d97706" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="786" y="328" font-size="12.5" fill="#0b0b0b">선형 탐사의 실패 탐색 기대 비용</text>
+  <text x="786" y="350" font-size="13" font-weight="700" fill="#d97706">약 (1 + 1/(1-a)^2) / 2</text>
+  <text x="786" y="376" font-size="11.5" fill="#52514e">빈칸이 거의 없으면 빈칸을 찾느라</text>
+  <text x="786" y="394" font-size="11.5" fill="#52514e">테이블 전체를 훑게 되어 발산합니다.</text>
+  <text x="786" y="418" font-size="11.5" fill="#52514e">그래서 임계값을 0.5~0.7로 낮게 잡습니다.</text>
+
+  <text x="560" y="456" text-anchor="middle" font-size="11.5" fill="#52514e">리사이징 1회는 전체 재해싱이라 O(n)이지만, 용량을 2배씩 늘리면 분할 상환으로 삽입 1회당 평균 O(1)이 됩니다</text>
+</svg>

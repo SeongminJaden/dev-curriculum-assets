@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="500" viewBox="0 0 1120 500" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="500" fill="#fcfcfb"/>
+  <defs>
+    <marker id="ar6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626"/>
+    </marker>
+    <marker id="ar6b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2a78d6"/>
+    </marker>
+  </defs>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">교착상태의 4대 필요조건과 자원 할당 그래프</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">네 조건이 모두 성립할 때만 교착이 발생합니다 — 하나만 깨뜨려도 불가능해집니다</text>
+
+  <!-- conditions -->
+  <rect x="40" y="88" width="500" height="72" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+  <circle cx="72" cy="124" r="14" fill="#2a78d6"/>
+  <text x="72" y="129" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+  <text x="98" y="118" font-size="14" font-weight="700" fill="#0b0b0b">상호 배제 Mutual Exclusion</text>
+  <text x="98" y="141" font-size="11.5" fill="#52514e">자원을 한 번에 하나의 프로세스만 사용할 수 있습니다</text>
+
+  <rect x="40" y="172" width="500" height="72" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+  <circle cx="72" cy="208" r="14" fill="#1baf7a"/>
+  <text x="72" y="213" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+  <text x="98" y="202" font-size="14" font-weight="700" fill="#0b0b0b">점유와 대기 Hold and Wait</text>
+  <text x="98" y="225" font-size="11.5" fill="#52514e">자원을 이미 쥔 상태에서 다른 자원을 기다립니다</text>
+
+  <rect x="40" y="256" width="500" height="72" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+  <circle cx="72" cy="292" r="14" fill="#d97706"/>
+  <text x="72" y="297" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+  <text x="98" y="286" font-size="14" font-weight="700" fill="#0b0b0b">비선점 No Preemption</text>
+  <text x="98" y="309" font-size="11.5" fill="#52514e">쥔 자원을 외부에서 강제로 빼앗을 수 없습니다</text>
+
+  <rect x="40" y="340" width="500" height="72" rx="10" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-width="2.5"/>
+  <circle cx="72" cy="376" r="14" fill="#8b5cf6"/>
+  <text x="72" y="381" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">4</text>
+  <text x="98" y="370" font-size="14" font-weight="700" fill="#0b0b0b">순환 대기 Circular Wait</text>
+  <text x="98" y="393" font-size="11.5" fill="#52514e">대기 관계가 원을 이룹니다 — 실무에서 주로 이 조건을 깹니다</text>
+
+  <text x="40" y="444" font-size="11.5" fill="#52514e">1971년 에드워드 코프만 연구진이 정리했습니다. 이 네 조건이 이후 예방·회피·탐지 전략 전체의 논리적 근거가 됩니다.</text>
+
+  <!-- resource allocation graph -->
+  <rect x="580" y="88" width="500" height="324" rx="10" fill="#dc2626" fill-opacity="0.07" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="830" y="116" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0b0b0b">자원 할당 그래프 — 순환이 곧 교착</text>
+
+  <circle cx="700" cy="190" r="34" fill="#2a78d6" fill-opacity="0.18" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="700" y="196" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">P1</text>
+
+  <rect x="928" y="158" width="64" height="64" rx="8" fill="#1baf7a" fill-opacity="0.18" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="960" y="196" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">R1</text>
+
+  <rect x="668" y="308" width="64" height="64" rx="8" fill="#1baf7a" fill-opacity="0.18" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="700" y="346" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">R2</text>
+
+  <circle cx="960" cy="340" r="34" fill="#2a78d6" fill-opacity="0.18" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="960" y="346" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0b0b">P2</text>
+
+  <line x1="922" y1="190" x2="740" y2="190" stroke="#2a78d6" stroke-width="2.5" marker-end="url(#ar6b)"/>
+  <text x="831" y="180" text-anchor="middle" font-size="11" fill="#2a78d6">할당</text>
+
+  <line x1="700" y1="228" x2="700" y2="302" stroke="#dc2626" stroke-width="2.5" marker-end="url(#ar6)"/>
+  <text x="672" y="270" text-anchor="end" font-size="11" fill="#dc2626">요청</text>
+
+  <line x1="738" y1="340" x2="920" y2="340" stroke="#2a78d6" stroke-width="2.5" marker-end="url(#ar6b)"/>
+  <text x="829" y="362" text-anchor="middle" font-size="11" fill="#2a78d6">할당</text>
+
+  <line x1="960" y1="302" x2="960" y2="228" stroke="#dc2626" stroke-width="2.5" marker-end="url(#ar6)"/>
+  <text x="988" y="270" font-size="11" fill="#dc2626">요청</text>
+
+  <text x="608" y="400" font-size="11.5" fill="#52514e">P1은 R1을 쥔 채 R2를 기다리고, P2는 R2를 쥔 채 R1을 기다립니다.</text>
+  <text x="608" y="418" font-size="11.5" fill="#dc2626">화살표가 닫힌 원을 이루므로 어느 쪽도 영원히 진행하지 못합니다.</text>
+
+  <text x="580" y="466" font-size="11.5" fill="#52514e">자원마다 인스턴스가 하나뿐이면 순환의 존재와 교착은 정확히 동치입니다. 인스턴스가 여럿인 자원이 섞이면 순환은 필요조건일 뿐이라 추가 판정이 필요합니다.</text>
+</svg>

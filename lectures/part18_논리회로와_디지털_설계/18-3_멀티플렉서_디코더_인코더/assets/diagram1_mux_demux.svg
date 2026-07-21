@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="480" fill="#fcfcfb"/>
+  <defs>
+    <marker id="m1" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#0b0b0b"/>
+    </marker>
+  </defs>
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">멀티플렉서와 디멀티플렉서</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">AND 게이트로 경로를 열고 OR 게이트로 모으면 '고르는 회로'가 됩니다</text>
+
+  <!-- ===== 2대1 MUX 게이트 수준 ===== -->
+  <g>
+    <rect x="30" y="76" width="430" height="370" rx="10" fill="#2a78d6" fill-opacity="0.10" stroke="#2a78d6" stroke-width="2.5"/>
+    <text x="245" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">2대1 MUX — 게이트 수준</text>
+    <text x="245" y="124" text-anchor="middle" font-size="11.5" fill="#52514e">Y = S&#773;·D₀ + S·D₁</text>
+
+    <text x="72" y="152" text-anchor="end" font-size="12.5" font-weight="700" fill="#0b0b0b">D₀</text>
+    <line x1="82" y1="148" x2="250" y2="148" stroke="#0b0b0b" stroke-width="2"/>
+    <text x="72" y="252" text-anchor="end" font-size="12.5" font-weight="700" fill="#0b0b0b">D₁</text>
+    <line x1="82" y1="248" x2="250" y2="248" stroke="#0b0b0b" stroke-width="2"/>
+
+    <text x="72" y="334" text-anchor="end" font-size="12.5" font-weight="700" fill="#0b0b0b">S</text>
+    <line x1="82" y1="330" x2="120" y2="330" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="120" y1="330" x2="120" y2="162" stroke="#0b0b0b" stroke-width="2"/>
+    <circle cx="120" cy="262" r="3.5" fill="#0b0b0b"/>
+    <line x1="120" y1="262" x2="250" y2="262" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="120" y1="162" x2="160" y2="162" stroke="#0b0b0b" stroke-width="2"/>
+
+    <!-- NOT -->
+    <g transform="translate(160,148)">
+      <path d="M0,0 L28,14 L0,28 Z" fill="#ffffff" stroke="#2a78d6" stroke-width="2.5"/>
+      <circle cx="33" cy="14" r="5" fill="#ffffff" stroke="#2a78d6" stroke-width="2.5"/>
+    </g>
+    <line x1="198" y1="162" x2="250" y2="162" stroke="#0b0b0b" stroke-width="2"/>
+
+    <!-- AND1 -->
+    <g transform="translate(250,140)">
+      <path d="M0,0 H14 A15,15 0 0 1 14,30 H0 Z" fill="#ffffff" stroke="#2a78d6" stroke-width="2.5"/>
+    </g>
+    <line x1="279" y1="155" x2="295" y2="155" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="295" y1="155" x2="295" y2="198" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="295" y1="198" x2="320" y2="198" stroke="#0b0b0b" stroke-width="2"/>
+
+    <!-- AND2 -->
+    <g transform="translate(250,240)">
+      <path d="M0,0 H14 A15,15 0 0 1 14,30 H0 Z" fill="#ffffff" stroke="#2a78d6" stroke-width="2.5"/>
+    </g>
+    <line x1="279" y1="255" x2="305" y2="255" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="305" y1="255" x2="305" y2="212" stroke="#0b0b0b" stroke-width="2"/>
+    <line x1="305" y1="212" x2="320" y2="212" stroke="#0b0b0b" stroke-width="2"/>
+
+    <!-- OR -->
+    <g transform="translate(320,190)">
+      <path d="M0,0 Q15,15 0,30 Q22,30 38,15 Q22,0 0,0 Z" fill="#ffffff" stroke="#2a78d6" stroke-width="2.5"/>
+    </g>
+    <line x1="358" y1="205" x2="400" y2="205" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+    <text x="410" y="210" font-size="13" font-weight="700" fill="#2a78d6">Y</text>
+
+    <line x1="55" y1="360" x2="435" y2="360" stroke="#2a78d6" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="55" y="384" font-size="11.5" fill="#52514e">S=0이면 위쪽 AND만 열려 D₀가, S=1이면</text>
+    <text x="55" y="400" font-size="11.5" fill="#52514e">아래쪽 AND만 열려 D₁이 통과합니다.</text>
+    <text x="55" y="416" font-size="11.5" fill="#52514e">닫힌 경로는 0이 되므로 OR로 합쳐도</text>
+    <text x="55" y="432" font-size="11.5" fill="#52514e">서로 간섭하지 않습니다.</text>
+  </g>
+
+  <!-- ===== 4대1 MUX ===== -->
+  <g>
+    <rect x="480" y="76" width="300" height="370" rx="10" fill="#1baf7a" fill-opacity="0.10" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="630" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">4대1 MUX</text>
+    <text x="630" y="124" text-anchor="middle" font-size="11.5" fill="#52514e">선택 신호 2비트 → 입력 4개 중 하나</text>
+
+    <rect x="565" y="150" width="90" height="180" rx="8" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+    <text x="610" y="235" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">MUX</text>
+    <text x="610" y="255" text-anchor="middle" font-size="11" fill="#52514e">4 → 1</text>
+
+    <text x="512" y="179" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">D₀</text>
+    <line x1="522" y1="175" x2="565" y2="175" stroke="#0b0b0b" stroke-width="2"/>
+    <text x="512" y="214" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">D₁</text>
+    <line x1="522" y1="210" x2="565" y2="210" stroke="#0b0b0b" stroke-width="2"/>
+    <text x="512" y="254" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">D₂</text>
+    <line x1="522" y1="250" x2="565" y2="250" stroke="#0b0b0b" stroke-width="2"/>
+    <text x="512" y="289" text-anchor="end" font-size="12" font-weight="700" fill="#0b0b0b">D₃</text>
+    <line x1="522" y1="285" x2="565" y2="285" stroke="#0b0b0b" stroke-width="2"/>
+
+    <line x1="655" y1="240" x2="710" y2="240" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+    <text x="722" y="245" font-size="13" font-weight="700" fill="#1baf7a">Y</text>
+
+    <line x1="590" y1="370" x2="590" y2="330" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+    <line x1="630" y1="370" x2="630" y2="330" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+    <text x="590" y="388" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">S₁</text>
+    <text x="630" y="388" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">S₀</text>
+
+    <text x="505" y="412" font-size="11.5" fill="#52514e">S₁S₀ = 00→D₀, 01→D₁, 10→D₂, 11→D₃</text>
+    <text x="505" y="430" font-size="11.5" fill="#52514e">n비트 선택 신호는 2ⁿ개 입력을 다룹니다.</text>
+  </g>
+
+  <!-- ===== DEMUX ===== -->
+  <g>
+    <rect x="800" y="76" width="290" height="370" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+    <text x="945" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#0b0b0b">1대4 DEMUX</text>
+    <text x="945" y="124" text-anchor="middle" font-size="11.5" fill="#52514e">MUX를 거꾸로 돌린 거울상 회로</text>
+
+    <rect x="875" y="150" width="90" height="180" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2.5"/>
+    <text x="920" y="235" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">DEMUX</text>
+    <text x="920" y="255" text-anchor="middle" font-size="11" fill="#52514e">1 → 4</text>
+
+    <text x="822" y="235" text-anchor="end" font-size="12.5" font-weight="700" fill="#0b0b0b">D</text>
+    <line x1="832" y1="240" x2="875" y2="240" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+
+    <line x1="965" y1="175" x2="1020" y2="175" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+    <text x="1032" y="180" font-size="12" font-weight="700" fill="#d97706">Y₀</text>
+    <line x1="965" y1="210" x2="1020" y2="210" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+    <text x="1032" y="215" font-size="12" font-weight="700" fill="#d97706">Y₁</text>
+    <line x1="965" y1="250" x2="1020" y2="250" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+    <text x="1032" y="255" font-size="12" font-weight="700" fill="#d97706">Y₂</text>
+    <line x1="965" y1="285" x2="1020" y2="285" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+    <text x="1032" y="290" font-size="12" font-weight="700" fill="#d97706">Y₃</text>
+
+    <line x1="900" y1="370" x2="900" y2="330" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+    <line x1="940" y1="370" x2="940" y2="330" stroke="#0b0b0b" stroke-width="2" marker-end="url(#m1)"/>
+    <text x="900" y="388" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">S₁</text>
+    <text x="940" y="388" text-anchor="middle" font-size="12" font-weight="700" fill="#0b0b0b">S₀</text>
+
+    <text x="825" y="412" font-size="11.5" fill="#52514e">선택된 출력 하나에만 D가 실리고,</text>
+    <text x="825" y="430" font-size="11.5" fill="#52514e">나머지 출력은 0으로 유지됩니다.</text>
+  </g>
+</svg>

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="500" viewBox="0 0 1120 500" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="1120" height="500" fill="#fcfcfb"/>
+
+  <text x="560" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0b0b0b">경우의 수 증가율과 완전탐색의 한계</text>
+  <text x="560" y="56" text-anchor="middle" font-size="13" fill="#52514e">세로축은 로그 척도입니다 — 기준선은 초당 약 10⁸ 연산</text>
+
+  <!-- Chart area -->
+  <g>
+    <rect x="30" y="78" width="640" height="392" rx="10" fill="#2a78d6" fill-opacity="0.06" stroke="#2a78d6" stroke-width="2.5"/>
+
+    <!-- axes -->
+    <line x1="90" y1="420" x2="640" y2="420" stroke="#52514e" stroke-width="2"/>
+    <line x1="90" y1="420" x2="90" y2="110" stroke="#52514e" stroke-width="2"/>
+    <text x="365" y="452" text-anchor="middle" font-size="12" fill="#52514e">입력 크기 n</text>
+    <text x="52" y="264" text-anchor="middle" font-size="12" fill="#52514e" transform="rotate(-90 52 264)">경우의 수 (로그 척도)</text>
+
+    <!-- y gridlines -->
+    <line x1="90" y1="360" x2="640" y2="360" stroke="#52514e" stroke-opacity="0.15" stroke-width="1"/>
+    <text x="84" y="364" text-anchor="end" font-size="10.5" fill="#52514e">10³</text>
+    <line x1="90" y1="300" x2="640" y2="300" stroke="#52514e" stroke-opacity="0.15" stroke-width="1"/>
+    <text x="84" y="304" text-anchor="end" font-size="10.5" fill="#52514e">10⁶</text>
+    <line x1="90" y1="240" x2="640" y2="240" stroke="#dc2626" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="84" y="244" text-anchor="end" font-size="10.5" font-weight="700" fill="#dc2626">10⁸</text>
+    <line x1="90" y1="180" x2="640" y2="180" stroke="#52514e" stroke-opacity="0.15" stroke-width="1"/>
+    <text x="84" y="184" text-anchor="end" font-size="10.5" fill="#52514e">10¹²</text>
+    <line x1="90" y1="130" x2="640" y2="130" stroke="#52514e" stroke-opacity="0.15" stroke-width="1"/>
+    <text x="84" y="134" text-anchor="end" font-size="10.5" fill="#52514e">10¹⁸</text>
+
+    <text x="648" y="236" font-size="11" font-weight="700" fill="#dc2626">1초 선</text>
+
+    <!-- x ticks -->
+    <text x="90" y="438" text-anchor="middle" font-size="10.5" fill="#52514e">0</text>
+    <text x="200" y="438" text-anchor="middle" font-size="10.5" fill="#52514e">10</text>
+    <text x="310" y="438" text-anchor="middle" font-size="10.5" fill="#52514e">20</text>
+    <text x="420" y="438" text-anchor="middle" font-size="10.5" fill="#52514e">30</text>
+    <text x="530" y="438" text-anchor="middle" font-size="10.5" fill="#52514e">40</text>
+    <text x="640" y="438" text-anchor="middle" font-size="10.5" fill="#52514e">50</text>
+
+    <!-- n^2 curve (green, very flat on log scale) -->
+    <path d="M 100 412 L 200 396 L 310 384 L 420 377 L 530 372 L 640 368" fill="none" stroke="#1baf7a" stroke-width="3"/>
+    <text x="600" y="390" font-size="13" font-weight="700" fill="#1baf7a">n²</text>
+
+    <!-- 2^n curve (orange) -->
+    <path d="M 100 418 L 200 358 L 310 296 L 420 236 L 530 176 L 600 138" fill="none" stroke="#d97706" stroke-width="3"/>
+    <text x="608" y="130" font-size="13" font-weight="700" fill="#d97706">2ⁿ</text>
+
+    <!-- n! curve (purple, steepest) -->
+    <path d="M 100 418 L 150 372 L 200 306 L 240 246 L 275 182 L 305 122" fill="none" stroke="#8b5cf6" stroke-width="3"/>
+    <text x="312" y="116" font-size="13" font-weight="700" fill="#8b5cf6">n!</text>
+
+    <!-- crossing markers -->
+    <circle cx="211" cy="240" r="6" fill="#8b5cf6"/>
+    <text x="222" y="228" font-size="11" font-weight="700" fill="#8b5cf6">n ≈ 11</text>
+    <circle cx="365" cy="240" r="6" fill="#d97706"/>
+    <text x="376" y="228" font-size="11" font-weight="700" fill="#d97706">n ≈ 25</text>
+
+    <text x="100" y="466" font-size="11.5" fill="#52514e">두 곡선이 1초 선을 넘는 n 값이 이렇게 작다는 것이 핵심입니다</text>
+  </g>
+
+  <!-- Right: practical table -->
+  <g>
+    <rect x="692" y="78" width="398" height="392" rx="10" fill="#d97706" fill-opacity="0.10" stroke="#d97706" stroke-width="2.5"/>
+    <text x="891" y="108" text-anchor="middle" font-size="16" font-weight="700" fill="#0b0b0b">n을 보고 알고리즘을 역추론하기</text>
+
+    <rect x="714" y="128" width="354" height="52" rx="9" fill="#8b5cf6" fill-opacity="0.16" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="730" y="150" font-size="13" font-weight="700" fill="#0b0b0b">n ≤ 10~11</text>
+    <text x="730" y="170" font-size="11.5" fill="#52514e">n! 순열 완전탐색 가능 (외판원 완전탐색의 한계)</text>
+
+    <rect x="714" y="190" width="354" height="52" rx="9" fill="#d97706" fill-opacity="0.16" stroke="#d97706" stroke-width="2"/>
+    <text x="730" y="212" font-size="13" font-weight="700" fill="#0b0b0b">n ≤ 20~25</text>
+    <text x="730" y="232" font-size="11.5" fill="#52514e">2ⁿ 부분집합 완전탐색 가능 (비트마스크 신호)</text>
+
+    <rect x="714" y="252" width="354" height="52" rx="9" fill="#1baf7a" fill-opacity="0.16" stroke="#1baf7a" stroke-width="2"/>
+    <text x="730" y="274" font-size="13" font-weight="700" fill="#0b0b0b">n ≤ 5,000</text>
+    <text x="730" y="294" font-size="11.5" fill="#52514e">O(n²) 이중 반복문 가능</text>
+
+    <rect x="714" y="314" width="354" height="52" rx="9" fill="#2a78d6" fill-opacity="0.16" stroke="#2a78d6" stroke-width="2"/>
+    <text x="730" y="336" font-size="13" font-weight="700" fill="#0b0b0b">n ≤ 10⁶</text>
+    <text x="730" y="356" font-size="11.5" fill="#52514e">O(n log n) 정렬 기반 접근이 필요</text>
+
+    <line x1="714" y1="386" x2="1068" y2="386" stroke="#d97706" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="714" y="410" font-size="12.5" font-weight="700" fill="#0b0b0b">코드를 짜기 전에 n의 최대값을 먼저 봅니다</text>
+    <text x="714" y="432" font-size="11.5" fill="#52514e">n ≤ 20이라면 출제자가 비트마스크를 의도했을</text>
+    <text x="714" y="448" font-size="11.5" fill="#52514e">가능성이 높습니다. 경우의 수 계산이 곧 설계 판단</text>
+    <text x="714" y="464" font-size="11.5" fill="#52514e">이며, 구현 자체는 Part 16에서 다룹니다.</text>
+  </g>
+</svg>
